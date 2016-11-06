@@ -4,6 +4,7 @@
 
 
 **简书其它章节地址：**
+
 [自己动手写一个印钞机 第一章](http://www.jianshu.com/p/4ba3a10ea9e5) 
 [自己动手写一个印钞机 第二章](http://www.jianshu.com/p/82885fde3ec2) 
 [自己动手写一个印钞机 第三章](http://www.jianshu.com/p/056d8b28f581) 
