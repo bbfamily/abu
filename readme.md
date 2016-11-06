@@ -3,14 +3,20 @@
 #  印钞机系统（摇滚战国）
 
 
-**简书其它章节地址：**
+**简书章节地址：**
 
 [自己动手写一个印钞机 第一章](http://www.jianshu.com/p/4ba3a10ea9e5) 
+
 [自己动手写一个印钞机 第二章](http://www.jianshu.com/p/82885fde3ec2) 
+
 [自己动手写一个印钞机 第三章](http://www.jianshu.com/p/056d8b28f581) 
+
 [自己动手写一个印钞机 第四章](http://www.jianshu.com/p/ffa63437c991) 
+
 [自己动手写一个印钞机 第五章](http://www.jianshu.com/p/ca5d766ad70a) 
+
 [自己动手写一个印钞机 第六章](http://www.jianshu.com/p/c15cdd11367c) 
+
 [自己动手写一个印钞机 第七章](http://www.jianshu.com/p/7e4108cd4ad1) 
 
 [股票量化专题地址，请关注，谢谢！](http://www.jianshu.com/collection/0a774f78050a)
