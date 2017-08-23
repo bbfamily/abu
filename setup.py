@@ -17,15 +17,35 @@ URL = "http://abuquant.com/"
 DOWNLOAD_URL = 'https://github.com/bbfamily/abu'
 CLASSIFIERS = []
 
-# TODO  start
-DESCRIPTION = "强大的股票量化库"
-LONG_DESCRIPTION = "abu是以时间驱动来选股，生成订单。"
+DESCRIPTION = "阿布量化系统"
+LONG_DESCRIPTION = """
+**abu追求的是一句话就能够说明的智能策略**
+abu能够帮助用户自动完善策略，主动分析策略产生的交易行为，智能拦截策略生成的容易失败的交易单。
+
+现阶段的量化策略还是人工编写的代码，abu量化交易系统的设计将会向着由计算机自动实现整套流程的方向迈进，包括编写量化策略本身。
+
+我们对未来的期望是：abupy用户只需要提供一些简单的种子策略，计算机在这些种子基础上不断自我学习、自我成长，创造出新的策略，并且随着时间序列数据不断智能调整策略的参数。
+
+### 特点
+
+* 使用多种机器学习技术智能优化策略
+* 在实盘中指导策略进行交易，提高策略的实盘效果，战胜市场
+
+### 支持的投资市场:
+
+* 美股，A股，港股
+* 期货，期权
+* 比特币，莱特币
+
+### 工程设计目标：
+
+* 分离基础策略和策略优化监督模块
+* 提高灵活度和适配性
+
+"""
 KEY_WORDS = ['阿布', 'abu', 'quant', 'quantization',
              'crawler', 'spider', 'scrapy', 'stock', 'machine learning',
              '股票', '机器学习', '量化', '爬虫']
-
-
-# TODO end
 
 
 def init_mete_data():
