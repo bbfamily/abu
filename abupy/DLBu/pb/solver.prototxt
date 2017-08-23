@@ -1,0 +1,16 @@
+net: "/Users/Bailey/Desktop/my_work/abu/Caffe/pb/train_val.prototxt"
+test_iter: 100
+test_interval: 2000
+test_initialization: false
+display: 100
+average_loss: 40
+base_lr: 0.01
+lr_policy: "step"
+stepsize: 320000
+gamma: 0.96
+max_iter: 2000000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 6000
+snapshot_prefix: "/Users/Bailey/Desktop/my_work/abu/Caffe/gen/stock_judge_train"
+solver_mode: CPU

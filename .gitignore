@@ -1,0 +1,8 @@
+.ipynb_checkpoints*
+.idea
+.DS_Store
+logging.log
+p.sh
+*.pyc
+tmp
+test.py

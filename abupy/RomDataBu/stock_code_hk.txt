@@ -1,0 +1,1890 @@
+hk|0|00010|恒隆集团|HLJT:|henglongjituan|HANG LUNG GROUP||恒隆集团有限公司
+hk|0|00100|白马户外媒体|BMHWMT:BMHWMB:|baimahuwaimeiti:baimahuwaimeiben|CLEAR MEDIA||白马户外媒体有限公司
+hk|0|01000|北青传媒|BQCM:BQZM:|beiqingchuanmei:beiqingzhuanmei|BEIJING MEDIA||北青传媒股份有限公司-H股
+hk|0|01002|威铖国际|WCGJ:|weichengguoji|V.S. INT'L||威铖国际集团有限公司
+hk|0|01003|21控股|21KG:|21konggu|21 HOLDINGS||21控股有限公司
+hk|0|01006|长寿花食品|CSHSP:CSHSP:CSHYP:|changshouhuashipin:changshouhuasipin:changshouhuayipin|CHANGSHOUHUA||长寿花食品股份有限公司
+hk|0|01007|大庆乳业|DQRY:DQRY:TQRY:|daqingruye:daiqingruye:taiqingruye|DAQING DAIRY||大庆乳业控股有限公司
+hk|0|01008|贵联控股|GLKG:|guiliankonggu|BRILLIANT CIR||贵联控股国际有限公司
+hk|0|01009|国际娱乐|GJYL:GJYY:|guojiyule:guojiyuyue|INT'L ENT||国际娱乐有限公司
+hk|0|00101|恒隆地产|HLDC:|henglongdichan|HANG LUNG PPT||恒隆地产有限公司
+hk|0|01010|弘茂科技|HMKJ:|hongmaokeji|PACMOS TECH||弘茂科技控股有限公司
+hk|0|01011|泰凌医药|TLYY:|tailingyiyao|NT PHARMA||中国泰凌医药集团有限公司
+hk|0|01013|伟俊集团控股|WJJTKG:|weijunjituankonggu|WAI CHUN GROUP||伟俊集团控股有限公司
+hk|0|01015|STOCK1015|STOCK1015:|STOCK1015|||
+hk|0|01016|STOCK1016|STOCK1016:|STOCK1016|||
+hk|0|01017|STOCK1017|STOCK1017:|STOCK1017|||
+hk|0|01018|STOCK1018|STOCK1018:|STOCK1018|||
+hk|0|01019|康宏金融|KHJR:|kanghongjinrong|CONVOY||康宏金融控股有限公司
+hk|0|00102|凯升控股|KSKG:|kaishengkonggu|SUMMIT ASCENT||凯升控股有限公司
+hk|0|01020|华耐控股|HNKG:|huanaikonggu|SINOREF HLDGS||华耐控股有限公司
+hk|0|01021|麦达斯控股-S|MDSKG-S:|maidasikonggu-S|MIDAS HLDGS-S||麦达斯控股有限公司
+hk|0|01022|飞鱼科技|FYKJ:|feiyukeji|FEIYU||飞鱼科技国际有限公司
+hk|0|01023|时代集团控股|SDJTKG:|shidaijituankonggu|SITOY GROUP||时代集团控股有限公司
+hk|0|01025|物美商业|WMSY:|wumeishangye|WUMART||北京物美商业集团股份有限公司-H股
+hk|0|01026|环球实业科技|HQSYKJ:|huanqiushiyekeji|UNIVERSAL TECH||环球实业科技控股有限公司
+hk|0|01028|千百度|QBD:QBD:|qianbaidu:qianbaiduo|C.BANNER||千百度国际控股有限公司
+hk|0|01029|铁货|TH:|tiehuo|IRC||铁江现货有限公司
+hk|0|00103|首长宝佳|SCBJ:|shouchangbaojia|SHOUGANG CENT||首长宝佳集团有限公司
+hk|0|01030|新城发展控股|XCFZKG:|xinchengfazhankonggu|FUTURE LAND||新城发展控股有限公司
+hk|0|01031|金利丰金融|JLFJR:|jinlifengjinrong|KINGSTON FIN||金利丰金融集团有限公司
+hk|0|01036|万科置业(海外)|WKZY(HW):MKZY(HW):|wankezhiye(haiwai):mokezhiye(haiwai)|VANKE PPT OVS||万科置业(海外)有限公司
+hk|0|01038|长江基建集团|CJJJJT:|changjiangjijianjituan|CKI HOLDINGS||长江基建集团有限公司
+hk|0|01041|中国新能源动力|ZGXNYDL:ZGXNYDL:|zhongguoxinnengyuandongli:zhongguoxinnaiyuandongli|CH NEW ENGY PWR||中国新能源动力集团有限公司
+hk|0|01043|光宇国际集团科技|GYGJJTKJ:|guangyuguojijituankeji|COSLIGHT TECH||光宇国际集团科技有限公司
+hk|0|01044|恒安国际|HAGJ:|henganguoji|HENGAN INT'L||恒安国际集团有限公司
+hk|0|01045|亚太卫星|YTWX:|yataiweixing|APT SATELLITE||亚太卫星控股有限公司
+hk|0|01047|毅兴行|YXX:YXH:|yixingxing:yixinghang|NGAI HING HONG||毅兴行有限公司
+hk|0|01048|新源控股|XYKG:|xinyuankonggu|NOVO GROUP||新源控股有限公司
+hk|0|01049|时富投资|SFTZ:|shifutouzi|CELESTIAL ASIA||时富投资集团有限公司
+hk|0|00105|凯联国际酒店|KLGJJD:|kailianguojijiudian|ASSO INT HOTELS||凯联国际酒店有限公司
+hk|0|01050|嘉利国际|JLGJ:|jialiguoji|KARRIE INT'L||嘉利国际控股有限公司
+hk|0|01051|国际资源|GJZY:|guojiziyuan|G-RESOURCES||国际资源集团有限公司
+hk|0|01052|越秀交通基建|YXJTJJ:|yuexiujiaotongjijian|YUEXIUTRANSPORT||越秀交通基建有限公司
+hk|0|01053|重庆钢铁股份|ZQGTGF:CQGTGF:ZQGTGB:CQGTGB:|zhongqinggangtiegufen:chongqinggangtiegufen:zhongqinggangtiegubin:chongqinggangtiegubin|CHONGQING IRON||重庆钢铁股份有限公司-H股
+hk|0|01055|中国南方航空股份|ZGNFHKGF:ZGNFHKGF:ZGNFHKGB:ZGNFHKGB:|zhongguonanfanghangkonggufen:zhongguonafanghangkonggufen:zhongguonanfanghangkonggubin:zhongguonafang|CHINA SOUTH AIR||中国南方航空股份有限公司-H股
+hk|0|01057|浙江世宝|ZJSB:|zhejiangshibao|ZHEJIANG SHIBAO||浙江世宝股份有限公司-H股
+hk|0|01058|粤海制革|YHZG:|yuehaizhige|GUANGDONG TANN||粤海制革有限公司
+hk|0|01059|看通集团|KTJT:|kantongjituan|KANTONE HOLDING||看通集团有限公司
+hk|0|00106|朗诗绿色地产|LSLSDC:LSLSDC:|langshilvsedichan:langshilusedichan|LANDSEA PPT||朗诗绿色地产有限公司
+hk|0|01060|阿里影业|ALYY:|aliyingye|ALI PICTURES||阿里巴巴影业集团有限公司
+hk|0|01061|亿胜生物科技|YSSWKJ:|yishengshengwukeji|ESSEX BIO-TECH||亿胜生物科技有限公司
+hk|0|01062|国开国际投资|GKGJTZ:|guokaiguojitouzi|CDB INT'L INV||国开国际投资有限公司
+hk|0|01063|新确科技|XQKJ:|xinquekeji|SUNCORP TECH||新确科技有限公司
+hk|0|01064|中华国际|ZHGJ:|zhonghuaguoji|ZHONG HUA INT'L||中华国际控股有限公司
+hk|0|01065|天津创业环保股份|TJCYHBGF:TJCYHBGB:|tianjinchuangyehuanbaogufen:tianjinchuangyehuanbaogubin|TIANJIN CAPITAL||天津创业环保集团股份有限公司-H股
+hk|0|01066|威高股份|WGGF:WGGB:|weigaogufen:weigaogubin|WEIGAO GROUP||山东威高集团医用高分子制品股份有限公司-H股
+hk|0|01068|雨润食品|YRSP:YRSP:YRYP:|yurunshipin:yurunsipin:yurunyipin|YURUN FOOD||中国雨润食品集团有限公司
+hk|0|01069|中国农林低碳|ZGNLDT:|zhongguononglinditan|CA LOW-CARBON||中国农林低碳控股有限公司
+hk|0|00107|四川成渝高速公路|SCCYGSGL:|sichuanchengyugaosugonglu|SICHUAN EXPRESS||四川成渝高速公路股份有限公司-H股
+hk|0|01070|TCL多媒体|TCLDMT:TCLDMB:|TCLduomeiti:TCLduomeiben|TCL MULTIMEDIA||TCL多媒体科技控股有限公司
+hk|0|01071|华电国际电力股份|HDGJDLGF:HDGJDLGB:|huadianguojidianligufen:huadianguojidianligubin|HUADIAN POWER||华电国际电力股份有限公司-H股
+hk|0|01072|东方电气|DFDQ:|dongfangdianqi|DONGFANG ELEC||东方电气股份有限公司-H股
+hk|0|01073|浩伦农科|HLNK:|haolunnongke|CHINA AGROTECH||浩伦农业科技集团有限公司
+hk|0|01075|首都信息|SDXX:SDXX:SDSX:SDSX:|shouduxinxi:shoudouxinxi:shoudushenxi:shoudoushenxi|CAPINFO||首都信息发展股份有限公司-H股
+hk|0|01076|博华太平洋|BHTPY:|bohuataipingyang|IMPERIAL PAC||博华太平洋国际控股有限公司
+hk|0|01079|松景科技|SJKJ:SYKJ:|songjingkeji:songyingkeji|PINE TECH||松景科技控股有限公司
+hk|0|00108|国锐地产|GRDC:|guoruidichan|GR PROPERTIES||国锐地产有限公司
+hk|0|01080|胜利管道|SLGD:|shengliguandao|SHENGLI PIPE||胜利油气管道控股有限公司
+hk|0|01083|港华燃气|GHRQ:JHRQ:|ganghuaranqi:jianghuaranqi|TOWNGAS CHINA||港华燃气有限公司
+hk|0|01085|亨鑫科技|HXKJ:PXKJ:|hengxinkeji:pengxinkeji|HXTL||亨鑫科技有限公司
+hk|0|01086|好孩子国际|HHZGJ:|haohaiziguoji|GOODBABY INTL||好孩子国际控股有限公司
+hk|0|01087|泓淋科技|HLKJ:|honglinkeji|HL TECHNOLOGY||泓淋科技集团有限公司
+hk|0|01088|中国神华|ZGSH:|zhongguoshenhua|CHINA SHENHUA||中国神华能源股份有限公司-H股
+hk|0|01089|乐游科技控股|LYKJKG:YYKJKG:|leyoukejikonggu:yueyoukejikonggu|LEYOU TECH H||乐游科技控股有限公司
+hk|0|00109|金威资源|JWZY:|jinweiziyuan|GOOD FELLOW RES||金威资源控股有限公司
+hk|0|01090|大明国际|DMGJ:DMGJ:TMGJ:|damingguoji:daimingguoji:taimingguoji|DA MING INT'L||大明国际控股有限公司
+hk|0|01091|中信大锰|ZXDM:ZSDM:ZXDM:ZSDM:ZXTM:ZSTM:|zhongxindameng:zhongshendameng:zhongxindaimeng:zhongshendaimeng:zhongxintaimeng:zhongshentaimeng|CITIC DAMENG||中信大锰控股有限公司
+hk|0|01093|石药集团|SYJT:DYJT:|shiyaojituan:danyaojituan|CSPC PHARMA||石药集团有限公司
+hk|0|01094|中国公共采购|ZGGGCG:|zhongguogonggongcaigou|C P PROCUREMENT||中国公共采购有限公司
+hk|0|01096|动感集团|DGJT:|dongganjituan|ACTIVE GROUP||动感集团控股有限公司
+hk|0|01097|有线宽频|YXKP:YXKB:|youxiankuanpin:youxiankuanbin|I-CABLE COMM||有线宽频有限公司
+hk|0|01099|国药控股|GYKG:|guoyaokonggu|SINOPHARM||国药控股股份有限公司-H股
+hk|0|00011|恒生银行|HSYX:HSYH:|hengshengyinxing:hengshengyinhang|HANG SENG BANK||恒生银行有限公司
+hk|0|00110|中国长远|ZGCY:|zhongguochangyuan|CHINA FORTUNE||中国长远控股有限公司
+hk|0|01100|飞达控股|FDKG:|feidakonggu|MAINLAND HOLD||飞达帽业控股有限公司
+hk|0|01102|环能国际|HNGJ:HNGJ:|huannengguoji:huannaiguoji|ENVIRO ENERGY||环能国际控股有限公司
+hk|0|01103|上海栋华|SHDH:|shanghaidonghua|SHANGHAI TONVA||上海栋华石油化工股份有限公司-H股
+hk|0|01104|亚太资源|YTZY:|yataiziyuan|APAC RESOURCES||亚太资源有限公司
+hk|0|01105|星岛|XD:|xingdao|SING TAO||星岛新闻集团有限公司
+hk|0|01106|中国海景|ZGHJ:ZGHY:|zhongguohaijing:zhongguohaiying|SINO HAIJING||中国海景控股有限公司
+hk|0|01107|当代置业|DDZY:|dangdaizhiye|MODERN LAND||当代置业(中国)有限公司
+hk|0|01108|洛阳玻璃股份|LYBLGF:LYBLGB:|luoyangboligufen:luoyangboligubin|LUOYANG GLASS||洛阳玻璃股份有限公司-H股
+hk|0|01109|华润置地|HRZD:|huarunzhidi|CHINA RES LAND||华润置地有限公司
+hk|0|00111|信达国际控股|XDGJKG:SDGJKG:|xindaguojikonggu:shendaguojikonggu|CINDA INTL HLDG||信达国际控股有限公司
+hk|0|01110|金活医药集团|JHYYJT:|jinhuoyiyaojituan|KINGWORLD||金活医药集团有限公司
+hk|0|01111|创兴银行|CXYX:CXYH:|chuangxingyinxing:chuangxingyinhang|CHONG HING BANK||创兴银行有限公司
+hk|0|01112|合生元|HSY:GSY:|heshengyuan:geshengyuan|BIOSTIME||合生元国际控股有限公司
+hk|0|01115|西藏5100|XC5100:XZ5100:|xicang5100:xizang5100|TIBET 5100||西藏5100水资源控股有限公司
+hk|0|01117|现代牧业|XDMY:|xiandaimuye|CH MODERN D||中国现代牧业控股有限公司
+hk|0|01118|高力集团|GLJT:|gaolijituan|GOLIK HOLDINGS||高力集团有限公司
+hk|0|00112|勒泰商业地产|LTSYDC:LTSYDC:|letaishangyedichan:leitaishangyedichan|LT COMM REALEST||勒泰商业地产有限公司
+hk|0|01120|雅视光学|YSGX:|yashiguangxue|ARTS OPTICAL||雅视光学集团有限公司
+hk|0|01121|宝峰时尚|BFSS:|baofengshishang|BAOFENGMODERN||宝峰时尚国际控股有限公司
+hk|0|01122|庆铃汽车股份|QLQCGF:QLQCGB:|qinglingqichegufen:qinglingqichegubin|QINGLING MOTORS||庆铃汽车股份有限公司-H股
+hk|0|01123|中港照相|ZGZX:ZJZX:|zhonggangzhaoxiang:zhongjiangzhaoxiang|CHINA-HK PHOTO||中港照相器材集团有限公司
+hk|0|01124|沿海家园|YHJY:YHJY:|yanhaijiayuan:yanhaijiByuan|COASTAL GL||沿海绿色家园有限公司
+hk|0|01125|丽丰控股|LFKG:|lifengkonggu|LAI FUNG HOLD||丽丰控股有限公司
+hk|0|01126|德林国际|DLGJ:|delinguoji|DREAM INT'L||德林国际有限公司
+hk|0|01127|汇星印刷|HXYS:|huixingyinshua|1010 PRINTING||汇星印刷集团有限公司
+hk|0|01128|永利澳门|YLAM:|yongliaomen|WYNN MACAU||永利澳门有限公司
+hk|0|01129|中国水业集团|ZGSYJT:|zhongguoshuiyejituan|WATER INDUSTRY||中国水业集团有限公司
+hk|0|00113|迪生创建|DSCJ:|dishengchuangjian|DICKSON CONCEPT||迪生创建(国际)有限公司
+hk|0|01130|中国环境资源|ZGHJZY:|zhongguohuanjingziyuan|CHINA ENV RES||中国环境资源集团有限公司
+hk|0|01131|鸿宝资源|HBZY:|hongbaoziyuan|AGRITRADE RES||鸿宝资源有限公司
+hk|0|01132|橙天嘉禾|CTJH:|chengtianjiahe|ORANGE SKY G H||橙天嘉禾娱乐(集团)有限公司
+hk|0|01133|哈尔滨电气|HEBDQ:|haerbindianqi|HARBIN ELECTRIC||哈尔滨电气股份有限公司-H股
+hk|0|01136|台泥国际集团|TNGJJT:|tainiguojijituan|TCC INT'L HOLD||台泥国际集团有限公司
+hk|0|01137|香港电视|XGDS:XJDS:|xianggangdianshi:xiangjiangdianshi|HKTV||香港电视网络有限公司
+hk|0|01138|中海发展股份|ZHFZGF:ZHFZGB:|zhonghaifazhangufen:zhonghaifazhangubin|CHINA SHIP DEV||中海发展股份有限公司-H股
+hk|0|01139|华多利集团|HDLJT:|huaduolijituan|VICTORY GROUP||华多利集团有限公司
+hk|0|01140|东英金融投资|DYJRTZ:|dongyingjinrongtouzi|OP FIN INV||东英金融投资有限公司
+hk|0|01141|保兴资本|BXZB:|baoxingziben|MISSION CAP||保兴资本控股有限公司
+hk|0|01142|西伯利亚矿业|XBLYKY:XBLYKY:XBLYKY:|xiboliyakuangye:xibailiyakuangye:xibaliyakuangye|SIBERIAN MINING||西伯利亚矿业集团有限公司
+hk|0|01143|中慧国际控股|ZHGJKG:|zhonghuiguojikonggu|TELEFIELD||中慧国际控股有限公司
+hk|0|01146|中国服饰控股|ZGFSKG:|zhongguofushikonggu|CH OUTFITTERS||中国服饰控股有限公司
+hk|0|01148|新晨动力|XCDL:|xinchendongli|POWER XINCHEN||新晨中国动力控股有限公司
+hk|0|01149|中国安芯|ZGAX:|zhongguoanxin|ANXIN-CHINA||中国安芯控股有限公司
+hk|0|00115|钧濠集团|JHJT:|junhaojituan|GRAND FIELD GP||钧濠集团有限公司
+hk|0|01150|米兰站|MLZ:|milanzhan|MILAN STATION||米兰站控股有限公司
+hk|0|01151|依利安达|YLAD:|yilianda|ELEC & ELTEK||依利安达集团有限公司
+hk|0|01152|新融宇集团|XRYJT:|xinrongyujituan|INFINITY FIN||新融宇集团(控股)有限公司
+hk|0|01155|星辰通信|XCTX:XCTS:|xingchentongxin:xingchentongshen|CENTRON TELECOM||星辰通信国际控股有限公司
+hk|0|01157|中联重科|ZLZK:ZLCK:|zhonglianzhongke:zhonglianchongke|ZOOMLION||中联重科股份有限公司-H股
+hk|0|01159|中国绿能国际|ZGLNGJ:ZGLNGJ:ZGLNGJ:ZGLNGJ:|zhongguolvnengguoji:zhongguolunengguoji:zhongguolvnaiguoji:zhongguolunaiguoji|JIMEI INT ENT||集美国际娱乐集团有限公司
+hk|0|00116|周生生|ZSS:|zhoushengsheng|CHOW SANG SANG||周生生集团国际有限公司
+hk|0|01160|大唐投资国际|DTTZGJ:DTTZGJ:TTTZGJ:|datangtouziguoji:daitangtouziguoji:taitangtouziguoji|GRAND INV INTL||大唐投资国际有限公司
+hk|0|01161|奥思集团|ASJT:YSJT:ASJT:YSJT:|aosijituan:yusijituan:aosaijituan:yusaijituan|WATER OASIS GP||奥思集团有限公司
+hk|0|01163|德金资源|DJZY:|dejinziyuan|DEJIN RES||德金资源集团有限公司
+hk|0|01164|中广核矿业|ZGHKY:ZAHKY:ZGHKY:ZAHKY:|zhongguanghekuangye:zhonganhekuangye:zhongguanghukuangye:zhonganhukuangye|CGN MINING||中广核矿业有限公司
+hk|0|01165|顺风清洁能源|SFQJNY:SFQJNY:|shunfengqingjienengyuan:shunfengqingjienaiyuan|SFCE||顺风国际清洁能源有限公司
+hk|0|01168|百仕达控股|BSDKG:|baishidakonggu|SINOLINK HOLD||百仕达控股有限公司
+hk|0|01169|海尔电器|HEDQ:|haierdianqi|HAIER ELEC||海尔电器集团有限公司
+hk|0|00117|宇阳控股|YYKG:|yuyangkonggu|EYANG HOLDINGS||宇阳控股(集团)有限公司
+hk|0|01170|信星集团|XXJT:SXJT:|xinxingjituan:shenxingjituan|KINGMAKER||信星鞋业集团有限公司
+hk|0|01171|兖州煤业股份|YZMYGF:YZMYGB:|yanzhoumeiyegufen:yanzhoumeiyegubin|YANZHOU COAL||兖州煤业股份有限公司-H股
+hk|0|01172|勤达集团国际|QDJTGJ:|qindajituanguoji|MIDAS INT'L||勤达集团国际有限公司
+hk|0|01173|威高国际|WGGJ:|weigaoguoji|VEEKO INT'L||威高国际控股有限公司
+hk|0|01174|太平洋恩利|TPYEL:|taipingyangenli|PACIFIC ANDES||太平洋恩利国际控股有限公司
+hk|0|01175|福记食品服务|FJSPFW:FJSPFW:FJYPFW:|fujishipinfuwu:fujisipinfuwu:fujiyipinfuwu|FU JI CATERING||福记食品服务控股有限公司
+hk|0|01176|珠光控股|ZGKG:|zhuguangkonggu|ZHUGUANG HOLD||珠光控股集团有限公司
+hk|0|01177|中国生物制药|ZGSWZY:|zhongguoshengwuzhiyao|SINO BIOPHARM||中国生物制药有限公司
+hk|0|01178|天年生物|TNSW:|tiannianshengwu|VITOP BIOENERGY||天年生物控股有限公司
+hk|0|00118|大同机械|DTJX:DTJX:TTJX:|datongjixie:daitongjixie:taitongjixie|COSMOS MACH||大同机械企业有限公司
+hk|0|01180|汇彩控股|HCKG:|huicaikonggu|PARADISE ENT||汇彩控股有限公司
+hk|0|01181|唐宫中国|TGZG:|tanggongzhongguo|TANG PALACE||唐宫(中国)控股有限公司
+hk|0|01182|中青基业|ZQJY:|zhongqingjiye|C Y FOUNDATION||中青基业集团有限公司
+hk|0|01185|中国航天万源|ZGHTWY:ZGHTMY:|zhongguohangtianwanyuan:zhongguohangtianmoyuan|CHINA ENERGINE||中国航天万源国际(集团)有限公司
+hk|0|01186|中国铁建|ZGTJ:|zhongguotiejian|CHINA RAIL CONS||中国铁建股份有限公司-H股
+hk|0|01187|汉唐国际控股|HTGJKG:|hantangguojikonggu|HAN TANG INTL||汉唐国际控股有限公司
+hk|0|01188|正道集团|ZDJT:|zhengdaojituan|HYBRID KINETIC||正道集团有限公司
+hk|0|01189|珀丽酒店|PLJD:|polijiudian|ROSEDALE HOTEL||珀丽酒店控股有限公司
+hk|0|00119|保利置业集团|BLZYJT:|baolizhiyejituan|POLY PROPERTY||保利置业集团有限公司
+hk|0|01190|航标控股|HBKG:|hangbiaokonggu|BOLINA||航标控股有限公司
+hk|0|01191|粤首环保|YSHB:|yueshouhuanbao|YUESHOU ENV||粤首环保控股有限公司
+hk|0|01192|泰山石化|TSSH:TSDH:|taishanshihua:taishandanhua|TITAN PETROCHEM||泰山石化集团有限公司
+hk|0|01193|华润燃气|HRRQ:|huarunranqi|CHINA RES GAS||华润燃气控股有限公司
+hk|0|01194|中国贵金属|ZGGJS:ZGGJZ:|zhongguoguijinshu:zhongguoguijinzhu|C PRECIOUSMETAL||中国贵金属资源控股有限公司
+hk|0|01195|京维集团|JWJT:|jingweijituan|KINGWELL GROUP||京维集团有限公司
+hk|0|01196|伟禄集团|WLJT:|weilujituan|REALORD GROUP||伟禄集团控股有限公司
+hk|0|01198|皇朝家俬|HZJS:HCJS:HZJS:HCJS:|huangzhaojiasi:huangchaojiasi:huangzhaojiBsi:huangchaojiBsi|ROYALE FURN||皇朝家俬控股有限公司
+hk|0|01199|中远太平洋|ZYTPY:|zhongyuantaipingyang|COSCO PACIFIC||中远太平洋有限公司
+hk|0|00012|恒基地产|HJDC:|hengjidichan|HENDERSON LAND||恒基兆业地产有限公司
+hk|0|01200|美联集团|MLJT:|meilianjituan|MIDLAND HOLDING||美联集团有限公司
+hk|0|01202|成都普天电缆股份|CDPTDLGF:CDPTDLGF:CDPTDLGB:CDPTDLGB:|chengduputiandianlangufen:chengdouputiandianlangufen:chengduputiandianlangubin:chengdouputiandianlan|CHENGDU PUTIAN||成都普天电缆股份有限公司-H股
+hk|0|01203|广南(集团)|GN(JT):AN(JT):GN(JT):AN(JT):|guangnan(jituan):annan(jituan):guangna(jituan):anna(jituan)|GUANGNAN (HOLD)||广南(集团)有限公司
+hk|0|01205|中信资源|ZXZY:ZSZY:|zhongxinziyuan:zhongshenziyuan|CITIC RESOURCES||中信资源控股有限公司
+hk|0|01206|同方泰德|TFTD:|tongfangtaide|TECHNOVATOR||同方泰德国际科技有限公司
+hk|0|01207|上置集团|SZJT:|shangzhijituan|SRE GROUP||上置集团有限公司
+hk|0|01208|五矿资源|WKZY:|wukuangziyuan|MMG||五矿资源有限公司
+hk|0|00121|卜蜂莲花|BFLH:BFLH:|bufenglianhua:bofenglianhua|C.P. LOTUS||卜蜂莲花有限公司
+hk|0|01210|克莉丝汀|KLST:|kelisiting|CHRISTINE||克莉丝汀国际控股有限公司
+hk|0|01211|比亚迪股份|BYDGF:BYDGB:|biyadigufen:biyadigubin|BYD COMPANY||比亚迪股份有限公司-H股
+hk|0|01212|利福国际|LFGJ:|lifuguoji|LIFESTYLE INT'L||利福国际集团有限公司
+hk|0|01213|万保刚集团|WBGJT:MBGJT:|wanbaogangjituan:mobaogangjituan|MOBICON GROUP||万保刚集团有限公司
+hk|0|01215|开源控股|KYKG:|kaiyuankonggu|KAI YUAN HLDGS||开源控股有限公司
+hk|0|01217|中国创新投资|ZGCXTZ:|zhongguochuangxintouzi|CH INNOVATION||中国创新投资有限公司
+hk|0|01218|永义国际|YYGJ:|yongyiguoji|EASYKNIT INT'L||永义国际集团有限公司
+hk|0|01219|天喔国际|TOGJ:TWGJ:|tianoguoji:tianwoguoji|TENWOW INT'L||天喔国际控股有限公司
+hk|0|00122|鳄鱼恤|EYX:|eyuxu|CROCODILE||鳄鱼恤有限公司
+hk|0|01220|志道国际|ZDGJ:|zhidaoguoji|ZHIDAO INT'L||志道国际(控股)有限公司
+hk|0|01223|新沣集团|XFJT:|xinfengjituan|SYMPHONY HOLD||新沣集团有限公司
+hk|0|01224|中渝置地|ZYZD:|zhongyuzhidi|C C LAND||中渝置地控股有限公司
+hk|0|01225|隆成集团|LCJT:|longchengjituan|LERADO GROUP||隆成集团(控股)有限公司
+hk|0|01226|中国投融资|ZGTRZ:|zhongguotourongzi|CH INV FIN GP||中国投融资集团有限公司
+hk|0|01227|国盛投资|GSTZ:GCTZ:|guoshengtouzi:guochengtouzi|NATIONAL INV||国盛投资基金有限公司
+hk|0|01228|奇峰国际|QFGJ:JFGJ:|qifengguoji:jifengguoji|SUPERB SUMMIT||奇峰国际集团有限公司
+hk|0|01229|南南资源|NNZY:NNZY:NNZY:NNZY:|nannanziyuan:nananziyuan:nannaziyuan:nanaziyuan|NAN NAN RES||南南资源实业有限公司
+hk|0|00123|越秀地产|YXDC:|yuexiudichan|YUEXIU PROPERTY||越秀地产股份有限公司
+hk|0|01230|雅士利国际|YSLGJ:|yashiliguoji|YASHILI INT'L||雅士利国际控股有限公司
+hk|0|01231|新矿资源|XKZY:|xinkuangziyuan|NEWTON RES||新矿资源有限公司
+hk|0|01232|金轮天地控股|JLTDKG:|jinluntiandikonggu|GW TIANDI||金轮天地控股有限公司
+hk|0|01233|时代地产|SDDC:|shidaidichan|TIMES PPT||时代地产控股有限公司
+hk|0|01234|中国利郎|ZGLL:|zhongguolilang|CHINA LILANG||中国利郎有限公司
+hk|0|01235|专业旅运|ZYLY:|zhuanyelvyun|TRAVEL EXPERT||专业旅运(亚洲)企业有限公司
+hk|0|01236|国农控股|GNKG:|guonongkonggu|NATIONAL AGRI||国农控股有限公司
+hk|0|01237|美丽家园|MLJY:MLJY:|meilijiayuan:meilijiByuan|MERRY GARDEN||美丽家园控股有限公司
+hk|0|01238|宝龙地产|BLDC:|baolongdichan|POWERLONG||宝龙地产控股有限公司
+hk|0|00124|粤海置地|YHZD:|yuehaizhidi|GD LAND||粤海置地控股有限公司
+hk|0|01240|青建国际|QJGJ:|qingjianguoji|CNQC INT'L||青建国际控股有限公司
+hk|0|01241|双桦控股|SHKG:|shuanghuakonggu|SHUANGHUA H||双桦控股有限公司
+hk|0|01247|米格国际控股|MGGJKG:|migeguojikonggu|MIKO INTL||米格国际控股有限公司
+hk|0|00125|新兴光学|XXGX:|xinxingguangxue|SUN HING VISION||新兴光学集团控股有限公司
+hk|0|01251|华油能源|HYNY:HYNY:|huayounengyuan:huayounaiyuan|SPT ENERGY||华油能源集团有限公司
+hk|0|01252|中国天瑞水泥|ZGTRSN:|zhongguotianruishuini|CHINA TIANRUI||中国天瑞集团水泥有限公司
+hk|0|01253|博大绿泽|BDLZ:BDLZ:BTLZ:BDLZ:BDLZ:BTLZ:BDLS:BDLS:BTLS:BDLS:BDLS:BTLS:|bodalvze:bodailvze:botailvze:bodaluze:bodailuze:botailuze:bodalvshi:bodailvshi:botailvshi:bodalushi:|BROADGREENSTATE||博大绿泽国际有限公司
+hk|0|01255|港大零售|GDLS:JDLS:GDLS:JDLS:GTLS:JTLS:|gangdalingshou:jiangdalingshou:gangdailingshou:jiangdailingshou:gangtailingshou:jiangtailingshou|S. CULTURE||港大零售国际控股有限公司
+hk|0|01258|中国有色矿业|ZGYSKY:|zhongguoyousekuangye|CHINFMINING||中国有色矿业有限公司
+hk|0|01259|中国儿童护理|ZGETHL:|zhongguoertonghuli|CH CHILD CARE||中国儿童护理有限公司
+hk|0|00126|佳宁娜|JNN:JNN:|jianingna:jianingnuo|CARRIANNA||佳宁娜集团控股有限公司
+hk|0|01260|皓天财经集团|HTCJJT:|haotiancaijingjituan|WONDERFUL SKY||皓天财经集团控股有限公司
+hk|0|01262|蜡笔小新食品|LBXXSP:LBXXSP:LBXXYP:|labixiaoxinshipin:labixiaoxinsipin:labixiaoxinyipin|LABIXIAOXIN||蜡笔小新休闲食品集团有限公司
+hk|0|01263|柏能集团|BNJT:BNJT:BNJT:BNJT:|bainengjituan:bonengjituan:bainaijituan:bonaijituan|PC PARTNER||柏能集团有限公司
+hk|0|01265|天津津燃公用|TJJRGY:|tianjinjinrangongyong|TIANJINJINRAN||天津津燃公用事业股份有限公司-H股
+hk|0|01266|西王特钢|XWTG:|xiwangtegang|XIWANG STEEL||西王特钢有限公司
+hk|0|01268|美东汽车|MDQC:|meidongqiche|MEIDONG AUTO||中国美东汽车控股有限公司
+hk|0|01269|中国车辆零部件|ZGCLLBJ:|zhongguochelianglingbujian|CHINA VEH COM||中国车辆零部件科技控股有限公司
+hk|0|00127|华人置业|HRZY:|huarenzhiye|CHINESE EST H||华人置业集团有限公司
+hk|0|01270|朗廷-SS|LT-SS:|langting-SS|LANGHAM-SS||朗廷酒店投资与朗廷酒店投资有限公司-SS
+hk|0|01271|佳明集团控股|JMJTKG:|jiamingjituankonggu|GRAND MING||佳明集团控股有限公司
+hk|0|01273|香港信贷|XGXD:XJXD:XGSD:XJSD:|xianggangxindai:xiangjiangxindai:xianggangshendai:xiangjiangshendai|HK FINANCE GP||香港信贷集团有限公司
+hk|0|01277|力量能源|LLNY:LLNY:|liliangnengyuan:liliangnaiyuan|KINETIC M&E||力量矿业能源有限公司
+hk|0|01278|中国新城镇|ZGXCZ:|zhongguoxinchengzhen|CHINANEWTOWN||中国新城镇发展有限公司
+hk|0|00128|安宁控股|ANKG:|anningkonggu|ENM HOLDINGS||安宁控股有限公司
+hk|0|01280|汇银家电|HYJD:HYJD:|huiyinjiadian:huiyinjiBdian|HUIYIN APP||汇银家电(控股)有限公司
+hk|0|01282|世达科技|SDKJ:|shidakeji|WWTT||世达科技(控股)有限公司
+hk|0|01285|嘉士利集团|JSLJT:|jiashilijituan|JIASHILI GP||嘉士利集团有限公司
+hk|0|01288|农业银行|NYYX:NYYH:|nongyeyinxing:nongyeyinhang|ABC||中国农业银行股份有限公司-H股
+hk|0|01289|盛力达科技|SLDKJ:CLDKJ:|shenglidakeji:chenglidakeji|SUNLIT SCI||无锡盛力达科技股份有限公司-H股
+hk|0|00129|泛海集团|FHJT:|fanhaijituan|ASIA STANDARD||泛海国际集团有限公司
+hk|0|01290|中国汇融|ZGHR:|zhongguohuirong|CHINA HUIRONG||中国汇融金融控股有限公司
+hk|0|01292|长安民生物流|CAMSWL:|changanminshengwuliu|CMA LOGISTICS||重庆长安民生物流股份有限公司-H股
+hk|0|01293|宝信汽车|BXQC:BSQC:|baoxinqiche:baoshenqiche|BAOXIN AUTO||宝信汽车集团有限公司
+hk|0|01296|国电科环|GDKH:|guodiankehuan|GUODIAN TECH||国电科技环保集团股份有限公司-H股
+hk|0|01297|中国擎天软件|ZGQTRJ:|zhongguoqingtianruanjian|SINOSOFT TECH||中国擎天软件科技集团有限公司
+hk|0|01298|天美(控股)|TM(KG):|tianmei(konggu)|TECHCOMP||天美(控股)有限公司
+hk|0|01299|友邦保险|YBBX:|youbangbaoxian|AIA||友邦保险控股有限公司
+hk|0|00013|和记黄埔|HJHP:HJHP:HJHP:HJHB:HJHB:HJHB:|hejihuangpu:huojihuangpu:hujihuangpu:hejihuangbu:huojihuangbu:hujihuangbu|HUTCHISON||和记黄埔有限公司
+hk|0|00130|慕诗国际|MSGJ:|mushiguoji|MOISELLE INT'L||慕诗国际集团有限公司
+hk|0|01300|俊知集团|JZJT:|junzhijituan|TRIGIANT||俊知集团有限公司
+hk|0|01302|先健科技|XJKJ:|xianjiankeji|LIFETECH SCI||先健科技公司
+hk|0|01305|伟志控股|WZKG:|weizhikonggu|WAI CHI HOLD||伟志控股有限公司
+hk|0|01308|海丰国际|HFGJ:|haifengguoji|SITC||海丰国际控股有限公司
+hk|0|00131|卓能(集团)|ZN(JT):ZN(JT):|zhuoneng(jituan):zhuonai(jituan)|CHEUK NANG HOLD||卓能(集团)有限公司
+hk|0|01312|联合水泥|LHSN:LGSN:|lianheshuini:liangeshuini|ALLIED CEMENT||联合水泥控股有限公司
+hk|0|01313|华润水泥控股|HRSNKG:|huarunshuinikonggu|CHINARES CEMENT||华润水泥控股有限公司
+hk|0|01314|翠华控股|CHKG:|cuihuakonggu|TSUI WAH HLDG||翠华控股有限公司
+hk|0|01315|允升国际|YSGJ:|yunshengguoji|VISION FAME||允升国际控股有限公司
+hk|0|01316|耐世特|NST:|naishite|NEXTEER||耐世特汽车系统集团有限公司
+hk|0|01317|枫叶教育|FYJY:FXJY:|fengyejiaoyu:fengxiejiaoyu|MAPLELEAF EDU||中国枫叶教育集团有限公司
+hk|0|01318|格菱控股|GLKG:|gelingkonggu|GREENS HOLDINGS||格菱控股有限公司
+hk|0|01319|霭华押业信贷|AHYYXD:AHYYSD:|aihuayayexindai:aihuayayeshendai|OIWAHPAWN||霭华押业信贷控股有限公司
+hk|0|00132|中国兴业控股|ZGXYKG:|zhongguoxingyekonggu|CHINA INV HOLD||中国兴业控股有限公司
+hk|0|01321|中国新城市|ZGXCS:|zhongguoxinchengshi|CHINA NEWCITY||中国新城市商业发展有限公司
+hk|0|01326|天马影视|TMYS:|tianmayingshi|PEGASUS ENT||天马影视文化控股有限公司
+hk|0|01327|时间由你|SJYN:|shijianyouni|TIME2U||时间由你国际控股有限公司
+hk|0|01328|精英国际|JYGJ:|jingyingguoji|INT'L ELITE||精英国际有限公司
+hk|0|00133|招商局中国基金|ZSJZGJJ:|zhaoshangjuzhongguojijin|CHINA MERCHANTS||招商局中国基金有限公司
+hk|0|01330|绿色动力环保|LSDLHB:LSDLHB:|lvsedonglihuanbao:lusedonglihuanbao|DYNAGREEN ENV||绿色动力环保集团股份有限公司-H股
+hk|0|01332|确利达国际|QLDGJ:|quelidaguoji|QUALIPAK||确利达国际控股有限公司
+hk|0|01333|中国忠旺|ZGZW:|zhongguozhongwang|CHINA ZHONGWANG||中国忠旺控股有限公司
+hk|0|01335|顺泰控股|STKG:|shuntaikonggu|SHEEN TAI||顺泰控股集团有限公司
+hk|0|01336|新华保险|XHBX:|xinhuabaoxian|NCI||新华人寿保险股份有限公司-H股
+hk|0|01338|霸王集团|BWJT:|bawangjituan|BAWANG GROUP||霸王国际(集团)控股有限公司
+hk|0|01339|中国人民保险集团|ZGRMBXJT:|zhongguorenminbaoxianjituan|PICC GROUP||中国人民保险集团股份有限公司-H股
+hk|0|01340|惠生国际|HSGJ:|huishengguoji|HUISHENG INTL||惠生国际控股有限公司
+hk|0|01345|中国先锋医药|ZGXFYY:|zhongguoxianfengyiyao|PIONEER PHARM||中国先锋医药控股有限公司
+hk|0|01347|华虹半导体|HHBDT:HHBDB:|huahongbandaoti:huahongbandaoben|HUA HONG SEMI||华虹半导体有限公司
+hk|0|01348|滉达富控股|HDFKG:|huangdafukonggu|QUALI-SMART||滉达富控股有限公司
+hk|0|01349|复旦张江|FDZJ:|fudanzhangjiang|FUDANZHANGJIANG||上海复旦张江生物医药股份有限公司-H股
+hk|0|00135|昆仑能源|KLNY:KLNY:|kunlunnengyuan:kunlunnaiyuan|KUNLUN ENERGY||昆仑能源有限公司
+hk|0|01353|诺奇|NQ:NJ:|nuoqi:nuoji|NUOQI||福建诺奇股份有限公司-H股
+hk|0|01355|朸浚国际|LJGJ:LXGJ:|lijunguoji:lixunguoji|LEGEND STRAT||朸浚国际集团控股有限公司
+hk|0|01358|普华和顺|PHHS:PHHS:PHHS:|puhuaheshun:puhuahuoshun:puhuahushun|PW MEDTECH||普华和顺集团公司
+hk|0|01359|中国信达|ZGXD:ZGSD:|zhongguoxinda:zhongguoshenda|CHINA CINDA||中国信达资产管理股份有限公司-H股
+hk|0|00136|马斯葛集团|MSGJT:|masigejituan|MASCOTTE HOLD||马斯葛集团有限公司
+hk|0|01361|361度|361D:361D:|361du:361duo|361 DEGREES||361度国际有限公司
+hk|0|01362|新龙移动|XLYD:|xinlongyidong|SIS MOBILE||新龙移动集团有限公司
+hk|0|01363|中滔环保|ZTHB:|zhongtaohuanbao|CTEG||中滔环保集团有限公司
+hk|0|01365|润东汽车|RDQC:|rundongqiche|RUNDONG AUTO||中国润东汽车集团有限公司
+hk|0|01366|江南集团|JNJT:JNJT:|jiangnanjituan:jiangnajituan|JIANGNAN GP||江南集团有限公司
+hk|0|01367|恒宝企业控股|HBQYKG:|hengbaoqiyekonggu|HANBO ENT HLDGS||恒宝企业控股有限公司
+hk|0|01368|特步国际|TBGJ:|tebuguoji|XTEP INT'L||特步国际
+hk|0|01369|五洲国际|WZGJ:|wuzhouguoji|WUZHOU INT'L||五洲国际控股有限公司
+hk|0|00137|金辉集团|JHJT:|jinhuijituan|JINHUI HOLDINGS||金辉集团有限公司
+hk|0|01370|恒实矿业|HSKY:|hengshikuangye|HENGSHIMINING||恒实矿业投资有限公司
+hk|0|01371|华彩控股|HCKG:|huacaikonggu|CHINA LOTSYN||华彩控股有限公司
+hk|0|01372|怡益控股|YYKG:|yiyikonggu|EXCEL DEV||怡益控股有限公司
+hk|0|01373|国际家居零售|GJJJLS:GJJJLS:|guojijiajulingshou:guojijiBjulingshou|IH RETAIL||国际家居零售有限公司
+hk|0|01375|中州证券|ZZZQ:ZZZX:|zhongzhouzhengquan:zhongzhouzhengxuan|CC SECURITIES||中原证券股份有限公司-H股
+hk|0|01378|中国宏桥|ZGHQ:|zhongguohongqiao|CHINAHONGQIAO||中国宏桥集团有限公司
+hk|0|00138|中建富通|ZJFT:|zhongjianfutong|CCT FORTIS||中建富通集团有限公司
+hk|0|01380|中国金石|ZGJS:ZGJD:|zhongguojinshi:zhongguojindan|CHI KINGSTONE||中国金石矿业控股有限公司
+hk|0|01381|粤丰环保|YFHB:|yuefenghuanbao|CANVEST ENV||粤丰环保电力有限公司
+hk|0|01382|互太纺织|HTFZ:|hutaifangzhi|PACIFICTEXTILES||互太纺织控股有限公司
+hk|0|01383|太阳世纪集团|TYSJJT:|taiyangshijijituan|SUNCENTURY GP||太阳世纪集团有限公司
+hk|0|01385|上海复旦|SHFD:|shanghaifudan|SHANGHAI FUDAN||上海复旦微电子集团股份有限公司-H股
+hk|0|01386|盈进集团|YJJT:|yingjinjituan|WALKER GROUP||盈进集团控股有限公司
+hk|0|01387|人和商业|RHSY:RHSY:RHSY:|renheshangye:renhuoshangye:renhushangye|RENHE COMM||人和商业控股有限公司
+hk|0|01388|安莉芳控股|ALFKG:|anlifangkonggu|EMBRY HOLDINGS||安莉芳控股有限公司
+hk|0|01390|环亚智富|HYZF:|huanyazhifu|ECONTEXT ASIA||环亚智富有限公司
+hk|0|01393|恒鼎实业|HDSY:|hengdingshiye|HIDILI INDUSTRY||恒鼎实业国际发展有限公司
+hk|0|01395|强泰环保|QTHB:JTHB:|qiangtaihuanbao:jiangtaihuanbao|ELL ENV||强泰环保控股有限公司
+hk|0|01396|毅德国际|YDGJ:|yideguoji|HYDOO INTL||毅德国际控股有限公司
+hk|0|01397|碧瑶绿色集团|BYLSJT:BYLSJT:|biyaolvsejituan:biyaolusejituan|BAGUIO GREEN||碧瑶绿色集团有限公司
+hk|0|01398|工商银行|GSYX:GSYH:|gongshangyinxing:gongshangyinhang|ICBC||中国工商银行股份有限公司-H股
+hk|0|01399|飞毛腿|FMT:|feimaotui|SCUD GROUP||飞毛腿集团有限公司
+hk|0|00014|希慎兴业|XSXY:|xishenxingye|HYSAN DEV||希慎兴业有限公司
+hk|0|01400|宏太控股|HTKG:|hongtaikonggu|WANG TAI HLDG||宏太控股有限公司
+hk|0|00141|大中华集团|DZHJT:DZHJT:TZHJT:|dazhonghuajituan:daizhonghuajituan:taizhonghuajituan|GREAT CHINA||大中华集团有限公司
+hk|0|01418|盛诺集团|SNJT:CNJT:|shengnuojituan:chengnuojituan|SINOMAX GROUP||盛诺集团有限公司
+hk|0|00142|第一太平|DYTP:|diyitaiping|FIRST PACIFIC||第一太平有限公司
+hk|0|01421|工盖有限公司|GGYXGS:GGYXGS:GHYXGS:|gonggaiyouxiangongsi:gonggeyouxiangongsi:gongheyouxiangongsi|KINGBO STRIKE||工盖有限公司
+hk|0|01428|耀才证券金融|YCZQJR:YCZXJR:|yaocaizhengquanjinrong:yaocaizhengxuanjinrong|BRIGHT SMART||耀才证券金融集团有限公司
+hk|0|01431|原生态牧业|YSTMY:|yuanshengtaimuye|YST DAIRY||原生态牧业有限公司
+hk|0|01432|中国圣牧|ZGSM:|zhongguoshengmu|CHINA SHENGMU||中国圣牧有机奶业有限公司
+hk|0|01438|富贵生命|FGSM:|fuguishengming|NIRVANA ASIA||富贵生命国际有限公司
+hk|0|01439|中华包装控股|ZHBZKG:|zhonghuabaozhuangkonggu|CH PACK DEV||中华包装控股发展有限公司
+hk|0|00144|招商局国际|ZSJGJ:|zhaoshangjuguoji|CHINA MER HOLD||招商局国际有限公司
+hk|0|01443|富临集团控股|FLJTKG:|fulinjituankonggu|FULUM GP HLDG||富临集团控股有限公司
+hk|0|01446|鸿福堂|HFT:|hongfutang|HUNGFOOKTONG||鸿福堂集团控股有限公司
+hk|0|01448|福寿园|FSY:|fushouyuan|FU SHOU YUAN||福寿园国际集团有限公司
+hk|0|00145|香港建屋贷款|XGJWDK:XJJWDK:|xianggangjianwudaikuan:xiangjiangjianwudaikuan|HK BLDG & LOAN||香港建屋贷款有限公司
+hk|0|01450|世纪睿科|SJRK:|shijiruike|CENTURY SAGE||世纪睿科控股有限公司
+hk|0|01462|雅骏控股|YJKG:|yajunkonggu|NGA CHUN HLDG||雅骏控股有限公司
+hk|0|01466|民生珠宝|MSZB:|minshengzhubao|MAN SANG JEWEL||民生珠宝控股有限公司
+hk|0|00147|超越集团|CYJT:|chaoyuejituan|CHAOYUE GROUP||超越集团有限公司
+hk|0|01478|丘钛科技|QTKJ:|qiutaikeji|Q TECH||丘钛科技(集团)有限公司
+hk|0|01480|恩达集团控股|EDJTKG:|endajituankonggu|YAN TAT GROUP||恩达集团控股有限公司
+hk|0|01488|理文手袋|LWSD:|liwenshoudai|L&M HANDBAGS||理文手袋集团有限公司
+hk|0|00015|盈信控股|YXKG:YSKG:|yingxinkonggu:yingshenkonggu|VANTAGE INT'L||盈信控股有限公司
+hk|0|00151|中国旺旺|ZGWW:|zhongguowangwang|WANT WANT CHINA||中国旺旺控股有限公司
+hk|0|01513|丽珠医药|LZYY:|lizhuyiyao|LIVZON PHARMA||丽珠医药集团股份有限公司-H股
+hk|0|01515|凤凰医疗|FHYL:|fenghuangyiliao|PHOENIXHEALTH||凤凰医疗集团有限公司
+hk|0|00152|深圳国际|SZGJ:|shenzhenguoji|SHENZHEN INT'L||深圳国际控股有限公司
+hk|0|01522|中国城市轨道科技|ZGCSGDKJ:|zhongguochengshiguidaokeji|C CITYRAILTEC||中国城市轨道交通科技控股有限公司
+hk|0|00153|中国赛特|ZGST:|zhongguosaite|CHINA SAITE||中国赛特集团有限公司
+hk|0|00154|北京发展(香港)|BJFZ(XG):BJFZ(XJ):|beijingfazhan(xianggang):beijingfazhan(xiangjiang)|BEIJING DEV(HK)||北京发展(香港)有限公司
+hk|0|00155|中国源畅|ZGYC:|zhongguoyuanchang|CHINA SOLAR||中国源畅光电能源控股有限公司
+hk|0|01555|MI能源|MINY:MINY:|MInengyuan:MInaiyuan|MIE HOLDINGS||MI能源控股有限公司
+hk|0|00156|力宝华润|LBHR:|libaohuarun|LIPPO CHINA RES||力宝华润有限公司
+hk|0|00157|自然美|ZRM:|ziranmei|NATURAL BEAUTY||自然美生物科技有限公司
+hk|0|00158|万邦投资|WBTZ:MBTZ:|wanbangtouzi:mobangtouzi|MELBOURNE ENT||万邦投资有限公司
+hk|0|01588|畅捷通|CJT:|changjietong|CHANJET||畅捷通信息技术股份有限公司-H股
+hk|0|00159|布莱克万矿业|BLKWKY:BLKMKY:|bulaikewankuangye:bulaikemokuangye|BROCKMAN MINING||布莱克万矿业有限公司
+hk|0|01599|城建设计|CJSJ:|chengjiansheji|UCD||北京城建设计发展集团股份有限公司-H股
+hk|0|00016|新鸿基地产|XHJDC:|xinhongjidichan|SHK PPT||新鸿基地产发展有限公司
+hk|0|00160|汉国置业|HGZY:|hanguozhiye|HON KWOK LAND||汉国置业有限公司
+hk|0|01600|天伦燃气|TLRQ:|tianlunranqi|TIAN LUN GAS||中国天伦燃气控股有限公司
+hk|0|00161|中航国际控股|ZHGJKG:|zhonghangguojikonggu|AVIC IHL||中航国际控股股份有限公司-H股
+hk|0|01613|协同通信|XTTX:XTTS:|xietongtongxin:xietongtongshen|SYNERTONE||协同通信集团有限公司
+hk|0|01616|银仕来控股|YSLKG:|yinshilaikonggu|SILVERMAN HL||银仕来控股有限公司
+hk|0|01618|中国中冶|ZGZY:|zhongguozhongye|MCC||中国冶金科工股份有限公司-H股
+hk|0|01619|天合化工|THHG:TGHG:|tianhehuagong:tiangehuagong|TIANHE CHEM||天合化工集团有限公司
+hk|0|00162|世纪金花|SJJH:|shijijinhua|CENTURY GINWA||世纪金花商业控股有限公司
+hk|0|01622|力高地产|LGDC:|ligaodichan|REDCO PPT||力高地产集团有限公司
+hk|0|01623|海隆控股|HLKG:|hailongkonggu|HILONG||海隆控股有限公司
+hk|0|01626|嘉耀控股|JYKG:|jiayaokonggu|JIA YAO HLDGS||嘉耀控股有限公司
+hk|0|01628|禹洲地产|YZDC:|yuzhoudichan|YUZHOU PPT||禹洲地产股份有限公司
+hk|0|00163|英皇国际|YHGJ:|yinghuangguoji|EMPEROR INT'L||英皇集团(国际)有限公司
+hk|0|01636|中国金属利用|ZGJSLY:ZGJZLY:|zhongguojinshuliyong:zhongguojinzhuliyong|CMRU||中国金属资源利用有限公司
+hk|0|01638|佳兆业集团|JZYJT:|jiazhaoyejituan|KAISA GROUP||佳兆业集团控股有限公司
+hk|0|01639|安捷利实业|AJLSY:|anjielishiye|AKM INDUSTRIAL||安捷利实业有限公司
+hk|0|00164|御濠娱乐|YHYL:YHYY:|yuhaoyule:yuhaoyuyue|REXGLOBAL ENT||御濠娱乐控股有限公司
+hk|0|00165|中国光大控股|ZGGDKG:ZGGDKG:ZGGTKG:|zhongguoguangdakonggu:zhongguoguangdaikonggu:zhongguoguangtaikonggu|CHINA EB LTD||中国光大控股有限公司
+hk|0|00166|新时代能源|XSDNY:XSDNY:|xinshidainengyuan:xinshidainaiyuan|NEWTIMES ENERGY||新时代能源有限公司
+hk|0|01661|智美集团|ZMJT:|zhimeijituan|WISDOM GROUP||智美控股集团
+hk|0|01663|汉港房地产|HGFDC:HJFDC:|hangangfangdichan:hanjiangfangdichan|S HARBOUR PPT||汉港房地产集团有限公司
+hk|0|01666|同仁堂科技|TRTKJ:|tongrentangkeji|TONG REN TANG||北京同仁堂科技发展股份有限公司-H股
+hk|0|01668|华南城|HNC:HNC:|huanancheng:huanacheng|CHINASOUTHCITY||华南城控股有限公司
+hk|0|01669|环球信贷集团|HQXDJT:HQSDJT:|huanqiuxindaijituan:huanqiushendaijituan|GIC GROUP||环球信贷集团有限公司
+hk|0|00167|IDTINT'L|IDTINT'L:|IDTINT'L|IDT INT'L||万威国际有限公司
+hk|0|01678|中国创意家居|ZGCYJJ:ZGCYJJ:|zhongguochuangyijiaju:zhongguochuangyijiBju|CREATIVE HOME||中国创意家居集团有限公司
+hk|0|00168|青岛啤酒股份|QDPJGF:QDPJGB:|qingdaopijiugufen:qingdaopijiugubin|TSINGTAO BREW||青岛啤酒股份有限公司-H股
+hk|0|01680|澳门励骏|AMLJ:|aomenlijun|MACAU LEGEND||澳门励骏创建有限公司
+hk|0|01681|康臣药业|KCYY:|kangchenyaoye|CONSUN PHARMA||康臣药业集团有限公司
+hk|0|01682|高锐中国物联|GRZGWL:|gaoruizhongguowulian|HIGHLIGHT IOT||高锐中国物联网国际有限公司
+hk|0|01685|BOER POWER|BOERPOWER:|BOERPOWER|||博耳电力控股有限公司
+hk|0|01689|华禧控股|HXKG:|huaxikonggu|HUAXIHOLDINGS||华禧控股有限公司
+hk|0|00169|万达酒店发展|WDJDFZ:MDJDFZ:|wandajiudianfazhan:modajiudianfazhan|WANDA HOTEL DEV||万达酒店发展有限公司
+hk|0|01698|博士蛙国际|BSWGJ:|boshiwaguoji|BOSHIWA INT'L||博士蛙国际控股有限公司
+hk|0|01699|普甜食品|PTSP:PTSP:PTYP:|putianshipin:putiansipin:putianyipin|PUTIAN FOOD||中国普甜食品控股有限公司
+hk|0|00017|新世界发展|XSJFZ:|xinshijiefazhan|NEW WORLD DEV||新世界发展有限公司
+hk|0|00170|中国资本|ZGZB:|zhongguoziben|CHINA ASSETS||中国资本(控股)有限公司
+hk|0|01700|华地国际控股|HDGJKG:|huadiguojikonggu|SPRINGLAND||华地国际控股有限公司
+hk|0|01708|三宝科技|SBKJ:|sanbaokeji|SAMPLE TECH||南京三宝科技股份有限公司-H股
+hk|0|00171|银建国际|YJGJ:|yinjianguoji|SILVER GRANT||银建国际实业有限公司
+hk|0|01717|澳优|AY:|aoyou|AUSNUTRIA||澳优乳业股份有限公司
+hk|0|00172|金榜集团|JBJT:|jinbangjituan|GOLDBOND GROUP||金榜集团控股有限公司
+hk|0|01728|正通汽车|ZTQC:|zhengtongqiche|ZHENGTONGAUTO||中国正通汽车服务控股有限公司
+hk|0|00173|嘉华国际|JHGJ:|jiahuaguoji|K. WAH INT'L||嘉华国际集团有限公司
+hk|0|01733|永晖控股|YHKG:|yonghuikonggu|WINSWAY||永晖实业控股股份有限公司
+hk|0|00174|盛洋投资|SYTZ:CYTZ:|shengyangtouzi:chengyangtouzi|GEMINI INV||盛洋投资(控股)有限公司
+hk|0|00175|吉利汽车|JLQC:|jiliqiche|GEELY AUTO||吉利汽车控股有限公司
+hk|0|00176|联太工业|LTGY:|liantaigongye|UNITED PACIFIC||联太工业有限公司
+hk|0|01768|BRACELL|BRACELL:|BRACELL|BRACELL||BracellLtd.
+hk|0|00177|江苏宁沪高速公路|JSNHGSGL:|jiangsuninghugaosugonglu|JIANGSU EXPRESS||江苏宁沪高速公路股份有限公司-H股
+hk|0|01771|新丰泰集团|XFTJT:|xinfengtaijituan|SUNFONDA GP||新丰泰集团控股有限公司
+hk|0|01777|花样年控股|HYNKG:|huayangniankonggu|FANTASIA||花样年控股集团有限公司
+hk|0|01778|彩生活|CSH:|caishenghuo|COLOUR LIFE||彩生活服务集团有限公司
+hk|0|00178|莎莎国际|SSGJ:SSGJ:SSGJ:SSGJ:|suosuoguoji:shasuoguoji:suoshaguoji:shashaguoji|SA SA INT'L||莎莎国际控股有限公司
+hk|0|01788|国泰君安国际|GTJAGJ:|guotaijunanguoji|GUOTAI JUNAN I||国泰君安国际控股有限公司
+hk|0|00179|德昌电机控股|DCDJKG:|dechangdianjikonggu|JOHNSON ELEC H||德昌电机控股有限公司
+hk|0|01798|大唐新能源|DTXNY:DTXNY:TTXNY:DTXNY:DTXNY:TTXNY:|datangxinnengyuan:daitangxinnengyuan:taitangxinnengyuan:datangxinnaiyuan:daitangxinnaiyuan:taitangxi|DATANG RENEW||中国大唐集团新能源股份有限公司-H股
+hk|0|00018|东方报业集团|DFBYJT:|dongfangbaoyejituan|ORIENTAL PRESS||东方报业集团有限公司
+hk|0|00180|开达集团|KDJT:|kaidajituan|KADER HOLDINGS||开达集团有限公司
+hk|0|01800|中国交通建设|ZGJTJS:|zhongguojiaotongjianshe|CHINA COMM CONS||中国交通建设股份有限公司-H股
+hk|0|01803|瀚洋物流|HYWL:|hanyangwuliu|ASR LOGISTICS||瀚洋物流控股有限公司
+hk|0|01808|企展控股|QZKG:|qizhankonggu|ENTERPRISE DEV||企展控股有限公司
+hk|0|00181|闽港控股|MGKG:MJKG:|mingangkonggu:minjiangkonggu|FUJIAN HOLDINGS||闽港控股有限公司
+hk|0|01811|中广核美亚|ZGHMY:ZAHMY:ZGHMY:ZAHMY:|zhongguanghemeiya:zhonganhemeiya:zhongguanghumeiya:zhonganhumeiya|CGN MEIYA||中国广核美亚电力控股有限公司
+hk|0|01812|晨鸣纸业|CMZY:|chenmingzhiye|CHENMING PAPER||山东晨鸣纸业集团股份有限公司-H股
+hk|0|01813|合景泰富|HJTF:GJTF:HYTF:GYTF:|hejingtaifu:gejingtaifu:heyingtaifu:geyingtaifu|KWG PROPERTY||合景泰富地产控股有限公司
+hk|0|01816|中广核电力|ZGHDL:ZAHDL:ZGHDL:ZAHDL:|zhongguanghedianli:zhonganhedianli:zhongguanghudianli:zhonganhudianli|CGN POWER||中国广核电力股份有限公司-H股
+hk|0|01818|招金矿业|ZJKY:|zhaojinkuangye|ZHAOJIN MINING||招金矿业股份有限公司-H股
+hk|0|01819|富贵鸟|FGN:|fuguiniao|FUGUINIAO||富贵鸟股份有限公司-H股
+hk|0|01823|华昱高速|HYGS:|huayugaosu|HUAYUEXPRESSWAY||华昱高速集团有限公司
+hk|0|01828|大昌行集团|DCXJT:DCXJT:TCXJT:DCHJT:DCHJT:TCHJT:|dachangxingjituan:daichangxingjituan:taichangxingjituan:dachanghangjituan:daichanghangjituan:taichan|DCH HOLDINGS||大昌行集团有限公司
+hk|0|01829|中国机械工程|ZGJXGC:|zhongguojixiegongcheng|CMEC||中国机械设备工程股份有限公司-H股
+hk|0|01830|必瘦站|BSZ:|bishouzhan|PERFECT SHAPE||必瘦站(中国)控股有限公司
+hk|0|01831|十方控股|SFKG:|shifangkonggu|SHIFANG HLDG||十方控股有限公司
+hk|0|01833|银泰商业|YTSY:|yintaishangye|INTIME||银泰商业(集团)有限公司
+hk|0|01836|九兴控股|JXKG:|jiuxingkonggu|STELLA HOLDINGS||九兴控股有限公司
+hk|0|01838|CHINAPROPERTIES|CHINAPROPERTIES:|CHINAPROPERTIES|CHINAPROPERTIES||ChinaPropertiesGroupLtd.
+hk|0|00184|激成投资|JCTZ:|jichengtouzi|KECK SENG INV||激成投资(香港)有限公司
+hk|0|01848|中国飞机租赁|ZGFJZL:|zhongguofeijizulin|CALC||中国飞机租赁集团控股有限公司
+hk|0|00185|恒辉企业控股|HHQYKG:|henghuiqiyekonggu|HENG FAI ENT||恒辉企业控股有限公司
+hk|0|01856|依波路|YBL:|yibolu|ERNEST BOREL||依波路控股有限公司
+hk|0|01862|景瑞控股|JRKG:YRKG:|jingruikonggu:yingruikonggu|JINGRUI HLDGS||景瑞控股有限公司
+hk|0|01863|思嘉集团|SJJT:SJJT:|sijiajituan:saijiajituan|SIJIA GROUP||思嘉集团有限公司
+hk|0|01866|中国心连心化肥|ZGXLXHF:|zhongguoxinlianxinhuafei|CHINA XLX FERT||中国心连心化肥有限公司
+hk|0|01868|同方友友|TFYY:|tongfangyouyou|NEO-NEON||同方友友控股有限公司
+hk|0|00187|京城机电股份|JCJDGF:JCJDGB:|jingchengjidiangufen:jingchengjidiangubin|JINGCHENG MAC||北京京城机电股份有限公司-H股
+hk|0|01878|南戈壁-S|NGB-S:NGB-S:|nangebi-S:nagebi-S|SOUTHGOBI-S||南戈壁资源有限公司
+hk|0|00188|新华汇富金融|XHHFJR:|xinhuahuifujinrong|SUNWAH KINGSWAY||新华汇富金融控股有限公司
+hk|0|01880|百丽国际|BLGJ:|bailiguoji|BELLE INT'L||百丽国际控股有限公司
+hk|0|01882|海天国际|HTGJ:|haitianguoji|HAITIAN INT'L||海天国际控股有限公司
+hk|0|01883|中信国际电讯|ZXGJDX:ZSGJDX:|zhongxinguojidianxun:zhongshenguojidianxun|CITIC TELECOM||中信国际电讯集团有限公司
+hk|0|01884|EPRINT集团|EPRINTJT:|EPRINTjituan|EPRINT GROUP||eprint集团有限公司
+hk|0|01886|汇源果汁|HYGZ:|huiyuanguozhi|HUIYUAN JUICE||中国汇源果汁集团有限公司
+hk|0|01888|建滔积层板|JTJCB:|jiantaojicengban|KB LAMINATES||建滔积层板控股有限公司
+hk|0|01889|武夷药业|WYYY:|wuyiyaoye|WUYI PHARMA||武夷国际药业有限公司
+hk|0|00189|东岳集团|DYJT:|dongyuejituan|DONGYUE GROUP||东岳集团有限公司
+hk|0|01893|中材股份|ZCGF:ZCGB:|zhongcaigufen:zhongcaigubin|SINOMA||中国中材股份有限公司-H股
+hk|0|01898|中煤能源|ZMNY:ZMNY:|zhongmeinengyuan:zhongmeinaiyuan|CHINA COAL||中国中煤能源股份有限公司-H股
+hk|0|01899|兴达国际|XDGJ:|xingdaguoji|XINGDA INT'L||兴达国际控股有限公司
+hk|0|00019|太古股份公司A|TGGFGSA:TGGBGSA:|taigugufengongsiA:taigugubingongsiA|SWIRE PACIFIC A||太古股份有限公司'A'
+hk|0|00190|香港建设(控股)|XGJS(KG):XJJS(KG):|xianggangjianshe(konggu):xiangjiangjianshe(konggu)|HKC (HOLDINGS)||香港建设(控股)有限公司
+hk|0|01900|中国智能交通|ZGZNJT:ZGZNJT:|zhongguozhinengjiaotong:zhongguozhinaijiaotong|CHINA ITS||中国智能交通系统(控股)有限公司
+hk|0|01908|西南环保|XNHB:XNHB:|xinanhuanbao:xinahuanbao|SOUTHWEST ECO||西南环保发展有限公司
+hk|0|00191|丽新国际|LXGJ:|lixinguoji|LAI SUN INT'L||丽新制衣国际有限公司
+hk|0|01910|新秀丽|XXL:|xinxiuli|SAMSONITE||新秀丽国际有限公司
+hk|0|01913|普拉达|PLD:|pulada|PRADA||PRADAS.p.A.
+hk|0|01918|融创中国|RCZG:|rongchuangzhongguo|SUNAC||融创中国控股有限公司
+hk|0|01919|中国远洋|ZGYY:|zhongguoyuanyang|CHINA COSCO||中国远洋控股股份有限公司-H股
+hk|0|01928|金沙中国有限公司|JSZGYXGS:|jinshazhongguoyouxiangongsi|SANDS CHINA LTD||金沙中国有限公司
+hk|0|01929|周大福|ZDF:ZDF:ZTF:|zhoudafu:zhoudaifu:zhoutaifu|CHOW TAI FOOK||周大福珠宝集团有限公司
+hk|0|00193|冠中地产|GZDC:|guanzhongdichan|CAPITAL ESTATE||冠中地产有限公司
+hk|0|01938|珠江钢管|ZJGG:|zhujianggangguan|CHU KONG PIPE||珠江石油天然气钢管控股有限公司
+hk|0|00194|廖创兴企业|LCXQY:|liaochuangxingqiye|LIU CHONG HING||廖创兴企业有限公司
+hk|0|00195|利海资源|LHZY:|lihaiziyuan|L'SEA RESOURCES||利海资源国际控股有限公司
+hk|0|01958|北京汽车|BJQC:|beijingqiche|BAIC MOTOR||北京汽车股份有限公司-H股
+hk|0|00196|宏华集团|HHJT:|honghuajituan|HONGHUA GROUP||宏华集团有限公司
+hk|0|01963|重庆银行|ZQYX:CQYX:ZQYH:CQYH:|zhongqingyinxing:chongqingyinxing:zhongqingyinhang:chongqingyinhang|BCQ||重庆银行股份有限公司-H股
+hk|0|01966|中骏置业|ZJZY:|zhongjunzhiye|CHINA SCE PPT||中骏置业控股有限公司
+hk|0|01968|匹克体育|PKTY:PKBY:|piketiyu:pikebenyu|PEAK SPORT||匹克体育用品有限公司
+hk|0|00197|亨泰|HT:PT:|hengtai:pengtai|HENG TAI||亨泰消费品集团有限公司
+hk|0|01972|太古地产|TGDC:|taigudichan|SWIREPROPERTIES||太古地产有限公司
+hk|0|00198|星美控股|XMKG:|xingmeikonggu|SMI HOLDINGS||星美控股集团有限公司
+hk|0|01980|天鸽互动|TGHD:|tiangehudong|TIANGE||天鸽互动控股有限公司
+hk|0|01988|民生银行|MSYX:MSYH:|minshengyinxing:minshengyinhang|MINSHENG BANK||中国民生银行股份有限公司-H股
+hk|0|00199|德祥地产|DXDC:|dexiangdichan|ITC PROPERTIES||德祥地产集团有限公司
+hk|0|01991|大洋集团|DYJT:DYJT:TYJT:|dayangjituan:daiyangjituan:taiyangjituan|TA YANG GROUP||大洋集团控股有限公司
+hk|0|01993|雅仕维|YSW:|yashiwei|ASIARAY||雅仕维传媒集团有限公司
+hk|0|01998|飞克国际|FKGJ:|feikeguoji|FLYKE INT'L||飞克国际控股有限公司
+hk|0|01999|敏华控股|MHKG:|minhuakonggu|MAN WAH HLDGS||敏华控股有限公司
+hk|0|00002|中电控股|ZDKG:|zhongdiankonggu|CLP HOLDINGS||中电控股有限公司
+hk|0|00020|会德丰|HDF:KDF:|huidefeng:kuaidefeng|WHEELOCK||会德丰有限公司
+hk|0|00200|新濠国际发展|XHGJFZ:|xinhaoguojifazhan|MELCO INT'L DEV||新濠国际发展有限公司
+hk|0|02000|晨讯科技|CXKJ:|chenxunkeji|SIM TECH||晨讯科技集团有限公司
+hk|0|02002|阳光纸业|YGZY:|yangguangzhiye|SUNSHINE PAPER||中国阳光纸业控股有限公司
+hk|0|02006|锦江酒店|JJJD:|jinjiangjiudian|JINJIANG HOTELS||上海锦江国际酒店(集团)股份有限公司-H股
+hk|0|02007|碧桂园|BGY:|biguiyuan|COUNTRY GARDEN||碧桂园控股有限公司
+hk|0|02008|凤凰卫视|FHWS:|fenghuangweishi|PHOENIX TV||凤凰卫视控股有限公司
+hk|0|02009|金隅股份|JYGF:JYGB:|jinyugufen:jinyugubin|BBMG||北京金隅股份有限公司-H股
+hk|0|00201|华大地产|HDDC:HDDC:HTDC:|huadadichan:huadaidichan:huataidichan|MAGNIFICENT||华大地产投资有限公司
+hk|0|02010|瑞年国际|RNGJ:|ruinianguoji|REAL NUTRI||瑞年国际有限公司
+hk|0|02011|KEE|KEE:|KEE|KEE||开易控股有限公司
+hk|0|02012|阳光油砂|YGYS:|yangguangyousha|SUNSHINE OIL||阳光油砂有限公司
+hk|0|02014|浩泽净水|HZJS:HSJS:HZCS:HSCS:|haozejingshui:haoshijingshui:haozechengshui:haoshichengshui|OZNER WATER||浩泽净水国际控股有限公司
+hk|0|02018|瑞声科技|RSKJ:|ruishengkeji|AAC TECH||瑞声科技控股有限公司
+hk|0|00202|润中国际控股|RZGJKG:|runzhongguojikonggu|EVERCHINA INT'L||润中国际控股有限公司
+hk|0|02020|安踏体育|ATTY:ATBY:|antatiyu:antabenyu|ANTA SPORTS||安踏体育用品有限公司
+hk|0|02023|中国绿岛科技|ZGLDKJ:ZGLDKJ:|zhongguolvdaokeji:zhongguoludaokeji|CHINA LUDAO||中国绿岛科技有限公司
+hk|0|02028|映美控股|YMKG:|yingmeikonggu|JOLIMARK||映美控股有限公司
+hk|0|02030|卡宾|QB:KB:|qiabin:kabin|CABBEEN||卡宾服饰有限公司
+hk|0|02033|时计宝|SJB:|shijibao|TIME WATCH||时计宝投资有限公司
+hk|0|02038|富智康集团|FZKJT:|fuzhikangjituan|FIH||富智康集团有限公司
+hk|0|02039|中集集团|ZJJT:|zhongjijituan|CIMC||中国国际海运集装箱(集团)股份有限公司-H股
+hk|0|00204|中国投资开发|ZGTZKF:|zhongguotouzikaifa|CHINA INV DEV||中国投资开发有限公司
+hk|0|00205|财讯传媒|CXCM:CXZM:|caixunchuanmei:caixunzhuanmei|SEEC MEDIA||财讯传媒集团有限公司
+hk|0|00206|TSC集团|TSCJT:|TSCjituan|TSC GROUP||TSC集团控股有限公司
+hk|0|02066|盛京银行|SJYX:CJYX:SJYH:CJYH:|shengjingyinxing:chengjingyinxing:shengjingyinhang:chengjingyinhang|SHENGJINGBANK||盛京银行股份有限公司-H股
+hk|0|02068|中铝国际|ZLGJ:|zhonglvguoji|CHALIECO||中铝国际工程股份有限公司-H股
+hk|0|00207|大悦城地产|DYCDC:DYCDC:TYCDC:|dayuechengdichan:daiyuechengdichan:taiyuechengdichan|JOY CITY PPT||大悦城地产有限公司
+hk|0|02078|荣阳实业|RYSY:|rongyangshiye|PANASIALUM||荣阳实业集团有限公司
+hk|0|00208|保利达资产|BLDZC:|baolidazichan|POLYTEC ASSET||保利达资产控股有限公司
+hk|0|02083|大自然家居|DZRJJ:DZRJJ:TZRJJ:DZRJJ:DZRJJ:TZRJJ:|daziranjiaju:daiziranjiaju:taiziranjiaju:daziranjiBju:daiziranjiBju:taiziranjiBju|NATURE HOME||大自然家居控股有限公司
+hk|0|02088|西王置业|XWZY:|xiwangzhiye|XIWANG PROPERTY||西王置业控股有限公司
+hk|0|02098|卓尔发展|ZEFZ:|zhuoerfazhan|ZALL DEV||卓尔发展集团有限公司
+hk|0|02099|中国黄金国际|ZGHJGJ:|zhongguohuangjinguoji|CHINAGOLDINTL||中国黄金国际资源有限公司
+hk|0|00021|大中华地产控股|DZHDCKG:DZHDCKG:TZHDCKG:|dazhonghuadichankonggu:daizhonghuadichankonggu:taizhonghuadichankonggu|GREAT CHI PPT||大中华地产控股有限公司
+hk|0|00210|达芙妮国际|DFNGJ:|dafuniguoji|DAPHNE INT'L||达芙妮国际控股有限公司
+hk|0|02100|百奥家庭互动|BAJTHD:BYJTHD:BAJTHD:BYJTHD:|baiaojiatinghudong:baiyujiatinghudong:baiaojiBtinghudong:baiyujiBtinghudong|BAIOO||百奥家庭互动有限公司
+hk|0|02111|超盈国际控股|CYGJKG:|chaoyingguojikonggu|BEST PACIFIC||超盈国际控股有限公司
+hk|0|02112|优库资源|YKZY:|youkuziyuan|CAA RESOURCES||优库资源有限公司
+hk|0|02118|天山发展控股|TSFZKG:|tianshanfazhankonggu|TIAN SHAN DEV||天山发展(控股)有限公司
+hk|0|02121|一化控股|YHKG:|yihuakonggu|FIRST CHEM||一化控股(中国)有限公司
+hk|0|02123|金盾控股|JDKG:|jindunkonggu|GOLDEN SHIELD||金盾控股(实业)有限公司
+hk|0|02128|中国联塑|ZGLS:|zhongguoliansu|CHINA LESSO||中国联塑集团控股有限公司
+hk|0|02133|中国多金属|ZGDJS:ZGDJZ:|zhongguoduojinshu:zhongguoduojinzhu|CH POLYMETAL||中国多金属矿业有限公司
+hk|0|00214|汇汉控股|HHKG:|huihankonggu|ASIA ORIENT||汇汉控股有限公司
+hk|0|00215|和记电讯香港|HJDXXG:HJDXXG:HJDXXG:HJDXXJ:HJDXXJ:HJDXXJ:|hejidianxunxianggang:huojidianxunxianggang:hujidianxunxianggang:hejidianxunxiangjiang:huojidianxunxi|HUTCHTEL HK||和记电讯香港控股有限公司
+hk|0|00216|建业实业|JYSY:|jianyeshiye|CHINNEY INV||建业实业有限公司
+hk|0|02168|盈德气体|YDQT:YDQB:|yingdeqiti:yingdeqiben|YINGDE GASES||盈德气体集团有限公司
+hk|0|00217|中国诚通发展集团|ZGCTFZJT:|zhongguochengtongfazhanjituan|CHINA CHENGTONG||中国诚通发展集团有限公司
+hk|0|02178|百勤油服|BQYF:|baiqinyoufu|PETRO-KING||百勤油田服务有限公司
+hk|0|02183|利福地产|LFDC:|lifudichan|LIFESTYLE PPT||利福地产发展有限公司
+hk|0|02186|绿叶制药|LYZY:LYZY:LXZY:LXZY:|lvyezhiyao:luyezhiyao:lvxiezhiyao:luxiezhiyao|LUYE PHARMA||绿叶制药集团有限公司
+hk|0|02188|泰坦能源技术|TTNYJS:TTNYJS:TTNYJZ:TTNYJZ:|taitannengyuanjishu:taitannaiyuanjishu:taitannengyuanjizhu:taitannaiyuanjizhu|TITANS ENERGY||中国泰坦能源技术集团有限公司
+hk|0|00219|顺豪科技|SHKJ:|shunhaokeji|SHUN HO TECH||顺豪科技控股有限公司
+hk|0|02196|复星医药|FXYY:|fuxingyiyao|FOSUN PHARMA||上海复星医药(集团)股份有限公司-H股
+hk|0|02198|中国三江化工|ZGSJHG:|zhongguosanjianghuagong|CHINA SANJIANG||中国三江精细化工有限公司
+hk|0|00220|统一企业中国|TYQYZG:|tongyiqiyezhongguo|U-PRESID CHINA||统一企业中国控股有限公司
+hk|0|02200|浩沙国际|HSGJ:|haoshaguoji|HOSA INT'L||浩沙国际有限公司
+hk|0|02202|万科企业|WKQY:MKQY:|wankeqiye:mokeqiye|CHINA VANKE||万科企业股份有限公司-H股
+hk|0|02208|金风科技|JFKJ:|jinfengkeji|GOLDWIND||新疆金风科技股份有限公司-H股
+hk|0|00221|PNG资源|PNGZY:|PNGziyuan|PNG RESOURCES||PNG资源控股有限公司
+hk|0|02211|金天医药集团|JTYYJT:|jintianyiyaojituan|JINTIAN PHARM||金天医药集团股份有限公司
+hk|0|02212|高鹏矿业|GPKY:|gaopengkuangye|FB MINING||高鹏矿业控股有限公司
+hk|0|02213|益华百货|YHBH:|yihuabaihuo|YI HUA STORE||益华百货控股有限公司
+hk|0|02218|安德利果汁|ADLGZ:|andeliguozhi|ANDRE JUICE||烟台北方安德利果汁股份有限公司-H股
+hk|0|00222|闽信集团|MXJT:MSJT:|minxinjituan:minshenjituan|MIN XIN HOLD||闽信集团有限公司
+hk|0|02221|创业集团控股|CYJTKG:|chuangyejituankonggu|NEW CONCEPTS||创业集团(控股)有限公司
+hk|0|02222|雷士照明|LSZM:|leishizhaoming|NVC LIGHTING||雷士照明控股有限公司
+hk|0|02223|卡撒天娇|QSTJ:KSTJ:|qiasatianjiao:kasatianjiao|CASABLANCA||卡撒天娇集团有限公司
+hk|0|02226|老恒和酿造|LHHNZ:LHHNZ:LHHNZ:|laohengheniangzao:laohenghuoniangzao:laohenghuniangzao|HONWORLD GP||老恒和酿造有限公司
+hk|0|02228|中国节能海东青|ZGJNHDQ:ZGJNHDQ:|zhongguojienenghaidongqing:zhongguojienaihaidongqing|CECEP COSTIN||中国节能海东青新材料集团有限公司
+hk|0|02229|长港敦信|CGDX:CJDX:CGDX:CJDX:CGDS:CJDS:CGDS:CJDS:|changgangdunxin:changjiangdunxin:changgangduixin:changjiangduixin:changgangdunshen:changjiangdunshen|CG DUNXIN||长港敦信实业有限公司
+hk|0|00223|神州资源|SZZY:|shenzhouziyuan|SRGL||神州资源集团有限公司
+hk|0|02233|西部水泥|XBSN:|xibushuini|WESTCHINACEMENT||中国西部水泥有限公司
+hk|0|02236|惠生工程|HSGC:|huishenggongcheng|WISON ENGRG||惠生工程技术服务有限公司
+hk|0|02238|广汽集团|GQJT:AQJT:|guangqijituan:anqijituan|GAC GROUP||广州汽车集团股份有限公司-H股
+hk|0|00224|建生国际|JSGJ:|jianshengguoji|PIONEER GLOBAL||建生国际集团有限公司
+hk|0|00225|博富临置业|BFLZY:|bofulinzhiye|POKFULAM||博富临置业有限公司
+hk|0|02255|海昌控股|HCKG:|haichangkonggu|HAICHANG HLDG||海昌控股有限公司
+hk|0|00226|力宝|LB:|libao|LIPPO||力宝有限公司
+hk|0|02266|帝盛酒店集团|DSJDJT:DCJDJT:|dishengjiudianjituan:dichengjiudianjituan|DORSETT||帝盛酒店集团有限公司
+hk|0|02268|优源控股|YYKG:|youyuankonggu|YOUYUAN HLDGS||优源国际控股有限公司
+hk|0|00227|第一上海|DYSH:|diyishanghai|FIRST SHANGHAI||第一上海投资有限公司
+hk|0|02277|震升工程|ZSGC:|zhenshenggongcheng|CHUN SING ENG||震升工程控股有限公司
+hk|0|00228|中能控股|ZNKG:ZNKG:|zhongnengkonggu:zhongnaikonggu|CHINA ENERGY||中国能源开发控股有限公司
+hk|0|02280|慧聪网|HCW:|huicongwang|HC INTL||慧聪网有限公司
+hk|0|02282|美高梅中国|MGMZG:|meigaomeizhongguo|MGM CHINA||美高梅中国控股有限公司
+hk|0|02283|东江集团控股|DJJTKG:|dongjiangjituankonggu|TK GROUP HLDG||东江集团(控股)有限公司
+hk|0|02288|承达国际|CDGJ:|chengdaguoji|RYKADAN CAPITAL||宏基资本有限公司
+hk|0|00229|利民实业|LMSY:|liminshiye|RAYMOND IND||利民实业有限公司
+hk|0|02298|都市丽人|DSLR:DSLR:|dushiliren:doushiliren|COSMO LADY||都市丽人(中国)控股有限公司
+hk|0|02299|百宏实业|BHSY:|baihongshiye|BILLION IND||百宏实业控股有限公司
+hk|0|00023|东亚银行|DYYX:DYYH:|dongyayinxing:dongyayinhang|BANK OF E ASIA||东亚银行有限公司
+hk|0|00230|五矿建设|WKJS:|wukuangjianshe|MINMETALS LAND||五矿建设有限公司
+hk|0|02300|澳科控股|AKKG:|aokekonggu|AMVIG HOLDINGS||澳科控股有限公司
+hk|0|02302|中核国际|ZHGJ:ZHGJ:|zhongheguoji:zhonghuguoji|CNNC INT'L||中核国际有限公司
+hk|0|02303|恒兴黄金|HXHJ:|hengxinghuangjin|HENGXING GOLD||恒兴黄金控股有限公司
+hk|0|02307|锦兴国际控股|JXGJKG:|jinxingguojikonggu|KAM HING INT'L||锦兴国际控股有限公司
+hk|0|02308|研祥智能|YXZN:YXZN:|yanxiangzhineng:yanxiangzhinai|EVOC||研祥智能科技股份有限公司-H股
+hk|0|02309|伯明翰环球|BMHHQ:BMHHQ:BMHHQ:|bominghanhuanqiu:baiminghanhuanqiu:baminghanhuanqiu|BIRMINGHAM INTL||伯明翰环球控股有限公司
+hk|0|00231|盛明国际控股|SMGJKG:CMGJKG:|shengmingguojikonggu:chengmingguojikonggu|MADEX INTL HOLD||盛明国际(控股)有限公司
+hk|0|02310|申基国际|SJGJ:|shenjiguoji|FOREBASE INTL||申基国际控股有限公司
+hk|0|02312|中国金融租赁|ZGJRZL:|zhongguojinrongzulin|CH FIN LEASING||中国金融租赁集团有限公司
+hk|0|02313|申洲国际|SZGJ:|shenzhouguoji|SHENZHOU INTL||申洲国际集团控股有限公司
+hk|0|02314|理文造纸|LWZZ:|liwenzaozhi|LEE & MAN PAPER||理文造纸有限公司
+hk|0|02317|味丹国际|WDGJ:|weidanguoji|VEDAN INT'L||味丹国际(控股)有限公司
+hk|0|02318|中国平安|ZGPA:|zhongguopingan|PING AN||中国平安保险(集团)股份有限公司-H股
+hk|0|02319|蒙牛乳业|MNRY:|mengniuruye|MENGNIU DAIRY||中国蒙牛乳业有限公司
+hk|0|00232|中国航空工业国际|ZGHKGYGJ:|zhongguohangkonggongyeguoji|AVIC INT'L||中国航空工业国际控股(香港)有限公司
+hk|0|02320|合丰集团|HFJT:GFJT:|hefengjituan:gefengjituan|HOP FUNG GROUP||合丰集团控股有限公司
+hk|0|02322|仁瑞投资|RRTZ:|renruitouzi|NOBLE CENTURY||仁瑞投资控股有限公司
+hk|0|02323|至卓国际|ZZGJ:|zhizhuoguoji|TOPSEARCH INT'L||至卓国际(控股)有限公司
+hk|0|02327|宇业控股|YYKG:|yuyekonggu|U-HOME HOLDINGS||宇业集团控股有限公司
+hk|0|02328|中国财险|ZGCX:|zhongguocaixian|PICC P&C||中国人民财产保险股份有限公司-H股
+hk|0|02329|国瑞置业|GRZY:|guoruizhiye|GUORUI PPT||国瑞置业有限公司
+hk|0|00233|铭源医疗|MYYL:|mingyuanyiliao|MY MEDICARE||铭源医疗发展有限公司
+hk|0|02330|中国上城|ZGSC:|zhongguoshangcheng|CHINA UPTOWN||中国上城集团有限公司
+hk|0|02331|李宁|LN:|lining|LI NING||李宁有限公司
+hk|0|02333|长城汽车|CCQC:|changchengqiche|GREATWALL MOTOR||长城汽车股份有限公司-H股
+hk|0|02338|潍柴动力|WCDL:|weichaidongli|WEICHAI POWER||潍柴动力股份有限公司-H股
+hk|0|02339|京西国际|JXGJ:|jingxiguoji|BWI INT'L||京西重工国际有限公司
+hk|0|00234|新世纪集团|XSJJT:|xinshijijituan|NEW CENTURY GP||新世纪集团香港有限公司
+hk|0|02340|新昌管理集团|XCGLJT:|xinchangguanlijituan|SYNERGIS HOLD||新昌管理集团有限公司
+hk|0|02341|中怡国际|ZYGJ:|zhongyiguoji|ECOGREEN||中怡国际集团有限公司
+hk|0|02342|京信通信|JXTX:JSTX:JXTS:JSTS:|jingxintongxin:jingshentongxin:jingxintongshen:jingshentongshen|COMBA||京信通信系统控股有限公司
+hk|0|02343|太平洋航运|TPYHY:|taipingyanghangyun|PACIFIC BASIN||太平洋航运集团有限公司
+hk|0|02345|上海集优|SHJY:|shanghaijiyou|SHANGHAI PRIME||上海集优机械股份有限公司-H股
+hk|0|02348|东瑞制药|DRZY:|dongruizhiyao|DAWNRAYS PHARMA||东瑞制药(控股)有限公司
+hk|0|02349|中国城市基础设施|ZGCSJCSS:|zhongguochengshijichusheshi|CH CITY INFRA||中国城市基础设施集团有限公司
+hk|0|00235|中策集团|ZCJT:|zhongcejituan|CHINA STRATEGIC||中策集团有限公司
+hk|0|02355|宝业集团|BYJT:|baoyejituan|BAOYE GROUP||宝业集团股份有限公司-H股
+hk|0|02356|大新银行集团|DXYXJT:DXYXJT:TXYXJT:DXYHJT:DXYHJT:TXYHJT:|daxinyinxingjituan:daixinyinxingjituan:taixinyinxingjituan:daxinyinhangjituan:daixinyinhangjituan:ta|DAHSING BANKING||大新银行集团有限公司
+hk|0|02357|中航科工|ZHKG:|zhonghangkegong|AVICHINA||中国航空科技工业股份有限公司-H股
+hk|0|02358|久融控股|JRKG:|jiurongkonggu|JIU RONG HOLD||久融控股有限公司
+hk|0|00236|香港生力啤|XGSLP:XJSLP:|xianggangshenglipi:xiangjiangshenglipi|SAN MIGUEL HK||香港生力啤酒厂有限公司
+hk|0|02362|金川国际|JCGJ:|jinchuanguoji|JINCHUAN INTL||金川集团国际资源有限公司
+hk|0|02368|鹰美|YM:|yingmei|EAGLE NICE||鹰美(国际)控股有限公司
+hk|0|02369|酷派集团|KPJT:|kupaijituan|COOLPAD GROUP||酷派集团有限公司
+hk|0|00237|安全货仓|AQHC:|anquanhuocang|SAFETY GODOWN||安全货仓有限公司
+hk|0|02371|中国创联教育|ZGCLJY:|zhongguochuanglianjiaoyu|C CHUANGLIAN ED||中国创联教育集团有限公司
+hk|0|02378|保诚|BC:|baocheng|PRU||英国保诚有限公司
+hk|0|02379|中天国际|ZTGJ:|zhongtianguoji|ZHONGTIAN INT'L||中天国际控股有限公司
+hk|0|00238|长兴国际|CXGJ:|changxingguoji|EVERGREEN INT||长兴国际(集团)控股有限公司
+hk|0|02380|中国电力|ZGDL:|zhongguodianli|CHINA POWER||中国电力国际发展有限公司
+hk|0|02382|舜宇光学科技|SYGXKJ:|shunyuguangxuekeji|SUNNY OPTICAL||舜宇光学科技(集团)有限公司
+hk|0|02383|TOM集团|TOMJT:|TOMjituan|TOM GROUP||TOM集团有限公司
+hk|0|02386|中石化炼化工程|ZSHLHGC:ZDHLHGC:|zhongshihualianhuagongcheng:zhongdanhualianhuagongcheng|SINOPEC SEG||中石化炼化工程(集团)股份有限公司-H股
+hk|0|02388|中银香港|ZYXG:ZYXJ:|zhongyinxianggang:zhongyinxiangjiang|BOC HONG KONG||中银香港(控股)有限公司
+hk|0|00239|白花油|BHY:|baihuayou|PAK FAH YEOW||白花油国际有限公司
+hk|0|02393|巨星国际控股|JXGJKG:|juxingguojikonggu|YESTAR INTL||巨星国际控股有限公司
+hk|0|02398|友佳国际|YJGJ:|youjiaguoji|GOOD FRIEND||友佳国际控股有限公司
+hk|0|02399|虎都|HD:HD:|hudu:hudou|FORDOO||中国虎都控股有限公司
+hk|0|00024|宝威控股|BWKG:|baoweikonggu|BURWILL||宝威控股有限公司
+hk|0|00240|利基控股|LJKG:|lijikonggu|BUILD KING HOLD||利基控股有限公司
+hk|0|00241|阿里健康|ALJK:|alijiankang|ALI HEALTH||阿里健康信息技术有限公司
+hk|0|00242|信德集团|XDJT:SDJT:|xindejituan:shendejituan|SHUN TAK HOLD||信德集团有限公司
+hk|0|00244|先施|XS:|xianshi|SINCERE||先施有限公司
+hk|0|00245|中国七星控股|ZGQXKG:|zhongguoqixingkonggu|CHINA SEVENSTAR||中国七星控股有限公司
+hk|0|00246|瑞金矿业|RJKY:|ruijinkuangye|REALGOLD MINING||瑞金矿业有限公司
+hk|0|02468|创益太阳能|CYTYN:CYTYN:|chuangyitaiyangneng:chuangyitaiyangnai|TRONY SOLAR||创益太阳能控股有限公司
+hk|0|00248|香港通讯国际控股|XGTXGJKG:XJTXGJKG:|xianggangtongxunguojikonggu:xiangjiangtongxunguojikonggu|HKC INT'L HOLD||香港通讯国际控股有限公司
+hk|0|02488|元征科技|YZKJ:|yuanzhengkeji|LAUNCH TECH||深圳市元征科技股份有限公司-H股
+hk|0|00250|中国数码信息|ZGSMXX:ZGSMXX:ZGSMSX:ZGSMSX:|zhongguoshumaxinxi:zhongguoshuomaxinxi:zhongguoshumashenxi:zhongguoshuomashenxi|SINO-I TECH||中国数码信息有限公司
+hk|0|00251|爪哇控股|ZWKG:ZWKG:ZWKG:ZWKG:|zhaowakonggu:zhuawakonggu:zhaowBkonggu:zhuawBkonggu|SEA HOLDINGS||爪哇控股有限公司
+hk|0|00252|华信地产财务|HXDCCW:HSDCCW:|huaxindichancaiwu:huashendichancaiwu|SE ASIA PPT||华信地产财务有限公司
+hk|0|00253|顺豪资源集团|SHZYJT:|shunhaoziyuanjituan|SHUN HO RES||顺豪资源集团有限公司
+hk|0|00254|国家联合资源|GJLHZY:GJLHZY:GJLGZY:GJLGZY:|guojialianheziyuan:guojiBlianheziyuan:guojialiangeziyuan:guojiBliangeziyuan|NUR HOLDINGS||国家联合资源控股有限公司
+hk|0|00255|龙记集团|LJJT:|longjijituan|LUNG KEE||龙记(百慕达)集团有限公司
+hk|0|00256|冠城钟表珠宝|GCZBZB:|guanchengzhongbiaozhubao|CITYCHAMP||冠城钟表珠宝集团有限公司
+hk|0|00257|中国光大国际|ZGGDGJ:ZGGDGJ:ZGGTGJ:|zhongguoguangdaguoji:zhongguoguangdaiguoji:zhongguoguangtaiguoji|CHINA EB INT'L||中国光大国际有限公司
+hk|0|00258|汤臣集团|TCJT:SCJT:|tangchenjituan:shangchenjituan|TOMSON GROUP||汤臣集团有限公司
+hk|0|00259|亿都(国际控股)|YD(GJKG):YD(GJKG):|yidu(guojikonggu):yidou(guojikonggu)|YEEBO (INT'L H)||亿都(国际控股)有限公司
+hk|0|00026|中华汽车|ZHQC:|zhonghuaqiche|CHINA MOTOR BUS||中华汽车有限公司
+hk|0|00260|幸福控股|XFKG:|xingfukonggu|AVIC JOY HLDG||幸福控股(香港)有限公司
+hk|0|02600|中国铝业|ZGLY:|zhongguolvye|CHALCO||中国铝业股份有限公司-H股
+hk|0|02601|中国太保|ZGTB:|zhongguotaibao|CPIC||中国太平洋保险(集团)股份有限公司-H股
+hk|0|02607|上海医药|SHYY:|shanghaiyiyao|SH PHARMA||上海医药集团股份有限公司-H股
+hk|0|02608|阳光100中国|YG100ZG:|yangguang100zhongguo|SUNSHINE 100||阳光100中国控股有限公司
+hk|0|00261|中建置地|ZJZD:|zhongjianzhidi|CCT LAND||中建置地集团有限公司
+hk|0|00262|迪臣发展国际|DCFZGJ:|dichenfazhanguoji|DESON DEV INT'L||迪臣发展国际集团有限公司
+hk|0|02623|中国中盛资源|ZGZSZY:ZGZCZY:|zhongguozhongshengziyuan:zhongguozhongchengziyuan|CH ZHONGSHENG||中国中盛资源控股有限公司
+hk|0|02626|湖南有色金属公司|HNYSJSGS:HNYSJSGS:HNYSJZGS:HNYSJZGS:|hunanyousejinshugongsi:hunayousejinshugongsi:hunanyousejinzhugongsi:hunayousejinzhugongsi|HNC||湖南有色金属股份有限公司-H股
+hk|0|02628|中国人寿|ZGRS:|zhongguorenshou|CHINA LIFE||中国人寿保险股份有限公司-H股
+hk|0|02638|港灯-SS|GD-SS:JD-SS:|gangdeng-SS:jiangdeng-SS|HKELECTRIC-SS||港灯电力投资与港灯电力投资有限公司-SS
+hk|0|00264|卓高国际|ZGGJ:|zhuogaoguoji|CHANCO INT'L||卓高国际集团有限公司
+hk|0|00265|东胜中国|DSZG:|dongshengzhongguo|ORIENT VICTORY||东胜中国控股有限公司
+hk|0|00266|天德地产|TDDC:|tiandedichan|TIAN TECK LAND||天德地产有限公司
+hk|0|02662|奕达|YD:|yida|FITTEC||奕达国际集团有限公司
+hk|0|02668|百德国际|BDGJ:|baideguoji|PAK TAK INT'L||百德国际有限公司
+hk|0|00267|中信股份|ZXGF:ZSGF:ZXGB:ZSGB:|zhongxingufen:zhongshengufen:zhongxingubin:zhongshengubin|CITIC||中国中信股份有限公司
+hk|0|02678|天虹纺织|THFZ:|tianhongfangzhi|TEXHONG TEXTILE||天虹纺织集团有限公司
+hk|0|00268|金蝶国际|JDGJ:|jindieguoji|KINGDEE INT'L||金蝶国际软件集团有限公司
+hk|0|02688|新奥能源|XANY:XYNY:XANY:XYNY:|xinaonengyuan:xinyunengyuan:xinaonaiyuan:xinyunaiyuan|ENN ENERGY||新奥能源控股有限公司
+hk|0|02689|玖龙纸业|JLZY:|jiulongzhiye|ND PAPER||玖龙纸业(控股)有限公司
+hk|0|00269|中国资源交通|ZGZYJT:|zhongguoziyuanjiaotong|CRTG||中国资源交通集团有限公司
+hk|0|02698|魏桥纺织|WQFZ:|weiqiaofangzhi|WEIQIAO TEXTILE||魏桥纺织股份有限公司-H股
+hk|0|00027|银河娱乐|YHYL:YHYY:|yinheyule:yinheyuyue|GALAXY ENT||银河娱乐集团有限公司
+hk|0|00270|粤海投资|YHTZ:|yuehaitouzi|GUANGDONG INV||粤海投资有限公司
+hk|0|02700|格林国际控股|GLGJKG:|gelinguojikonggu|GREEN INTL HLDG||格林国际控股有限公司
+hk|0|00271|丹枫控股|DFKG:|danfengkonggu|DAN FORM HOLD||丹枫控股有限公司
+hk|0|00272|瑞安房地产|RAFDC:|ruianfangdichan|SHUI ON LAND||瑞安房地产有限公司
+hk|0|02722|重庆机电|ZQJD:CQJD:|zhongqingjidian:chongqingjidian|CHONGQING M&E||重庆机电股份有限公司-H股
+hk|0|02727|上海电气|SHDQ:|shanghaidianqi|SH ELECTRIC||上海电气集团股份有限公司-H股
+hk|0|02728|成谦声汇|CQSH:|chengqianshenghui|SHINHINT||成谦声汇控股有限公司
+hk|0|00273|威利国际|WLGJ:|weiliguoji|WILLIE INT'L||威利国际控股有限公司
+hk|0|00274|中富资源|ZFZY:|zhongfuziyuan|C BILLION RES||中富资源有限公司
+hk|0|00275|锦兴集团|JXJT:|jinxingjituan|HANNY HOLDINGS||锦兴集团有限公司
+hk|0|00276|蒙古能源|MGNY:MGNY:|menggunengyuan:menggunaiyuan|MONGOLIA ENERGY||蒙古能源有限公司
+hk|0|00277|太兴置业|TXZY:|taixingzhiye|TERN PROPERTIES||太兴置业有限公司
+hk|0|02777|富力地产|FLDC:|fulidichan|R&F PROPERTIES||广州富力地产股份有限公司-H股
+hk|0|00278|华厦置业|HSZY:HXZY:|huashazhiye:huaxiazhiye|WAH HA REALTY||华厦置业有限公司
+hk|0|02788|精熙国际|JXGJ:|jingxiguoji|YORKEY OPTICAL||精熙国际(开曼)有限公司
+hk|0|02789|远大中国|YDZG:YDZG:YTZG:|yuandazhongguo:yuandaizhongguo:yuantaizhongguo|YUANDA CHINA||远大中国控股有限公司
+hk|0|00279|民丰企业|MFQY:|minfengqiye|FREEMAN FIN||民丰企业控股有限公司
+hk|0|00028|天安|TA:|tianan|TIAN AN||天安中国投资有限公司
+hk|0|00280|景福集团|JFJT:YFJT:|jingfujituan:yingfujituan|KING FOOK HOLD||景福集团有限公司
+hk|0|00281|川河集团|CHJT:|chuanhejituan|RIVERA (HOLD)||川河集团有限公司
+hk|0|00282|壹传媒|YCM:YZM:|yichuanmei:yizhuanmei|NEXT MEDIA||壹传媒有限公司
+hk|0|00283|高银地产|GYDC:|gaoyindichan|GOLDIN PPT||高银地产控股有限公司
+hk|0|00285|比亚迪电子|BYDDZ:|biyadidianzi|BYD ELECTRONIC||比亚迪电子(国际)有限公司
+hk|0|00286|同佳健康|TJJK:|tongjiajiankang|CS HEALTH||同佳国际健康产业集团有限公司
+hk|0|02866|中海集运|ZHJY:|zhonghaijiyun|CSCL||中海集装箱运输股份有限公司-H股
+hk|0|02868|首创置业|SCZY:|shouchuangzhiye|BJ CAPITAL LAND||首创置业股份有限公司-H股
+hk|0|00287|永发置业|YFZY:|yongfazhiye|WINFAIR INV||永发置业有限公司
+hk|0|02877|神威药业|SWYY:|shenweiyaoye|SHINEWAY PHARM||中国神威药业集团有限公司
+hk|0|00288|万洲国际|WZGJ:MZGJ:|wanzhouguoji:mozhouguoji|WH GROUP||万洲国际有限公司
+hk|0|02880|大连港|DLG:DLG:TLG:DLJ:DLJ:TLJ:|daliangang:dailiangang:tailiangang:dalianjiang:dailianjiang:tailianjiang|DALIAN PORT||大连港股份有限公司-H股
+hk|0|02882|香港资源控股|XGZYKG:XJZYKG:|xianggangziyuankonggu:xiangjiangziyuankonggu|HKRH||香港资源控股有限公司
+hk|0|02883|中海油田服务|ZHYTFW:|zhonghaiyoutianfuwu|CHINA OILFIELD||中海油田服务股份有限公司-H股
+hk|0|02888|渣打集团|ZDJT:|zhadajituan|STANCHART||渣打集团有限公司
+hk|0|02889|中国镍资源|ZGNZY:|zhongguonieziyuan|CNR HOLDINGS||中国镍资源控股有限公司
+hk|0|02898|龙润茶|LRC:|longruncha|LONGRUN TEA||龙润茶集团有限公司
+hk|0|02899|紫金矿业|ZJKY:|zijinkuangye|ZIJIN MINING||紫金矿业集团股份有限公司-H股
+hk|0|00029|达力集团|DLJT:|dalijituan|DYNAMIC HOLD||达力集团有限公司
+hk|0|00290|中国富强金融|ZGFQJR:ZGFJJR:|zhongguofuqiangjinrong:zhongguofujiangjinrong|C FORTUNE FIN||中国富强金融集团有限公司
+hk|0|00291|华润创业|HRCY:|huarunchuangye|CHINA RESOURCES||华润创业有限公司
+hk|0|00292|泛海酒店|FHJD:|fanhaijiudian|ASIA STD HOTEL||泛海酒店集团有限公司
+hk|0|02924|HERITAGE I-OLD|HERITAGEI-OLD:|HERITAGEI-OLD|||汉基控股有限公司
+hk|0|02929|UNITY INV-OLD|UNITYINV-OLD:|UNITYINV-OLD|||合一投资控股有限公司
+hk|0|00293|国泰航空|GTHK:|guotaihangkong|CATHAY PAC AIR||国泰航空有限公司
+hk|0|02930|CH YUNNAN-OLD|CHYUNNAN-OLD:|CHYUNNAN-OLD|||中国云锡矿业集团有限公司
+hk|0|02931|LAI SUN DEV-1K|LAISUNDEV-1K:|LAISUNDEV-1K|||丽新发展有限公司
+hk|0|02932|CH YUNNAN RTS|CHYUNNANRTS:|CHYUNNANRTS|||
+hk|0|00294|长江制衣|CJZY:|changjiangzhiyi|YANGTZEKIANG||长江制衣有限公司
+hk|0|00295|江山控股|JSKG:|jiangshankonggu|KONG SUN HOLD||江山控股有限公司
+hk|0|00296|英皇娱乐酒店|YHYLJD:YHYYJD:|yinghuangyulejiudian:yinghuangyuyuejiudian|EMPEROR E HOTEL||英皇娱乐酒店有限公司
+hk|0|00297|中化化肥|ZHHF:|zhonghuahuafei|SINOFERT||中化化肥控股有限公司
+hk|0|00298|庄士中国|ZSZG:|zhuangshizhongguo|CHUANG'S CHINA||庄士中国投资有限公司
+hk|0|00299|中讯软件|ZXRJ:|zhongxunruanjian|SINOCOM SOFT||中讯软件集团股份有限公司
+hk|0|00003|香港中华煤气|XGZHMQ:XJZHMQ:|xianggangzhonghuameiqi:xiangjiangzhonghuameiqi|HK & CHINA GAS||香港中华煤气有限公司
+hk|0|00030|佳讯控股|JXKG:|jiaxunkonggu|ABC COM (HOLD)||佳讯(控股)有限公司
+hk|0|00300|昆明机床|KMJC:|kunmingjichuang|KUNMING MACHINE||沈机集团昆明机床股份有限公司-H股
+hk|0|00305|五菱汽车|WLQC:|wulingqiche|WULING MOTORS||五菱汽车集团控股有限公司
+hk|0|00306|冠忠巴士集团|GZBSJT:|guanzhongbashijituan|KWOON CHUNG BUS||冠忠巴士集团有限公司
+hk|0|00307|优派能源发展|YPNYFZ:YPNYFZ:|youpainengyuanfazhan:youpainaiyuanfazhan|UP ENERGY DEV||优派能源发展集团有限公司
+hk|0|00308|香港中旅|XGZL:XJZL:|xianggangzhonglv:xiangjiangzhonglv|CHINA TRAVEL HK||香港中旅国际投资有限公司
+hk|0|00309|新华通讯频媒|XHTXPM:XHTXBM:|xinhuatongxunpinmei:xinhuatongxunbinmei|XH NEWS MEDIA||新华通讯频媒控股有限公司
+hk|0|00031|航天控股|HTKG:|hangtiankonggu|CHINA AEROSPACE||中国航天国际控股有限公司
+hk|0|00310|嘉进投资国际|JJTZGJ:|jiajintouziguoji|PROSP INV HOLD||嘉进投资国际有限公司
+hk|0|00311|联泰控股|LTKG:|liantaikonggu|LUEN THAI||联泰控股有限公司
+hk|0|00312|岁宝百货|SBBH:|suibaobaihuo|SHIRBLE STORE||岁宝百货控股(中国)有限公司
+hk|0|00313|裕田中国|YTZG:|yutianzhongguo|RICHLY FIELD||裕田中国发展有限公司
+hk|0|00315|数码通电讯|SMTDX:SMTDX:|shumatongdianxun:shuomatongdianxun|SMARTONE TELE||数码通电讯集团有限公司
+hk|0|00316|东方海外国际|DFHWGJ:|dongfanghaiwaiguoji|OOIL||东方海外(国际)有限公司
+hk|0|00318|黄河实业|HHSY:|huangheshiye|VONGROUP||黄河实业有限公司
+hk|0|00319|勤美达国际|QMDGJ:|qinmeidaguoji|CHINA METAL||勤美达国际控股有限公司
+hk|0|00032|港通控股|GTKG:JTKG:|gangtongkonggu:jiangtongkonggu|CROSS-HAR(HOLD)||港通控股有限公司
+hk|0|00320|金宝通|JBT:|jinbaotong|COMPUTIME||金宝通集团有限公司
+hk|0|00321|德永佳集团|DYJJT:|deyongjiajituan|TEXWINCA HOLD||德永佳集团有限公司
+hk|0|00322|康师傅控股|KSFKG:|kangshifukonggu|TINGYI||康师傅控股有限公司
+hk|0|00323|马鞍山钢铁股份|MASGTGF:MASGTGB:|maanshangangtiegufen:maanshangangtiegubin|MAANSHAN IRON||马鞍山钢铁股份有限公司-H股
+hk|0|00327|百富环球|BFHQ:|baifuhuanqiu|PAX GLOBAL||百富环球科技有限公司
+hk|0|00329|叁龙国际|SLGJ:|sanlongguoji|DRAGONITE INT'L||叁龙国际有限公司
+hk|0|00033|和协海峡金融集团|HXHXJRJT:HXHXJRJT:HXHXJRJT:|hexiehaixiajinrongjituan:huoxiehaixiajinrongjituan:huxiehaixiajinrongjituan|HARMONIC STR||和协海峡金融集团有限公司
+hk|0|00330|思捷环球|SJHQ:SJHQ:|sijiehuanqiu:saijiehuanqiu|ESPRIT HOLDINGS||思捷环球控股有限公司
+hk|0|03300|中国玻璃|ZGBL:|zhongguoboli|CHINA GLASS||中国玻璃控股有限公司
+hk|0|03303|巨涛海洋石油服务|JTHYSYFW:JTHYDYFW:|jutaohaiyangshiyoufuwu:jutaohaiyangdanyoufuwu|JUTAL OIL SER||巨涛海洋石油服务有限公司
+hk|0|03308|金鹰商贸集团|JYSMJT:|jinyingshangmaojituan|GOLDEN EAGLE||金鹰商贸集团有限公司
+hk|0|03311|中国建筑国际|ZGJZGJ:|zhongguojianzhuguoji|CHINA STATE CON||中国建筑国际集团有限公司
+hk|0|03315|金邦达宝嘉|JBDBJ:|jinbangdabaojia|GOLDPAC GROUP||金邦达宝嘉控股有限公司
+hk|0|03318|中国香精香料|ZGXJXL:|zhongguoxiangjingxiangliao|CHINA FLAVORS||中国香精香料有限公司
+hk|0|00332|元亨燃气|YHRQ:YPRQ:|yuanhengranqi:yuanpengranqi|YUANHENG GAS||元亨燃气控股有限公司
+hk|0|03322|永嘉集团|YJJT:|yongjiajituan|WIN HANVERKY||永嘉集团控股有限公司
+hk|0|03323|中国建材|ZGJC:|zhongguojiancai|CNBM||中国建材股份有限公司-H股
+hk|0|03328|交通银行|JTYX:JTYH:|jiaotongyinxing:jiaotongyinhang|BANKCOMM||交通银行股份有限公司-H股
+hk|0|00333|黛丽斯国际|DLSGJ:|dailisiguoji|TOP FORM INT'L||黛丽斯国际有限公司
+hk|0|03330|灵宝黄金|LBHJ:|lingbaohuangjin|LINGBAO GOLD||灵宝黄金股份有限公司-H股
+hk|0|03331|维达国际|WDGJ:|weidaguoji|VINDA INT'L||维达国际控股有限公司
+hk|0|03332|中生联合|ZSLH:ZSLG:|zhongshenglianhe:zhongshengliange|SINOLIFE UTD||南京中生联合股份有限公司-H股
+hk|0|03333|恒大地产|HDDC:HDDC:HTDC:|hengdadichan:hengdaidichan:hengtaidichan|EVERGRANDE||恒大地产集团有限公司
+hk|0|03335|DBA电讯|DBADX:|DBAdianxun|DBA TELECOM||DBA电讯(亚洲)控股有限公司
+hk|0|03336|巨腾国际|JTGJ:|jutengguoji|JU TENG INTL||巨腾国际控股有限公司
+hk|0|03337|安东油田服务|ADYTFW:|andongyoutianfuwu|ANTON OILFIELD||安东油田服务集团
+hk|0|03339|中国龙工|ZGLG:|zhongguolonggong|LONKING||中国龙工控股有限公司
+hk|0|00334|唯冠国际|WGGJ:|weiguanguoji|PROVIEW INT'L||唯冠国际控股有限公司
+hk|0|03344|互益集团|HYJT:|huyijituan|ADDCHANCE||互益集团有限公司
+hk|0|00335|美建集团|MJJT:|meijianjituan|UPBEST GROUP||美建集团有限公司
+hk|0|03355|先进半导体|XJBDT:XJBDB:|xianjinbandaoti:xianjinbandaoben|ASMC||上海先进半导体制造股份有限公司-H股
+hk|0|00336|华宝国际|HBGJ:|huabaoguoji|HUABAO INTL||华宝国际控股有限公司
+hk|0|03360|远东宏信|YDHX:YDHS:|yuandonghongxin:yuandonghongshen|FE HORIZON||远东宏信有限公司
+hk|0|03363|正业国际|ZYGJ:|zhengyeguoji|ZHENGYE INT'L||正业国际控股有限公司
+hk|0|03366|华侨城(亚洲)|HQC(YZ):|huaqiaocheng(yazhou)|OCT (ASIA)||华侨城(亚洲)控股有限公司
+hk|0|03368|百盛集团|BSJT:BCJT:|baishengjituan:baichengjituan|PARKSON GROUP||百盛商业集团有限公司
+hk|0|03369|秦港股份|QGGF:QJGF:QGGB:QJGB:|qinganggufen:qinjianggufen:qinganggubin:qinjianggubin|QHD PORT||秦皇岛港股份有限公司-H股
+hk|0|00337|绿地香港|LDXG:LDXG:LDXJ:LDXJ:|lvdixianggang:ludixianggang:lvdixiangjiang:ludixiangjiang|GREENLAND HK||绿地香港控股有限公司
+hk|0|03377|远洋地产|YYDC:|yuanyangdichan|SINO-OCEAN LAND||远洋地产控股有限公司
+hk|0|03378|厦门港务|SMGW:XMGW:SMJW:XMJW:|shamengangwu:xiamengangwu:shamenjiangwu:xiamenjiangwu|XIAMEN PORT||厦门国际港务股份有限公司-H股
+hk|0|00338|上海石油化工股份|SHSYHGGF:SHDYHGGF:SHSYHGGB:SHDYHGGB:|shanghaishiyouhuagonggufen:shanghaidanyouhuagonggufen:shanghaishiyouhuagonggubin:shanghaidanyouhuago|SHANGHAI PECHEM||中国石化上海石油化工股份有限公司-H股
+hk|0|03380|龙光地产|LGDC:|longguangdichan|LOGAN PPT||龙光地产控股有限公司
+hk|0|03382|天津港发展|TJGFZ:TJJFZ:|tianjingangfazhan:tianjinjiangfazhan|TIANJINPORT DEV||天津港发展控股有限公司
+hk|0|03383|雅居乐地产|YJLDC:YJYDC:|yajuledichan:yajuyuedichan|AGILE PROPERTY||雅居乐地产控股有限公司
+hk|0|03386|东鹏控股|DPKG:|dongpengkonggu|DONGPENG HLDG||东鹏控股股份有限公司
+hk|0|03389|亨得利|HDL:PDL:HDL:PDL:|hengdeli:pengdeli:hengdeili:pengdeili|HENGDELI||亨得利控股有限公司
+hk|0|00339|安利时投资|ALSTZ:|anlishitouzi|EARNEST INV||安利时投资控股有限公司
+hk|0|03393|威胜集团|WSJT:|weishengjituan|WASION GROUP||威胜集团控股有限公司
+hk|0|03398|华鼎控股|HDKG:|huadingkonggu|CHINA TING||华鼎集团控股有限公司
+hk|0|03399|粤运交通|YYJT:|yueyunjiaotong|YUEYUN TRANS||广东粤运交通股份有限公司-H股
+hk|0|00034|九龙建业|JLJY:|jiulongjianye|KOWLOON DEV||九龙建业有限公司
+hk|0|00340|中国矿业|ZGKY:|zhongguokuangye|CHINA MINING||中国矿业资源集团有限公司
+hk|0|00341|大家乐集团|DJLJT:DJLJT:TJLJT:DJLJT:DJLJT:TJLJT:DJYJT:DJYJT:TJYJT:DJYJT:DJYJT:TJYJT:|dajialejituan:daijialejituan:taijialejituan:dajiBlejituan:daijiBlejituan:taijiBlejituan:dajiayuejitu|CAFE DE CORAL H||大家乐集团有限公司
+hk|0|00342|新海能源|XHNY:XHNY:|xinhainengyuan:xinhainaiyuan|NEWOCEAN ENERGY||新海能源集团有限公司
+hk|0|00343|文化传信|WHCX:WHZX:WHCS:WHZS:|wenhuachuanxin:wenhuazhuanxin:wenhuachuanshen:wenhuazhuanshen|CULTURECOM HOLD||文化传信集团有限公司
+hk|0|00346|延长石油国际|YCSYGJ:YCDYGJ:|yanchangshiyouguoji:yanchangdanyouguoji|YANCHANG PETRO||延长石油国际有限公司
+hk|0|00347|鞍钢股份|AGGF:AGGB:|anganggufen:anganggubin|ANGANG STEEL||鞍钢股份有限公司-H股
+hk|0|00348|海尔智能健康|HEZNJK:HEZNJK:|haierzhinengjiankang:haierzhinaijiankang|HAIERHEALTHWISE||海尔智能健康控股有限公司
+hk|0|00350|经纬纺织机械股份|JWFZJXGF:JWFZJXGB:|jingweifangzhijixiegufen:jingweifangzhijixiegubin|JINGWEI TEXTILE||经纬纺织机械股份有限公司-H股
+hk|0|00351|亚洲能源物流|YZNYWL:YZNYWL:|yazhounengyuanwuliu:yazhounaiyuanwuliu|ASIA ENERGY LOG||亚洲能源物流集团有限公司
+hk|0|00352|富阳|FY:|fuyang|FORTUNE SUN||富阳(中国)控股有限公司
+hk|0|00353|能源国际投资|NYGJTZ:NYGJTZ:|nengyuanguojitouzi:naiyuanguojitouzi|ENERGY INTINV||能源国际投资控股有限公司
+hk|0|00354|中国软件国际|ZGRJGJ:|zhongguoruanjianguoji|CHINASOFT INT'L||中软国际有限公司
+hk|0|00355|世纪城市国际|SJCSGJ:|shijichengshiguoji|CENTURY C INT'L||世纪城市国际控股有限公司
+hk|0|00356|鼎立资本|DLZB:|dingliziben|DT CAPITAL||鼎立资本有限公司
+hk|0|00357|海航基础|HHJC:|haihangjichu|HNA INFRA||海航基础股份有限公司-H股
+hk|0|00358|江西铜业股份|JXTYGF:JXTYGB:|jiangxitongyegufen:jiangxitongyegubin|JIANGXI COPPER||江西铜业股份有限公司-H股
+hk|0|00359|海升果汁|HSGZ:|haishengguozhi|HAISHENG JUICE||中国海升果汁控股有限公司
+hk|0|00036|远东控股国际|YDKGGJ:|yuandongkongguguoji|FE HLDGS INTL||远东控股国际有限公司
+hk|0|00360|新焦点|XJD:|xinjiaodian|NEW FOCUS AUTO||新焦点汽车技术控股有限公司
+hk|0|03608|永盛新材料|YSXCL:YCXCL:|yongshengxincailiao:yongchengxincailiao|YONGSHENG MAT||永盛新材料有限公司
+hk|0|00361|顺龙控股|SLKG:|shunlongkonggu|SINO GOLF HOLD||顺龙控股有限公司
+hk|0|03618|重庆农村商业银行|ZQNCSYYX:CQNCSYYX:ZQNCSYYH:CQNCSYYH:|zhongqingnongcunshangyeyinxing:chongqingnongcunshangyeyinxing:zhongqingnongcunshangyeyinhang:chongqi|CQRC BANK||重庆农村商业银行股份有限公司-H股
+hk|0|00362|中国天化工|ZGTHG:|zhongguotianhuagong|C ZENITH CHEM||中国天化工集团有限公司
+hk|0|03623|集成金融|JCJR:|jichengjinrong|C SUCCESS FIN||中国集成金融集团控股有限公司
+hk|0|03628|仁恒实业控股|RHSYKG:|renhengshiyekonggu|RENHENG ENT||仁恒实业控股有限公司
+hk|0|00363|上海实业控股|SHSYKG:|shanghaishiyekonggu|SHANGHAI IND H||上海实业控股有限公司
+hk|0|03633|中裕燃气|ZYRQ:|zhongyuranqi|ZHONGYU GAS||中裕燃气控股有限公司
+hk|0|03636|保利文化|BLWH:|baoliwenhua|POLY CULTURE||保利文化集团股份有限公司-H股
+hk|0|03639|亿达中国|YDZG:|yidazhongguo|YIDA CHINA||亿达中国控股有限公司
+hk|0|00364|坪山茶业|PSCY:|pingshanchaye|PING SHAN TEA||坪山茶业集团有限公司
+hk|0|00365|日东科技|RDKJ:|ridongkeji|SUN EAST TECH||日东科技(控股)有限公司
+hk|0|00366|陆氏集团(越南)|LSJT(YN):LZJT(YN):LSJT(YN):LZJT(YN):|lushijituan(yuenan):luzhijituan(yuenan):lushijituan(yuena):luzhijituan(yuena)|LUKS GROUP (VN)||陆氏集团(越南控股)有限公司
+hk|0|03663|协众国际控股|XZGJKG:|xiezhongguojikonggu|XIEZHONG INTL||协众国际控股有限公司
+hk|0|03666|小南国|XNG:XNG:|xiaonanguo:xiaonaguo|XIAO NAN GUO||小南国餐饮控股有限公司
+hk|0|03668|中铝矿业国际|ZLKYGJ:|zhonglvkuangyeguoji|CHINALCO-CMC||中铝矿业国际
+hk|0|03669|永达汽车|YDQC:|yongdaqiche|YONGDA AUTO||中国永达汽车服务控股有限公司
+hk|0|00367|庄士机构国际|ZSJGGJ:|zhuangshijigouguoji|CHUANG'S INT'L||庄士机构国际有限公司
+hk|0|00368|中外运航运|ZWYHY:|zhongwaiyunhangyun|SINOTRANS SHIP||中外运航运有限公司
+hk|0|03683|荣丰联合控股|RFLHKG:RFLGKG:|rongfenglianhekonggu:rongfengliangekonggu|GREAT HARVEST||荣丰联合控股有限公司
+hk|0|03688|莱蒙国际|LMGJ:|laimengguoji|TOP SPRING||莱蒙国际集团有限公司
+hk|0|00369|永泰地产|YTDC:|yongtaidichan|WING TAI PPT||永泰地产有限公司
+hk|0|03698|徽商银行|HSYX:HSYH:|huishangyinxing:huishangyinhang|HUISHANG BANK||徽商银行股份有限公司-H股
+hk|0|03699|万达商业|WDSY:MDSY:|wandashangye:modashangye|WANDA COMM||大连万达商业地产股份有限公司-H股
+hk|0|00037|远东酒店实业|YDJDSY:|yuandongjiudianshiye|FE HOTELS||远东酒店实业有限公司
+hk|0|00370|国华|GH:|guohua|CHINA BEST||国华集团控股有限公司
+hk|0|03708|日成控股|RCKG:|richengkonggu|YAT SING HLDG||日成控股有限公司
+hk|0|03709|珂莱蒂尔|KLDE:|kelaidier|KORADIOR||珂莱蒂尔控股有限公司
+hk|0|00371|北控水务集团|BKSWJT:|beikongshuiwujituan|BJ ENT WATER||北控水务集团有限公司
+hk|0|00372|德祥企业|DXQY:|dexiangqiye|ITC CORPORATION||德祥企业集团有限公司
+hk|0|00373|联合集团|LHJT:LGJT:|lianhejituan:liangejituan|ALLIED GROUP||联合集团有限公司
+hk|0|00374|四洲集团|SZJT:|sizhoujituan|FOUR SEAS MER||四洲集团有限公司
+hk|0|00376|瑞东集团|RDJT:|ruidongjituan|REORIENT GROUP||瑞东集团有限公司
+hk|0|00377|华君控股|HJKG:|huajunkonggu|HUAJUN HOLD||华君控股有限公司
+hk|0|03777|中国光纤|ZGGX:ZGGQ:|zhongguoguangxian:zhongguoguangqian|C FIBER OPTIC||中国光纤网络系统集团有限公司
+hk|0|03778|中国织材控股|ZGZCKG:|zhongguozhicaikonggu|CHINA WEAVING||中国织材控股有限公司
+hk|0|00378|事安集团|SAJT:|shianjituan|CIAM GROUP||事安集团有限公司
+hk|0|03788|中国罕王|ZGHW:|zhongguohanwang|CHINA HANKING||中国罕王控股有限公司
+hk|0|00379|必美宜|BMY:|bimeiyi|PME||必美宜集团有限公司
+hk|0|00038|第一拖拉机股份|DYTLJGF:DYTLJGB:|diyituolajigufen:diyituolajigubin|FIRST TRACTOR||第一拖拉机股份有限公司-H股
+hk|0|00380|中国管业|ZGGY:|zhongguoguanye|CHINA PIPE||中国管业集团有限公司
+hk|0|03800|保利协鑫能源|BLXXNY:BLXXNY:|baolixiexinnengyuan:baolixiexinnaiyuan|GCL-POLY ENERGY||保利协鑫能源控股有限公司
+hk|0|03808|中国重汽|ZGZQ:ZGCQ:|zhongguozhongqi:zhongguochongqi|SINOTRUK||中国重汽(香港)有限公司
+hk|0|00381|桥雄国际|QXGJ:|qiaoxiongguoji|KIU HUNG INT'L||侨雄国际控股有限公司
+hk|0|03813|宝胜国际|BSGJ:|baoshengguoji|POU SHENG INT'L||宝胜国际(控股)有限公司
+hk|0|03816|KFM金德|KFMJD:|KFMjinde|KFM KINGDOM||KFM金德控股有限公司
+hk|0|03818|中国动向|ZGDX:|zhongguodongxiang|CHINA DONGXIANG||中国动向(集团)有限公司
+hk|0|00382|威灵控股|WLKG:|weilingkonggu|WELLING HOLDING||威灵控股有限公司
+hk|0|03822|三和建筑集团|SHJZJT:SHJZJT:SHJZJT:|sanhejianzhujituan:sanhuojianzhujituan:sanhujianzhujituan|SAM WOO CONS||三和建筑集团有限公司
+hk|0|03823|德普科技|DPKJ:|depukeji|TECH PRO||德普科技发展有限公司
+hk|0|03828|明辉国际|MHGJ:|minghuiguoji|MING FAI INT'L||明辉国际控股有限公司
+hk|0|00383|中国网络资本|ZGWLZB:ZGWLZB:|zhongguowangluoziben:zhongguowanglaoziben|COL CAPITAL||中国网络资本有限公司
+hk|0|03833|新疆新鑫矿业|XJXXKY:XQXXKY:|xinjiangxinxinkuangye:xinqiangxinxinkuangye|XINXIN MINING||新疆新鑫矿业股份有限公司-H股
+hk|0|03838|中国淀粉|ZGDF:|zhongguodianfen|CHINA STARCH||中国淀粉控股有限公司
+hk|0|00384|中国燃气|ZGRQ:|zhongguoranqi|CHINA GAS HOLD||中国燃气控股有限公司
+hk|0|00385|建联集团|JLJT:|jianlianjituan|CHINNEY ALLI||建联集团有限公司
+hk|0|00386|中国石油化工股份|ZGSYHGGF:ZGDYHGGF:ZGSYHGGB:ZGDYHGGB:|zhongguoshiyouhuagonggufen:zhongguodanyouhuagonggufen:zhongguoshiyouhuagonggubin:zhongguodanyouhuago|SINOPEC CORP||中国石油化工股份有限公司-H股
+hk|0|03868|群星纸业|QXZY:|qunxingzhiye|QX PAPER||群星纸业控股有限公司
+hk|0|00387|力丰(集团)|LF(JT):|lifeng(jituan)|LEEPORT(HOLD)||力丰(集团)有限公司
+hk|0|00388|香港交易所|XGJYS:XJJYS:|xianggangjiaoyisuo:xiangjiangjiaoyisuo|HKEX||香港交易及结算所有限公司
+hk|0|03883|中国奥园|ZGAY:ZGYY:|zhongguoaoyuan:zhongguoyuyuan|CHINA AOYUAN||中国奥园地产集团股份有限公司
+hk|0|03886|康健国际医疗|KJGJYL:|kangjianguojiyiliao|TOWN HEALTH||康健国际医疗集团有限公司
+hk|0|03888|金山软件|JSRJ:|jinshanruanjian|KINGSOFT||金山软件有限公司
+hk|0|03889|大成糖业|DCTY:DCTY:TCTY:|dachengtangye:daichengtangye:taichengtangye|GLOBAL SWEET||大成糖业控股有限公司
+hk|0|00389|通天酒业|TTJY:|tongtianjiuye|TONTINE WINES||中国通天酒业集团有限公司
+hk|0|03898|南车时代电气|NCSDDQ:NCSDDQ:|nancheshidaidianqi:nacheshidaidianqi|CSR TIMES ELEC||株洲南车时代电气股份有限公司-H股
+hk|0|03899|中集安瑞科|ZJARK:|zhongjianruike|CIMC ENRIC||中集安瑞科控股有限公司
+hk|0|00390|中国中铁|ZGZT:|zhongguozhongtie|CHINA RAILWAY||中国中铁股份有限公司-H股
+hk|0|03900|绿城中国|LCZG:LCZG:|lvchengzhongguo:luchengzhongguo|GREENTOWN CHINA||绿城中国控股有限公司
+hk|0|03903|瀚华金控|HHJK:|hanhuajinkong|HANHUA FIN||瀚华金控股份有限公司-H股
+hk|0|00391|美亚娱乐资讯|MYYLZX:MYYYZX:|meiyayulezixun:meiyayuyuezixun|MEI AH ENTER||美亚娱乐资讯集团有限公司
+hk|0|03918|金界控股|JJKG:|jinjiekonggu|NAGACORP||金界控股有限公司
+hk|0|00392|北京控股|BJKG:|beijingkonggu|BEIJING ENT||北京控股有限公司
+hk|0|00393|旭日企业|XRQY:|xuriqiye|GLORIOUS SUN||旭日企业有限公司
+hk|0|03933|联邦制药|LBZY:|lianbangzhiyao|UNITED LAB||联邦制药国际控股有限公司
+hk|0|03939|万国国际矿业|WGGJKY:MGGJKY:|wanguoguojikuangye:moguoguojikuangye|WANGUO MINING||万国国际矿业集团有限公司
+hk|0|03948|伊泰煤炭|YTMT:|yitaimeitan|YITAI COAL||内蒙古伊泰煤炭股份有限公司-H股
+hk|0|00395|中国智能集团|ZGZNJT:ZGZNJT:|zhongguozhinengjituan:zhongguozhinaijituan|SMARTAC GP CH||中国智能集团控股有限公司
+hk|0|00396|兴利(香港)控股|XL(XG)KG:XL(XJ)KG:|xingli(xianggang)konggu:xingli(xiangjiang)konggu|HING LEE (HK)||兴利(香港)控股有限公司
+hk|0|03968|招商银行|ZSYX:ZSYH:|zhaoshangyinxing:zhaoshangyinhang|CM BANK||招商银行股份有限公司-H股
+hk|0|00397|君阳太阳能|JYTYN:JYTYN:|junyangtaiyangneng:junyangtaiyangnai|JUNYANG SOLAR||君阳太阳能电力投资有限公司
+hk|0|00398|东方表行集团|DFBXJT:DFBHJT:|dongfangbiaoxingjituan:dongfangbiaohangjituan|ORIENTAL WATCH||东方表行集团有限公司
+hk|0|03983|中海石油化学|ZHSYHX:ZHDYHX:|zhonghaishiyouhuaxue:zhonghaidanyouhuaxue|CHINA BLUECHEM||中海石油化学股份有限公司-H股
+hk|0|03988|中国银行|ZGYX:ZGYH:|zhongguoyinxing:zhongguoyinhang|BANK OF CHINA||中国银行股份有限公司-H股
+hk|0|03989|首创环境|SCHJ:|shouchuanghuanjing|CAPITAL ENV||首创环境控股有限公司
+hk|0|00399|联合基因集团|LHJYJT:LGJYJT:|lianhejiyinjituan:liangejiyinjituan|UNITED GENE GP||联合基因科技集团有限公司
+hk|0|03993|洛阳钼业|LYMY:|luoyangmuye|CMOC||洛阳栾川钼业集团股份有限公司-H股
+hk|0|03998|波司登|BSD:|bosideng|BOSIDENG||波司登国际控股有限公司
+hk|0|03999|大成食品|DCSP:DCSP:TCSP:DCSP:DCSP:TCSP:DCYP:DCYP:TCYP:|dachengshipin:daichengshipin:taichengshipin:dachengsipin:daichengsipin:taichengsipin:dachengyipin:da|DACHAN FOOD||大成食品(亚洲)有限公司
+hk|0|00004|九龙仓集团|JLCJT:|jiulongcangjituan|WHARF HOLDINGS||九龙仓集团有限公司
+hk|0|00040|金山工业|JSGY:|jinshangongye|GOLD PEAK||金山工业(集团)有限公司
+hk|0|00400|科通芯城|KTXC:|ketongxincheng|COGOBUY||科通芯城集团
+hk|0|00401|万嘉集团|WJJT:MJJT:|wanjiajituan:mojiajituan|WANJIA GROUP||万嘉集团控股有限公司
+hk|0|00403|星光集团|XGJT:|xingguangjituan|STARLITE HOLD||星光集团有限公司
+hk|0|00404|新昌营造|XCYZ:|xinchangyingzao|HSIN CHONG CONS||新昌营造集团有限公司
+hk|0|00406|有利集团|YLJT:|youlijituan|YAU LEE HOLD||有利集团有限公司
+hk|0|00408|叶氏化工集团|YSHGJT:XSHGJT:YZHGJT:XZHGJT:|yeshihuagongjituan:xieshihuagongjituan:yezhihuagongjituan:xiezhihuagongjituan|YIP'S CHEMICAL||叶氏化工集团有限公司
+hk|0|00041|鹰君|YJ:|yingjun|GREAT EAGLE H||鹰君集团有限公司
+hk|0|00410|SOHO中国|SOHOZG:|SOHOzhongguo|SOHO CHINA||SOHO中国有限公司
+hk|0|00411|南顺(香港)|NS(XG):NS(XG):NS(XJ):NS(XJ):|nanshun(xianggang):nashun(xianggang):nanshun(xiangjiang):nashun(xiangjiang)|LAM SOON (HK)||南顺(香港)有限公司
+hk|0|00412|汉基控股|HJKG:|hanjikonggu|HERITAGE INT'L||汉基控股有限公司
+hk|0|00413|南华中国|NHZG:NHZG:|nanhuazhongguo:nahuazhongguo|SOUTH CHINA CHI||南华(中国)有限公司
+hk|0|00417|谢瑞麟|XRL:|xieruilin|TSE SUI LUEN||谢瑞麟珠宝(国际)有限公司
+hk|0|00418|方正控股|FZKG:|fangzhengkonggu|FOUNDER HOLD||方正控股有限公司
+hk|0|00419|中国9号健康|ZG9HJK:|zhongguo9haojiankang|JIUHAO HEALTH||中国9号健康产业有限公司
+hk|0|00042|东北电气|DBDQ:|dongbeidianqi|NE ELECTRIC||东北电气发展股份有限公司-H股
+hk|0|00420|福田实业|FTSY:|futianshiye|FOUNTAIN SET||福田实业(集团)有限公司
+hk|0|00422|越南制造加工出口|YNZZJGCK:YNZZJGCK:|yuenanzhizaojiagongchukou:yuenazhizaojiagongchukou|VMEP HOLDINGS||越南制造加工出口(控股)有限公司
+hk|0|00423|经济日报集团|JJRBJT:|jingjiribaojituan|HKET HOLDINGS||香港经济日报集团有限公司
+hk|0|00425|敏实集团|MSJT:|minshijituan|MINTH GROUP||敏实集团有限公司
+hk|0|00426|万华媒体|WHMT:MHMT:WHMB:MHMB:|wanhuameiti:mohuameiti:wanhuameiben:mohuameiben|ONE MEDIA GROUP||万华媒体集团有限公司
+hk|0|00428|亨亚|HY:PY:|hengya:pengya|HARMONY ASSET||亨亚有限公司
+hk|0|00043|卜蜂国际|BFGJ:BFGJ:|bufengguoji:bofengguoji|C.P. POKPHAND||卜蜂国际有限公司
+hk|0|00430|东方网库|DFWK:|dongfangwangku|ORIENTAL EXPL||东方网库控股有限公司
+hk|0|00431|大中华实业|DZHSY:DZHSY:TZHSY:|dazhonghuashiye:daizhonghuashiye:taizhonghuashiye|G CHINA HOLD||大中华实业控股有限公司
+hk|0|00432|盈大地产|YDDC:YDDC:YTDC:|yingdadichan:yingdaidichan:yingtaidichan|PCPD||盈科大衍地产发展有限公司
+hk|0|00433|北方矿业|BFKY:|beifangkuangye|NORTH MINING||北方矿业股份有限公司
+hk|0|04331|戴尔-T|DE-T:|daier-T|DELL-T||戴尔
+hk|0|04332|AMGEN-T|AMGEN-T:|AMGEN-T|AMGEN-T||AmgenInc.
+hk|0|04333|思科-T|SK-T:SK-T:|sike-T:saike-T|CISCO-T||思科
+hk|0|04335|英特尔-T|YTE-T:|yingteer-T|INTEL-T||英特尔
+hk|0|04336|应用材料-T|YYCL-T:|yingyongcailiao-T|APPL MATERIAL-T||应用材料
+hk|0|00434|博雅互动|BYHD:|boyahudong|BOYAA||博雅互动国际有限公司
+hk|0|00438|彩虹电子|CHDZ:|caihongdianzi|IRICO||彩虹集团电子股份有限公司-H股
+hk|0|00439|光启科学|GQKX:|guangqikexue|KUANGCHI||光启科学有限公司
+hk|0|00044|香港飞机工程|XGFJGC:XJFJGC:|xianggangfeijigongcheng:xiangjiangfeijigongcheng|HAECO||香港飞机工程有限公司
+hk|0|00440|大新金融|DXJR:DXJR:TXJR:|daxinjinrong:daixinjinrong:taixinjinrong|DAH SING||大新金融集团有限公司
+hk|0|00445|中国消防|ZGXF:|zhongguoxiaofang|CHINA FIRE||中国消防企业集团有限公司
+hk|0|00449|志高控股|ZGKG:|zhigaokonggu|CHIGO HOLDING||志高控股有限公司
+hk|0|00045|大酒店|DJD:DJD:TJD:|dajiudian:daijiudian:taijiudian|HK&S HOTELS||香港上海大酒店有限公司
+hk|0|00450|鸿兴印刷集团|HXYSJT:|hongxingyinshuajituan|HUNG HING PRINT||鸿兴印刷集团有限公司
+hk|0|00451|协鑫新能源|XXXNY:XXXNY:|xiexinxinnengyuan:xiexinxinnaiyuan|GCL NEWENERGY||协鑫新能源控股有限公司
+hk|0|00455|天大药业|TDYY:TDYY:TTYY:|tiandayaoye:tiandaiyaoye:tiantaiyaoye|TIANDA PHARMA||天大药业有限公司
+hk|0|00456|新城市建设发展|XCSJSFZ:|xinchengshijianshefazhan|NEW CITY DEV||新城市建设发展集团有限公司
+hk|0|00458|联亚集团|LYJT:|lianyajituan|TRISTATE HOLD||TristateHoldingsLtd.
+hk|0|00459|美联工商铺|MLGSP:|meiliangongshangpu|MIDLAND IC&I||美联工商铺有限公司
+hk|0|00046|科联系统|KLXT:KLJT:|kelianxitong:kelianjitong|COMPUTER & TECH||科联系统集团有限公司
+hk|0|00460|四环医药|SHYY:|sihuanyiyao|SIHUAN PHARM||四环医药控股集团有限公司
+hk|0|04601|BOC 2014 PREF|BOC2014PREF:|BOC2014PREF|||
+hk|0|04603|ICBC USDPREF1|ICBCUSDPREF1:|ICBCUSDPREF1|||
+hk|0|04604|ICBC EURPREF1|ICBCEURPREF1:|ICBCEURPREF1|||
+hk|0|00462|天然乳品|TRRP:|tianranrupin|NATURAL DAIRY||天然乳品(新西兰)控股有限公司
+hk|0|00464|建福集团|JFJT:|jianfujituan|KENFORD GROUP||建福集团控股有限公司
+hk|0|00465|富通科技|FTKJ:|futongkeji|FUTONG TECH||富通科技发展控股有限公司
+hk|0|00467|联合能源集团|LHNYJT:LGNYJT:LHNYJT:LGNYJT:|lianhenengyuanjituan:liangenengyuanjituan:lianhenaiyuanjituan:liangenaiyuanjituan|UNITEDENERGY GP||联合能源集团有限公司
+hk|0|00468|纷美包装|FMBZ:|fenmeibaozhuang|GAPACK||纷美包装有限公司
+hk|0|00469|凯普松国际|KPSGJ:|kaipusongguoji|CAPXON INT'L||凯普松国际电子有限公司
+hk|0|00047|合兴集团|HXJT:GXJT:|hexingjituan:gexingjituan|HOP HING GROUP||合兴集团控股有限公司
+hk|0|00471|中播控股|ZBKG:|zhongbokonggu|CMMB VISION||中国移动多媒体广播控股有限公司
+hk|0|00472|金六福投资|JLFTZ:JLFTZ:|jinliufutouzi:jinlufutouzi|JLF INVESTMENT||金六福投资有限公司
+hk|0|00474|昊天发展集团|HTFZJT:|haotianfazhanjituan|HAO TIAN DEV||昊天发展集团有限公司
+hk|0|00475|中发展控股|ZFZKG:|zhongfazhankonggu|ZHONG FA ZHAN||中发展控股有限公司
+hk|0|00476|中国动力控股|ZGDLKG:|zhongguodonglikonggu|CH DYNAMICS||中国动力(控股)有限公司
+hk|0|00477|奥普集团控股|APJTKG:YPJTKG:|aopujituankonggu:yupujituankonggu|AUPU GROUP HLDG||奥普集团控股有限公司
+hk|0|00479|华建控股|HJKG:|huajiankonggu|CIL HOLDINGS||华建控股有限公司
+hk|0|00048|中国汽车内饰|ZGQCNS:ZGQCNS:|zhongguoqicheneishi:zhongguoqichenashi|C AUTO INT DECO||中国汽车内饰集团有限公司
+hk|0|00480|香港兴业国际|XGXYGJ:XJXYGJ:|xianggangxingyeguoji:xiangjiangxingyeguoji|HKR INT'L||香港兴业国际集团有限公司
+hk|0|00482|圣马丁国际|SMDGJ:SMZGJ:|shengmadingguoji:shengmazhengguoji|SANDMARTIN INTL||圣马丁国际控股有限公司
+hk|0|00483|包浩斯国际|BHSGJ:|baohaosiguoji|BAUHAUS INT'L||包浩斯国际(控股)有限公司
+hk|0|00484|云游控股|YYKG:|yunyoukonggu|FORGAME||云游控股有限公司
+hk|0|00485|实华发展|SHFZ:|shihuafazhan|SHIHUA DEV||实华发展有限公司
+hk|0|00486|RUSAL|RUSAL:|RUSAL|RUSAL||UnitedCompanyRUSALPlc
+hk|0|00487|实德环球|SDHQ:|shidehuanqiu|SUCCESSUNIVERSE||实德环球有限公司
+hk|0|00488|丽新发展|LXFZ:|lixinfazhan|LAI SUN DEV||丽新发展有限公司
+hk|0|00489|东风集团股份|DFJTGF:DFJTGB:|dongfengjituangufen:dongfengjituangubin|DONGFENG GROUP||东风汽车集团股份有限公司-H股
+hk|0|00491|汉传媒|HCM:HZM:|hanchuanmei:hanzhuanmei|SEE CORPORATION||汉传媒集团有限公司
+hk|0|00493|国美电器|GMDQ:|guomeidianqi|GOME||国美电器控股有限公司
+hk|0|00494|利丰|LF:|lifeng|LI & FUNG||利丰有限公司
+hk|0|00495|PALADIN|PALADIN:|PALADIN|PALADIN||百利大有限公司
+hk|0|00496|卡森国际|QSGJ:KSGJ:|qiasenguoji:kasenguoji|KASEN||卡森国际控股有限公司
+hk|0|00497|资本策略地产|ZBCLDC:|zibencel<edichan|CSI PROPERTIES||资本策略地产有限公司
+hk|0|00498|保华集团|BHJT:|baohuajituan|PYI CORP||保华集团有限公司
+hk|0|00499|青岛控股|QDKG:|qingdaokonggu|QINGDAO HLDGS||青岛控股国际有限公司
+hk|0|00005|汇丰控股|HFKG:|huifengkonggu|HSBC HOLDINGS||汇丰控股有限公司
+hk|0|00050|香港小轮(集团)|XGXL(JT):XJXL(JT):|xianggangxiaolun(jituan):xiangjiangxiaolun(jituan)|HK FERRY (HOLD)||香港小轮(集团)有限公司
+hk|0|00500|现丰服务集团|XFFWJT:|xianfengfuwujituan|FRONTIER SER||先丰服务集团有限公司
+hk|0|00503|朗生医药|LSYY:|langshengyiyao|LANSEN PHARMA||朗生医药控股有限公司
+hk|0|00505|兴业铜业|XYTY:|xingyetongye|XINGYE COPPER||兴业铜业国际集团有限公司
+hk|0|00506|中国食品|ZGSP:ZGSP:ZGYP:|zhongguoshipin:zhongguosipin:zhongguoyipin|CHINA FOODS||中国食品有限公司
+hk|0|00508|鼎亿集团投资|DYJTTZ:|dingyijituantouzi|DINGYI GP INV||鼎亿集团投资有限公司
+hk|0|00509|世纪阳光|SJYG:|shijiyangguang|SUNSHINE||世纪阳光集团控股有限公司
+hk|0|00051|海港企业|HGQY:HJQY:|haigangqiye:haijiangqiye|HARBOUR CENTRE||海港企业有限公司
+hk|0|00510|时富金融服务集团|SFJRFWJT:|shifujinrongfuwujituan|CASH FIN SER GP||时富金融服务集团有限公司
+hk|0|00511|电视广播|DSGB:DSAB:|dianshiguangbo:dianshianbo|TVB||电视广播有限公司
+hk|0|00512|远大医药|YDYY:YDYY:YTYY:|yuandayiyao:yuandaiyiyao:yuantaiyiyao|CHINAGRANDPHARM||远大医药健康控股有限公司
+hk|0|00513|恒和集团|HHJT:HHJT:HHJT:|henghejituan:henghuojituan:henghujituan|CONTINENTAL H||恒和珠宝集团有限公司
+hk|0|00515|达进东方照明|DJDFZM:|dajindongfangzhaoming|TC ORI LIGHT||达进东方照明控股有限公司
+hk|0|00517|中远国际控股|ZYGJKG:|zhongyuanguojikonggu|COSCO INTL HOLD||中远国际控股有限公司
+hk|0|00518|同得仕(集团)|TDS(JT):TDS(JT):|tongdeshi(jituan):tongdeishi(jituan)|TUNGTEX (HOLD)||同得仕(集团)有限公司
+hk|0|00519|实力建业|SLJY:|shilijianye|APPLIED DEV||实力建业集团有限公司
+hk|0|00520|呷哺呷哺|XBXB:|xiabuxiabu|XIABUXIABU||呷哺呷哺餐饮管理(中国)控股有限公司
+hk|0|00525|广深铁路股份|GSTLGF:ASTLGF:GSTLGB:ASTLGB:|guangshentielugufen:anshentielugufen:guangshentielugubin:anshentielugubin|GUANGSHEN RAIL||广深铁路股份有限公司-H股
+hk|0|00526|利时集团控股|LSJTKG:|lishijituankonggu|LISI GP HOLD||利时集团(控股)有限公司
+hk|0|00527|瑞风新能源|RFXNY:RFXNY:|ruifengxinnengyuan:ruifengxinnaiyuan|RUIFENG RENEW||中国瑞风新能源控股有限公司
+hk|0|00528|金达控股|JDKG:|jindakonggu|KINGDOM HOLDING||金达控股有限公司
+hk|0|00053|国浩集团|GHJT:|guohaojituan|GUOCO GROUP||国浩集团有限公司
+hk|0|00531|顺诚|SC:|shuncheng|SAMSON HOLDING||顺诚控股有限公司
+hk|0|00533|金利来集团|JLLJT:|jinlilaijituan|GOLDLION HOLD||金利来集团有限公司
+hk|0|00535|金地商置|JDSZ:|jindishangzhi|GEMDALE PPT||金地商置集团有限公司
+hk|0|00536|贸易通|MYT:|maoyitong|TRADELINK||贸易通电子贸易有限公司
+hk|0|00538|味千(中国)|WQ(ZG):|weiqian(zhongguo)|AJISEN (CHINA)||味千(中国)控股有限公司
+hk|0|00539|冠华国际控股|GHGJKG:|guanhuaguojikonggu|VICTORY CITY||冠华国际控股有限公司
+hk|0|00054|合和实业|HHSY:GHSY:HHSY:GHSY:HHSY:GHSY:|heheshiye:geheshiye:hehuoshiye:gehuoshiye:hehushiye:gehushiye|HOPEWELL HOLD||合和实业有限公司
+hk|0|00540|迅捷环球控股|XJHQKG:|xunjiehuanqiukonggu|SPEEDY GLOBAL||迅捷环球控股有限公司
+hk|0|00542|新岭域集团|XLYJT:|xinlingyujituan|CENERIC||新岭域(集团)有限公司
+hk|0|00543|太平洋网络|TPYWL:TPYWL:|taipingyangwangluo:taipingyangwanglao|PACIFIC ONLINE||太平洋网络
+hk|0|00544|大同集团|DTJT:DTJT:TTJT:|datongjituan:daitongjituan:taitongjituan|DAIDO GROUP||大同集团有限公司
+hk|0|00546|阜丰集团|FFJT:|fufengjituan|FUFENG GROUP||阜丰集团有限公司
+hk|0|00547|数字王国|SZWG:SZWG:|shuziwangguo:shuoziwangguo|DIGITAL DOMAIN||数字王国集团有限公司
+hk|0|00548|深圳高速公路股份|SZGSGLGF:SZGSGLGB:|shenzhengaosugonglugufen:shenzhengaosugonglugubin|SHENZHENEXPRESS||深圳高速公路股份有限公司-H股
+hk|0|00549|奇峰化纤|QFHX:JFHX:QFHQ:JFHQ:|qifenghuaxian:jifenghuaxian:qifenghuaqian:jifenghuaqian|QIFENG FIBER||吉林奇峰化纤股份有限公司-H股
+hk|0|00055|中星集团控股|ZXJTKG:|zhongxingjituankonggu|NEWAY GROUP||中星集团控股有限公司
+hk|0|00550|先传媒|XCM:XZM:|xianchuanmei:xianzhuanmei|CINMEDIA||先传媒集团有限公司
+hk|0|00551|裕元集团|YYJT:|yuyuanjituan|YUE YUEN IND||裕元工业(集团)有限公司
+hk|0|00552|中国通信服务|ZGTXFW:ZGTSFW:|zhongguotongxinfuwu:zhongguotongshenfuwu|CHINACOMSERVICE||中国通信服务股份有限公司-H股
+hk|0|00553|南京熊猫电子股份|NJXMDZGF:NJXMDZGF:NJXMDZGB:NJXMDZGB:|nanjingxiongmaodianzigufen:najingxiongmaodianzigufen:nanjingxiongmaodianzigubin:najingxiongmaodianzi|NANJING PANDA||南京熊猫电子股份有限公司-H股
+hk|0|00554|汉思能源|HSNY:HSNY:HSNY:HSNY:|hansinengyuan:hansainengyuan:hansinaiyuan:hansainaiyuan|HANS ENERGY||汉思能源有限公司
+hk|0|00555|御泰中彩控股|YTZCKG:|yutaizhongcaikonggu|REXLOT HOLDINGS||御泰中彩控股有限公司
+hk|0|00556|泛亚环保|FYHB:|fanyahuanbao|PAN ASIA ENVIRO||泛亚环保集团有限公司
+hk|0|00558|力劲科技|LJKJ:LJKJ:|lijinkeji:lijingkeji|LK TECH||力劲科技集团有限公司
+hk|0|00559|国藏集团|GCJT:GZJT:|guocangjituan:guozangjituan|GUOCANG GROUP||国藏集团有限公司
+hk|0|00056|联合地产(香港)|LHDC(XG):LGDC(XG):LHDC(XJ):LGDC(XJ):|lianhedichan(xianggang):liangedichan(xianggang):lianhedichan(xiangjiang):liangedichan(xiangjiang)|ALLIED PPT (HK)||联合地产(香港)有限公司
+hk|0|00560|珠江船务|ZJCW:|zhujiangchuanwu|CHU KONG SHIP||珠江船务企业(股份)有限公司
+hk|0|00563|上实城市开发|SSCSKF:|shangshichengshikaifa|SH IND URBAN||上海实业城市开发集团有限公司
+hk|0|00564|郑煤机|ZMJ:|zhengmeiji|ZMJ||郑州煤矿机械集团股份有限公司-H股
+hk|0|00565|锦艺纺织|JYFZ:|jinyifangzhi|ART TEXTILE||锦艺纺织科技国际有限公司
+hk|0|00566|汉能薄膜发电|HNBMFD:HNBMFD:HNBMFD:HNBMFD:|hannengbaomofadian:hannaibaomofadian:hannengbomofadian:hannaibomofadian|HANERGY TFP||汉能薄膜发电集团有限公司
+hk|0|00567|大昌微线集团|DCWXJT:DCWXJT:TCWXJT:|dachangweixianjituan:daichangweixianjituan:taichangweixianjituan|DAISHOMICROLINE||大昌微线集团有限公司
+hk|0|00568|山东墨龙|SDML:|shandongmolong|SHANDONG MOLONG||山东墨龙石油机械股份有限公司-H股
+hk|0|00569|中国自动化|ZGZDH:|zhongguozidonghua|CH AUTOMATION||中国自动化集团有限公司
+hk|0|00057|震雄集团|ZXJT:|zhenxiongjituan|CHEN HSONG HOLD||震雄集团有限公司
+hk|0|00570|中国中药|ZGZY:|zhongguozhongyao|TRAD CHI MED||中国中药有限公司
+hk|0|00571|丰德丽控股|FDLKG:|fengdelikonggu|ESUN HOLDINGS||丰德丽控股有限公司
+hk|0|00572|中国富佑集团|ZGFYJT:|zhongguofuyoujituan|CH FOR YOU GP||中国富佑集团有限公司
+hk|0|00573|稻香控股|DXKG:|daoxiangkonggu|TAO HEUNG HLDGS||稻香控股有限公司
+hk|0|00575|励晶太平洋|LJTPY:|lijingtaipingyang|REGENT PACIFIC||励晶太平洋集团有限公司
+hk|0|00576|浙江沪杭甬|ZJHHY:|zhejianghuhangyong|ZHEJIANGEXPRESS||浙江沪杭甬高速公路股份有限公司-H股
+hk|0|00577|路易十三|LYSS:|luyishisan|LOUIS XIII H||路易十三集团有限公司
+hk|0|00578|融信资源|RXZY:RSZY:|rongxinziyuan:rongshenziyuan|ROSAN RES||融信资源控股有限公司
+hk|0|00579|京能清洁能源|JNQJNY:JNQJNY:JNQJNY:JNQJNY:|jingnengqingjienengyuan:jingnaiqingjienengyuan:jingnengqingjienaiyuan:jingnaiqingjienaiyuan|JNCEC||北京京能清洁能源电力股份有限公司-H股
+hk|0|00058|新威国际|XWGJ:|xinweiguoji|SUNWAY INT'L||新威国际控股有限公司
+hk|0|00580|赛晶电力电子|SJDLDZ:|saijingdianlidianzi|SUN.KING ELEC||赛晶电力电子集团有限公司
+hk|0|00581|中国东方集团|ZGDFJT:|zhongguodongfangjituan|CHINA ORIENTAL||中国东方集团控股有限公司
+hk|0|00582|蓝鼎国际|LDGJ:|landingguoji|LANDING INTL||蓝鼎国际发展有限公司
+hk|0|00583|南华早报集团|NHZBJT:NHZBJT:|nanhuazaobaojituan:nahuazaobaojituan|SCMP GROUP||南华早报集团有限公司
+hk|0|00585|意马国际|YMGJ:|yimaguoji|IMAGI INT'L||意马国际控股有限公司
+hk|0|00586|海螺创业|HLCY:|hailuochuangye|CONCH VENTURE||中国海螺创业控股有限公司
+hk|0|00587|华瀚生物制药|HHSWZY:|huahanshengwuzhiyao|HUA HAN||华瀚生物制药控股有限公司
+hk|0|00588|北京北辰实业股份|BJBCSYGF:BJBCSYGB:|beijingbeichenshiyegufen:beijingbeichenshiyegubin|BEIJING N STAR||北京北辰实业股份有限公司-H股
+hk|0|00589|宝姿|BZ:|baozi|PORTS||宝姿时装有限公司
+hk|0|00059|天誉置业|TYZY:|tianyuzhiye|SKYFAME REALTY||天誉置业(控股)有限公司
+hk|0|00590|六福集团|LFJT:LFJT:|liufujituan:lufujituan|LUK FOOK HOLD||六福集团(国际)有限公司
+hk|0|00591|中国高精密|ZGGJM:|zhongguogaojingmi|C HIGHPRECISION||中国高精密自动化集团有限公司
+hk|0|00593|天洋国际控股|TYGJKG:|tianyangguojikonggu|SKYOCEAN INTL||天洋国际控股有限公司
+hk|0|00596|浪潮国际|LCGJ:|langchaoguoji|INSPUR INT'L||浪潮国际有限公司
+hk|0|00598|中国外运|ZGWY:|zhongguowaiyun|SINOTRANS||中国外运股份有限公司-H股
+hk|0|00599|怡邦行控股|YBXKG:YBHKG:|yibangxingkonggu:yibanghangkonggu|E. BON HOLDINGS||怡邦行控股有限公司
+hk|0|00006|电能实业|DNSY:DNSY:|diannengshiye:diannaishiye|POWER ASSETS||电能实业有限公司
+hk|0|00060|香港食品投资|XGSPTZ:XJSPTZ:XGSPTZ:XJSPTZ:XGYPTZ:XJYPTZ:|xianggangshipintouzi:xiangjiangshipintouzi:xianggangsipintouzi:xiangjiangsipintouzi:xianggangyipinto|HK FOOD INV||香港食品投资控股有限公司
+hk|0|00600|中国基建投资|ZGJJTZ:|zhongguojijiantouzi|CHINA INFRA INV||中国基建投资有限公司
+hk|0|00601|权智(国际)|QZ(GJ):|quanzhi(guoji)|GROUP SENSE||权智(国际)有限公司
+hk|0|00602|佳华百货控股|JHBHKG:|jiahuabaihuokonggu|JIAHUA STORES H||佳华百货控股有限公司
+hk|0|00603|中油燃气|ZYRQ:|zhongyouranqi|CHINA OIL & GAS||中油燃气集团有限公司
+hk|0|06030|中信证券|ZXZQ:ZSZQ:ZXZX:ZSZX:|zhongxinzhengquan:zhongshenzhengquan:zhongxinzhengxuan:zhongshenzhengxuan|CITIC SEC||中信证券股份有限公司-H股
+hk|0|00604|深圳控股|SZKG:|shenzhenkonggu|SHENZHEN INVEST||深圳控股有限公司
+hk|0|00605|中国金融投资管理|ZGJRTZGL:|zhongguojinrongtouziguanli|C FIN SERVICES||中国金融投资管理有限公司
+hk|0|00606|中国粮油控股|ZGLYKG:|zhongguoliangyoukonggu|CHINA AGRI||中国粮油控股有限公司
+hk|0|00607|丰盛控股|FSKG:FCKG:|fengshengkonggu:fengchengkonggu|FULLSHARE||丰盛控股有限公司
+hk|0|00608|达利国际|DLGJ:|daliguoji|HIGH FASHION||达利国际集团有限公司
+hk|0|00609|天德化工|TDHG:|tiandehuagong|TIANDE CHEMICAL||天德化工控股有限公司
+hk|0|00061|北亚资源|BYZY:|beiyaziyuan|NORTH ASIA RES||北亚资源控股有限公司
+hk|0|00611|中核工业二三国际|ZHGYESGJ:ZHGYESGJ:|zhonghegongyeersanguoji:zhonghugongyeersanguoji|CNI 23 INT'L||中国核工业二三国际有限公司
+hk|0|06116|拉夏贝尔|LXBE:|laxiabeier|LA CHAPELLE||上海拉夏贝尔服饰股份有限公司-H股
+hk|0|06118|奥星生命科技|AXSMKJ:YXSMKJ:|aoxingshengmingkeji:yuxingshengmingkeji|AUSTAR||奥星生命科技有限公司
+hk|0|00612|中国投资基金公司|ZGTZJJGS:|zhongguotouzijijingongsi|CHINA INV FUND||中国投资基金有限公司
+hk|0|06123|先达国际物流|XDGJWL:|xiandaguojiwuliu|ON TIME LOG||先达国际物流控股有限公司
+hk|0|06128|泛亚国际|FYGJ:|fanyaguoji|EARTHASIA||泛亚环境国际控股有限公司
+hk|0|06136|康达环保|KDHB:|kangdahuanbao|KANGDA ENV||康达国际环保有限公司
+hk|0|06138|哈尔滨银行|HEBYX:HEBYH:|haerbinyinxing:haerbinyinhang|HARBIN BANK||哈尔滨银行股份有限公司-H股
+hk|0|06139|金茂投资-SS|JMTZ-SS:|jinmaotouzi-SS|JINMAO INV-SS||金茂投资与金茂(中国)投资控股有限公司-SS
+hk|0|06161|泰加保险|TJBX:|taijiabaoxian|TARGET INS||泰加保险(控股)有限公司
+hk|0|06166|中国宏泰发展|ZGHTFZ:|zhongguohongtaifazhan|CHINA VAST||中国宏泰产业市镇发展有限公司
+hk|0|06168|中国优通|ZGYT:|zhongguoyoutong|CHINA U-TON||中国优通控股有限公司
+hk|0|00617|百利保控股|BLBKG:|bailibaokonggu|PALIBURG HOLD||百利保控股有限公司
+hk|0|00618|北大资源|BDZY:BDZY:BTZY:|beidaziyuan:beidaiziyuan:beitaiziyuan|PKU RESOURCES||北大资源(控股)有限公司
+hk|0|06188|迪信通|DXT:DST:|dixintong:dishentong|BJ DIGITAL||北京迪信通商贸股份有限公司-H股
+hk|0|00619|南华金融|NHJR:NHJR:|nanhuajinrong:nahuajinrong|SOUTH CHINA FIN||南华金融控股有限公司
+hk|0|06198|青岛港|QDG:QDJ:|qingdaogang:qingdaojiang|QINGDAO PORT||青岛港国际股份有限公司-H股
+hk|0|06199|中国北车|ZGBC:|zhongguobeiche|CHINA CNR||中国北车股份有限公司-H股
+hk|0|00062|载通|ZT:|zaitong|TRANSPORT INT'L||载通国际控股有限公司
+hk|0|00621|坛金矿业|TJKY:|tanjinkuangye|TAUNG GOLD||坛金矿业有限公司
+hk|0|06210|VALECOMMON-DRS|VALECOMMON-DRS:|VALECOMMON-DRS|VALE COMMON-DRS||ValeS.A.-普通预托证券
+hk|0|00622|威华达控股|WHDKG:|weihuadakonggu|ENERCHINA HOLD||威华达控股有限公司
+hk|0|06230|VALEPREF-DRS|VALEPREF-DRS:|VALEPREF-DRS|VALE PREF-DRS||ValeS.A.-A类优先预托证券
+hk|0|00626|大众金融控股|DZJRKG:DZJRKG:TZJRKG:|dazhongjinrongkonggu:daizhongjinrongkonggu:taizhongjinrongkonggu|PUBLIC FIN HOLD||大众金融控股有限公司
+hk|0|00627|佑威国际|YWGJ:|youweiguoji|U-RIGHT INT'L||佑威国际控股有限公司
+hk|0|00628|华银控股|HYKG:|huayinkonggu|SINO CREDIT||华银控股有限公司
+hk|0|00629|悦达矿业|YDKY:|yuedakuangye|YUE DA MINING||悦达矿业控股有限公司
+hk|0|00063|荣丰国际|RFGJ:|rongfengguoji|WINFOONG INT'L||荣丰国际有限公司
+hk|0|00631|三一国际|SYGJ:|sanyiguoji|SANY INT'L||三一重装国际控股有限公司
+hk|0|00632|东方明珠石油|DFMZSY:DFMZDY:|dongfangmingzhushiyou:dongfangmingzhudanyou|PEARLORIENT OIL||东方明珠石油有限公司
+hk|0|00633|中国全通|ZGQT:|zhongguoquantong|CH ALL ACCESS||中国全通(控股)有限公司
+hk|0|00635|彩星集团|CXJT:|caixingjituan|PLAYMATES||彩星集团有限公司
+hk|0|00636|嘉里物流|JLWL:|jialiwuliu|KERRY LOG NET||嘉里物流联网有限公司
+hk|0|00637|利记|LJ:|liji|LEE KEE||利记控股有限公司
+hk|0|00638|建溢集团|JYJT:|jianyijituan|KIN YAT HOLD||建溢集团有限公司
+hk|0|06388|COACH-DRS-RS|COACH-DRS-RS:|COACH-DRS-RS|COACH-DRS-RS||Coach,Inc.-RS
+hk|0|00639|首钢资源|SGZY:|shougangziyuan|SHOUGANG RES||首钢福山资源集团有限公司
+hk|0|00064|结好控股|JHKG:|jiehaokonggu|GET NICE||结好控股有限公司
+hk|0|00640|星谦化工|XQHG:|xingqianhuagong|INFINITY CHEM||星谦化工控股有限公司
+hk|0|00642|Paladin优先股|PaladinYXG:|Paladinyouxiangu|PALADIN PREF||百利大有限公司-可转换可赎回优先股
+hk|0|00643|恒富控股|HFKG:|hengfukonggu|CARRY WEALTH||恒富控股有限公司
+hk|0|00645|安域亚洲|AYYZ:|anyuyazhou|ARES ASIA||安域亚洲有限公司
+hk|0|00646|中国环保科技|ZGHBKJ:|zhongguohuanbaokeji|CHINA ENV TEC||中国环保科技控股有限公司
+hk|0|00648|中国仁济医疗|ZGRJYL:|zhongguorenjiyiliao|CHINA RENJI||中国仁济医疗集团有限公司
+hk|0|00065|弘海有限公司|HHYXGS:|honghaiyouxiangongsi|DETEAM CO LTD||弘海有限公司
+hk|0|00650|顺昌集团|SCJT:|shunchangjituan|SHUN CHEONG||顺昌集团有限公司
+hk|0|00651|中海船舶|ZHCB:|zhonghaichuanbo|CHI O SHIPBLDG||中海船舶重工集团有限公司
+hk|0|00653|卓悦控股|ZYKG:|zhuoyuekonggu|BONJOUR HOLD||卓悦控股有限公司
+hk|0|00655|香港华人有限公司|XGHRYXGS:XJHRYXGS:|xiangganghuarenyouxiangongsi:xiangjianghuarenyouxiangongsi|HK CHINESE LTD||香港华人有限公司
+hk|0|00656|复星国际|FXGJ:|fuxingguoji|FOSUN INTL||复星国际有限公司
+hk|0|00657|环科国际|HKGJ:|huankeguoji|G-VISION INT'L||环科国际集团有限公司
+hk|0|00658|中国高速传动|ZGGSCD:ZGGSZD:|zhongguogaosuchuandong:zhongguogaosuzhuandong|C TRANSMISSION||中国高速传动设备集团有限公司
+hk|0|00659|新创建集团|XCJJT:|xinchuangjianjituan|NWS HOLDINGS||新创建集团有限公司
+hk|0|00066|港铁公司|GTGS:JTGS:|gangtiegongsi:jiangtiegongsi|MTR CORPORATION||香港铁路有限公司
+hk|0|00660|伟俊矿业集团|WJKYJT:|weijunkuangyejituan|WAI CHUN MINING||伟俊矿业集团有限公司
+hk|0|00661|中国大冶有色金属|ZGDYYSJS:ZGDYYSJS:ZGTYYSJS:ZGDYYSJZ:ZGDYYSJZ:ZGTYYSJZ:|zhongguodayeyousejinshu:zhongguodaiyeyousejinshu:zhongguotaiyeyousejinshu:zhongguodayeyousejinzhu:zh|CDAYENONFER||中国大冶有色金属矿业有限公司
+hk|0|00662|亚洲金融|YZJR:|yazhoujinrong|ASIA FINANCIAL||亚洲金融集团有限公司
+hk|0|00663|金山能源|JSNY:JSNY:|jinshannengyuan:jinshannaiyuan|KING STONE ENGY||金山能源集团有限公司
+hk|0|00665|海通国际|HTGJ:|haitongguoji|HAITONG INT'L||海通国际证券集团有限公司
+hk|0|00666|新工投资|XGTZ:|xingongtouzi|SHK HK IND||新工投资有限公司
+hk|0|00668|东原地产|DYDC:|dongyuandichan|DOWELL PPT||东原地产控股有限公司
+hk|0|00669|创科实业|CKSY:|chuangkeshiye|TECHTRONIC IND||创科实业有限公司
+hk|0|00067|旭光高新材料|XGGXCL:|xuguanggaoxincailiao|LUMENA NEWMAT||中国旭光高新材料集团有限公司
+hk|0|00670|中国东方航空股份|ZGDFHKGF:ZGDFHKGB:|zhongguodongfanghangkonggufen:zhongguodongfanghangkonggubin|CHINA EAST AIR||中国东方航空股份有限公司-H股
+hk|0|00672|众安房产|ZAFC:|zhonganfangchan|ZHONGAN REALEST||众安房产有限公司
+hk|0|00673|中国卫生控股|ZGWSKG:|zhongguoweishengkonggu|CHINA HEALTH||中国卫生控股有限公司
+hk|0|00674|文化地标投资|WHDBTZ:|wenhuadibiaotouzi|CULTURELANDMARK||文化地标投资有限公司
+hk|0|00675|坚宝国际|JBGJ:|jianbaoguoji|K & P INT'L||坚宝国际控股有限公司
+hk|0|00676|创信国际|CXGJ:CSGJ:|chuangxinguoji:chuangshenguoji|PEGASUS INT'L||创信国际控股有限公司
+hk|0|00677|金源米业|JYMY:|jinyuanmiye|GOLDEN RES DEV||金源米业国际有限公司
+hk|0|00678|云顶香港|YDXG:YDXJ:|yundingxianggang:yundingxiangjiang|GENTING HK||云顶香港有限公司
+hk|0|00679|亚洲联网科技|YZLWKJ:|yazhoulianwangkeji|ASIA TELE-NET||亚洲联网科技有限公司
+hk|0|00068|利兴发展|LXFZ:|lixingfazhan|LEE HING||利兴发展有限公司
+hk|0|00680|南海控股|NHKG:NHKG:|nanhaikonggu:nahaikonggu|NAN HAI CORP||南海控股有限公司
+hk|0|06808|高鑫零售|GXLS:|gaoxinlingshou|SUNART RETAIL||高鑫零售有限公司
+hk|0|00681|中民控股|ZMKG:|zhongminkonggu|CHI PEOPLE HOLD||中民控股有限公司
+hk|0|06818|中国光大银行|ZGGDYX:ZGGDYX:ZGGTYX:ZGGDYH:ZGGDYH:ZGGTYH:|zhongguoguangdayinxing:zhongguoguangdaiyinxing:zhongguoguangtaiyinxing:zhongguoguangdayinhang:zhongg|CEB BANK||中国光大银行股份有限公司-H股
+hk|0|00682|超大现代|CDXD:CDXD:CTXD:|chaodaxiandai:chaodaixiandai:chaotaixiandai|CHAODA MODERN||超大现代农业(控股)有限公司
+hk|0|06822|科劲国际|KJGJ:KJGJ:|kejinguoji:kejingguoji|KING'S FLAIR||科劲国际(控股)有限公司
+hk|0|06823|香港电讯-SS|XGDX-SS:XJDX-SS:|xianggangdianxun-SS:xiangjiangdianxun-SS|HKT-SS||香港电讯信托与香港电讯有限公司-SS
+hk|0|06828|蓝天威力|LTWL:|lantianweili|BLUE SKY PWR||蓝天威力控股有限公司
+hk|0|00683|嘉里建设|JLJS:|jialijianshe|KERRY PPT||嘉里建设有限公司
+hk|0|06830|华众车载|HZCZ:|huazhongchezai|HUAZHONG IN-V||华众车载控股有限公司
+hk|0|06837|海通证券|HTZQ:HTZX:|haitongzhengquan:haitongzhengxuan|HAITONG SEC||海通证券股份有限公司-H股
+hk|0|06838|盈利时|YLS:|yinglishi|WINOX||盈利时控股有限公司
+hk|0|00684|亚伦国际|YLGJ:|yalunguoji|ALLAN INT'L||亚伦国际集团有限公司
+hk|0|00685|世界华文媒体|SJHWMT:SJHWMB:|shijiehuawenmeiti:shijiehuawenmeiben|MEDIA CHINESE||世界华文媒体有限公司
+hk|0|00686|联合光伏|LHGF:LGGF:|lianheguangfu:liangeguangfu|UNITED PV||联合光伏集团有限公司
+hk|0|06863|辉山乳业|HSRY:|huishanruye|HUISHAN DAIRY||中国辉山乳业控股有限公司
+hk|0|06866|佐力小贷|ZLXD:|zuolixiaodai|ZUOLI M-FIN||佐力科创小额贷款股份有限公司-H股
+hk|0|06868|天福|TF:|tianfu|TENFU||天福(开曼)控股有限公司
+hk|0|06869|长飞光纤光缆|CFGXGL:CFGQGL:|changfeiguangxianguanglan:changfeiguangqianguanglan|YOFC||长飞光纤光缆股份有限公司-H股
+hk|0|00687|泰升集团|TSJT:|taishengjituan|TYSAN HOLDINGS||泰升集团控股有限公司
+hk|0|00688|中国海外发展|ZGHWFZ:|zhongguohaiwaifazhan|CHINA OVERSEAS||中国海外发展有限公司
+hk|0|06881|中国银河|ZGYH:|zhongguoyinhe|CGS||中国银河证券股份有限公司-H股
+hk|0|06882|东瀛游|DYY:|dongyingyou|EGL HOLDINGS||东瀛游控股有限公司
+hk|0|06883|新濠博亚娱乐|XHBYYL:XHBYYY:|xinhaoboyayule:xinhaoboyayuyue|MELCO CROWN||新濠博亚娱乐有限公司
+hk|0|06888|英达公路再生科技|YDGLZSKJ:|yingdagongluzaishengkeji|FREETECH||英达公路再生科技(集团)有限公司
+hk|0|06893|衍生集团|YSJT:|yanshengjituan|HINSANG GROUP||衍生集团(国际)控股有限公司
+hk|0|06898|中国铝罐|ZGLG:|zhongguolvguan|CHINA ALUMCAN||中国铝罐控股有限公司
+hk|0|06899|联众|LZ:|lianzhong|OURGAME||联众国际控股有限公司
+hk|0|00069|香格里拉(亚洲)|XGLL(YZ):|xianggelila(yazhou)|SHANGRI-LA ASIA||香格里拉(亚洲)有限公司
+hk|0|00690|联康生物科技集团|LKSWKJJT:|liankangshengwukejijituan|UNI-BIO GROUP||联康生物科技集团有限公司
+hk|0|00691|山水水泥|SSSN:|shanshuishuini|SHANSHUI CEMENT||中国山水水泥集团有限公司
+hk|0|00692|中国家居|ZGJJ:ZGJJ:|zhongguojiaju:zhongguojiBju|CHINA HOUSEHOLD||中国家居控股有限公司
+hk|0|00693|陈唱国际|CCGJ:|chenchangguoji|TAN CHONG INT'L||陈唱国际有限公司
+hk|0|00694|北京首都机场股份|BJSDJCGF:BJSDJCGF:BJSDJCGB:BJSDJCGB:|beijingshoudujichanggufen:beijingshoudoujichanggufen:beijingshoudujichanggubin:beijingshoudoujichang|BEIJING AIRPORT||北京首都国际机场股份有限公司-H股
+hk|0|00695|东吴水泥|DWSN:|dongwushuini|DONGWU CEMENT||东吴水泥国际有限公司
+hk|0|00696|中国民航信息网络|ZGMHXXWL:ZGMHSXWL:ZGMHXXWL:ZGMHSXWL:|zhongguominhangxinxiwangluo:zhongguominhangshenxiwangluo:zhongguominhangxinxiwanglao:zhongguominhang|TRAVELSKY TECH||中国民航信息网络股份有限公司-H股
+hk|0|00698|通达集团|TDJT:|tongdajituan|TONGDA GROUP||通达集团控股有限公司
+hk|0|00699|神州租车|SZZC:|shenzhouzuche|CAR INC||神州租车有限公司
+hk|0|00007|凯富能源|KFNY:KFNY:|kaifunengyuan:kaifunaiyuan|HOIFU ENERGY||凯富能源集团有限公司
+hk|0|00070|海王集团|HWJT:|haiwangjituan|NEPTUNE GROUP||海王国际集团有限公司
+hk|0|00700|腾讯控股|TXKG:|tengxunkonggu|TENCENT||腾讯控股有限公司
+hk|0|00702|中国油气控股|ZGYQKG:|zhongguoyouqikonggu|SINO OIL & GAS||中国油气控股有限公司
+hk|0|00703|佳景集团|JJJT:JYJT:|jiajingjituan:jiayingjituan|FUTURE BRIGHT||佳景集团有限公司
+hk|0|00704|和嘉资源|HJZY:HJZY:HJZY:|hejiaziyuan:huojiaziyuan:hujiaziyuan|HUSCOKE RES||和嘉资源控股有限公司
+hk|0|00705|鼎和矿业|DHKY:DHKY:DHKY:|dinghekuangye:dinghuokuangye:dinghukuangye|DINGHE MINING||鼎和矿业控股有限公司
+hk|0|00706|美丽中国控股|MLZGKG:|meilizhongguokonggu|BEAUTI C HOLD||美丽中国控股有限公司
+hk|0|00707|协盛协丰|XSXF:XCXF:|xieshengxiefeng:xiechengxiefeng|CO-PROSPERITY||协盛协丰控股有限公司
+hk|0|00709|佐丹奴国际|ZDNGJ:|zuodannuguoji|GIORDANO INT'L||佐丹奴国际有限公司
+hk|0|00071|美丽华酒店|MLHJD:|meilihuajiudian|MIRAMAR HOTEL||美丽华酒店企业有限公司
+hk|0|00710|精电|JD:|jingdian|VARITRONIX INTL||精电国际有限公司
+hk|0|00711|俊和发展集团|JHFZJT:JHFZJT:JHFZJT:|junhefazhanjituan:junhuofazhanjituan:junhufazhanjituan|CHUN WO DEV||俊和发展集团有限公司
+hk|0|00712|卡姆丹克太阳能|QMDKTYN:KMDKTYN:QMDKTYN:KMDKTYN:|qiamudanketaiyangneng:kamudanketaiyangneng:qiamudanketaiyangnai:kamudanketaiyangnai|COMTEC SOLAR||卡姆丹克太阳能系统集团有限公司
+hk|0|00713|世界(集团)|SJ(JT):|shijie(jituan)|WORLD HOUSEWARE||世界(集团)有限公司
+hk|0|00715|中泛控股|ZFKG:|zhongfankonggu|CHINA OCEANWIDE||中泛控股有限公司
+hk|0|00716|胜狮货柜|SSHG:SSHJ:|shengshihuogui:shengshihuoju|SINGAMAS CONT||胜狮货柜企业有限公司
+hk|0|00717|英皇证券|YHZQ:YHZX:|yinghuangzhengquan:yinghuangzhengxuan|EMPEROR CAPITAL||英皇证券集团有限公司
+hk|0|00718|百威国际|BWGJ:|baiweiguoji|BESTWAY INT'L||百威国际控股有限公司
+hk|0|00719|山东新华制药股份|SDXHZYGF:SDXHZYGB:|shandongxinhuazhiyaogufen:shandongxinhuazhiyaogubin|SHANDONG XINHUA||山东新华制药股份有限公司-H股
+hk|0|00072|现代传播|XDCB:XDZB:|xiandaichuanbo:xiandaizhuanbo|MODERN MEDIA||现代传播控股有限公司
+hk|0|00720|意达利控股|YDLKG:|yidalikonggu|AUTO ITALIA||意达利控股有限公司
+hk|0|00721|中国金融国际|ZGJRGJ:|zhongguojinrongguoji|C FIN INT INV||中国金融国际投资有限公司
+hk|0|00723|永保林业|YBLY:|yongbaolinye|SUSTAIN FOREST||永保林业控股有限公司
+hk|0|00724|泰丰国际|TFGJ:|taifengguoji|SINO-TECH INT'L||泰丰国际集团有限公司
+hk|0|00725|恒都集团|HDJT:HDJT:|hengdujituan:hengdoujituan|PERENNIAL INT'L||恒都集团有限公司
+hk|0|00726|东南国际集团|DNGJJT:DNGJJT:|dongnanguojijituan:dongnaguojijituan|SOUTH EAST GP||东南国际集团有限公司
+hk|0|00727|皇冠环球集团|HGHQJT:|huangguanhuanqiujituan|CROWNICORP||皇冠环球集团有限公司
+hk|0|00728|中国电信|ZGDX:ZGDS:|zhongguodianxin:zhongguodianshen|CHINA TELECOM||中国电信股份有限公司-H股
+hk|0|00729|五龙电动车|WLDDC:|wulongdiandongche|FDG EVEHICLES||五龙电动车(集团)有限公司
+hk|0|00073|亚洲果业|YZGY:|yazhouguoye|ASIAN CITRUS||亚洲果业控股有限公司
+hk|0|00731|森信纸业集团|SXZYJT:SSZYJT:|senxinzhiyejituan:senshenzhiyejituan|SAMSON PAPER||森信纸业集团有限公司
+hk|0|00732|信利国际|XLGJ:SLGJ:|xinliguoji:shenliguoji|TRULY INT'L||信利国际有限公司
+hk|0|00733|合富辉煌|HFHH:GFHH:|hefuhuihuang:gefuhuihuang|HOPEFLUENT||合富辉煌集团控股有限公司
+hk|0|00735|中国电力新能源|ZGDLXNY:ZGDLXNY:|zhongguodianlixinnengyuan:zhongguodianlixinnaiyuan|C P NEW ENERGY||中国电力新能源发展有限公司
+hk|0|00736|中国置业投资|ZGZYTZ:|zhongguozhiyetouzi|CHINA PPT INV||中国置业投资控股有限公司
+hk|0|00737|合和公路基建|HHGLJJ:GHGLJJ:HHGLJJ:GHGLJJ:HHGLJJ:GHGLJJ:|hehegonglujijian:gehegonglujijian:hehuogonglujijian:gehuogonglujijian:hehugonglujijian:gehugonglujij|HOPEWELL INFR||合和公路基建有限公司
+hk|0|00738|莱尔斯丹|LESD:|laiersidan|LE SAUNDA||莱尔斯丹控股有限公司
+hk|0|00743|亚洲水泥(中国)|YZSN(ZG):|yazhoushuini(zhongguo)|ASIA CEMENT CH||亚洲水泥(中国)控股公司
+hk|0|00745|中国国家文化产业|ZGGJWHCY:ZGGJWHCY:|zhongguoguojiawenhuachanye:zhongguoguojiBwenhuachanye|CN CULTURE GP||中国国家文化产业集团有限公司
+hk|0|00746|理文化工|LWHG:|liwenhuagong|L & M CHEMICAL||理文化工有限公司
+hk|0|00747|沈阳公用发展股份|SYGYFZGF:CYGYFZGF:SYGYFZGB:CYGYFZGB:|shenyanggongyongfazhangufen:chenyanggongyongfazhangufen:shenyanggongyongfazhangubin:chenyanggongyong|SHENYANG PUBLIC||沈阳公用发展股份有限公司-H股
+hk|0|00075|渝太地产|YTDC:|yutaidichan|Y.T. REALTY||渝太地产集团有限公司
+hk|0|00750|兴业太阳能|XYTYN:XYTYN:|xingyetaiyangneng:xingyetaiyangnai|SINGYES SOLAR||中国兴业太阳能技术控股有限公司
+hk|0|00751|创维数码|CWSM:CWSM:|chuangweishuma:chuangweishuoma|SKYWORTHDIGITAL||创维数码控股有限公司
+hk|0|00753|中国国航|ZGGH:|zhongguoguohang|AIR CHINA||中国国际航空股份有限公司-H股
+hk|0|00754|合生创展集团|HSCZJT:GSCZJT:|heshengchuangzhanjituan:geshengchuangzhanjituan|HOPSON DEV HOLD||合生创展集团有限公司
+hk|0|00755|上海证大|SHZD:SHZD:SHZT:|shanghaizhengda:shanghaizhengdai:shanghaizhengtai|SHANGHAI ZENDAI||上海证大房地产有限公司
+hk|0|00756|中国天溢控股|ZGTYKG:|zhongguotianyikonggu|CHI TIANYI HOLD||中国天溢控股有限公司
+hk|0|00757|阳光能源|YGNY:YGNY:|yangguangnengyuan:yangguangnaiyuan|SOLARGIGA||阳光能源控股有限公司
+hk|0|00076|南海石油|NHSY:NHSY:NHDY:NHDY:|nanhaishiyou:nahaishiyou:nanhaidanyou:nahaidanyou|SOUTH SEA PETRO||南海石油控股有限公司
+hk|0|00760|新天地产集团|XTDCJT:|xintiandichanjituan|TALENT PPT GP||新天地产集团有限公司
+hk|0|00761|百营环球资源|BYHQZY:|baiyinghuanqiuziyuan|BEL GLOBAL RES||百营环球资源控股有限公司
+hk|0|00762|中国联通|ZGLT:|zhongguoliantong|CHINA UNICOM||中国联合网络通信(香港)股份有限公司
+hk|0|00763|中兴通讯|ZXTX:|zhongxingtongxun|ZTE||中兴通讯股份有限公司-H股
+hk|0|00764|永恒策略|YHCL:|yonghengcel<e|ETERNITY INV||永恒策略投资有限公司
+hk|0|00766|中盈集团控股|ZYJTKG:|zhongyingjituankonggu|SINO PROSPER GP||中盈(集团)控股有限公司
+hk|0|00768|开明投资|KMTZ:|kaimingtouzi|UBA INVESTMENTS||开明投资有限公司
+hk|0|00769|中国稀土|ZGXT:|zhongguoxitu|CHINA RAREEARTH||中国稀土控股有限公司
+hk|0|00077|进智公共交通|JZGGJT:|jinzhigonggongjiaotong|AMS TRANSPORT||进智公共交通控股有限公司
+hk|0|00771|自动系统|ZDXT:ZDJT:|zidongxitong:zidongjitong|AUTOMATED SYS||自动系统集团有限公司
+hk|0|00773|中国金属再生资源|ZGJSZSZY:ZGJZZSZY:|zhongguojinshuzaishengziyuan:zhongguojinzhuzaishengziyuan|CH METAL RECYCL||中国金属再生资源(控股)有限公司
+hk|0|00775|长江生命科技|CJSMKJ:|changjiangshengmingkeji|CKLIFE SCIENCES||长江生命科技集团有限公司
+hk|0|00776|捷丰家居|JFJJ:JFJJ:|jiefengjiaju:jiefengjiBju|JF FURNISHINGS||捷丰家居用品有限公司
+hk|0|00777|网龙|WL:|wanglong|NETDRAGON||网龙网络有限公司
+hk|0|00787|利标品牌|LBPP:|libiaopinpai|GLOBAL BRANDS||利标品牌有限公司
+hk|0|00789|雅天妮|YTN:|yatianni|ARTINI||雅天妮中国有限公司
+hk|0|00079|世纪建业|SJJY:|shijijianye|CENTURY LEGEND||世纪建业(集团)有限公司
+hk|0|00794|锦胜集团(控股)|JSJT(KG):|jinshengjituan(konggu)|COME SURE GROUP||锦胜集团(控股)有限公司
+hk|0|00798|光谷联合|GGLH:GGLG:|guanggulianhe:guangguliange|OVU||光谷联合控股有限公司
+hk|0|00008|电讯盈科|DXYK:|dianxunyingke|PCCW||电讯盈科有限公司
+hk|0|00080|中国新经济投资|ZGXJJTZ:|zhongguoxinjingjitouzi|CNEWECON FUND||中国新经济投资有限公司
+hk|0|00800|A8新媒体|A8XMT:A8XMB:|A8xinmeiti:A8xinmeiben|A8 NEW MEDIA||A8新媒体集团有限公司
+hk|0|08001|东方汇财证券|DFHCZQ:DFHCZX:|dongfanghuicaizhengquan:dongfanghuicaizhengxuan|ORIENTSEC INT||东方汇财证券国际控股有限公司
+hk|0|08002|IGG|IGG:|IGG|IGG||IGGInc
+hk|0|08003|世大控股|SDKG:SDKG:STKG:|shidakonggu:shidaikonggu:shitaikonggu|GREAT WORLD||世大控股有限公司
+hk|0|08005|裕兴科技|YXKJ:|yuxingkeji|YUXING INFOTECH||裕兴科技投资控股有限公司
+hk|0|08006|华泰瑞银|HTRY:|huatairuiyin|SINO SPLENDID||中国华泰瑞银控股有限公司
+hk|0|08007|环球战略集团|HQZLJT:|huanqiuzhanl<ejituan|GLOBALSTRAT||环球战略集团有限公司
+hk|0|08008|新意网集团|XYWJT:|xinyiwangjituan|SUNEVISION||新意网集团有限公司
+hk|0|08009|华夏能源控股|HXNYKG:HXNYKG:|huaxianengyuankonggu:huaxianaiyuankonggu|CHI ENGY HOLD||华夏能源控股有限公司
+hk|0|00801|金卫医疗|JWYL:|jinweiyiliao|GOLDEN MEDITECH||金卫医疗集团有限公司
+hk|0|08010|成报传媒|CBCM:CBZM:|chengbaochuanmei:chengbaozhuanmei|SINGPAO MEDIA||成报传媒集团有限公司
+hk|0|08011|百田石油|BTSY:BTDY:|baitianshiyou:baitiandanyou|POLYARD PETRO||百田石油国际集团有限公司
+hk|0|08016|长虹佳华|CHJH:|changhongjiahua|CHANGHONG JH||长虹佳华控股有限公司
+hk|0|08017|百龄国际|BLGJ:|bailingguoji|LONG SUCCESS||百龄国际(控股)有限公司
+hk|0|08019|皓文控股|HWKG:|haowenkonggu|HAO WEN HLDGS||皓文控股有限公司
+hk|0|00802|宏霸数码|HBSM:HBSM:|hongbashuma:hongbashuoma|RCG||宏霸数码集团(控股)有限公司
+hk|0|08020|川盟金融|CMJR:|chuanmengjinrong|CHANCETON FIN||川盟金融集团有限公司
+hk|0|08022|永耀集团控股|YYJTKG:|yongyaojituankonggu|EVERSHINE GP||永耀集团控股有限公司
+hk|0|08025|亚洲资产|YZZC:|yazhouzichan|ACR HOLDINGS||亚洲资产(控股)有限公司
+hk|0|08026|长达科技|CDKJ:|changdakeji|PROSTEN TECH||长达科技控股有限公司
+hk|0|08028|天时软件|TSRJ:|tianshiruanjian|TIMELESS||天时软件有限公司
+hk|0|08029|太阳国际|TYGJ:|taiyangguoji|SUN INT'L||太阳国际资源有限公司
+hk|0|00803|昌兴国际|CXGJ:|changxingguoji|PROSPERITY INTL||昌兴国际控股(香港)有限公司
+hk|0|08030|汇联金融服务|HLJRFW:|huilianjinrongfuwu|FLYING FIN||汇联金融服务控股有限公司
+hk|0|08031|易通讯集团|YTXJT:|yitongxunjituan|ETS GROUP||易通讯集团有限公司
+hk|0|08032|非凡中国|FFZG:|feifanzhongguo|VIVA CHINA||非凡中国控股有限公司
+hk|0|08033|爱达利网络|ADLWL:ADLWL:|aidaliwangluo:aidaliwanglao|VODATEL NETWORK||爱达利网络控股有限公司
+hk|0|08036|晶芯科技控股|JXKJKG:|jingxinkejikonggu|GOLDENMARS||晶芯科技控股有限公司
+hk|0|08041|荟萃国际(控股)|HCGJ(KG):|huicuiguoji(konggu)|LUXEY INT'L||荟萃国际(控股)有限公司
+hk|0|08045|南大苏富特|NDSFT:NDSFT:NDSFT:NDSFT:NTSFT:NTSFT:|nandasufute:nadasufute:nandaisufute:nadaisufute:nantaisufute:nataisufute|NANDASOFT||江苏南大苏富特科技股份有限公司-H股
+hk|0|08046|恒芯中国|HXZG:|hengxinzhongguo|HENG XIN CHINA||恒芯中国控股有限公司
+hk|0|08047|宇恒供应链|YHGYL:|yuhenggongyinglian|SKY FOREVER||宇恒供应链集团有限公司
+hk|0|08048|香港珠宝|XGZB:XJZB:|xianggangzhubao:xiangjiangzhubao|H.K. JEWELRY||香港珠宝控股有限公司
+hk|0|08049|吉林长龙药业|JLCLYY:|jilinchanglongyaoye|JILIN CHANGLONG||吉林省辉南长龙生化药业股份有限公司-H股
+hk|0|00805|GLENCORE-S|GLENCORE-S:|GLENCORE-S|GLENCORE-S||Glencoreplc
+hk|0|08050|云博产业|YBCY:|yunbochanye|YUNBO DIGITAL||云博产业集团有限公司
+hk|0|08051|千里眼控股|QLYKG:|qianliyankonggu|TELEEYE HOLDING||千里眼控股有限公司
+hk|0|08053|比优集团|BYJT:|biyoujituan|PIZU GROUP||比优集团控股有限公司
+hk|0|08055|中国网络教育|ZGWLJY:ZGWLJY:|zhongguowangluojiaoyu:zhongguowanglaojiaoyu|CHI E-LEARNING||中国网络教育集团有限公司
+hk|0|08056|鼎丰集团控股|DFJTKG:|dingfengjituankonggu|DIFFER GROUP||鼎丰集团控股有限公司
+hk|0|08058|罗欣药业|LXYY:|luoxinyaoye|LUOXIN PHARMA||山东罗欣药业集团股份有限公司-H股
+hk|0|08059|朝威控股|ZWKG:CWKG:|zhaoweikonggu:chaoweikonggu|GLORY FLAME||朝威控股有限公司
+hk|0|00806|惠理集团|HLJT:|huilijituan|VALUE PARTNERS||惠理集团有限公司
+hk|0|08060|国联通信|GLTX:GLTS:|guoliantongxin:guoliantongshen|GLOBAL LINK||国联通信控股有限公司
+hk|0|08061|光亚|GY:|guangya|ACROSSASIA||光亚有限公司
+hk|0|08063|和汇集团|HHJT:HHJT:HHJT:|hehuijituan:huohuijituan:huhuijituan|WELL WAY GP||和汇集团有限公司
+hk|0|08066|品创控股|PCKG:|pinchuangkonggu|PHOENITRON HOLD||品创控股有限公司
+hk|0|08067|东方大学城控股|DFDXCKG:DFDXCKG:DFTXCKG:|dongfangdaxuechengkonggu:dongfangdaixuechengkonggu:dongfangtaixuechengkonggu|OUC HOLDINGS||东方大学城控股(香港)有限公司
+hk|0|08068|新宇国际|XYGJ:|xinyuguoji|NU INT'L||新宇国际实业(集团)有限公司
+hk|0|08071|中彩网通控股|ZCWTKG:|zhongcaiwangtongkonggu|CH NETCOMTECH||中彩网通控股有限公司
+hk|0|08072|罗马集团|LMJT:|luomajituan|ROMA GROUP||罗马集团有限公司
+hk|0|80737|HOPEWELL INFR-R|HOPEWELLINFR-R:|HOPEWELLINFR-R|||合和公路基建有限公司
+hk|0|08075|寰亚传媒|HYCM:HYZM:|huanyachuanmei:huanyazhuanmei|MEDIA ASIA||寰亚传媒集团有限公司
+hk|0|08076|新利软件|XLRJ:|xinliruanjian|SING LEE||新利软件(集团)股份有限公司
+hk|0|08077|昆仑国际金融|KLGJJR:|kunlunguojijinrong|KVB KUNLUN FG||昆仑国际金融集团有限公司
+hk|0|08078|中国3D数码|ZG3DSM:ZG3DSM:|zhongguo3Dshuma:zhongguo3Dshuoma|CHINA3D DIGIT||中国3D数码娱乐有限公司
+hk|0|08080|北亚策略|BYCL:|beiyacel<e|NAS HOLDINGS||北亚策略控股有限公司
+hk|0|08081|中国手游文化|ZGSYWH:|zhongguoshouyouwenhua|CMG CUL INV||中国手游文化投资有限公司
+hk|0|08082|仁智国际集团|RZGJJT:|renzhiguojijituan|SAGE INT'L GP||仁智国际集团有限公司
+hk|0|08083|中国创新支付|ZGCXZF:|zhongguochuangxinzhifu|INNOVATIONPAY||中国创新支付集团有限公司
+hk|0|08085|香港生命科学|XGSMKX:XJSMKX:|xianggangshengmingkexue:xiangjiangshengmingkexue|HK LIFE SCI||香港生命科学技术集团有限公司
+hk|0|08086|DX.com控股|DX.comKG:|DX.comkonggu|DX.COM HOLDINGS||DX.com控股有限公司
+hk|0|08087|中国三三传媒|ZGSSCM:ZGSSZM:|zhongguosansanchuanmei:zhongguosansanzhuanmei|CHINA 33MEDIA||中国三三传媒集团有限公司
+hk|0|08088|汇友资本|HYZB:|huiyouziben|AID PARTNERS||汇友资本控股有限公司
+hk|0|00809|大成生化科技|DCSHKJ:DCSHKJ:TCSHKJ:|dachengshenghuakeji:daichengshenghuakeji:taichengshenghuakeji|GLOBAL BIO-CHEM||大成生化科技集团有限公司
+hk|0|08090|中国融保金融集团|ZGRBJRJT:|zhongguorongbaojinrongjituan|CHI ASSURANCE||中国融保金融集团有限公司
+hk|0|08093|爱特丽皮革|ATLPG:|aitelipige|ODELLALEATHER||爱特丽皮革控股有限公司
+hk|0|08095|北大青鸟环宇|BDQNHY:BDQNHY:BTQNHY:|beidaqingniaohuanyu:beidaiqingniaohuanyu:beitaiqingniaohuanyu|BEIDA JADE BIRD||北京北大青鸟环宇科技股份有限公司-H股
+hk|0|08096|瑞丰石化|RFSH:RFDH:|ruifengshihua:ruifengdanhua|RUIFENG PETRO||瑞丰石化控股有限公司
+hk|0|08098|昌利控股|CLKG:|changlikonggu|CL GROUP||昌利(控股)有限公司
+hk|0|08099|中国优材|ZGYC:|zhongguoyoucai|CH WOOD OPT||中国优材(控股)有限公司
+hk|0|00081|中国海外宏洋集团|ZGHWHYJT:|zhongguohaiwaihongyangjituan|CH OVS G OCEANS||中国海外宏洋集团有限公司
+hk|0|08101|家梦控股|JMKG:JMKG:|jiamengkonggu:jiBmengkonggu|JIA MENG HLDG||家梦控股有限公司
+hk|0|08103|泰盛国际控股|TSGJKG:TCGJKG:|taishengguojikonggu:taichengguojikonggu|TAI SHING||泰盛国际(控股)有限公司
+hk|0|08106|浙大兰德|ZDLD:ZDLD:ZTLD:|zhedalande:zhedailande:zhetailande|ZHEDA LANDE||浙江浙大网新兰德科技股份有限公司-H股
+hk|0|08107|誉宴集团|YYJT:|yuyanjituan|U BANQUET GP||誉宴集团控股有限公司
+hk|0|08108|福泽集团|FZJT:FSJT:|fuzejituan:fushijituan|GRAND PEACE||福泽集团控股有限公司
+hk|0|08109|科瑞控股|KRKG:|keruikonggu|CREATIVE ENERGY||科瑞控股有限公司
+hk|0|00811|新华文轩|XHWX:|xinhuawenxuan|XINHUA WINSHARE||新华文轩出版传媒股份有限公司-H股
+hk|0|08111|中科光电|ZKGD:|zhongkeguangdian|CT SOLARPOWER||中科光电控股有限公司
+hk|0|08115|上海青浦消防|SHQPXF:|shanghaiqingpuxiaofang|SHANGHAI QINGPU||上海青浦消防器材股份有限公司-H股
+hk|0|08116|中国幸福投资|ZGXFTZ:|zhongguoxingfutouzi|C FORTUNE INV||中国幸福投资(控股)有限公司
+hk|0|08117|中国基础能源|ZGJCNY:ZGJCNY:|zhongguojichunengyuan:zhongguojichunaiyuan|CHI P ENERGY||中国基础能源控股有限公司
+hk|0|08119|即时科研|JSKY:|jishikeyan|THIZ TECHNOLOGY||即时科研集团有限公司
+hk|0|08120|东麟农业|DLNY:|donglinnongye|ORI UNICORN||东麟农业集团有限公司
+hk|0|08123|首华财经网络|SHCJWL:SHCJWL:|shouhuacaijingwangluo:shouhuacaijingwanglao|FIRST CHINA NET||首华财经网络集团有限公司
+hk|0|08125|中持基业|ZCJY:|zhongchijiye|KATE CHINA||中持基业控股有限公司
+hk|0|08126|G.A.控股|G.A.KG:|G.A.konggu|G. A. HOLDINGS||G.A.控股有限公司
+hk|0|08128|中国地能|ZGDN:ZGDN:|zhongguodineng:zhongguodinai|C G SOURCE ENGY||中国地能产业集团有限公司
+hk|0|08129|中国生物资源|ZGSWZY:|zhongguoshengwuziyuan|CH BIO CASSAVA||中国生物资源控股有限公司
+hk|0|00813|世茂房地产|SMFDC:|shimaofangdichan|SHIMAO PROPERTY||世茂房地产控股有限公司
+hk|0|08130|智城控股|ZCKG:|zhichengkonggu|ZHI CHENG H||智城控股有限公司
+hk|0|08131|辰罡科技|CGKJ:|chengangkeji|ABC MULTIACTIVE||辰罡科技有限公司
+hk|0|08132|中油港燃|ZYGR:ZYJR:|zhongyougangran:zhongyoujiangran|CHINAOILGANGRAN||中油港燃能源集团控股有限公司
+hk|0|08135|正美丰业|ZMFY:|zhengmeifengye|ZMFY GLASS||正美丰业汽车玻璃服务有限公司
+hk|0|08137|洪桥集团|HQJT:|hongqiaojituan|HONBRIDGE||洪桥集团有限公司
+hk|0|08138|同仁堂国药|TRTGY:|tongrentangguoyao|TONGRENTANGCM||北京同仁堂国药有限公司
+hk|0|08139|长安仁恒|CARH:|changanrenheng|CHANGAN RH||浙江长安仁恒科技股份有限公司-H股
+hk|0|08143|华夏医疗|HXYL:|huaxiayiliao|HUA XIA HEALTH||华夏医疗集团有限公司
+hk|0|08145|电讯首科|DXSK:|dianxunshouke|TSO||电讯首科控股有限公司
+hk|0|08146|马仕达国际|MSDGJ:|mashidaguoji|MASTERCRAFT I||马仕达国际控股有限公司
+hk|0|00815|中国白银集团|ZGBYJT:|zhongguobaiyinjituan|CHI SILVER GP||中国白银集团有限公司
+hk|0|08150|无缝绿色|WFLS:WFLS:|wufenglvse:wufengluse|SEAMLESS GREEN||无缝绿色中国(集团)有限公司
+hk|0|08153|科地农业|KDNY:|kedinongye|CODE AGRI||科地农业控股有限公司
+hk|0|08155|南华置地|NHZD:NHZD:|nanhuazhidi:nahuazhidi|SOUTHCHINA LAND||南华置地有限公司
+hk|0|08156|众彩股份|ZCGF:ZCGB:|zhongcaigufen:zhongcaigubin|CHINA VANGUARD||众彩科技股份有限公司
+hk|0|08158|中国再生医学|ZGZSYX:|zhongguozaishengyixue|CRMI||中国再生医学国际有限公司
+hk|0|08159|辉煌科技|HHKJ:|huihuangkeji|GLORY MARK||辉煌科技(控股)有限公司
+hk|0|00816|华电福新|HDFX:|huadianfuxin|HUADIAN FUXIN||华电福新能源股份有限公司-H股
+hk|0|08162|港银控股|GYKG:JYKG:|gangyinkonggu:jiangyinkonggu|LOCO HK||港银控股有限公司
+hk|0|08163|万德移动|WDYD:MDYD:|wandeyidong:modeyidong|MERDEKAMOBILE||万德移动集团有限公司
+hk|0|08165|华普智通|HPZT:|huapuzhitong|JIAN EPAYMENT||华普智通系统有限公司
+hk|0|08166|中国农业生态|ZGNYST:|zhongguonongyeshengtai|CHINA ECO-FARM||中国农业生态有限公司
+hk|0|08167|中国新电信|ZGXDX:ZGXDS:|zhongguoxindianxin:zhongguoxindianshen|NEO TELEMEDIA||中国新电信集团有限公司
+hk|0|08168|英裘控股|YQKG:|yingqiukonggu|UKF||英裘(控股)有限公司
+hk|0|08169|环康集团|HKJT:|huankangjituan|ECO-TEK HLDGS||环康集团有限公司
+hk|0|00817|方兴地产|FXDC:|fangxingdichan|FRANSHION PPT||方兴地产(中国)有限公司
+hk|0|08171|中国趋势|ZGQS:ZGCS:|zhongguoqushi:zhongguocushi|CHINA TRENDS||中国趋势控股有限公司
+hk|0|08172|中国星文化产业|ZGXWHCY:|zhongguoxingwenhuachanye|CHINASTARCMG||中国星文化产业集团有限公司
+hk|0|08173|寰亚矿业|HYKY:|huanyakuangye|PAN ASIA MINING||寰亚矿业有限公司
+hk|0|08175|中国数码文化|ZGSMWH:ZGSMWH:|zhongguoshumawenhua:zhongguoshuomawenhua|C DIGITAL CUL||中国数码文化(集团)有限公司
+hk|0|08178|中国信息科技|ZGXXKJ:ZGSXKJ:|zhongguoxinxikeji:zhongguoshenxikeji|CHINA INFO TECH||中国信息科技发展有限公司
+hk|0|08179|喜尚控股|XSKG:|xishangkonggu|GAYETY HLDGS||喜尚控股有限公司
+hk|0|00818|高阳科技|GYKJ:|gaoyangkeji|HI SUN TECH||高阳科技(中国)有限公司
+hk|0|08180|新锐医药|XRYY:|xinruiyiyao|NEW RAY MEDIC||新锐医药国际控股有限公司
+hk|0|08181|港深联合|GSLH:JSLH:GSLG:JSLG:|gangshenlianhe:jiangshenlianhe:gangshenliange:jiangshenliange|KONGSHUMUNION||港深联合物业管理(控股)有限公司
+hk|0|08185|御药堂|YYT:|yuyaotang|RM GROUP||御药堂集团控股有限公司
+hk|0|08186|神州东盟资源|SZDMZY:|shenzhoudongmengziyuan|CHINA ASEAN RES||神州东盟资源有限公司
+hk|0|08189|泰达生物|TDSW:|taidashengwu|TEDA BIOMEDICAL||天津泰达生物医学工程股份有限公司-H股
+hk|0|00819|天能动力|TNDL:TNDL:|tiannengdongli:tiannaidongli|TIANNENG POWER||天能动力国际有限公司
+hk|0|08190|康佰控股|KBKG:|kangbaikonggu|COMBEST HOLD||康佰控股有限公司
+hk|0|08191|鸿伟亚洲|HWYZ:|hongweiyazhou|HONG WEI ASIA||鸿伟(亚洲)控股有限公司
+hk|0|08192|环球能源资源|HQNYZY:HQNYZY:|huanqiunengyuanziyuan:huanqiunaiyuanziyuan|GLOBAL ENERGY||环球能源资源国际集团有限公司
+hk|0|08193|汉华专业服务|HHZYFW:|hanhuazhuanyefuwu|GC PRO SER||汉华专业服务有限公司
+hk|0|08197|东北虎药业|DBHYY:|dongbeihuyaoye|NORTHEAST TIGER||东北虎药业股份有限公司-H股
+hk|0|08198|新濠环彩|XHHC:|xinhaohuancai|MELCOLOT||新濠环彩有限公司
+hk|0|00082|第一视频|DYSP:DYSB:|diyishipin:diyishibin|V1 GROUP||第一视频集团有限公司
+hk|0|08200|修身堂|XST:|xiushentang|SAU SAN TONG||修身堂控股有限公司
+hk|0|08201|宝联控股|BLKG:|baoliankonggu|PPS INT'L||宝联控股有限公司
+hk|0|08202|汇创控股|HCKG:|huichuangkonggu|INNO-TECH HOLD||汇创控股有限公司
+hk|0|08203|凯顺能源|KSNY:KSNY:|kaishunnengyuan:kaishunnaiyuan|KAISUN ENERGY||凯顺能源集团有限公司
+hk|0|08205|交大慧谷|JDHG:JDHG:JTHG:|jiaodahuigu:jiaodaihuigu:jiaotaihuigu|JIAODA WITHUB||上海交大慧谷信息产业股份有限公司-H股
+hk|0|08206|神通电信服务|STDXFW:STDSFW:|shentongdianxinfuwu:shentongdianshenfuwu|C COMM TELE SER||神通电信服务有限公司
+hk|0|08207|中国信贷|ZGXD:ZGSD:|zhongguoxindai:zhongguoshendai|CREDIT CHINA||中国信贷控股有限公司
+hk|0|00821|汇盈控股|HYKG:|huiyingkonggu|VC HOLDINGS||汇盈控股有限公司
+hk|0|08210|龙杰智能卡|LJZNQ:LJZNQ:LJZNK:LJZNK:|longjiezhinengqia:longjiezhinaiqia:longjiezhinengka:longjiezhinaika|ADVANCED CARD||龙杰智能卡控股有限公司
+hk|0|08211|浙江永隆实业|ZJYLSY:|zhejiangyonglongshiye|YONGLONG||浙江永隆实业股份有限公司-H股
+hk|0|08213|惟膳|WS:|weishan|EPICUREAN||惟膳有限公司
+hk|0|08216|百本医护|BBYH:|baibenyihu|BAMBOOSHEALTH||百本医护控股有限公司
+hk|0|08218|毅高国际控股|YGGJKG:|yigaoguojikonggu|ECHO INT HOLD||毅高(国际)控股集团有限公司
+hk|0|08219|品牌中国|PPZG:|pinpaizhongguo|BRANDINGCHINA||品牌中国集团有限公司
+hk|0|00822|嘉瑞国际|JRGJ:|jiaruiguoji|KA SHUI INT'L||嘉瑞国际控股有限公司
+hk|0|08220|比高集团|BGJT:|bigaojituan|BINGO GROUP||比高集团控股有限公司
+hk|0|08222|壹照明|YZM:|yizhaoming|E LIGHTING||壹照明集团控股有限公司
+hk|0|08225|中国医药集团|ZGYYJT:|zhongguoyiyaojituan|C HEALTH GP||中国医疗集团有限公司
+hk|0|08226|中昱科技|ZYKJ:|zhongyukeji|SUNRISE C TECH||中昱科技集团有限公司
+hk|0|08227|海天天线|HTTX:|haitiantianxian|HAITIAN ANTENNA||西安海天天线科技股份有限公司-H股
+hk|0|08228|国艺娱乐|GYYL:GYYY:|guoyiyule:guoyiyuyue|NATIONAL ARTS||国艺娱乐文化集团有限公司
+hk|0|08233|中国基建港口|ZGJJGK:ZGJJJK:|zhongguojijiangangkou:zhongguojijianjiangkou|CIG PORTS||中国基建港口有限公司
+hk|0|08235|赛迪顾问|SDGW:|saidiguwen|CCID CONSULTING||赛迪顾问股份有限公司-H股
+hk|0|08236|宝德科技集团|BDKJJT:|baodekejijituan|POWERLEADER||宝德科技集团股份有限公司-H股
+hk|0|08237|华星控股|HXKG:|huaxingkonggu|LINK HOLDINGS||华星控股有限公司
+hk|0|08239|首都金融控股|SDJRKG:SDJRKG:|shoudujinrongkonggu:shoudoujinrongkonggu|CAPITAL FIN||首都金融控股有限公司
+hk|0|08242|宏创高科|HCGK:|hongchuanggaoke|MEGALOGICTECH||宏创高科集团有限公司
+hk|0|08243|大贺传媒|DHCM:DHCM:THCM:DHZM:DHZM:THZM:|dahechuanmei:daihechuanmei:taihechuanmei:dahezhuanmei:daihezhuanmei:taihezhuanmei|DAHE MEDIA||大贺传媒股份有限公司-H股
+hk|0|08246|名轩控股|MXKG:|mingxuankonggu|NOBLE HOUSE H||名轩(中国)控股有限公司
+hk|0|08247|中生北控生物科技|ZSBKSWKJ:|zhongshengbeikongshengwukeji|BIOSINO BIO-TEC||中生北控生物科技股份有限公司-H股
+hk|0|08249|宁波万豪|NBWH:NBMH:|ningbowanhao:ningbomohao|NINGBO WANHAO||宁波万豪控股股份有限公司-H股
+hk|0|00825|新世界百货中国|XSJBHZG:|xinshijiebaihuozhongguo|NWDS CHINA||新世界百货中国有限公司
+hk|0|08250|中国天然投资|ZGTRTZ:|zhongguotianrantouzi|CHI NATURAL INV||中国天然投资有限公司
+hk|0|08253|天元铝业|TYLY:|tianyuanlvye|TIANYUAN||三门峡天元铝业股份有限公司-H股
+hk|0|08255|神州数字|SZSZ:SZSZ:|shenzhoushuzi:shenzhoushuozi|CHINA BINARY||神州数字销售技术有限公司
+hk|0|08256|金利通|JLT:|jinlitong|NETEL||金利通科技(控股)有限公司
+hk|0|08258|西北实业|XBSY:|xibeishiye|NW INDUSTRY||陜西西北新技术实业股份有限公司-H股
+hk|0|00826|天工国际|TGGJ:|tiangongguoji|TIANGONG INT'L||天工国际有限公司
+hk|0|08260|施伯乐策略控股|SBLCLKG:SBLCLKG:SBLCLKG:SBYCLKG:SBYCLKG:SBYCLKG:|shibolecel<ekonggu:shibailecel<ekonggu:shibalecel<ekonggu:shiboyuecel<ekonggu:shibaiyuecel<ekonggu:s|ZEBRA STRAT||施伯乐策略控股有限公司
+hk|0|08265|宏峰太平洋|HFTPY:|hongfengtaipingyang|POWERWELL PAC||宏峰太平洋集团有限公司
+hk|0|08266|金达集团国际|JDJTGJ:|jindajituanguoji|GOLD TAT GP||金达集团国际有限公司
+hk|0|08267|蓝港互动|LGHD:LJHD:|langanghudong:lanjianghudong|LINEKONG||蓝港互动有限公司
+hk|0|08269|富誉控股|FYKG:|fuyukonggu|WEALTH GLORY||富誉控股有限公司
+hk|0|00827|玖源集团|JYJT:|jiuyuanjituan|KO YO GROUP||玖源化工(集团)有限公司
+hk|0|08270|中国煤层气|ZGMCQ:|zhongguomeicengqi|CHINA CBM||中国煤层气集团有限公司
+hk|0|08271|环球数码创意|HQSMCY:HQSMCY:|huanqiushumachuangyi:huanqiushuomachuangyi|GDC||环球数码创意控股有限公司
+hk|0|08272|华人饮食集团|HRYSJT:HRYSJT:HRYYJT:|huarenyinshijituan:huarenyinsijituan:huarenyinyijituan|C FOOD&BEV GP||华人饮食集团有限公司
+hk|0|08273|浙江展望|ZJZW:|zhejiangzhanwang|ZJ PROSPECT||浙江展望股份有限公司-H股
+hk|0|08277|骏东控股|JDKG:|jundongkonggu|STEEDORIENTAL||骏东(控股)有限公司
+hk|0|08279|亚博科技控股|YBKJKG:|yabokejikonggu|AGTECH HOLDINGS||亚博科技控股有限公司
+hk|0|00828|王朝酒业|WZJY:WCJY:|wangzhaojiuye:wangchaojiuye|DYNASTY WINES||王朝酒业集团有限公司
+hk|0|08286|长城微光|CCWG:|changchengweiguang|CCOE||山西长城微光器材股份有限公司-H股
+hk|0|00829|神冠控股|SGKG:|shenguankonggu|SHENGUAN HLDGS||神冠控股(集团)有限公司
+hk|0|08295|卓亚资本|ZYZB:|zhuoyaziben|ASIAN CAPITAL H||卓亚资本有限公司
+hk|0|08296|中国生命集团|ZGSMJT:|zhongguoshengmingjituan|SINO-LIFE GROUP||中国生命集团有限公司
+hk|0|08299|大唐潼金|DTTJ:DTTJ:TTTJ:|datangtongjin:daitangtongjin:taitangtongjin|GRAND T G GOLD||大唐潼金控股有限公司
+hk|0|00083|信和置业|XHZY:SHZY:XHZY:SHZY:XHZY:SHZY:|xinhezhiye:shenhezhiye:xinhuozhiye:shenhuozhiye:xinhuzhiye:shenhuzhiye|SINO LAND||信和置业有限公司
+hk|0|00830|远东环球|YDHQ:|yuandonghuanqiu|FAR EAST GLOBAL||远东环球集团有限公司
+hk|0|08301|明华科技|MHKJ:|minghuakeji|MINGWAH HI TECH||深圳市明华澳汉科技股份有限公司-H股
+hk|0|08302|STOCK8302|STOCK8302:|STOCK8302|||
+hk|0|08303|STOCK8303|STOCK8303:|STOCK8303|||
+hk|0|08304|STOCK8304|STOCK8304:|STOCK8304|||
+hk|0|08306|中国有色金属|ZGYSJS:ZGYSJZ:|zhongguoyousejinshu:zhongguoyousejinzhu|CH NONFERROUS||中国有色金属有限公司
+hk|0|08307|密迪斯肌|MDSJ:|midisiji|MEDICSKIN||密迪斯肌控股有限公司
+hk|0|08309|时尚环球|SSHQ:|shishanghuanqiu|RUNWAY GLOBAL||时尚环球控股有限公司
+hk|0|00831|利亚零售|LYLS:|liyalingshou|CR ASIA||利亚零售有限公司
+hk|0|08311|圆美光电|YMGD:|yuanmeiguangdian|PERFECT OPT||圆美光电有限公司
+hk|0|08312|金满堂控股|JMTKG:|jinmantangkonggu|BRILLIANCE WW||金满堂控股有限公司
+hk|0|08315|冠辉保安|GHBA:|guanhuibaoan|KF SECURITY||冠辉保安控股有限公司
+hk|0|08317|财华社集团|CHSJT:|caihuashejituan|FINET GROUP||财华社集团有限公司
+hk|0|00832|建业地产|JYDC:|jianyedichan|CENTRAL CHINA||建业地产股份有限公司
+hk|0|08320|思城控股|SCKG:SCKG:|sichengkonggu:saichengkonggu|C CHENG HLDGS||思城控股有限公司
+hk|0|08325|中国支付通|ZGZFT:|zhongguozhifutong|CHINA SMARTPAY||中国支付通集团控股有限公司
+hk|0|08329|海王英特龙|HWYTL:|haiwangyingtelong|NEP INTERLONG||深圳市海王英特龙生物技术股份有限公司-H股
+hk|0|00833|华讯|HX:|huaxun|ALLTRONICS||华讯股份有限公司
+hk|0|08337|直通电讯|ZTDX:|zhitongdianxun|DIRECTEL||直通电讯控股有限公司
+hk|0|00834|康大食品|KDSP:KDSP:KTSP:KDSP:KDSP:KTSP:KDYP:KDYP:KTYP:|kangdashipin:kangdaishipin:kangtaishipin:kangdasipin:kangdaisipin:kangtaisipin:kangdayipin:kangdaiyi|KANGDA FOOD||中国康大食品有限公司
+hk|0|08340|域高金融|YGJR:|yugaojinrong|VINCO FINANCIAL||域高金融集团有限公司
+hk|0|08348|滨海泰达物流|BHTDWL:|binhaitaidawuliu|BINHAI TEDA||天津滨海泰达物流集团股份有限公司-H股
+hk|0|00835|亚洲煤业|YZMY:|yazhoumeiye|ASIA COAL||亚洲煤业有限公司
+hk|0|08351|俊文宝石|JWBS:JWBD:|junwenbaoshi:junwenbaodan|LARRY JEWELRY||俊文宝石国际有限公司
+hk|0|08356|中国新华电视|ZGXHDS:|zhongguoxinhuadianshi|CNC HOLDINGS||中国新华电视控股有限公司
+hk|0|00836|华润电力|HRDL:|huarundianli|CHINA RES POWER||华润电力控股有限公司
+hk|0|00837|谭木匠|TMJ:|tanmujiang|CARPENTER TAN||谭木匠控股有限公司
+hk|0|08376|FINSOFTCORP-OLD|FINSOFTCORP-OLD:|FINSOFTCORP-OLD|||汇财软件公司
+hk|0|00838|亿和控股|YHKG:YHKG:YHKG:|yihekonggu:yihuokonggu:yihukonggu|EVA HOLDINGS||亿和精密工业控股有限公司
+hk|0|00839|天大石油管材|TDSYGC:TDSYGC:TTSYGC:TDDYGC:TDDYGC:TTDYGC:|tiandashiyouguancai:tiandaishiyouguancai:tiantaishiyouguancai:tiandadanyouguancai:tiandaidanyouguanc|TIANDA OIL PIPE||安徽天大石油管材股份有限公司-H股
+hk|0|00084|宝光实业|BGSY:|baoguangshiye|STELUX HOLDINGS||宝光实业(国际)有限公司
+hk|0|00840|天业节水|TYJS:|tianyejieshui|TIANYE WATER||新疆天业节水灌溉股份有限公司-H股
+hk|0|00841|木薯资源|MSZY:|mushuziyuan|CASSAVA RES||亚洲木薯资源控股有限公司
+hk|0|00842|理士国际|LSGJ:|lishiguoji|LEOCH INT'L||理士国际技术有限公司
+hk|0|00844|广豪国际|GHGJ:AHGJ:|guanghaoguoji:anhaoguoji|GRAND CONCORD||广豪国际控股有限公司
+hk|0|00845|恒盛地产|HSDC:HCDC:|hengshengdichan:hengchengdichan|GLORIOUS PPT H||恒盛地产控股有限公司
+hk|0|00846|明发集团|MFJT:|mingfajituan|MINGFA GROUP||明发集团(国际)有限公司
+hk|0|84602|ICBC CNHPREF1-R|ICBCCNHPREF1-R:|ICBCCNHPREF1-R|||
+hk|0|00847|哈萨克矿业-S|HSKKY-S:|hasakekuangye-S|KAZ MINERALS-S||哈萨克矿业有限公司
+hk|0|00848|茂业国际|MYGJ:|maoyeguoji|MAOYE INT'L||茂业国际控股有限公司
+hk|0|00085|中国电子|ZGDZ:|zhongguodianzi|CHINA ELECTRON||中国电子集团控股有限公司
+hk|0|00850|中亚能源|ZYNY:ZYNY:|zhongyanengyuan:zhongyanaiyuan|PETROASIAN||中亚能源控股有限公司
+hk|0|00851|盛源控股|SYKG:CYKG:|shengyuankonggu:chengyuankonggu|SHENG YUAN HLDG||盛源控股有限公司
+hk|0|00852|海峡石油化工|HXSYHG:HXDYHG:|haixiashiyouhuagong:haixiadanyouhuagong|STRONG PETRO||海峡石油化工控股有限公司
+hk|0|00853|微创医疗|WCYL:|weichuangyiliao|MICROPORT||微创医疗科学有限公司
+hk|0|00854|威雅利|WYL:|weiyali|WILLAS-ARRAY||威雅利电子(集团)有限公司
+hk|0|00855|中国水务|ZGSW:|zhongguoshuiwu|CHINA WATER||中国水务集团有限公司
+hk|0|00856|伟仕控股|WSKG:|weishikonggu|VST HOLDINGS||伟仕控股有限公司
+hk|0|00857|中国石油股份|ZGSYGF:ZGDYGF:ZGSYGB:ZGDYGB:|zhongguoshiyougufen:zhongguodanyougufen:zhongguoshiyougubin:zhongguodanyougubin|PETROCHINA||中国石油天然气股份有限公司-H股
+hk|0|00858|精优药业|JYYY:|jingyouyaoye|EXTRAWELL PHAR||精优药业控股有限公司
+hk|0|00859|镇科集团|ZKJT:|zhenkejituan|HENRY GROUP||镇科集团控股有限公司
+hk|0|00086|新鸿基公司|XHJGS:|xinhongjigongsi|SUN HUNG KAI CO||新鸿基有限公司
+hk|0|00861|神州数码|SZSM:SZSM:|shenzhoushuma:shenzhoushuoma|DIGITAL CHINA||神州数码控股有限公司
+hk|0|00862|远见控股|YJKG:YXKG:|yuanjiankonggu:yuanxiankonggu|VISION VALUES||远见控股有限公司
+hk|0|00864|永利地产发展|YLDCFZ:|yonglidichanfazhan|WING LEE PPT||永利地产发展有限公司
+hk|0|00865|第一电讯|DYDX:|diyidianxun|FIRST MOBILE||第一电讯集团有限公司
+hk|0|00866|中国秦发|ZGQF:|zhongguoqinfa|CHINA QINFA||中国秦发集团有限公司
+hk|0|00867|康哲药业|KZYY:|kangzheyaoye|CMS||康哲药业控股有限公司
+hk|0|00868|信义玻璃|XYBL:SYBL:|xinyiboli:shenyiboli|XINYI GLASS||信义玻璃控股有限公司
+hk|0|00869|彩星玩具|CXWJ:|caixingwanju|PLAYMATES TOYS||彩星玩具有限公司
+hk|0|00087|太古股份公司B|TGGFGSB:TGGBGSB:|taigugufengongsiB:taigugubingongsiB|SWIRE PACIFIC B||太古股份有限公司'B'
+hk|0|00871|中国疏浚环保|ZGSJHB:ZGSXHB:|zhongguoshujunhuanbao:zhongguoshuxunhuanbao|CH DREDG ENV||中国疏浚环保控股有限公司
+hk|0|00872|锦恒汽车安全|JHQCAQ:|jinhengqicheanquan|JH AUTO SAFETY||锦恒汽车安全技术控股有限公司
+hk|0|00873|中国泰丰床品|ZGTFCP:|zhongguotaifengchuangpin|C TAIFENG BED||中国泰丰床品控股有限公司
+hk|0|00874|白云山|BYS:|baiyunshan|BAIYUNSHAN PH||广州白云山医药集团股份有限公司-H股
+hk|0|00875|从玉农业|CYNY:ZYNY:|congyunongye:zongyunongye|CYPRESS JADE||从玉农业控股有限公司
+hk|0|00877|昂纳光通信集团|ANGTXJT:ANGTSJT:|angnaguangtongxinjituan:angnaguangtongshenjituan|O-NET COMM GP||昂纳光通信(集团)有限公司
+hk|0|00880|澳博控股|ABKG:|aobokonggu|SJM HOLDINGS||澳门博彩控股有限公司
+hk|0|00881|中升控股|ZSKG:|zhongshengkonggu|ZHONGSHENG HLDG||中升集团控股有限公司
+hk|0|00882|天津发展|TJFZ:|tianjinfazhan|TIANJIN DEV||天津发展控股有限公司
+hk|0|00883|中国海洋石油|ZGHYSY:ZGHYDY:|zhongguohaiyangshiyou:zhongguohaiyangdanyou|CNOOC||中国海洋石油有限公司
+hk|0|00884|旭辉控股集团|XHKGJT:|xuhuikonggujituan|CIFI HOLD GP||旭辉控股(集团)有限公司
+hk|0|00885|福方集团|FFJT:|fufangjituan|FOREFRONT GROUP||福方集团有限公司
+hk|0|00886|银基集团|YJJT:|yinjijituan|SILVER BASE||银基集团控股有限公司
+hk|0|00887|英皇钟表珠宝|YHZBZB:|yinghuangzhongbiaozhubao|EMPEROR WATCH&J||英皇钟表珠宝有限公司
+hk|0|00888|路讯通|LXT:|luxuntong|ROADSHOW||路讯通控股有限公司
+hk|0|00889|连达科技控股|LDKJKG:|liandakejikonggu|DATRONIX HOLD||连达科技控股有限公司
+hk|0|00089|大生地产|DSDC:DSDC:TSDC:|dashengdichan:daishengdichan:taishengdichan|TAI SANG LAND||大生地产发展有限公司
+hk|0|00891|利邦|LB:|libang|TRINITY||利邦控股有限公司
+hk|0|00893|中国铁钛|ZGTT:|zhongguotietai|CHINAVTM MINING||中国钒钛磁铁矿业有限公司
+hk|0|00894|万裕科技|WYKJ:MYKJ:|wanyukeji:moyukeji|MAN YUE TECH||万裕科技集团有限公司
+hk|0|00895|东江环保|DJHB:|dongjianghuanbao|DONGJIANG ENV||东江环保股份有限公司-H股
+hk|0|00896|兴胜创建|XSCJ:|xingshengchuangjian|HANISON||兴胜创建控股有限公司
+hk|0|00897|位元堂|WYT:|weiyuantang|WAI YUEN TONG||位元堂药业控股有限公司
+hk|0|00898|万事昌国际|WSCGJ:MSCGJ:|wanshichangguoji:moshichangguoji|MULTIFIELD INTL||万事昌国际控股有限公司
+hk|0|00899|亚洲资源|YZZY:|yazhouziyuan|ASIA RESOURCES||亚洲资源控股有限公司
+hk|0|00009|长和国际实业|CHGJSY:CHGJSY:CHGJSY:|changheguojishiye:changhuoguojishiye:changhuguojishiye|CHEUNG WO IHL||长和国际实业集团有限公司
+hk|0|00090|琥珀能源|HPNY:HPNY:|huponengyuan:huponaiyuan|AMBER ENERGY||琥珀能源有限公司
+hk|0|00901|鹰力投资|YLTZ:|yinglitouzi|EAGLERIDE INV||鹰力投资控股有限公司
+hk|0|00902|华能国际电力股份|HNGJDLGF:HNGJDLGF:HNGJDLGB:HNGJDLGB:|huanengguojidianligufen:huanaiguojidianligufen:huanengguojidianligubin:huanaiguojidianligubin|HUANENG POWER||华能国际电力股份有限公司-H股
+hk|0|00903|冠捷科技|GJKJ:|guanjiekeji|TPV TECHNOLOGY||冠捷科技有限公司
+hk|0|00904|中国粗粮王饮品|ZGCLWYP:|zhongguoculiangwangyinpin|C CULIANGWANG||中国粗粮王饮品控股有限公司
+hk|0|00906|中粮包装|ZLBZ:|zhongliangbaozhuang|COFCO PACKAGING||中粮包装控股有限公司
+hk|0|00907|高雅光学|GYGX:|gaoyaguangxue|ELEGANCEOPTICAL||高雅光学国际集团有限公司
+hk|0|00908|珠海控股投资|ZHKGTZ:|zhuhaikonggutouzi|ZHUHAI H INV||珠海控股投资集团有限公司
+hk|0|00909|中大国际|ZDGJ:ZDGJ:ZTGJ:|zhongdaguoji:zhongdaiguoji:zhongtaiguoji|ZHONGDA INT'L||中大国际控股有限公司
+hk|0|00091|标准资源控股|BZZYKG:|biaozhunziyuankonggu|INT'L STD RES||标准资源控股有限公司
+hk|0|00910|中国三迪|ZGSD:|zhongguosandi|CHINA SANDI||中国三迪控股有限公司
+hk|0|00912|信佳国际|XJGJ:SJGJ:|xinjiaguoji:shenjiaguoji|SUGA INT'L||信佳国际集团有限公司
+hk|0|00914|安徽海螺水泥股份|AHHLSNGF:AHHLSNGB:|anhuihailuoshuinigufen:anhuihailuoshuinigubin|ANHUI CONCH||安徽海螺水泥股份有限公司-H股
+hk|0|00915|林麦集团|LMJT:|linmaijituan|LINMARK GROUP||林麦集团有限公司
+hk|0|00916|龙源电力|LYDL:|longyuandianli|CHINA LONGYUAN||龙源电力集团股份有限公司-H股
+hk|0|00917|新世界中国|XSJZG:|xinshijiezhongguo|NEW WORLD CHINA||新世界中国地产有限公司
+hk|0|00918|第一德胜控股|DYDSKG:|diyideshengkonggu|TAKSON HOLDINGS||第一德胜控股有限公司
+hk|0|00919|现代美容|XDMR:|xiandaimeirong|MODERN BEAUTY||现代美容控股有限公司
+hk|0|00921|海信科龙|HXKL:HSKL:|haixinkelong:haishenkelong|HISENSE KELON||海信科龙电器股份有限公司-H股
+hk|0|00922|安贤园中国|AXYZG:|anxianyuanzhongguo|ANXIANYUAN CH||安贤园中国控股有限公司
+hk|0|00923|综合环保集团|ZHHBJT:ZHHBJT:ZGHBJT:ZGHBJT:|zonghehuanbaojituan:zenghehuanbaojituan:zonggehuanbaojituan:zenggehuanbaojituan|IWS||综合环保集团有限公司
+hk|0|00925|北京建设|BJJS:|beijingjianshe|BJ PROPERTIES||北京建设(控股)有限公司
+hk|0|00926|碧生源|BSY:|bishengyuan|BESUNYEN||碧生源控股有限公司
+hk|0|00927|富士高实业|FSGSY:|fushigaoshiye|FUJIKON IND||富士高实业控股有限公司
+hk|0|00928|野马国际|YMGJ:|yemaguoji|TACK FIORI||野马国际集团有限公司
+hk|0|00929|国际精密|GJJM:|guojijingmi|IPE GROUP||国际精密集团有限公司
+hk|0|00930|中国森林|ZGSL:|zhongguosenlin|CHINA FORESTRY||中国森林控股有限公司
+hk|0|00931|中国天然气|ZGTRQ:|zhongguotianranqi|CHINA LNG||中国天然气集团有限公司
+hk|0|00933|光汇石油|GHSY:GHDY:|guanghuishiyou:guanghuidanyou|BRIGHTOIL||光汇石油(控股)有限公司
+hk|0|00934|中石化冠德|ZSHGD:ZDHGD:|zhongshihuaguande:zhongdanhuaguande|SINOPEC KANTONS||中石化冠德控股有限公司
+hk|0|00935|龙翔集团|LXJT:|longxiangjituan|DRAGON CROWN||龙翔集团控股有限公司
+hk|0|00936|鹏程亚洲|PCYZ:|pengchengyazhou|EAGLE LEGEND||鹏程亚洲有限公司
+hk|0|00938|民生国际|MSGJ:|minshengguoji|MAN SANG INT'L||民生国际有限公司
+hk|0|00939|建设银行|JSYX:JSYH:|jiansheyinxing:jiansheyinhang|CCB||中国建设银行股份有限公司-H股
+hk|0|00094|绿森集团|LSJT:LSJT:|lvsenjituan:lusenjituan|GREENHEART GP||绿森集团有限公司
+hk|0|00940|中国动物保健品|ZGDWBJP:|zhongguodongwubaojianpin|C ANIMAL HEALTH||中国动物保健品有限公司
+hk|0|00941|中国移动|ZGYD:|zhongguoyidong|CHINA MOBILE||中国移动有限公司
+hk|0|00943|意科控股|YKKG:|yikekonggu|EFORCE HOLDINGS||意科控股有限公司
+hk|0|00945|宏利金融-S|HLJR-S:|honglijinrong-S|MANULIFE-S||ManulifeFinancialCorporation
+hk|0|00947|摩比发展|MBFZ:MBFZ:|mobifazhan:mabifazhan|MOBI DEV||摩比发展有限公司
+hk|0|00948|融达控股|RDKG:|rongdakonggu|Z-OBEE||融达控股有限公司
+hk|0|00095|绿景中国地产|LJZGDC:LJZGDC:LYZGDC:LYZGDC:|lvjingzhongguodichan:lujingzhongguodichan:lvyingzhongguodichan:luyingzhongguodichan|LVGEM CHINA||绿景(中国)地产投资有限公司
+hk|0|00950|李氏大药厂|LSDYC:LZDYC:LSDYC:LZDYC:LSTYC:LZTYC:LSDYA:LZDYA:LSDYA:LZDYA:LSTYA:LZTYA:LSDYH:LZDYH:LSDYH:LZDYH:LSTY|lishidayaochang:lizhidayaochang:lishidaiyaochang:lizhidaiyaochang:lishitaiyaochang:lizhitaiyaochang:|LEE'S PHARM||李氏大药厂控股有限公司
+hk|0|00951|超威动力|CWDL:|chaoweidongli|CHAOWEI POWER||超威动力控股有限公司
+hk|0|00952|华富国际|HFGJ:|huafuguoji|QUAM||华富国际控股有限公司
+hk|0|00953|美克国际|MKGJ:|meikeguoji|MEIKE INT'L||美克国际控股有限公司
+hk|0|00954|常茂生物|CMSW:|changmaoshengwu|CHANGMAO BIO||常茂生物化学工程股份有限公司-H股
+hk|0|00956|新天绿色能源|XTLSNY:XTLSNY:XTLSNY:XTLSNY:|xintianlvsenengyuan:xintianlusenengyuan:xintianlvsenaiyuan:xintianlusenaiyuan|CHINA SUNTIEN||新天绿色能源股份有限公司-H股
+hk|0|00958|华能新能源|HNXNY:HNXNY:HNXNY:HNXNY:|huanengxinnengyuan:huanaixinnengyuan:huanengxinnaiyuan:huanaixinnaiyuan|HN RENEWABLES||华能新能源股份有限公司-H股
+hk|0|00959|奥玛仕国际|AMSGJ:YMSGJ:|aomashiguoji:yumashiguoji|AMAX INT HOLD||奥玛仕国际控股有限公司
+hk|0|00096|YUSEI|YUSEI:|YUSEI|YUSEI||友成控股有限公司
+hk|0|00960|龙湖地产|LHDC:|longhudichan|LONGFOR PPT||龙湖地产有限公司
+hk|0|00963|华熙生物科技|HXSWKJ:|huaxishengwukeji|BLOOMAGE BIOTEC||华熙生物科技有限公司
+hk|0|00966|中国太平|ZGTP:|zhongguotaiping|CHINA TAIPING||中国太平保险控股有限公司
+hk|0|00967|桑德国际|SDGJ:|sangdeguoji|SOUND GLOBAL||桑德国际有限公司
+hk|0|00968|信义光能|XYGN:SYGN:XYGN:SYGN:|xinyiguangneng:shenyiguangneng:xinyiguangnai:shenyiguangnai|XINYI SOLAR||信义光能控股有限公司
+hk|0|00969|华联国际|HLGJ:|hualianguoji|HUA LIEN INT'L||华联国际(控股)有限公司
+hk|0|00097|恒基发展|HJFZ:|hengjifazhan|HENDERSON INV||恒基兆业发展有限公司
+hk|0|00970|耀莱集团|YLJT:|yaolaijituan|SPARKLE ROLL||耀莱集团有限公司
+hk|0|00973|L'OCCITANE|L'OCCITANE:|L'OCCITANE|L'OCCITANE||L'OccitaneInternationalS.A.
+hk|0|00976|齐合天地|QHTD:QGTD:|qihetiandi:qigetiandi|CHIHO-TIANDE||齐合天地集团有限公司
+hk|0|00978|招商局置地|ZSJZD:|zhaoshangjuzhidi|CHI MER LAND||招商局置地有限公司
+hk|0|00979|绿色能源科技集团|LSNYKJJT:LSNYKJJT:LSNYKJJT:LSNYKJJT:|lvsenengyuankejijituan:lusenengyuankejijituan:lvsenaiyuankejijituan:lusenaiyuankejijituan|GREEN ENERGY GP||绿色能源科技集团有限公司
+hk|0|00098|兴发铝业|XFLY:|xingfalvye|XINGFA ALUM||兴发铝业控股有限公司
+hk|0|00980|联华超市|LHCS:|lianhuachaoshi|LIANHUA||联华超市股份有限公司-H股
+hk|0|00981|中芯国际|ZXGJ:|zhongxinguoji|SMIC||中芯国际集成电路制造有限公司
+hk|0|00982|卓智控股|ZZKG:|zhuozhikonggu|IONE HOLDINGS||卓智控股有限公司
+hk|0|00983|瑞安建业|RAJY:|ruianjianye|SOCAM DEV||瑞安建业有限公司
+hk|0|00984|永旺|YW:|yongwang|AEON STORES||永旺(香港)百货有限公司
+hk|0|00985|中科矿业|ZKKY:|zhongkekuangye|CST MINING||中科矿业集团有限公司
+hk|0|00986|中国环保能源|ZGHBNY:ZGHBNY:|zhongguohuanbaonengyuan:zhongguohuanbaonaiyuan|CH ENV ENERGY||中国环保能源投资有限公司
+hk|0|00987|中国再生能源投资|ZGZSNYTZ:ZGZSNYTZ:|zhongguozaishengnengyuantouzi:zhongguozaishengnaiyuantouzi|CH RENEW EN INV||中国再生能源投资有限公司
+hk|0|00988|楼东俊安资源|LDJAZY:|loudongjunanziyuan|LOUDONG GN RES||楼东俊安资源(中国)控股有限公司
+hk|0|00989|广泽地产|GZDC:AZDC:GSDC:ASDC:|guangzedichan:anzedichan:guangshidichan:anshidichan|GROUND PPT||广泽地产有限公司
+hk|0|00099|王氏国际|WSGJ:WZGJ:|wangshiguoji:wangzhiguoji|WONG'S INT'L||王氏国际集团有限公司
+hk|0|00990|荣晖国际|RHGJ:|ronghuiguoji|THEME INT'L||荣晖国际集团有限公司
+hk|0|00991|大唐发电|DTFD:DTFD:TTFD:|datangfadian:daitangfadian:taitangfadian|DATANG POWER||大唐国际发电股份有限公司-H股
+hk|0|00992|联想集团|LXJT:|lianxiangjituan|LENOVO GROUP||联想集团有限公司
+hk|0|00993|天行国际|TXGJ:THGJ:|tianxingguoji:tianhangguoji|SIMSEN INT'L||天行国际(控股)有限公司
+hk|0|00995|安徽皖通高速公路|AHWTGSGL:|anhuiwantonggaosugonglu|ANHUIEXPRESSWAY||安徽皖通高速公路股份有限公司-H股
+hk|0|00996|嘉年华国际|JNHGJ:|jianianhuaguoji|CARNIVAL GROUP||嘉年华国际控股有限公司
+hk|0|00997|普汇中金国际|PHZJGJ:|puhuizhongjinguoji|CHINLINK INTL||普汇中金国际控股有限公司
+hk|0|00998|中信银行|ZXYX:ZSYX:ZXYH:ZSYH:|zhongxinyinxing:zhongshenyinxing:zhongxinyinhang:zhongshenyinhang|CITIC BANK||中信银行股份有限公司-H股
+hk|0|00999|I.T|I.T:|I.T|I.T||I.TLtd.
+hk|4|HSI|恒生指数|HSZS:HSZS:|hengshengzhishu:hengshengzhishuo|||
+hk|4|HSCEI|国企指数|GQZS:GQZS:|guoqizhishu:guoqizhishuo|||
+hk|4|HSCCI|红筹指数|HCZS:GCZS:HCZS:GCZS:|hongchouzhishu:gongchouzhishu:hongchouzhishuo:gongchouzhishuo|||
+hk|0|01310|香港宽频|XGKP:XJKP:XGKB:XJKB:|xianggangkuanpin:xiangjiangkuanpin:xianggangkuanbin:xiangjiangkuanbin|HKBN||香港宽带有限公司
+hk|0|01430|苏创燃气|SCRQ:|suchuangranqi|SUCHUANG GAS||苏创燃气股份有限公司
+hk|0|01468|英裘控股|YQKG:|yingqiukonggu|UKF||英裘(控股)有限公司
+hk|0|01566|华夏动漫|HXDM:|huaxiadongman|CHINA ANIMATION||华夏动漫形象有限公司
+hk|0|01858|春立医疗|CLYL:|chunliyiliao|CHUNLI MEDICAL||北京市春立正达医疗器械股份有限公司-H股
+hk|0|02942|CHINAJINHAI RTS|CHINAJINHAIRTS:|CHINAJINHAIRTS|||
+hk|0|02946|SH TONVA RTS|SHTONVARTS:|SHTONVARTS|||
+hk|0|02952|GET NICE RTS|GETNICERTS:|GETNICERTS|||
+hk|0|00442|KTLINT'L|KTLINT'L:|KTLINT'L|KTL INT'L||KTLInternationalHoldingsGroupLtd.
+hk|0|01001|VANSHUNGCHONG|VANSHUNGCHONG:|VANSHUNGCHONG|VAN SHUNG CHONG||万顺昌集团有限公司
+hk|0|01004|中国智慧能源|ZGZHNY:ZGZHNY:|zhongguozhihuinengyuan:zhongguozhihuinaiyuan|C SMARTERENERGY||中国智慧能源集团控股有限公司
+hk|0|01005|MATRIXHOLDINGS|MATRIXHOLDINGS:|MATRIXHOLDINGS|MATRIX HOLDINGS||美力时集团有限公司
+hk|0|01037|DAIWAASSOCIATE|DAIWAASSOCIATE:|DAIWAASSOCIATE|DAIWA ASSOCIATE||台和商事控股有限公司
+hk|0|00104|ASIACOMMHOLD|ASIACOMMHOLD:|ASIACOMMHOLD|ASIA COMM HOLD||冠亚商业集团有限公司
+hk|0|01098|ROADKINGINFRA|ROADKINGINFRA:|ROADKINGINFRA|ROAD KING INFRA||路劲基建有限公司
+hk|0|01114|BRILLIANCECHI|BRILLIANCECHI:|BRILLIANCECHI|BRILLIANCE CHI||华晨中国汽车控股有限公司
+hk|0|01116|MAYERHOLDINGS|MAYERHOLDINGS:|MAYERHOLDINGS|MAYER HOLDINGS||美亚控股有限公司
+hk|0|01135|ASIASATELLITE|ASIASATELLITE:|ASIASATELLITE|ASIA SATELLITE||亚洲卫星控股有限公司
+hk|0|00114|HERALDHOLD|HERALDHOLD:|HERALDHOLD|HERALD HOLD||兴利集团有限公司
+hk|0|01184|S.A.S.DRAGON|S.A.S.DRAGON:|S.A.S.DRAGON|S.A.S. DRAGON||时捷集团有限公司
+hk|0|00120|COSMOPOLINT'L|COSMOPOLINT'L:|COSMOPOLINT'L|COSMOPOL INT'L||四海国际集团有限公司
+hk|0|01221|SINOHOTELS|SINOHOTELS:|SINOHOTELS|SINO HOTELS||信和酒店(集团)有限公司
+hk|0|01222|WANGONGROUP|WANGONGROUP:|WANGONGROUP|WANG ON GROUP||宏安集团有限公司
+hk|0|01323|NEWTREEGROUP|NEWTREEGROUP:|NEWTREEGROUP|NEWTREE GROUP||友川集团控股有限公司
+hk|0|01360|MEGAEXPOHLDG|MEGAEXPOHLDG:|MEGAEXPOHLDG|MEGAEXPO HLDG||MegaExpoHoldingsLtd.
+hk|0|00143|GLOBALTECH|GLOBALTECH:|GLOBALTECH|GLOBAL TECH||耀科国际(控股)有限公司
+hk|0|00146|TAIPINGCARPET|TAIPINGCARPET:|TAIPINGCARPET|TAI PING CARPET||太平地毡国际有限公司
+hk|0|00148|KINGBOARDCHEM|KINGBOARDCHEM:|KINGBOARDCHEM|KINGBOARD CHEM||建滔化工集团有限公司
+hk|0|00182|协合新能源|XHXNY:XGXNY:XHXNY:XGXNY:|xiehexinnengyuan:xiegexinnengyuan:xiehexinnaiyuan:xiegexinnaiyuan|CONCORD NE||协合新能源集团有限公司
+hk|0|00001|长和|CH:CH:CH:|changhe:changhuo:changhu|CKH HOLDINGS||长江和记实业有限公司
+hk|0|02080|MagnumEnt|MagnumEnt:|MagnumEnt|MAGNUM ENT||MagnumEntertainmentGroupHoldingsLtd.
+hk|0|00211|STYLANDHOLD|STYLANDHOLD:|STYLANDHOLD|STYLAND HOLD||大凌集团有限公司
+hk|0|00212|NANYANGHOLD|NANYANGHOLD:|NANYANGHOLD|NANYANG HOLD||南洋集团有限公司
+hk|0|00213|NATIONALELECH|NATIONALELECH:|NATIONALELECH|NATIONAL ELEC H||乐声电子有限公司
+hk|0|00243|QPLINT'L|QPLINT'L:|QPLINT'L|QPL INT'L||品质国际集团有限公司
+hk|0|00247|TSTPROPERTIES|TSTPROPERTIES:|TSTPROPERTIES|TST PROPERTIES||尖沙咀置业集团有限公司
+hk|0|00025|CHEVALIERINT'L|CHEVALIERINT'L:|CHEVALIERINT'L|CHEVALIER INT'L||其士国际集团有限公司
+hk|0|02618|TCL通讯|TCLTX:|TCLtongxun|TCL COMM||TCL通讯科技控股有限公司
+hk|0|02878|SOLOMONSYSTECH|SOLOMONSYSTECH:|SOLOMONSYSTECH|SOLOMON SYSTECH||SolomonSystech(International)Ltd.
+hk|0|00289|WINGONCO|WINGONCO:|WINGONCO|WING ON CO||永安国际有限公司
+hk|0|02933|CHINAJINHAI-OLD|CHINAJINHAI-OLD:|CHINAJINHAI-OLD|||中国金海国际集团有限公司
+hk|0|02934|JIN CAI H-OLD|JINCAIH-OLD:|JINCAIH-OLD|||金彩控股有限公司
+hk|0|02937|GENVON GP-OLD|GENVONGP-OLD:|GENVONGP-OLD|||正峰集团有限公司
+hk|0|00303|VTECHHOLDINGS|VTECHHOLDINGS:|VTECHHOLDINGS|VTECH HOLDINGS||伟易达集团有限公司
+hk|0|00328|ALCOHOLDINGS|ALCOHOLDINGS:|ALCOHOLDINGS|ALCO HOLDINGS||爱高集团有限公司
+hk|0|00345|VITASOYINT'L|VITASOYINT'L:|VITASOYINT'L|VITASOY INT'L||维他奶国际集团有限公司
+hk|0|00035|FECONSORTINTL|FECONSORTINTL:|FECONSORTINTL|FE CONSORT INTL||远东发展有限公司
+hk|0|00375|YGMTRADING|YGMTRADING:|YGMTRADING|YGM TRADING||YGM贸易有限公司
+hk|0|00444|SINCEREWATCHHK|SINCEREWATCHHK:|SINCEREWATCHHK|SINCEREWATCH HK||SincereWatch(HongKong)Ltd.
+hk|0|00052|FAIRWOODHOLD|FAIRWOODHOLD:|FAIRWOODHOLD|FAIRWOOD HOLD||大快活集团有限公司
+hk|0|00522|ASMPACIFIC|ASMPACIFIC:|ASMPACIFIC|ASM PACIFIC||ASMPacificTechnologyLtd.
+hk|0|00524|E-KONGGROUP|E-KONGGROUP:|E-KONGGROUP|E-KONG GROUP||e-KongGroupLtd.
+hk|0|00529|SISINT'L|SISINT'L:|SISINT'L|SIS INT'L||新龙国际集团有限公司
+hk|0|00532|WKKINTL(HOLD)|WKKINTL(HOLD):|WKKINTL(HOLD)|WKK INTL (HOLD)||Wong'sKongKingInternational(Holdings)Ltd.
+hk|0|00557|CITYE-SOLUTION|CITYE-SOLUTION:|CITYE-SOLUTION|CITY E-SOLUTION||城市e-Solutions有限公司
+hk|0|00592|BOSSINIINT'L|BOSSINIINT'L:|BOSSINIINT'L|BOSSINI INT'L||堡狮龙国际有限公司
+hk|0|00595|AVCONCEPTHOLD|AVCONCEPTHOLD:|AVCONCEPTHOLD|AV CONCEPT HOLD||先思行集团有限公司
+hk|0|00610|WAIKEEHOLD|WAIKEEHOLD:|WAIKEEHOLD|WAI KEE HOLD||惠记集团有限公司
+hk|0|00613|YUGANGINT'L|YUGANGINT'L:|YUGANGINT'L|YUGANG INT'L||渝港国际有限公司
+hk|0|00620|UDLHOLDINGS|UDLHOLDINGS:|UDLHOLDINGS|UDL HOLDINGS||太元集团有限公司
+hk|0|06288|FASTRETAIL-DRS|FASTRETAIL-DRS:|FASTRETAIL-DRS|FAST RETAIL-DRS||迅销有限公司-预托证券
+hk|0|00647|JOYCEBOUTIQUE|JOYCEBOUTIQUE:|JOYCEBOUTIQUE|JOYCE BOUTIQUE||JoyceBoutiqueHoldingsLtd.
+hk|0|06889|DYNAMJAPAN|DYNAMJAPAN:|DYNAMJAPAN|DYNAM JAPAN||DYNAMJAPANHOLDINGSCo.,Ltd.
+hk|0|00697|SHOUGANGINT'L|SHOUGANGINT'L:|SHOUGANGINT'L|SHOUGANG INT'L||首长国际企业有限公司
+hk|0|00701|CNTGROUP|CNTGROUP:|CNTGROUP|CNT GROUP||北海集团有限公司
+hk|0|00752|PICOFAREAST|PICOFAREAST:|PICOFAREAST|PICO FAR EAST||笔克远东集团有限公司
+hk|0|00758|JUNEFIELDGROUP|JUNEFIELDGROUP:|JUNEFIELDGROUP|JUNEFIELD GROUP||庄胜百货集团有限公司
+hk|0|00759|CECINT'LHOLD|CECINT'LHOLD:|CECINT'LHOLD|CEC INT'L HOLD||CEC国际控股有限公司
+hk|0|00765|PERFECTECHINTL|PERFECTECHINTL:|PERFECTECHINTL|PERFECTECH INTL||威发国际集团有限公司
+hk|0|00767|PACIFICPLYWOOD|PACIFICPLYWOOD:|PACIFICPLYWOOD|PACIFIC PLYWOOD||太平洋实业控股有限公司
+hk|0|00770|SHANGHAIGROWTH|SHANGHAIGROWTH:|SHANGHAIGROWTH|SHANGHAI GROWTH||沪光国际上海发展投资有限公司
+hk|0|00078|REGALINT'L|REGALINT'L:|REGALINT'L|REGAL INT'L||富豪酒店国际控股有限公司
+hk|0|08092|ITEHOLDINGS|ITEHOLDINGS:|ITEHOLDINGS|ITE HOLDINGS||ITE(Holdings)Ltd.
+hk|0|08112|FOCUSMEDIA|FOCUSMEDIA:|FOCUSMEDIA|FOCUS MEDIA||FocusMediaNetworkLtd.
+hk|0|08147|MILLENNIUMPG|MILLENNIUMPG:|MILLENNIUMPG|MILLENNIUM PG||MillenniumPacificGroupHoldingsLtd.
+hk|0|08170|KSLHoldings|KSLHoldings:|KSLHoldings|KSL HOLDINGS||KSLHoldingsLtd.
+hk|0|08176|EDSWELLNESS|EDSWELLNESS:|EDSWELLNESS|EDS WELLNESS||EDSWellnessHoldingsLtd.
+hk|0|08215|FIRSTCREDIT|FIRSTCREDIT:|FIRSTCREDIT|FIRST CREDIT||第一信用金融集团有限公司
+hk|0|08326|JCGROUPHLDG|JCGROUPHLDG:|JCGROUPHLDG|JC GROUP HLDG||JCGroupHoldingsLtd.
+hk|0|08363|SDMGROUP|SDMGROUP:|SDMGROUP|SDM GROUP||SDMGroupHoldingsLtd.
+hk|0|08379|WLS HOLD-OLD|WLSHOLD-OLD:|WLSHOLD-OLD|||汇隆控股有限公司
+hk|0|00088|TAICHEUNGHOLD|TAICHEUNGHOLD:|TAICHEUNGHOLD|TAI CHEUNG HOLD||大昌集团有限公司
+hk|0|00900|AEONCREDIT|AEONCREDIT:|AEONCREDIT|AEON CREDIT||Aeon信贷财务(亚洲)有限公司
+hk|0|00905|MASTERMINDCAP|MASTERMINDCAP:|MASTERMINDCAP|MASTERMIND CAP||慧德投资有限公司
+hk|0|00913|合一投资|HYTZ:GYTZ:|heyitouzi:geyitouzi|UNITY INV HOLD||合一投资控股有限公司
+hk|0|00092|CHAMPIONTECH|CHAMPIONTECH:|CHAMPIONTECH|CHAMPION TECH||冠军科技集团有限公司
+hk|0|00093|TERMBRAYIND|TERMBRAYIND:|TERMBRAYIND|TERMBRAY IND||添利工业国际(集团)有限公司
+hk|0|00975|MONGOLMINING|MONGOLMINING:|MONGOLMINING|MONGOL MINING||MongolianMiningCorporation
+hk|0|02336|海亮国际|HLGJ:|hailiangguoji|HAILIANG INTL||海亮国际控股有限公司
+hk|0|08018|汇财软件|HCRJ:|huicairuanjian|FINSOFT CORP||汇财软件公司
+hk|0|08305|均安控股|JAKG:|junankonggu|KWAN ON HLDGS||均安控股有限公司
+hk|0|02945|OPES ASIA-OLD|OPESASIA-OLD:|OPESASIA-OLD|||华保亚洲发展有限公司
+hk|0|02948|UNIVERSE IN-OLD|UNIVERSEIN-OLD:|UNIVERSEIN-OLD|||寰宇国际控股有限公司
+hk|0|02951|MING FUNG-OLD|MINGFUNG-OLD:|MINGFUNG-OLD|||明丰珠宝集团有限公司
+hk|0|01415|高伟电子|GWDZ:|gaoweidianzi|COWELL||高伟电子控股有限公司
+hk|0|02953|GOLDIN FIN-10K|GOLDINFIN-10K:|GOLDINFIN-10K|||高银金融(集团)有限公司
+hk|0|00623|中视金桥|ZSJQ:|zhongshijinqiao|SINOMEDIA||中视金桥国际传媒控股有限公司
+hk|0|02956|JOY CITY RTS|JOYCITYRTS:|JOYCITYRTS|||
+hk|0|02955|KITH HOLD-2000|KITHHOLD-2000:|KITHHOLD-2000|||侨威集团有限公司
+hk|0|03606|福耀玻璃|FYBL:|fuyaoboli|FUYAO GLASS||福耀玻璃工业集团股份有限公司-H股
+hk|0|03313|雅高控股|YGKG:|yagaokonggu|ARTGO HOLDINGS||雅高控股有限公司
+hk|0|06880|腾邦控股|TBKG:|tengbangkonggu|TEMPUS HOLD||腾邦控股有限公司
+hk|0|08148|奥柏中国|ABZG:YBZG:ABZG:YBZG:|aobaizhongguo:yubaizhongguo:aobozhongguo:yubozhongguo|AURUM PACIFIC||奥柏中国集团有限公司
+hk|0|01245|NIRAKU|NIRAKU:|NIRAKU|NIRAKU||NirakuGCHoldings,Inc.
+hk|0|02961|EASYKNIT E RTS|EASYKNITERTS:|EASYKNITERTS|||
+hk|0|00139|中国金海国际|ZGJHGJ:|zhongguojinhaiguoji|CHINA JINHAI||中国金海国际集团有限公司
+hk|0|08377|UL CREATIV-OLD|ULCREATIV-OLD:|ULCREATIV-OLD|||无限创意控股有限公司
+hk|0|08380|GET HOLDING-OLD|GETHOLDING-OLD:|GETHOLDING-OLD|||智易控股有限公司
+hk|0|02950|EASYKNITENT-OLD|EASYKNITENT-OLD:|EASYKNITENT-OLD|||永义实业集团有限公司
+hk|0|01250|金彩控股|JCKG:|jincaikonggu|JIN CAI HLDGS||金彩控股有限公司
+hk|0|01776|广发证券|GFZQ:AFZQ:GFZX:AFZX:|guangfazhengquan:anfazhengquan:guangfazhengxuan:anfazhengxuan|GF SEC||广发证券股份有限公司-H股
+hk|0|02389|正峰集团|ZFJT:|zhengfengjituan|GENVON GROUP||正峰集团有限公司
+hk|0|08021|汇隆控股|HLKG:|huilongkonggu|WLS HOLDINGS||汇隆控股有限公司
+hk|0|01500|现恒建筑|XHJZ:|xianhengjianzhu|INCON||现恒建筑控股有限公司
+hk|0|00209|中国瀛晟娱乐|ZGYSYL:ZGYCYL:ZGYSYY:ZGYCYY:|zhongguoyingshengyule:zhongguoyingchengyule:zhongguoyingshengyuyue:zhongguoyingchengyuyue|WINSHINE ENT||中国瀛晟娱乐传媒控股有限公司
+hk|0|08105|汇能集团|HNJT:HNJT:|huinengjituan:huinaijituan|SYNERGY GROUP||汇能集团控股国际有限公司
+hk|0|08381|RUI KANG-OLD|RUIKANG-OLD:|RUIKANG-OLD|||锐康药业集团投资有限公司
+hk|0|02960|SOLARTECH-OLD|SOLARTECH-OLD:|SOLARTECH-OLD|||蒙古矿业控股有限公司
+hk|0|02963|CHAGRI-PROD-OLD|CHAGRI-PROD-OLD:|CHAGRI-PROD-OLD|||中国农产品交易有限公司
+hk|0|00530|高银金融|GYJR:|gaoyinjinrong|GOLDIN FIN HOLD||高银金融(集团)有限公司
+hk|0|00810|华保亚洲|HBYZ:|huabaoyazhou|OPES ASIA||华保亚洲发展有限公司
+hk|0|02966|CHAGRI-PROD RTS|CHAGRI-PRODRTS:|CHAGRI-PRODRTS|||
+hk|0|01046|寰宇国际|HYGJ:|huanyuguoji|UNIVERSE INT'L||寰宇国际控股有限公司
+hk|0|01201|侨威集团|QWJT:|qiaoweijituan|KITH HOLDINGS||侨威集团有限公司
+hk|0|04370|STARBUCKS-T OLD|STARBUCKS-TOLD:|STARBUCKS-TOLD|||星巴克
+hk|0|01101|华荣能源|HRNY:HRNY:|huarongnengyuan:huarongnaiyuan|HUARONG ENERGY||中国华荣能源股份有限公司
+hk|0|01329|首创巨大|SCJD:SCJD:SCJT:|shouchuangjuda:shouchuangjudai:shouchuangjutai|CAPITAL JUDA||首创鉅大有限公司
+hk|0|00326|中国星集团|ZGXJT:|zhongguoxingjituan|CHINA STAR ENT||中国星集团有限公司
+hk|0|00708|恒大健康|HDJK:HDJK:HTJK:|hengdajiankang:hengdaijiankang:hengtaijiankang|EVERG HEALTH||恒大健康产业集团有限公司
+hk|0|02967|WAIYUENTONG RTS|WAIYUENTONGRTS:|WAIYUENTONGRTS|||
+hk|0|08133|铸能控股|ZNKG:ZNKG:|zhunengkonggu:zhunaikonggu|JETE POWER||铸能控股有限公司
+hk|0|08100|智易控股|ZYKG:|zhiyikonggu|GET HOLDINGS||智易控股有限公司
+hk|0|06826|昊海生物科技|HHSWKJ:|haohaishengwukeji|HAOHAI BIOTEC||上海昊海生物科技股份有限公司-H股
+hk|0|02972|HAITONG INT RTS|HAITONGINTRTS:|HAITONGINTRTS|||
+hk|0|00616|永义实业|YYSY:|yongyishiye|EASYKNIT ENT||永义实业集团有限公司
+hk|0|08387|L&A INTL-OLD|L&AINTL-OLD:|L&AINTL-OLD|||乐亚国际控股有限公司
+hk|0|01033|中石化油服|ZSHYF:ZDHYF:|zhongshihuayoufu:zhongdanhuayoufu|SINOPEC SSC||中石化石油工程技术服务股份有限公司-H股
+hk|0|00183|宏辉集团|HHJT:|honghuijituan|WINFULL GP||宏辉集团控股有限公司
+hk|0|02973|SOUNDWILL H-2K|SOUNDWILLH-2K:|SOUNDWILLH-2K|||金朝阳集团有限公司
+hk|0|08079|易还财务投资|YHCWTZ:YHCWTZ:|yihuancaiwutouzi:yihaicaiwutouzi|EASY REPAY FIN||易还财务投资有限公司
+hk|0|00521|海航国际投资|HHGJTZ:|haihangguojitouzi|HNA INT'L INV||海航国际投资集团有限公司
+hk|0|02978|EMPEROR CAP RTS|EMPERORCAPRTS:|EMPERORCAPRTS|||
+hk|0|08037|锐康药业|RKYY:|ruikangyaoye|RUI KANG PHARM||锐康药业集团投资有限公司
+hk|0|01470|滴达国际|DDGJ:|didaguoji|TIC TAC INT'L||滴达国际控股有限公司
+hk|0|01166|蒙古矿业|MGKY:|menggukuangye|SOLARTECH INT'L||蒙古矿业控股有限公司
+hk|0|02970|AMCO UNITED-OLD|AMCOUNITED-OLD:|AMCOUNITED-OLD|||隽泰控股有限公司
+hk|0|01281|隆基泰和|LJTH:LJTH:LJTH:|longjitaihe:longjitaihuo:longjitaihu|LONG JI TAI HE||隆基泰和控股有限公司
+hk|0|00149|中国农产品交易|ZGNCPJY:|zhongguonongchanpinjiaoyi|CH AGRI-PROD EX||中国农产品交易有限公司
+hk|0|00039|中国北大荒|ZGBDH:ZGBDH:ZGBTH:|zhongguobeidahuang:zhongguobeidaihuang:zhongguobeitaihuang|CH BEIDAHUANG||中国北大荒产业集团控股有限公司
+hk|0|02986|TONLY ELEC-2000|TONLYELEC-2000:|TONLYELEC-2000|||通力电子控股有限公司
+hk|0|00812|西证国际证券|XZGJZQ:XZGJZX:|xizhengguojizhengquan:xizhengguojizhengxuan|SWSI||西证国际证券股份有限公司
+hk|0|04337|星巴克-T新单位|XBK-TXDW:XBK-TXSW:XBK-TXCW:|xingbake-Txindanwei:xingbake-Txinshanwei:xingbake-Txinchanwei|STARBUCKS-T||星巴克
+hk|0|02974|COURAGEMARI-OLD|COURAGEMARI-OLD:|COURAGEMARI-OLD|||勇利航业集团有限公司
+hk|0|00878|金朝阳集团|JZYJT:JCYJT:|jinzhaoyangjituan:jinchaoyangjituan|SOUNDWILL HOLD||金朝阳集团有限公司
+hk|0|01301|德基科技控股|DJKJKG:|dejikejikonggu|D&G TECH||德基科技控股有限公司
+hk|0|02990|SOUTH CHI F RTS|SOUTHCHIFRTS:|SOUTHCHIFRTS|||
+hk|0|08355|超智能控股|CZNKG:CZNKG:|chaozhinengkonggu:chaozhinaikonggu|I-CONTROL||超智能控股有限公司
+hk|0|08397|GET HOLDING RTS|GETHOLDINGRTS:|GETHOLDINGRTS|||MillenniumPacificGroupHoldingsLtd.
+hk|0|01035|BBI生命科学|BBISMKX:|BBIshengmingkexue|BBI LIFE SCI||BBI生命科学有限公司
+hk|0|01303|汇力资源|HLZY:|huiliziyuan|HUILI RES||汇力资源(集团)有限公司
+hk|0|08195|L&AINTLHOLD|L&AINTLHOLD:|L&AINTLHOLD|L&A INTL HOLD||乐亚国际控股有限公司
+hk|0|08396|ICO GROUP-8000|ICOGROUP-8000:|ICOGROUP-8000|||扬科集团有限公司
+hk|0|02984|EPI (HOLD)-OLD|EPI(HOLD)-OLD:|EPI(HOLD)-OLD|||长盈集团(控股)有限公司
+hk|0|02988|BINHAI INV-OLD|BINHAIINV-OLD:|BINHAIINV-OLD|||滨海投资有限公司
+hk|0|06839|云南水务|YNSW:YNSW:|yunnanshuiwu:yunnashuiwu|YUNNAN WATER||云南水务投资股份有限公司-H股
+hk|0|08209|美捷汇控股|MJHKG:|meijiehuikonggu|MAJOR HLDGS||美捷汇控股有限公司
+hk|0|08121|超凡网络|CFWL:CFWL:|chaofanwangluo:chaofanwanglao|GURU ONLINE||超凡网络(控股)有限公司
+hk|0|01520|RUNWAY GLOBAL|RUNWAYGLOBAL:|RUNWAYGLOBAL|||时尚环球控股有限公司
+hk|0|06886|HTSC|HTSC:|HTSC|HTSC||华泰证券股份有限公司-H股
+hk|0|01113|长地|CD:|changdi|CK PROPERTY||长江实业地产有限公司
+hk|0|00218|申万宏源|SWHY:SMHY:|shenwanhongyuan:shenmohongyuan|SHENWANHONGYUAN||申万宏源(香港)有限公司
+hk|0|00630|隽泰控股|JTKG:JTKG:|juntaikonggu:juantaikonggu|AMCO UNITED||隽泰控股有限公司
+hk|0|01249|通力电子|TLDZ:|tonglidianzi|TONLY ELEC||通力电子控股有限公司
+hk|0|08038|金力集团|JLJT:|jinlijituan|GOLDENPOWER||金力集团控股有限公司
+hk|0|00641|恒天立信|HTLX:HTLS:|hengtianlixin:hengtianlishen|CHTC FONG'S-NEW||恒天立信工业有限公司
+hk|0|02989|CHTC FONG'S-OLD|CHTCFONG'S-OLD:|CHTCFONG'S-OLD|||恒天立信工业有限公司
+hk|0|01766|中国中车|ZGZC:|zhongguozhongche|CRRC||中国中车股份有限公司-H股
+hk|0|01822|幻音数码|HYSM:HYSM:|huanyinshuma:huanyinshuoma|E-RENTAL CAR||宜租互联网租车有限公司
+hk|0|02992|HANGFAT GI-OLD|HANGFATGI-OLD:|HANGFATGI-OLD|||恒发洋参控股有限公司
+hk|0|00317|广州广船国际股份|GZGCGJGF:AZGCGJGF:GZACGJGF:AZACGJGF:GZGCGJGB:AZGCGJGB:GZACGJGB:AZACGJGB:|guangzhouguangchuanguojigufen:anzhouguangchuanguojigufen:guangzhouanchuanguojigufen:anzhouanchuanguo|COMEC||中船海洋与防务装备股份有限公司-H股
+hk|0|08261|海天水电|HTSD:|haitianshuidian|HAITIAN HYD-NEW||海天水电国际有限公司
+hk|0|08398|HAITIAN HYD-OLD|HAITIANHYD-OLD:|HAITIANHYD-OLD|||海天水电国际有限公司
+hk|0|00911|恒发洋参|HFYC:HFYS:HFYC:HFYS:|hengfayangcan:hengfayangshen:hengfayangcen:hengfayangsan|HANGFAT GI-NEW||恒发洋参控股有限公司
+hk|0|01082|香港教育国际|XGJYGJ:XJJYGJ:|xianggangjiaoyuguoji:xiangjiangjiaoyuguoji|HK EDU INTL-NEW||香港教育(国际)投资集团有限公司
+hk|0|02991|HK EDU INTL-OLD|HKEDUINTL-OLD:|HKEDUINTL-OLD|||香港教育(国际)投资集团有限公司
+hk|0|08310|伽玛物流集团|QMWLJT:JMWLJT:GMWLJT:|qiemawuliujituan:jiamawuliujituan:gamawuliujituan|DAFENG PORT||大丰港和顺科技股份有限公司
+hk|0|02900|CAPITAL ENV RTS|CAPITALENVRTS:|CAPITALENVRTS|||
+hk|0|02901|CAP ESTATE RTS|CAPESTATERTS:|CAPESTATERTS|||
+hk|0|01145|勇利航业|YLHY:|yonglihangye|COURAGEMARINE||勇利航业集团有限公司
+hk|0|01322|CwGroupHold|CwGroupHold:|CwGroupHold|CW GROUP-500||CWGroupHoldingsLtd.
+hk|0|01673|华章科技|HZKJ:|huazhangkeji|HUAZHANG-2000||华章科技控股有限公司
+hk|0|00186|GRANDEHOLDINGS|GRANDEHOLDINGS:|GRANDEHOLDINGS|GRANDE HOLDINGS||嘉域集团有限公司
+hk|0|08336|电讯数码控股|DXSMKG:DXSMKG:|dianxunshumakonggu:dianxunshuomakonggu|TELECOMDIGIT-1K||电讯数码控股有限公司
+hk|0|01530|三生制药|SSZY:|sanshengzhiyao|3SBIO||三生制药
+hk|0|00876|永泰投资控股|YTTZKG:|yongtaitouzikonggu|MEGA MEDICAL||美加医学科技有限公司
+hk|0|08089|华人策略控股|HRCLKG:|huarencel<ekonggu|CHINESE STRAT||华人策略控股有限公司
+hk|0|08097|鼎石资本|DSZB:DDZB:|dingshiziben:dingdanziben|PINESTONE||鼎石资本有限公司
+hk|0|08276|华章科技|HZKJ:|huazhangkeji|||
+hk|0|01738|飞尚无烟煤|FSWYM:|feishangwuyanmei|FS ANTHRA-NEW||飞尚无烟煤资源有限公司
+hk|0|02993|FS ANTHRA-OLD|FSANTHRA-OLD:|FSANTHRA-OLD|||飞尚无烟煤资源有限公司
+hk|0|08140|扬科集团|YKJT:|yangkejituan|ICO GROUP||扬科集团有限公司
+hk|0|02902|CW GROUP-2000|CWGROUP-2000:|CWGROUP-2000|||CWGroupHoldingsLtd.
+hk|0|02903|HUAZHANG-4000|HUAZHANG-4000:|HUAZHANG-4000|||华章科技控股有限公司
+hk|0|08375|TELECOMDIGIT-4K|TELECOMDIGIT-4K:|TELECOMDIGIT-4K|||电讯数码控股有限公司
+hk|0|06108|新锐医药|XRYY:|xinruiyiyao|NEW RAY MEDIC||新锐医药国际控股有限公司
+hk|0|03836|和谐汽车|HXQC:HXQC:HXQC:|hexieqiche:huoxieqiche:huxieqiche|HARMONY AUTO||中国和谐新能源汽车控股有限公司
+hk|0|02904|COL CAPITAL|COLCAPITAL:|COLCAPITAL|||中国网络资本有限公司
+hk|0|00860|奥立仕控股|ALSKG:YLSKG:|aolishikonggu:yulishikonggu|O LUXE HOLD||奥立仕控股有限公司
+hk|0|01239|金宝宝控股|JBBKG:|jinbaobaokonggu|JIN BAO BAO-NEW||金宝宝控股有限公司
+hk|0|01246|毅信控股|YXKG:YSKG:|yixinkonggu:yishenkonggu|NGAISHUN H-NEW||毅信控股有限公司
+hk|0|08268|迪臣建设|DCJS:|dichenjianshe|DESON CONS-NEW||迪臣建设国际集团有限公司
+hk|0|02996|JIN BAO BAO-OLD|JINBAOBAO-OLD:|JINBAOBAO-OLD|||金宝宝控股有限公司
+hk|0|02997|NGAISHUN H-OLD|NGAISHUNH-OLD:|NGAISHUNH-OLD|||毅信控股有限公司
+hk|0|08400|DESON CONS-OLD|DESONCONS-OLD:|DESONCONS-OLD|||迪臣建设国际集团有限公司
+hk|0|02905|LANDING INTL|LANDINGINTL:|LANDINGINTL|||蓝鼎国际发展有限公司
+hk|0|00730|SHOUGANGGRAND|SHOUGANGGRAND:|SHOUGANGGRAND|SHOUGANG GRAND||首长四方(集团)有限公司
+hk|0|02906|HANNY HOLDINGS|HANNYHOLDINGS:|HANNYHOLDINGS|||锦兴集团有限公司
+hk|0|06183|中国绿宝|ZGLB:ZGLB:|zhongguolvbao:zhongguolubao|CH GREENFRESH||中国绿宝集团有限公司
+hk|0|08373|CHINA3D DIGIT|CHINA3DDIGIT:|CHINA3DDIGIT|||中国3D数码娱乐有限公司
+hk|0|01039|畅丰车桥|CFCQ:|changfengcheqiao|FORTUNET E-COMM||鑫网易商集团有限公司
+hk|0|02886|滨海投资|BHTZ:|binhaitouzi|BINHAI INV||滨海投资有限公司
+hk|0|00689|长盈集团(控股)|CYJT(KG):|changyingjituan(konggu)|EPI (HOLDINGS)||长盈集团(控股)有限公司
+hk|0|00814|北京京客隆|BJJKL:|beijingjingkelong|JINGKELONG||北京京客隆商业集团股份有限公司-H股
+hk|0|04338|微软-T|WR-T:|weiruan-T|MICROSOFT-T||微软
+hk|0|00574|百信药业|BXYY:BSYY:|baixinyaoye:baishenyaoye|PASHUN PHARMA||百信药业国际控股有限公司
+hk|0|08238|惠陶集团|HTJT:|huitaojituan|WINTO GROUP-NEW||惠陶集团(控股)有限公司
+hk|0|08372|WINTO GROUP-OLD|WINTOGROUP-OLD:|WINTOGROUP-OLD|||惠陶集团(控股)有限公司
+hk|0|00402|天下图控股|TXTKG:|tianxiatukonggu|PEACEMAP HOLD||天下图控股有限公司
+hk|0|02326|百灵达国际控股|BLDGJKG:|bailingdaguojikonggu|BEP INT'L-NEW||百灵达国际控股有限公司
+hk|0|02998|BEP INT'L-OLD|BEPINT'L-OLD:|BEPINT'L-OLD|||百灵达国际控股有限公司
+hk|0|02686|亚美能源|YMNY:YMNY:|yameinengyuan:yameinaiyuan|AAG ENERGY||亚美能源控股有限公司
+hk|0|02907|LINMARK GROUP|LINMARKGROUP:|LINMARKGROUP|||鹰力投资控股有限公司
+hk|0|01027|集成伞业|JCSY:|jichengsanye|JC UMBRELLA-NEW||集成伞业控股有限公司
+hk|0|02005|利君国际|LJGJ:|lijunguoji|SSY GROUP||石四药集团有限公司
+hk|0|02366|星美文化|XMWH:|xingmeiwenhua|SMI CULTURE||星美文化集团控股有限公司
+hk|0|02999|JC UMBRELLA-OLD|JCUMBRELLA-OLD:|JCUMBRELLA-OLD|||集成伞业控股有限公司
+hk|0|08395|CHI ENGY HOLD|CHIENGYHOLD:|CHIENGYHOLD|||华夏能源控股有限公司
+hk|0|02908|TCC INT'L RTS|TCCINT'LRTS:|TCCINT'LRTS|||
+hk|0|00263|高富集团控股|GFJTKG:|gaofujituankonggu|GT GROUP HLDG||高富集团控股有限公司
+hk|0|02909|ZHONG HUA INT'L|ZHONGHUAINT'L:|ZHONGHUAINT'L|||丽盛集团控股有限公司
+hk|0|00022|MEXAN|MEXAN:|MEXAN|||茂盛控股有限公司
+hk|0|02324|首都创投|SDCT:SDCT:|shouduchuangtou:shoudouchuangtou|CAPITAL VC-NEW||首都创投有限公司
+hk|0|08212|誉满国际控股|YMGJKG:|yumanguojikonggu|CELEBRATE-NEW||誉满国际(控股)有限公司
+hk|0|02981|CAPITAL VC-OLD|CAPITALVC-OLD:|CAPITALVC-OLD|||首都创投有限公司
+hk|0|08399|CELEBRATE-OLD|CELEBRATE-OLD:|CELEBRATE-OLD|||誉满国际(控股)有限公司
