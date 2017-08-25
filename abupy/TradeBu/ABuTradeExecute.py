@@ -151,8 +151,8 @@ def apply_action_to_capital(capital, action_pd, kl_pd_manager):
         logging.info('apply_action_to_capital action_pd.empty!!!')
         return
 
-    # 如果交易symbol数量 > 100个显示初始化进度条
-    init_show_progress = len(set(action_pd.symbol)) > 100
+    # 如果交易symbol数量 > 10000个显示初始化进度条
+    init_show_progress = len(set(action_pd.symbol)) > 10000
     # 资金时间序列初始化各个symbol对应的持仓列，持仓价值列
     capital.apply_init_kl(action_pd, show_progress=init_show_progress)
 
@@ -164,8 +164,8 @@ def apply_action_to_capital(capital, action_pd, kl_pd_manager):
         action_pd['deal'] = action_pd.apply(capital.apply_action, axis=1,
                                             args=(progress if show_apply_act_progress else None,))
 
-    # 如果交易symbol数量 > 100个显示apply进度条
-    show_apply_kl = len(set(action_pd.symbol)) > 100
+    # 如果交易symbol数量 > 1000个显示apply进度条
+    show_apply_kl = len(set(action_pd.symbol)) > 1000
     # 根据交易行为产生的持仓列，持仓价值列更新资金时间序列
     capital.apply_kl(action_pd, kl_pd_manager, show_progress=show_apply_kl)
 

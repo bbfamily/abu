@@ -17,7 +17,7 @@ abu能够帮助用户自动完善策略，主动分析策略产生的交易行�
 | 阿布量化交易系统 | abupy目录 |
 | 阿布量化交易教程 | abupy_lecture目录 |
 | 《量化交易之路》示例代码 | ipython／python目录| 
-| 《机器学习之路》及机器学习相关资料 | https://github.com/maxmon/abu_ml | 
+| 《机器学习之路》示例代码 | https://github.com/maxmon/abu_ml | 
 
 ### 特点
 
