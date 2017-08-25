@@ -154,8 +154,10 @@ class EMarketSourceType(Enum):
     """新浪 美股"""
     E_MARKET_SOURCE_sn_us = 3
 
-    """新浪 期货"""
+    """新浪 国内期货"""
     E_MARKET_SOURCE_sn_futures = 100
+    """新浪 国际期货"""
+    E_MARKET_SOURCE_sn_futures_gb = 101
 
     """火币 比特币，莱特币"""
     E_MARKET_SOURCE_hb_tc = 200
@@ -214,6 +216,14 @@ class EMarketSubType(Enum):
     ZZCE = 'ZZCE'
     """上海期货交易所SHFE'"""
     SHFE = 'SHFE'
+
+    """伦敦金属交易所"""
+    LME = 'LME'
+    """芝加哥商品交易所"""
+    CBOT = 'CBOT'
+    """纽约商品交易所"""
+    NYMEX = 'NYMEX'
+
     """币类子市场COIN'"""
     COIN = 'COIN'
 

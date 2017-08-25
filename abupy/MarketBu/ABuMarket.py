@@ -21,7 +21,7 @@ from ..CoreBu.ABuFixes import filter, zip
 from ..CoreBu.ABuFixes import KFold, six
 from ..UtilBu.ABuLazyUtil import LazyFunc
 from ..MarketBu.ABuSymbol import Symbol, code_to_symbol
-from ..MarketBu.ABuSymbolFutures import AbuFuturesCn
+from ..MarketBu.ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
 from ..MarketBu.ABuSymbolStock import AbuSymbolCN, AbuSymbolUS, AbuSymbolHK
 
 __author__ = '阿布'
@@ -173,10 +173,18 @@ def _all_hk_symbol(index=False):
 
 def _all_futures_cn():
     """
-    AbuFuturesCn().symbol获取期货symbol代码，注意这里只取连续合约代码
+    AbuFuturesCn().symbol获取国内期货symbol代码，注意这里只取连续合约代码
     :return:
     """
     return AbuFuturesCn().symbol
+
+
+def _all_futures_gb():
+    """
+    AbuFuturesGB().symbol获取国际期货symbol代码，LME，CBOT，COMEX
+    :return:
+    """
+    return AbuFuturesGB().symbol
 
 
 def _all_tc_symbol():
@@ -208,6 +216,8 @@ def all_symbol(market=None, ss=False, index=False, value=True):
         symbols = _all_hk_symbol(index)
     elif market == EMarketTargetType.E_MARKET_TARGET_FUTURES_CN:
         symbols = _all_futures_cn()
+    elif market == EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL:
+        symbols = _all_futures_gb()
     elif market == EMarketTargetType.E_MARKET_TARGET_TC:
         symbols = _all_tc_symbol()
     else:

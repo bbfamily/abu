@@ -162,11 +162,14 @@ def rolling_corr(df, ss=None, window=g_rolling_corr_window):
     """
     corr = 0
     if ss is None:
+        # 如果不使用pd_rolling_corr，需要copy，保证df == np.inf的会修改
+        df = df.copy()
+        df[df == np.inf] = 0
         # 迭代rolling_window下的时间窗口，使用np.corrcoef，比使用pd_rolling_corr效果高很多
         for (s, e) in rolling_window:
             # eg. rolling_window第一个即为np.corrcoef(df.iloc[0:60].T)
             window_corr = np.corrcoef(df.iloc[s:e].T)
-            window_corr[window_corr == np.inf] = 0
+            window_corr[(window_corr == np.inf) | (window_corr == np.nan)] = 0
             # 当前窗口下的相关系数乘以权重, window_corr * weights[s]为df.shape[1]大小的相关系数二维方阵
             corr += window_corr * weights[s]
     else:

@@ -343,9 +343,6 @@ class AbuProgress(object):
         self._label = label
         self.f = sys.stdout
         self.progress_widget = None
-        if ABuEnv.g_is_ipython:
-            self.progress_widget = FloatProgress(value=0, min=0, max=100)
-            display(self.progress_widget)
 
     def __enter__(self):
         """创建子进程做进度显示"""
@@ -384,7 +381,10 @@ class AbuProgress(object):
         self.f.write('\r')
         self.f.write(p_format.format(self._label, ext, ps))
 
-        if ABuEnv.g_is_ipython and self.progress_widget is not None:
+        if ABuEnv.g_is_ipython:
+            if self.progress_widget is None:
+                self.progress_widget = FloatProgress(value=0, min=0, max=100)
+                display(self.progress_widget)
             self.progress_widget.value = ps
 
         # 这样会出现余数结束的情况，还是尽量使用上下文管理器控制结束

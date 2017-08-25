@@ -43,8 +43,8 @@ class AbuBenchmark(PickleStateMixin):
                 # 美股期权暂时也以IXIC做为标尺，最好是外部参数中的benchmark设置
                 benchmark = IndexSymbol.IXIC
             elif ABuEnv.g_market_target == EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL:
-                # 国际期货暂时也以BM_FUTURES_CN做为标尺，最好是外部参数中的benchmark设置
-                benchmark = IndexSymbol.BM_FUTURES_CN
+                # 国际期货暂时也以BM_FUTURES_GB做为标尺
+                benchmark = IndexSymbol.BM_FUTURES_GB
             else:
                 raise TypeError('benchmark is None AND g_market_target ERROR!')
 

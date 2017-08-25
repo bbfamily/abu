@@ -151,17 +151,23 @@ def apply_action_to_capital(capital, action_pd, kl_pd_manager):
         logging.info('apply_action_to_capital action_pd.empty!!!')
         return
 
-    k_show_progress_hold = 1
-    # 如果交易symbol数量 > 1个显示进度条
-    show_progress = len(set(action_pd.symbol)) > k_show_progress_hold
+    # 如果交易symbol数量 > 100个显示初始化进度条
+    init_show_progress = len(set(action_pd.symbol)) > 100
     # 资金时间序列初始化各个symbol对应的持仓列，持仓价值列
-    capital.apply_init_kl(action_pd, show_progress=show_progress)
+    capital.apply_init_kl(action_pd, show_progress=init_show_progress)
+
+    # 如果交易symbol数量 > 1个显示apply进度条
+    show_apply_act_progress = len(set(action_pd.symbol)) > 1
     # 外部new一个进度条，为使用apply的操作使用
-    progress = AbuProgress(len(action_pd), 0, label='capital.apply_action...') if show_progress else None
-    # 针对每一笔交易进行buy，sell细节处理，涉及有限资金是否成交判定
-    action_pd['deal'] = action_pd.apply(capital.apply_action, axis=1, args=(progress,))
+    with AbuProgress(len(action_pd), 0, label='capital.apply_action') as progress:
+        # 针对每一笔交易进行buy，sell细节处理，涉及有限资金是否成交判定
+        action_pd['deal'] = action_pd.apply(capital.apply_action, axis=1,
+                                            args=(progress if show_apply_act_progress else None,))
+
+    # 如果交易symbol数量 > 100个显示apply进度条
+    show_apply_kl = len(set(action_pd.symbol)) > 100
     # 根据交易行为产生的持仓列，持仓价值列更新资金时间序列
-    capital.apply_kl(action_pd, kl_pd_manager, show_progress=show_progress)
+    capital.apply_kl(action_pd, kl_pd_manager, show_progress=show_apply_kl)
 
     # filter出所有持仓价值列
     stock_worths = capital.capital_pd.filter(regex='.*_worth')

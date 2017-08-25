@@ -104,12 +104,12 @@ class AbuCapital(PickleStateMixin):
         # 使用set筛选唯一的symbol交易序列
         symbols = set(action_pd.symbol)
         # 单进程进度条
-        progress = AbuProgress(len(symbols), 0, label='apply_init_kl...') if show_progress else None
-        for pos, symbol in enumerate(symbols):
-            # 迭代symbols，新建对应的call，put列
-            self.init_k_line(symbol)
-            if progress is not None:
-                progress.show(a_progress=pos + 1)
+        with AbuProgress(len(symbols), 0, label='apply_init_kl...') as progress:
+            for pos, symbol in enumerate(symbols):
+                if show_progress:
+                    progress.show(a_progress=pos + 1)
+                # 迭代symbols，新建对应的call，put列
+                self.init_k_line(symbol)
 
     def apply_k_line(self, a_k_day, kl_pd, buy_type_head):
         """
@@ -149,8 +149,6 @@ class AbuCapital(PickleStateMixin):
 
         # 在apply_action之后形成deal列后，set出考虑资金下成交了的交易序列
         deal_symbols_set = set(action_pd[action_pd['deal'] == 1].symbol)
-        # 单进程进度条
-        progress = AbuProgress(len(deal_symbols_set), 0, label='apply_kl...') if show_progress else None
 
         def do_apply_kl(kl_pd, buy_type_head):
             """
@@ -180,15 +178,17 @@ class AbuCapital(PickleStateMixin):
             cp_w = self.capital_pd[kl_pd.name + buy_type_head + '_worth']
             cp_w.loc[fe_index] = 0
 
-        for pos, deal_symbol in enumerate(deal_symbols_set):
-            # 从kl_pd_manager中获取对应的金融时间序列kl，每一个kl分别进行call（买涨），put（买跌）的交易日实时价值更新
-            kl = kl_pd_manager.get_pick_time_kl_pd(deal_symbol)
-            # 进行call（买涨）的交易日实时价值更新
-            do_apply_kl(kl, '_call')
-            # 进行put（买跌）的交易日实时价值更新
-            do_apply_kl(kl, '_put')
-            if progress is not None:
-                progress.show(a_progress=pos + 1)
+        # 单进程进度条
+        with AbuProgress(len(deal_symbols_set), 0, label='apply_kl...') as progress:
+            for pos, deal_symbol in enumerate(deal_symbols_set):
+                if show_progress:
+                    progress.show(a_progress=pos + 1)
+                # 从kl_pd_manager中获取对应的金融时间序列kl，每一个kl分别进行call（买涨），put（买跌）的交易日实时价值更新
+                kl = kl_pd_manager.get_pick_time_kl_pd(deal_symbol)
+                # 进行call（买涨）的交易日实时价值更新
+                do_apply_kl(kl, '_call')
+                # 进行put（买跌）的交易日实时价值更新
+                do_apply_kl(kl, '_put')
 
     def apply_action(self, a_action, progress):
         """

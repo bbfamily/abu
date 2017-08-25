@@ -7,7 +7,7 @@ from .ABuSymbolPd import get_price
 from .ABuSymbol import IndexSymbol, Symbol, code_to_symbol
 from . import ABuSymbol
 from ..MarketBu.ABuSymbolStock import AbuSymbolCN, AbuSymbolUS, AbuSymbolHK
-from .ABuSymbolFutures import AbuFuturesCn
+from .ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
 from .ABuHkUnit import AbuHkUnit
 from . import ABuMarket
 from .ABuMarket import MarketMixin
@@ -27,6 +27,7 @@ __all__ = [
     'get_price',
     'ABuSymbol',
     'AbuSymbolCN',
+    'AbuFuturesGB',
     'AbuSymbolUS',
     'AbuSymbolHK',
     'AbuFuturesCn',

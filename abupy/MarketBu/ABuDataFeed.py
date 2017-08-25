@@ -21,7 +21,8 @@ from ..CoreBu.ABuEnv import EMarketTargetType, EMarketSubType
 from ..CoreBu import ABuEnv
 from ..MarketBu import ABuNetWork
 from ..MarketBu.ABuDataBase import StockBaseMarket, SupportMixin, FuturesBaseMarket, TCBaseMarket
-from ..MarketBu.ABuDataParser import BDParser, TXParser, NTParser, SNUSParser, SNFuturesParser, HBTCParser
+from ..MarketBu.ABuDataParser import BDParser, TXParser, NTParser, SNUSParser
+from ..MarketBu.ABuDataParser import SNFuturesParser, SNFuturesGBParser, HBTCParser
 from ..UtilBu import ABuStrUtil, ABuDateUtil, ABuMd5
 from ..CoreBu.ABuDeprecated import AbuDeprecated
 # noinspection PyUnresolvedReferences
@@ -334,6 +335,38 @@ class SNFuturesApi(FuturesBaseMarket, SupportMixin):
         url = SNFuturesApi.K_NET_BASE % self._symbol.symbol_code
         data = ABuNetWork.get(url=url, timeout=K_TIME_OUT).json()
         kl_df = self.data_parser_cls(self._symbol, data).df
+        if kl_df is None:
+            return None
+        return FuturesBaseMarket._fix_kline_pd(kl_df, n_folds, start, end)
+
+
+class SNFuturesGBApi(FuturesBaseMarket, SupportMixin):
+    """sn futures数据源，支持国际期货"""
+
+    K_NET_BASE = "http://stock2.finance.sina.com.cn/futures/api/jsonp.php/" \
+                 "var %s%s=/GlobalFuturesService.getGlobalFuturesDailyKLine?symbol=%s&_=%s"
+
+    def __init__(self, symbol):
+        """
+        :param symbol: Symbol类型对象
+        """
+        super(SNFuturesGBApi, self).__init__(symbol)
+        # 设置数据源解析对象类
+        self.data_parser_cls = SNFuturesGBParser
+
+    def _support_market(self):
+        """声明数据源支持期货数据, 支持国际期货市场"""
+        return [EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL]
+
+    def kline(self, n_folds=2, start=None, end=None):
+        """日k线接口"""
+        today = ABuDateUtil.current_str_date().replace('-', '_')
+        url = SNFuturesGBApi.K_NET_BASE % (self._symbol.symbol_code, today, self._symbol.symbol_code, today)
+        data = ABuNetWork.get(url=url, timeout=(10, 60))
+        text = data.text
+        # 返回的是Javascript字符串解析出dict
+        js_dict = ABuNetWork.parse_js(text[text.find('=(') + 2:text.rfind(')')])
+        kl_df = self.data_parser_cls(self._symbol, js_dict).df
         if kl_df is None:
             return None
         return FuturesBaseMarket._fix_kline_pd(kl_df, n_folds, start, end)

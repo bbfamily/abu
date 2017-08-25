@@ -410,8 +410,8 @@ def multi_corr_df(corr_jobs, cmp_cnt=252, n_folds=None, start=None, end=None):
         # 美股期权暂时也以IXIC做为标尺
         benchmark = IndexSymbol.IXIC
     elif ABuEnv.g_market_target == EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL:
-        # 国际期货暂时也以BM_FUTURES_CN做为标尺
-        benchmark = IndexSymbol.BM_FUTURES_CN
+        # 国际期货暂时也以BM_FUTURES_GB做为标尺
+        benchmark = IndexSymbol.BM_FUTURES_GB
     else:
         # 没匹配上也不抛错误，随便给一个，因为这里要的benchmark主要目的只是做为时间标尺
         benchmark = IndexSymbol.IXIC

@@ -14,7 +14,7 @@ import numpy as np
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EMarketTargetType
 from ..BetaBu import ABuPositionBase
-from ..MarketBu.ABuSymbolFutures import AbuFuturesCn
+from ..MarketBu.ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
 from ..MarketBu.ABuHkUnit import AbuHkUnit
 from ..MarketBu import ABuMarket
 from ..MarketBu.ABuMarket import MarketMixin
@@ -129,8 +129,8 @@ class AbuOrder(object):
                 min_cnt = 100
                 buy_cnt -= buy_cnt % min_cnt
             elif market == EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL:
-                # 国际期货暂时只已1为1个单位，需要扩展
-                min_cnt = 1
+                # 国际期货, 查询最少一手单位
+                min_cnt = AbuFuturesGB().query_min_unit(factor_object.kl_pd.name)
                 buy_cnt -= buy_cnt % min_cnt
             else:
                 raise TypeError('ABuEnv.g_market_target ERROR, market={}, g_market_target={}'.format(

@@ -19,17 +19,13 @@ def code_to_symbol(code):
     :param code: str对象，代码 如：300104，sz300104，usTSLA
     :return: Symbol对象
     """
-    from ..MarketBu.ABuSymbolFutures import AbuFuturesCn
+    from ..MarketBu.ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
     from ..MarketBu.ABuSymbolStock import AbuSymbolCN, AbuSymbolUS
     from ..MarketBu.ABuMarket import all_symbol
 
     if not isinstance(code, six.string_types):
         # code必须是string_types
         raise TypeError('code must be string_types!!!，{} : type is {}'.format(code, type(code)))
-
-    if len(code) < 2:
-        # code的长度必须 > 2
-        raise ValueError('arg code :{} len < 2is error'.format(code))
 
     sub_market = None
     market = None
@@ -79,6 +75,13 @@ def code_to_symbol(code):
         market = EMarketTargetType.E_MARKET_TARGET_TC
         sub_market = EMarketSubType.COIN
         return Symbol(market, sub_market, code)
+    elif code.isalpha() and code.upper() in all_symbol(EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL):
+        # 全字母且匹配国际期货市场
+        futures_gb_code = code.upper()
+        q_df = AbuFuturesGB().query_symbol(futures_gb_code)
+        sub_market = EMarketSubType(q_df.exchange.values[0])
+        market = EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL
+        return Symbol(market, sub_market, futures_gb_code)
     elif code.isalpha() or (code.startswith('.') and code[1:].isalpha()):
         # 全字母进行美股大盘匹配或者美股股票匹配
         stock_code = code.upper()
@@ -234,6 +237,8 @@ class IndexSymbol(object):
 
     # 国内期货只是使用黄金做为时间标尺，不具备对比大盘作用
     BM_FUTURES_CN = Symbol(EMarketTargetType.E_MARKET_TARGET_FUTURES_CN, EMarketSubType.SHFE, 'AU0')
+    # 国际期货只是使用纽约黄金做为时间标尺，不具备对比大盘作用
+    BM_FUTURES_GB = Symbol(EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL, EMarketSubType.NYMEX, 'GC')
 
     # 币类只是使用btc做为时间标尺，不具备对比大盘作用
     TC_INX = Symbol(EMarketTargetType.E_MARKET_TARGET_TC, EMarketSubType.COIN, 'btc')

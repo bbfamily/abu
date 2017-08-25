@@ -237,6 +237,32 @@ class SNFuturesParser(object):
 
 
 @AbuDataParseWrap()
+class SNFuturesGBParser(object):
+    """示例国际期货数据源解析类，被类装饰器AbuDataParseWrap装饰"""
+    # noinspection PyUnusedLocal
+    def __init__(self, symbol, json_dict):
+        """
+        :param symbol: 请求的symbol str对象
+        :param json_dict: 请求返回的json或者dict数据
+        """
+        data = json_dict
+        # 为AbuDataParseWrap准备类必须的属性序列
+        if len(data) > 0:
+            # 时间日期序列
+            self.date = [item['date'] for item in data]
+            # 开盘价格序列
+            self.open = [item['open'] for item in data]
+            # 最高价格序列
+            self.high = [item['high'] for item in data]
+            # 最低价格序列
+            self.low = [item['low'] for item in data]
+            # 收盘价格序列
+            self.close = [item['close'] for item in data]
+            # 成交量序列
+            self.volume = [item['volume'] for item in data]
+
+
+@AbuDataParseWrap()
 class HBTCParser(object):
     """示例币类市场数据源解析类，被类装饰器AbuDataParseWrap装饰"""
 
