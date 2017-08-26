@@ -44,7 +44,7 @@ class AbuOrder(object):
     # 多个因子买入条件可能生成几百万个order对象使用__slots__降低内存消耗
     __slots__ = ('order_deal', 'buy_symbol', 'buy_date', 'buy_factor', 'buy_price', 'buy_cnt', 'buy_pos', 'sell_date',
                  'buy_type_str', 'expect_direction',
-                 'sell_type', 'sell_price', 'sell_type_extra', 'ml_features')
+                 'sell_type', 'keep_days', 'sell_price', 'sell_type_extra', 'ml_features')
 
     def __init__(self):
         """初始设置只需要将order_deal设置未成交状态"""
@@ -162,6 +162,9 @@ class AbuOrder(object):
             self.sell_date = None
             # 订单卖出类型，keep：持有
             self.sell_type = 'keep'
+            # 交易日持有天数
+            self.keep_days = 0
+
             # 订单卖出价格
             self.sell_price = None
             # 订单卖出额外信息

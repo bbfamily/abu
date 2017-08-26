@@ -7,6 +7,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
+import numpy as np
+import pandas as pd
+
 from .ABuFactorBuyBase import AbuFactorBuyBase, BuyCallMixin
 from .ABuFactorBuyBreak import AbuFactorBuyBreak
 from ..TLineBu.ABuTL import AbuTLine
@@ -206,3 +209,129 @@ class AbuFactorBuyBreakHitPredictDemo(AbuFactorBuyBreak):
         if result == -1:
             return True
         return False
+
+
+class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
+    """
+        比特币日交易策略：
+
+        1. 买入条件1: 当日这100个股票60%以上都是上涨的
+        2. 买入条件2: 使用在第12节：机器学习与比特币示例中编写的：信号发出今天比特币会有大行情
+    """
+
+    def _init_self(self, **kwargs):
+        from ..UtilBu.ABuProgress import AbuProgress
+        from ..MarketBu import ABuSymbolPd
+
+        # 市场中与btc最相关的top个股票
+        self.btc_similar_top = kwargs.pop('btc_similar_top')
+        # 超过多少个相关股票今天趋势相同就买入
+        self.btc_vote_val = kwargs.pop('btc_vote_val', 0.60)
+        self.pg = AbuProgress(len(self.kl_pd), 0, 'btc buy day')
+
+        def _collect_kl(sim_line):
+            """在初始化中将所有相关股票的对应时间的k线数据进行收集"""
+            start = self.kl_pd.iloc[0].date
+            end = self.kl_pd.iloc[-1].date
+            kl = ABuSymbolPd.make_kl_df(sim_line.symbol, start=start, end=end)
+            self.kl_dict[sim_line.symbol] = kl
+
+        self.kl_dict = {}
+        # k线数据进行收集到类字典对象self.kl_dict中
+        self.btc_similar_top.apply(_collect_kl, axis=1)
+
+    # noinspection PyUnresolvedReferences
+    def fit_day(self, today):
+        """
+        :param today: 当前驱动的交易日金融时间序列数据
+        :return:
+        """
+        self.pg.show()
+
+        # key是金融时间序列索引
+        day_ind = int(today.key)
+        # 忽略不符合买入的天（统计周期内前两天及最后一天），因为btc的机器学习特证需要三天交易数据
+        if day_ind < 2 or day_ind >= self.kl_pd.shape[0] - 1:
+            return None
+
+        # 今天，昨天，前天三天的交易数据进行特证转换
+        btc = self.kl_pd[day_ind - 2:day_ind + 1]
+        # 三天的交易数据进行转换后得到btc_today_x
+        btc_today_x = self.make_btc_today(btc)
+
+        # btc_ml并没有在这里传入，实际如果要使用，需要对外部的btc_ml进行本地序列化后，构造读取本地
+        # 买入条件2: 使用在第12节：机器学习与比特币示例中编写的：信号发出今天比特币会有大行情
+        if btc_ml.predict(btc_today_x):
+            # 买入条件1: 当日这100个股票60%以上都是上涨的
+            vote_val = self.similar_predict(today.date)
+            if vote_val > self.btc_vote_val:
+                return self.make_buy_order(day_ind - 1)
+
+    # noinspection PyUnresolvedReferences
+    def make_btc_today(self, sib_btc):
+        """构造比特币三天数据特证"""
+        from ..UtilBu import ABuScalerUtil
+
+        sib_btc['big_wave'] = (sib_btc.high - sib_btc.low) / sib_btc.pre_close > 0.55
+        sib_btc['big_wave'] = sib_btc['big_wave'].astype(int)
+        sib_btc_scale = ABuScalerUtil.scaler_std(
+            sib_btc.filter(['open', 'close', 'high', 'low', 'volume', 'pre_close',
+                            'ma5', 'ma10', 'ma21', 'ma60', 'atr21', 'atr14']))
+        # 把标准化后的和big_wave，date_week连接起来
+        sib_btc_scale = pd.concat([sib_btc['big_wave'], sib_btc_scale, sib_btc['date_week']], axis=1)
+
+        # 抽取第一天，第二天的大多数特征分别改名字以one，two为特征前缀，如：one_open，one_close，two_ma5，two_high.....
+        a0 = sib_btc_scale.iloc[0].filter(['open', 'close', 'high', 'low', 'volume', 'pre_close',
+                                           'ma5', 'ma10', 'ma21', 'ma60', 'atr21', 'atr14', 'date_week'])
+        a0.rename(index={'open': 'one_open', 'close': 'one_close', 'high': 'one_high', 'low': 'one_low',
+                         'volume': 'one_volume', 'pre_close': 'one_pre_close',
+                         'ma5': 'one_ma5', 'ma10': 'one_ma10', 'ma21': 'one_ma21',
+                         'ma60': 'one_ma60', 'atr21': 'one_atr21', 'atr14': 'one_atr14',
+                         'date_week': 'one_date_week'}, inplace=True)
+
+        a1 = sib_btc_scale.iloc[1].filter(['open', 'close', 'high', 'low', 'volume', 'pre_close',
+                                           'ma5', 'ma10', 'ma21', 'ma60', 'atr21', 'atr14', 'date_week'])
+        a1.rename(index={'open': 'two_open', 'close': 'two_close', 'high': 'two_high', 'low': 'two_low',
+                         'volume': 'two_volume', 'pre_close': 'two_pre_close',
+                         'ma5': 'two_ma5', 'ma10': 'two_ma10', 'ma21': 'two_ma21',
+                         'ma60': 'two_ma60', 'atr21': 'two_atr21', 'atr14': 'two_atr14',
+                         'date_week': 'two_date_week'}, inplace=True)
+        # 第三天的特征只使用'open', 'low', 'pre_close', 'date_week'，该名前缀today，如today_open，today_date_week
+        a2 = sib_btc_scale.iloc[2].filter(['big_wave', 'open', 'low', 'pre_close', 'date_week'])
+        a2.rename(index={'open': 'today_open', 'low': 'today_low',
+                         'pre_close': 'today_pre_close',
+                         'date_week': 'today_date_week'}, inplace=True)
+        # 将抽取改名字后的特征连接起来组合成为一条新数据，即3天的交易数据特征－>1条新的数据
+        btc_today = pd.DataFrame(pd.concat([a0, a1, a2], axis=0)).T
+
+        # 开始将周几进行离散处理
+        dummies_week_col = btc_ml.df.filter(regex='(^one_date_week_|^two_date_week_|^today_date_week_)').columns
+        dummies_week_df = pd.DataFrame(np.zeros((1, len(dummies_week_col))), columns=dummies_week_col)
+
+        # 手动修改每一天的one hot
+        one_day_key = 'one_date_week_{}'.format(btc_today.one_date_week.values[0])
+        dummies_week_df[one_day_key] = 1
+        two_day_key = 'two_date_week_{}'.format(btc_today.two_date_week.values[0])
+        dummies_week_df[two_day_key] = 1
+        today_day_key = 'today_date_week_{}'.format(btc_today.today_date_week.values[0])
+        dummies_week_df[today_day_key] = 1
+        btc_today.drop(['one_date_week', 'two_date_week', 'today_date_week'], inplace=True, axis=1)
+        btc_today = pd.concat([btc_today, dummies_week_df], axis=1)
+        return btc_today.as_matrix()[:, 1:]
+
+    def similar_predict(self, today_date):
+        """与比特币在市场中最相关的top100个股票已各自今天的涨跌结果进行投票"""
+        def _predict_vote(sim_line, _today_date):
+            kl = self.kl_dict[sim_line.symbol]
+            if kl is None:
+                return -1 * sim_line.vote_direction > 0
+            kl_today = kl[kl.date == _today_date]
+            if kl_today is None or kl_today.empty:
+                return -1 * sim_line.vote_direction > 0
+            # 需要 * sim_line.vote_direction，因为负相关的存在
+            return kl_today.p_change.values[0] * sim_line.vote_direction > 0
+
+        vote_result = self.btc_similar_top.apply(_predict_vote, axis=1, args={today_date, })
+        # 将所有投票结果进行统计，得到与比特币最相关的这top100个股票的今天投票结果
+        vote_val = 1 - vote_result.value_counts()[False] / vote_result.value_counts().sum()
+        return vote_val

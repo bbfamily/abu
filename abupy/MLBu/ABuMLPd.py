@@ -158,20 +158,34 @@ class BtcBigWaveClf(AbuMLPd):
         做出这个判断的依据里有一条即是今天的波动需要足够大
     """
 
+    def __init__(self, **kwarg):
+        """
+            如果传递了btc数据，说明不是运行：
+            12-机器学习与比特币示例(ABU量化使用文档)
+        """
+        self.btc = kwarg.pop('btc', None)
+        super(BtcBigWaveClf, self).__init__(**kwarg)
+
     def make_xy(self, **kwarg):
-
-        # 从沙盒中读取测试数据
-        ABuEnv.enable_example_env_ipython()
-        btc = ABuSymbolPd.make_kl_df('btc', start='2013-09-01', end='2017-07-26')
-        ABuEnv.disable_example_env_ipython()
-
+        if self.btc is None:
+            # 从沙盒中读取测试数据
+            ABuEnv.enable_example_env_ipython()
+            btc = ABuSymbolPd.make_kl_df('btc', start='2013-09-01', end='2017-07-26')
+            ABuEnv.disable_example_env_ipython()
+        else:
+            btc = self.btc
         # .055的日震荡幅度可以成做大波动的交易对比特币来说，下面对数据添加新列big_wave
         btc['big_wave'] = (btc.high - btc.low) / btc.pre_close > 0.055
         btc['big_wave'] = btc['big_wave'].astype(int)
 
-        # 首先切割训练集和测试集，保留最后60天走势数据做为测试集数据
-        btc_train_raw = btc[:-60]
-        btc_test_raw = btc[-60:]
+        if self.btc is None:
+            # 如果是12-机器学习与比特币示例(ABU量化使用文档)，保留60天数据
+            # 首先切割训练集和测试集，保留最后60天走势数据做为测试集数据
+            btc_train_raw = btc[:-60]
+            btc_test_raw = btc[-60:]
+        else:
+            btc_train_raw = btc
+            btc_test_raw = None
 
         # 下面为训练集和测试集数据都加上5，10，21，60日均线特征
         def calc_ma(tc, p_ma):
@@ -180,7 +194,8 @@ class BtcBigWaveClf(AbuMLPd):
 
         for ma in [5, 10, 21, 60]:
             calc_ma(btc_train_raw, ma)
-            calc_ma(btc_test_raw, ma)
+            if btc_test_raw is not None:
+                calc_ma(btc_test_raw, ma)
         # 下面使用训练集数据btc_train_raw做为参数抽取组合特征，重新组合好的特征
         btc_train0 = self.btc_siblings_df(btc_train_raw)
         # 由于每3条连续交易日数据组合成一个特征，只要向前跳一条数据进行特征组合抽取即可以得到另一组新特征
@@ -194,29 +209,29 @@ class BtcBigWaveClf(AbuMLPd):
         dummies_two_week = pd.get_dummies(btc_train['two_date_week'], prefix='two_date_week')
         dummies_today_week = pd.get_dummies(btc_train['today_date_week'], prefix='today_date_week')
         btc_train.drop(['one_date_week', 'two_date_week', 'today_date_week'], inplace=True, axis=1)
-
         # make_xy中需要确定self.df
         self.df = pd.concat([btc_train, dummies_one_week, dummies_two_week, dummies_today_week], axis=1)
         # make_xy中需要确定x, y
-        train_matrix = btc_train.as_matrix()
+        train_matrix = self.df.as_matrix()
         self.y = train_matrix[:, 0]
         self.x = train_matrix[:, 1:]
 
-        # 下面将前面保留切割的60条测试数据进行特征抽取组合，方式和抽取训练集时一样
-        btc_test0 = self.btc_siblings_df(btc_test_raw)
-        btc_test1 = self.btc_siblings_df(btc_test_raw[1:])
-        btc_test2 = self.btc_siblings_df(btc_test_raw[2:])
-        btc_test = pd.concat([btc_test0, btc_test1, btc_test2])
-        btc_test.index = np.arange(0, btc_test.shape[0])
-        dummies_one_week = pd.get_dummies(btc_test['one_date_week'], prefix='one_date_week')
-        dummies_two_week = pd.get_dummies(btc_test['two_date_week'], prefix='two_date_week')
-        dummies_today_week = pd.get_dummies(btc_test['today_date_week'], prefix='today_date_week')
-        btc_test.drop(['one_date_week', 'two_date_week', 'today_date_week'], inplace=True, axis=1)
-        self.btc_test = pd.concat([btc_test, dummies_one_week, dummies_two_week, dummies_today_week], axis=1)
-        # 测试集数据构建
-        matrix_test = btc_test.as_matrix()
-        self.y_test = matrix_test[:, 0]
-        self.x_test = matrix_test[:, 1:]
+        if btc_test_raw is not None:
+            # 下面将前面保留切割的60条测试数据进行特征抽取组合，方式和抽取训练集时一样
+            btc_test0 = self.btc_siblings_df(btc_test_raw)
+            btc_test1 = self.btc_siblings_df(btc_test_raw[1:])
+            btc_test2 = self.btc_siblings_df(btc_test_raw[2:])
+            btc_test = pd.concat([btc_test0, btc_test1, btc_test2])
+            btc_test.index = np.arange(0, btc_test.shape[0])
+            dummies_one_week = pd.get_dummies(btc_test['one_date_week'], prefix='one_date_week')
+            dummies_two_week = pd.get_dummies(btc_test['two_date_week'], prefix='two_date_week')
+            dummies_today_week = pd.get_dummies(btc_test['today_date_week'], prefix='today_date_week')
+            btc_test.drop(['one_date_week', 'two_date_week', 'today_date_week'], inplace=True, axis=1)
+            self.btc_test = pd.concat([btc_test, dummies_one_week, dummies_two_week, dummies_today_week], axis=1)
+            # 测试集数据构建
+            matrix_test = self.btc_test.as_matrix()
+            self.y_test = matrix_test[:, 0]
+            self.x_test = matrix_test[:, 1:]
 
     # noinspection PyMethodMayBeStatic
     def btc_siblings_df(self, btc_raw):
