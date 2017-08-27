@@ -79,9 +79,10 @@ except ImportError:
     from six.moves import zip, xrange, range, reduce, map, filter
 
 try:
+    # noinspection all
     from six.moves import cPickle as pickle
 except ImportError:
-    # noinspection PyUnresolvedReferences
+    # noinspection all
     from six.moves import cPickle as pickle
 
 if six.PY3:
