@@ -327,4 +327,4 @@ abu支持股票、期货、数字货币等多种金融投资品的行情和交�
 ![](./img/qrcode.jpg)
 
 ### License
-MIT
+[GPL](./LICENSE)
