@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from .ABuFactorSellBase import AbuFactorSellBase, ESupportDirection
+from .ABuFactorSellBase import AbuFactorSellBase, AbuFactorSellXD, ESupportDirection
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -33,9 +33,27 @@ class AbuFactorSellBreak(AbuFactorSellBase):
         寻找向下突破作为策略卖出驱动event
         :param today: 当前驱动的交易日金融时间序列数据
         :param orders: 买入择时策略中生成的订单序列
-        :return:
         """
         # 今天的收盘价格达到xd天内最低价格则符合条件
         if today.close == self.kl_pd.close[self.today_ind - self.xd + 1:self.today_ind + 1].min():
+            for order in orders:
+                self.sell_tomorrow(order)
+
+
+class AbuFactorSellXDBK(AbuFactorSellXD):
+    """示例继承AbuFactorBuyXD, 向下突破卖出择时因子"""
+
+    def support_direction(self):
+        """支持的方向，只支持正向"""
+        return [ESupportDirection.DIRECTION_CAll.value]
+
+    def fit_day(self, today, orders):
+        """
+        寻找向下突破作为策略卖出驱动event
+        :param today: 当前驱动的交易日金融时间序列数据
+        :param orders: 买入择时策略中生成的订单序列
+        """
+        # 今天的收盘价格达到xd天内最低价格则符合条件
+        if today.close == self.xd_kl.close.min():
             for order in orders:
                 self.sell_tomorrow(order)

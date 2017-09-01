@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from .ABuFactorBuyBase import AbuFactorBuyBase, BuyCallMixin, BuyPutMixin
+from .ABuFactorBuyBase import AbuFactorBuyBase, AbuFactorBuyXD, BuyCallMixin, BuyPutMixin
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -44,6 +44,21 @@ class AbuFactorBuyBreak(AbuFactorBuyBase, BuyCallMixin):
 
 
 # noinspection PyAttributeOutsideInit
+class AbuFactorBuyXDBK(AbuFactorBuyXD, BuyCallMixin):
+    """示例继承AbuFactorBuyXD完成正向突破买入择时类"""
+    def fit_day(self, today):
+        """
+        针对每一个交易日拟合买入交易策略，寻找向上突破买入机会
+        :param today: 当前驱动的交易日金融时间序列数据
+        :return:
+        """
+        # 今天的收盘价格达到xd天内最高价格则符合买入条件
+        if today.close == self.xd_kl.close.max():
+            return self.buy_tomorrow()
+        return None
+
+
+# noinspection PyAttributeOutsideInit
 class AbuFactorBuyPutBreak(AbuFactorBuyBase, BuyPutMixin):
     """示例反向突破买入择时类，混入BuyPutMixin，即向下突破触发买入event，详情请查阅期货回测示例demo"""
 
@@ -68,5 +83,20 @@ class AbuFactorBuyPutBreak(AbuFactorBuyBase, BuyPutMixin):
         """
         if today.close == self.kl_pd.close[self.today_ind - self.xd + 1:self.today_ind + 1].min():
             self.skip_days = self.xd
+            return self.buy_tomorrow()
+        return None
+
+
+# noinspection PyAttributeOutsideInit
+class AbuFactorBuyPutXDBK(AbuFactorBuyXD, BuyPutMixin):
+    """示例继承AbuFactorBuyXD完成反向突破买入择时类"""
+    def fit_day(self, today):
+        """
+        针对每一个交易日拟合买入交易策略，寻找向上突破买入机会
+        :param today: 当前驱动的交易日金融时间序列数据
+        :return:
+        """
+        # 与AbuFactorBuyBreak区别就是买向下突破的，即min()
+        if today.close == self.xd_kl.close.min():
             return self.buy_tomorrow()
         return None

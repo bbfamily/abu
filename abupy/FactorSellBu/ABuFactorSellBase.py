@@ -172,3 +172,41 @@ class AbuFactorSellBase(six.with_metaclass(ABCMeta, AbuParamBase)):
 
     # def fit_month(self, *args, **kwargs):
     #     pass
+
+
+class AbuFactorSellXD(AbuFactorSellBase):
+    """以周期为重要参数的策略，xd代表参数'多少天'如已周期为参数可直接继承使用 """
+
+    def _init_self(self, **kwargs):
+        """kwargs中必须包含: 突破参数xd 比如20，30，40天...突破"""
+        # 向下突破参数 xd， 比如20，30，40天...突破
+        self.xd = kwargs['xd']
+        # 在输出生成的orders_pd中显示的名字
+        self.sell_type_extra = '{}:{}'.format(self.__class__.__name__, self.xd)
+
+    def read_fit_day(self, today, orders):
+        """
+        覆盖base函数, 为fit_day中切片周期金融时间序列数据
+        :param today: 当前驱动的交易日金融时间序列数据
+        :param orders: 买入择时策略中生成的订单序列
+        :return: 生成的交易订单AbuOrder对象
+        """
+        # 今天这个交易日在整个金融时间序列的序号
+        self.today_ind = int(today.key)
+        # 回测中默认忽略最后一个交易日
+        if self.today_ind >= self.kl_pd.shape[0] - 1:
+            return
+        orders = list(filter(lambda order: order.expect_direction in self.support_direction(), orders))
+
+        # 完成为fit_day中切片周期金融时间序列数据
+        self.xd_kl = self.kl_pd[self.today_ind - self.xd + 1:self.today_ind + 1]
+
+        return self.fit_day(today, orders)
+
+    def support_direction(self):
+        """raise NotImplementedError"""
+        raise NotImplementedError('NotImplementedError support_direction')
+
+    def fit_day(self, today, orders):
+        """raise NotImplementedError"""
+        raise NotImplementedError('NotImplementedError support_direction')

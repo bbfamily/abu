@@ -220,3 +220,62 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
 
     # def fit_month(self, *args, **kwargs):
     #     pass
+
+
+class AbuFactorBuyXD(AbuFactorBuyBase):
+    """以周期为重要参数的策略，xd代表参数'多少天'如已周期为参数可直接继承使用"""
+
+    def read_fit_day(self, today):
+        """
+        覆盖base函数完成过滤统计周期内前xd天以及为fit_day中切片周期金融时间序列数据
+        :param today: 当前驱动的交易日金融时间序列数据
+        :return: 生成的交易订单AbuOrder对象
+        """
+        if self.skip_days > 0:
+            self.skip_days -= 1
+            return None
+
+        # 今天这个交易日在整个金融时间序列的序号
+        self.today_ind = int(today.key)
+        # 回测中默认忽略最后一个交易日
+        if self.today_ind >= self.kl_pd.shape[0] - 1:
+            return None
+
+        # 忽略不符合买入的天（统计周期内前xd天）
+        if self.today_ind < self.xd - 1:
+            return None
+
+        # 完成为fit_day中切片周期金融时间序列数据
+        self.xd_kl = self.kl_pd[self.today_ind - self.xd + 1:self.today_ind + 1]
+
+        return self.fit_day(today)
+
+    def buy_tomorrow(self):
+        """
+        覆盖base函数，明天进行买入操作，比如突破策略使用了今天收盘的价格做为参数，发出了买入信号，
+        需要进行明天买入操作，不能执行今天买入操作，使用周期参数xd赋予skip_days
+        :return 生成的交易订单AbuOrder对象
+        """
+
+        self.skip_days = self.xd
+        return self.make_buy_order(self.today_ind)
+
+    def buy_today(self):
+        """
+        覆盖base函数，今天即进行买入操作，需要不能使用今天的收盘数据等做为fit_day中信号判断，
+        适合如比特币非明确一天交易日时间或者特殊情况的买入信号，，使用周期参数xd赋予skip_days
+        :return 生成的交易订单AbuOrder对象
+        """
+        self.skip_days = self.xd
+        return self.make_buy_order(self.today_ind - 1)
+
+    def _init_self(self, **kwargs):
+        """子类因子针对可扩展参数的初始化"""
+        # 突破周期参数 xd， 比如20，30，40天...突破, 不要使用kwargs.pop('xd', 20), 明确需要参数xq
+        self.xd = kwargs['xd']
+        # 在输出生成的orders_pd中显示的名字
+        self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
+
+    def fit_day(self, today):
+        """raise NotImplementedError"""
+        raise NotImplementedError('NotImplementedError fit_day')
