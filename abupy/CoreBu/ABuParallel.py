@@ -80,11 +80,16 @@ else:
                 # 主要为了适配 n_jobs = -1，joblib中启动cpu个数个进程并行执行
                 self.n_jobs = ABuEnv.g_cpu_cnt
 
-            with ProcessPoolExecutor(max_workers=self.n_jobs) as pool:
+            if self.n_jobs == 1:
+                # 如果只开一个进程，那么只在主进程里运行，方便pdb debug且与joblib运行方式保持一致
                 for jb in iterable:
-                    # 这里iterable里每一个元素是delayed.delayed_function保留的tuple
-                    future_result = pool.submit(jb[0], *jb[1], **jb[2])
-                    future_result.add_done_callback(when_done)
+                    result.append(jb[0](*jb[1], **jb[2]))
+            else:
+                with ProcessPoolExecutor(max_workers=self.n_jobs) as pool:
+                    for jb in iterable:
+                        # 这里iterable里每一个元素是delayed.delayed_function保留的tuple
+                        future_result = pool.submit(jb[0], *jb[1], **jb[2])
+                        future_result.add_done_callback(when_done)
             return result
 
 
