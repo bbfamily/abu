@@ -98,11 +98,11 @@ class AbuPickTimeWorker(AbuPickTimeWorkBase):
         # 注意回测模式下始终非高频，非当日买菜，不区分美股，A股市场，卖出因子要先于买入因子的执行
         for sell_factor in self.sell_factors:
             # 迭代卖出因子，每个卖出因子针对今日交易数据，已经所以交易单进行择时
-            sell_factor.fit_day(today, self.orders)
+            sell_factor.read_fit_day(today, self.orders)
         # 买入因子行为要在卖出因子下面，否则为高频日交易模式
         for buy_factor in self.buy_factors:
             # 迭代买入因子，每个因子都对今天进行择时，如果生成order加入self.orders
-            order = buy_factor.fit_day(today)
+            order = buy_factor.read_fit_day(today)
             if order and order.order_deal:
                 self.orders.append(order)
 

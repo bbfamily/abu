@@ -31,7 +31,6 @@ class AbuSDBreak(AbuFactorBuyBase, BuyCallMixin):
 
         # 下面的代码和AbuFactorBuyBase的实现一摸一样
         self.xd = kwargs['xd']
-        self.skip_days = 0
         self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
 
     def fit_month(self, today):
@@ -46,7 +45,7 @@ class AbuSDBreak(AbuFactorBuyBase, BuyCallMixin):
         end_key = int(benchmark_today.ix[0].key)
         start_key = end_key - 20
         if start_key < 0:
-            return 0
+            return False
 
         # 使用切片切出从今天开始向前20天的数据
         benchmark_month = benchmark_df[start_key:end_key + 1]
@@ -68,15 +67,14 @@ class AbuSDBreak(AbuFactorBuyBase, BuyCallMixin):
             return None
 
         # 下面的代码和AbuFactorBuyBase的实现一摸一样
-        day_ind = int(today.key)
-        if day_ind < self.xd - 1 or day_ind >= self.kl_pd.shape[0] - 1:
+        if self.today_ind < self.xd - 1:
             return None
-        if self.skip_days > 0:
-            self.skip_days -= 1
-            return None
-        if today.close == self.kl_pd.close[day_ind - self.xd + 1:day_ind + 1].max():
+        # 今天的收盘价格达到xd天内最高价格则符合买入条件
+        if today.close == self.kl_pd.close[self.today_ind - self.xd + 1:self.today_ind + 1].max():
+            # 把突破新高参数赋值skip_days，这里也可以考虑make_buy_order确定是否买单成立，但是如果停盘太长时间等也不好
             self.skip_days = self.xd
-            return self.make_buy_order(day_ind)
+            # 生成买入订单, 由于使用了今天的收盘价格做为策略信号判断，所以信号发出后，只能明天买
+            return self.buy_tomorrow()
         return None
 
 
@@ -94,20 +92,18 @@ class AbuTwoDayBuy(AbuFactorBuyBase, BuyCallMixin):
         :param today: 当前驱动的交易日金融时间序列数据
         :return:
         """
-        # key是金融时间序列索引
-        day_ind = int(today.key)
-        # 忽略不符合买入的天（统计周期内前第1天及最后一天）
-        if day_ind == 0 or day_ind >= self.kl_pd.shape[0] - 1:
+        # 忽略不符合买入的天（统计周期内前第1天, 因为要用到昨天的交易数据）
+        if self.today_ind == 0:
             return None
 
         # 今天的涨幅
         td_change = today.p_change
         # 昨天的涨幅
-        yd_change = self.kl_pd.ix[day_ind - 1].p_change
+        yd_change = self.kl_pd.ix[self.today_ind - 1].p_change
 
         if td_change > 0 and 0 < yd_change < td_change:
-            # 连续涨两天, 且今天的涨幅比昨天还高 －>买入
-            return self.make_buy_order(day_ind)
+            # 连续涨两天, 且今天的涨幅比昨天还高 －>买入, 用到了今天的涨幅，只能明天买
+            return self.buy_tomorrow()
         return None
 
 
@@ -178,11 +174,8 @@ class AbuFactorBuyBreakHitPredictDemo(AbuFactorBuyBreak):
         """
         # 突破参数 xd， 比如20，30，40天...突破, 不要使用kwargs.pop('xd', 20), 明确需要参数xq
         self.xd = kwargs['xd']
-        # 忽略连续创新高，比如买入后第二天又突破新高，忽略
-        self.skip_days = 0
         # 在输出生成的orders_pd中显示的名字
         self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
-
         # 添加了通过AbuFactorBuyBreakUmpDemo记录训练好的决策器
         self.hit_ml = kwargs['hit_ml']
 
@@ -248,14 +241,12 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
         """
         self.pg.show()
 
-        # key是金融时间序列索引
-        day_ind = int(today.key)
-        # 忽略不符合买入的天（统计周期内前两天及最后一天），因为btc的机器学习特证需要三天交易数据
-        if day_ind < 2 or day_ind >= self.kl_pd.shape[0] - 1:
+        # 忽略不符合买入的天（统计周期内前两天, 因为btc的机器学习特证需要三天交易数据）
+        if self.today_ind < 2:
             return None
 
         # 今天，昨天，前天三天的交易数据进行特证转换
-        btc = self.kl_pd[day_ind - 2:day_ind + 1]
+        btc = self.kl_pd[self.today_ind - 2:self.today_ind + 1]
         # 三天的交易数据进行转换后得到btc_today_x
         btc_today_x = self.make_btc_today(btc)
 
@@ -265,7 +256,8 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
             # 买入条件1: 当日这100个股票60%以上都是上涨的
             vote_val = self.similar_predict(today.date)
             if vote_val > self.btc_vote_val:
-                return self.make_buy_order(day_ind - 1)
+                # 没有使用当天交易日的close等数据，且btc_ml判断的大波动是当日，所以当日买入
+                return self.buy_today()
 
     # noinspection PyUnresolvedReferences
     def make_btc_today(self, sib_btc):

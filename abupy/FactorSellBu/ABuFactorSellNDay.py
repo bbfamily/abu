@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from .ABuFactorSellBase import AbuFactorSellBase, filter_sell_order, skip_last_day, ESupportDirection
+from .ABuFactorSellBase import AbuFactorSellBase, ESupportDirection
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -25,8 +25,6 @@ class AbuFactorSellNDay(AbuFactorSellBase):
         """因子支持两个方向"""
         return [ESupportDirection.DIRECTION_CAll.value, ESupportDirection.DIRECTION_PUT.value]
 
-    @skip_last_day
-    @filter_sell_order
     def fit_day(self, today, orders):
         """
         :param today: 当前驱动的交易日金融时间序列数据
@@ -38,4 +36,4 @@ class AbuFactorSellNDay(AbuFactorSellBase):
             order.keep_days += 1
             if order.keep_days >= self.sell_n:
                 # 只要超过self.sell_n即卖出
-                order.fit_sell_order(int(today.key), self)
+                self.sell_tomorrow(order)

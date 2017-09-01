@@ -23,7 +23,6 @@ try:
     g_pandas_has_resampler = True
 except ImportError:
     try:
-        # 整天瞎鸡巴移代码位置，里面一行也没改
         # noinspection PyUnresolvedReferences
         from pandas.core.resample import DatetimeIndexResampler
         g_pandas_has_resampler = True

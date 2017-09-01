@@ -32,11 +32,8 @@ class AbuFactorBuyGolden(AbuFactorBuyBase, BuyCallMixin):
         self.ma_day = kwargs.pop('ma_day', 5)
         # 短暂停留阀值stay_day(int)，默认进入1天即算
         self.stay_day = kwargs.pop('stay_day', 1)
-
-        self.skip_days = 0
         # 交易目标短暂停留的标志
         self.below_stay_days = 0
-
         # 在输出生成的orders_pd中显示的名字
         self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
 
@@ -46,19 +43,12 @@ class AbuFactorBuyGolden(AbuFactorBuyBase, BuyCallMixin):
         :param today: 当前驱动的交易日金融时间序列数据
         :return:
         """
-        # key是金融时间序列索引
-        day_ind = int(today.key)
-        # 忽略不符合买入的天（统计周期内前xd天及最后一天）
-        if day_ind < self.xd - 1 or day_ind >= self.kl_pd.shape[0] - 1:
-            return None
-
-        if self.skip_days > 0:
-            # 执行买入订单后的忽略
-            self.skip_days -= 1
+        # 忽略不符合买入的天（统计周期内前xd天）
+        if self.today_ind < self.xd - 1:
             return None
 
         # 切片从前xd开始直到当前交易日为止的金融序列数据
-        window_pd = self.kl_pd[day_ind - self.xd + 1: day_ind + 1]
+        window_pd = self.kl_pd[self.today_ind - self.xd + 1: self.today_ind + 1]
         # 在切片的金融序列数据上计算黄金分割档位值，具体阅读ABuTLGolden.calc_golden
         golden = ABuTLGolden.calc_golden(window_pd, show=False)
 
@@ -99,6 +89,6 @@ class AbuFactorBuyGolden(AbuFactorBuyBase, BuyCallMixin):
             self.below_stay_days = 0
             # 放弃一段时间的买入观察, 放弃周期＝self.xd/2
             self.skip_days = self.xd / 2
-            # 生成买单
-            return self.make_buy_order(day_ind)
+            # 生成买单, 由于使用了今天的收盘价格做为策略信号判断，所以信号发出后，只能明天买
+            return self.buy_tomorrow()
         return None

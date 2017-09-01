@@ -7,7 +7,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-import functools
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
@@ -21,33 +20,6 @@ from ..UmpBu.ABuUmpManager import AbuUmpManager
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
-
-
-def skip_last_day(func):
-    """可选择装饰在fit_day上，过滤选股周期中的最后一个交易日"""
-    @functools.wraps(func)
-    def wrapper(self, today, orders):
-        day_ind = int(today.key)
-        if day_ind >= self.kl_pd.shape[0] - 1:
-            return
-
-        return func(self, today, orders)
-
-    return wrapper
-
-
-def filter_sell_order(func):
-    """
-        择时卖出因子策略可支持正向，反向，或者两个方向都支持，针对order中买入的方向，filter策略
-        对仅支持一个方向的一定要在fit_day上加上此装饰，两个方向都支持的话，重视效率情况下可不装饰
-    """
-    @functools.wraps(func)
-    def wrapper(self, today, orders):
-        # 根据order支持的方向是否在当前策略支持范围来筛选order
-        orders = list(filter(lambda order: order.expect_direction in self.support_direction(), orders))
-        return func(self, today, orders)
-
-    return wrapper
 
 
 class ESupportDirection(Enum):
@@ -97,6 +69,44 @@ class AbuFactorSellBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         return '{}: slippage:{}, \nkl:\n{}'.format(self.__class__.__name__, self.slippage_class, self.kl_pd.info())
 
     __repr__ = __str__
+
+    def read_fit_day(self, today, orders):
+        """
+        在择时worker对象中做日交易的函数，亦可以理解为盘前的一些决策事件处理，
+        内部会调用子类实现的fit_day函数
+        :param today: 当前驱动的交易日金融时间序列数据
+         :param orders: 买入择时策略中生成的订单序列
+        :return: 生成的交易订单AbuOrder对象
+        """
+        # 今天这个交易日在整个金融时间序列的序号
+        self.today_ind = int(today.key)
+        # 回测中默认忽略最后一个交易日
+        if self.today_ind >= self.kl_pd.shape[0] - 1:
+            return
+
+        """
+            择时卖出因子策略可支持正向，反向，或者两个方向都支持，
+            针对order中买入的方向，filter策略,
+            根据order支持的方向是否在当前策略支持范围来筛选order
+        """
+        orders = list(filter(lambda order: order.expect_direction in self.support_direction(), orders))
+        return self.fit_day(today, orders)
+
+    def sell_tomorrow(self, order):
+        """
+        明天进行卖出操作，比如突破策略使用了今天收盘的价格做为参数，发出了买入信号，
+        需要进行卖出操作，不能执行今天卖出操作
+        :param order交易订单AbuOrder对象
+        """
+        order.fit_sell_order(self.today_ind, self)
+
+    def sell_today(self, order):
+        """
+        今天即进行卖出操作，需要不能使用今天的收盘数据等做为fit_day中信号判断，
+        适合如比特币非明确一天交易日时间或者特殊情况的卖出信号
+        :param order交易订单AbuOrder对象
+        """
+        order.fit_sell_order(self.today_ind - 1, self)
 
     @abstractmethod
     def _init_self(self, **kwargs):

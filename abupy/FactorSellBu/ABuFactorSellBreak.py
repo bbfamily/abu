@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from .ABuFactorSellBase import AbuFactorSellBase, filter_sell_order, skip_last_day, ESupportDirection
+from .ABuFactorSellBase import AbuFactorSellBase, ESupportDirection
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -28,8 +28,6 @@ class AbuFactorSellBreak(AbuFactorSellBase):
         """支持的方向，只支持正向"""
         return [ESupportDirection.DIRECTION_CAll.value]
 
-    @skip_last_day
-    @filter_sell_order
     def fit_day(self, today, orders):
         """
         寻找向下突破作为策略卖出驱动event
@@ -37,9 +35,7 @@ class AbuFactorSellBreak(AbuFactorSellBase):
         :param orders: 买入择时策略中生成的订单序列
         :return:
         """
-
-        day_ind = int(today.key)
         # 今天的收盘价格达到xd天内最低价格则符合条件
-        if today.close == self.kl_pd.close[day_ind - self.xd + 1:day_ind + 1].min():
+        if today.close == self.kl_pd.close[self.today_ind - self.xd + 1:self.today_ind + 1].min():
             for order in orders:
-                order.fit_sell_order(day_ind, self)
+                self.sell_tomorrow(order)

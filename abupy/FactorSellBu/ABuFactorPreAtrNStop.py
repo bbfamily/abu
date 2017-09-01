@@ -8,7 +8,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from .ABuFactorSellBase import AbuFactorSellBase, filter_sell_order, skip_last_day, ESupportDirection
+from .ABuFactorSellBase import AbuFactorSellBase, ESupportDirection
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -33,8 +33,6 @@ class AbuFactorPreAtrNStop(AbuFactorSellBase):
         """单日最大跌幅n倍atr(止损)因子支持两个方向"""
         return [ESupportDirection.DIRECTION_CAll.value, ESupportDirection.DIRECTION_PUT.value]
 
-    @skip_last_day
-    @filter_sell_order
     def fit_day(self, today, orders):
         """
         止损event：今天相比昨天的收益 * 买入时的期望方向 > today.atr21 * pre_atr_n
@@ -46,4 +44,4 @@ class AbuFactorPreAtrNStop(AbuFactorSellBase):
         for order in orders:
             if (today.pre_close - today.close) * order.expect_direction > today.atr21 * self.pre_atr_n:
                 # 只要今天的收盘价格比昨天收盘价格差大于一个差值就止损卖出, 亦可以使用其它计算差值方式
-                order.fit_sell_order(int(today.key), self)
+                self.sell_tomorrow(order)

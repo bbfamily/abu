@@ -18,9 +18,12 @@ from sklearn.linear_model import LinearRegression
 
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import xrange
+from ..CoreBu.ABuPdHelper import pd_resample
 from ..CoreBu import ABuEnv
+from ..CoreBu.ABuEnv import EMarketDataSplitMode
 from ..UtilBu.ABuProgress import AbuProgress
-from ..UtilBu import ABuRegUtil
+from ..UtilBu import ABuRegUtil, ABuScalerUtil
+from ..MarketBu import ABuSymbolPd
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -131,6 +134,120 @@ def shift_distance(arr, how, slice_start=0, slice_end=-1, color='r', show=True, 
 
     # h_distance(三角底边距离), v_distance(三角垂直距离),distance(斜边路程),shift(位移),sd（位移路程比：shift / distance）
     return h_distance, v_distance, distance, shift, sd
+
+
+def calc_kl_speed(kl, resample=5):
+    """
+    计算曲线跟随趋势的速度，由于速度是相对的，所以需要在相同周期内与参数曲线进行比对
+    :param kl: pd.Series或者numpy序列
+    :param resample: 计算速度数值的重采样周期默认5
+    :return: 趋势变化敏感速度
+    """
+    kl_rp = pd_resample(kl, '{}D'.format(resample), how='mean')
+    """
+        eg: kl_rp
+        2011-07-28    1.0027
+        2011-08-02    0.9767
+        2011-08-07    0.9189
+        2011-08-12    0.9174
+        2011-08-17    0.9156
+    """
+    kl_diff = kl_rp.diff()
+    """
+        eg:
+        2011-08-02   -0.0260
+        2011-08-07   -0.0578
+        2011-08-12   -0.0015
+        2011-08-17   -0.0018
+    """
+    # 二值化 1 -1, 做为速度参数序列慢线
+    # noinspection PyTypeChecker
+    kl_trend_slow = pd.Series(np.where(kl_diff > 0, 1, -1))
+    """
+        eg: kl_trend_fast
+            0     -1
+            1     -1
+            2     -1
+            3     -1
+            4     -1
+            5      1
+            6      1
+            7     -1
+            8     -1
+            9     -1
+    """
+    # 慢线向前错一个周期形成快线
+    kl_trend_fast = kl_trend_slow.shift(-1)
+    """
+        egL kl_trend_slow
+            0     -1.0
+            1     -1.0
+            2     -1.0
+            3     -1.0
+            4      1.0
+            5      1.0
+            6     -1.0
+            7     -1.0
+            8     -1.0
+            9     -1.0
+    """
+
+    kl_trend_ffs = kl_trend_fast[:-1] * kl_trend_slow[:-1]
+    """
+        慢线 乘 快线 即符号运算
+        eg：kl_trend_ffs
+        0      1.0
+        1      1.0
+        2      1.0
+        3      1.0
+        4     -1.0
+        5      1.0
+        6     -1.0
+        7      1.0
+        8      1.0
+        9      1.0
+    """
+
+    # 符号相同的占所有和的比例即为趋势变化敏感速度值，注意如果没有在相同周期内与参数曲线进行比对的曲线，本速度值即无意义
+    speed = kl_trend_ffs.value_counts()[1] / kl_trend_ffs.value_counts().sum()
+    return speed
+
+
+def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
+                    start=None, end=None, n_folds=2, show=False):
+    """
+    参数传递一组symbol对，获取symbol对的金融时间序列数据，根据speed_key获取曲线序列数据，
+    分别通过calc_kl_speed计算symbol对的趋势跟随速度
+    :param symbol: eg: 'AU0'
+    :param benchmark_symbol: eg: 'XAU'
+    :param resample: 计算速度数值的重采样周期默认5
+    :param speed_key: 金融时间序列数据取的曲线序列key，默认'close'
+    :param start: 获取金融时间序列的start时间
+    :param end: 获取金融时间序列的end时间
+    :param n_folds: 获取金融时间序列的n_folds参数
+    :param show: 是否可视化symbol对的趋势走势对比
+    :return: 参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值
+    """
+    from ..TradeBu import AbuBenchmark
+    benchmark = AbuBenchmark(benchmark_symbol, start=start, end=end, n_folds=n_folds)
+    benchmark_kl = benchmark.kl_pd
+    kl = ABuSymbolPd.make_kl_df(symbol, benchmark=benchmark,
+                                data_mode=EMarketDataSplitMode.E_DATA_SPLIT_UNDO)
+    # 通过calc_kl_speed计算趋势跟随速度
+    kl_speed = calc_kl_speed(kl[speed_key], resample)
+    benchmark_kl_speed = calc_kl_speed(benchmark_kl[speed_key], resample)
+
+    if show:
+        # 可视化symbol对的趋势走势对比
+        kl_sl = ABuScalerUtil.scaler_one(kl[speed_key])
+        benchmark_kl_sl = ABuScalerUtil.scaler_one(benchmark_kl[speed_key])
+        kl_resamp = pd_resample(kl_sl, '{}D'.format(resample), how='mean')
+        benchmark_kl_resamp = pd_resample(benchmark_kl_sl, '{}D'.format(resample), how='mean')
+        kl_resamp.plot(label='kl', style=['*--'])
+        benchmark_kl_resamp.plot(label='benchmark', style=['^--'])
+        plt.legend(loc='best')
+    # 返回参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值
+    return kl_speed, benchmark_kl_speed
 
 
 def shift_distance_how(how):

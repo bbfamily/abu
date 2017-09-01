@@ -107,6 +107,9 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         # 默认的factor_name，子类通过_init_self可覆盖更具体的名字
         self.factor_name = '{}'.format(self.__class__.__name__)
 
+        # 忽略的交易日数量
+        self.skip_days = 0
+
         # 子类继续完成自有的构造
         self._init_self(**kwargs)
 
@@ -118,13 +121,15 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
 
     __repr__ = __str__
 
-    def make_buy_order(self, day_ind):
+    def make_buy_order(self, day_ind=-1):
         """
         根据交易发生的时间索引，依次进行交易订单生成，交易时间序列特征生成，
         决策交易是否拦截，生成特征学习数据，最终返回order，即订单生效
         :param day_ind: 交易发生的时间索引，即对应self.kl_pd.key
-        :return:
         """
+        if day_ind == -1:
+            # 默认模式下非高频，信号发出后，明天进行买入操作
+            day_ind = self.today_ind
 
         order = AbuOrder()
         # AbuOrde对象根据交易发生的时间索引生成交易订单
@@ -169,8 +174,43 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         """子类因子针对可扩展参数的初始化"""
         pass
 
+    def read_fit_day(self, today):
+        """
+        在择时worker对象中做日交易的函数，亦可以理解为盘前的一些决策事件处理，
+        内部会调用子类实现的fit_day函数
+        :param today: 当前驱动的交易日金融时间序列数据
+        :return: 生成的交易订单AbuOrder对象
+        """
+        if self.skip_days > 0:
+            self.skip_days -= 1
+            return None
+
+        # 今天这个交易日在整个金融时间序列的序号
+        self.today_ind = int(today.key)
+        # 回测中默认忽略最后一个交易日
+        if self.today_ind >= self.kl_pd.shape[0] - 1:
+            return None
+
+        return self.fit_day(today)
+
+    def buy_tomorrow(self):
+        """
+        明天进行买入操作，比如突破策略使用了今天收盘的价格做为参数，发出了买入信号，
+        需要进行明天买入操作，不能执行今天买入操作
+        :return 生成的交易订单AbuOrder对象
+        """
+        return self.make_buy_order(self.today_ind)
+
+    def buy_today(self):
+        """
+        今天即进行买入操作，需要不能使用今天的收盘数据等做为fit_day中信号判断，
+        适合如比特币非明确一天交易日时间或者特殊情况的买入信号
+        :return 生成的交易订单AbuOrder对象
+        """
+        return self.make_buy_order(self.today_ind - 1)
+
     @abstractmethod
-    def fit_day(self, *args, **kwargs):
+    def fit_day(self, today):
         """子类主要需要实现的函数，完成策略因子针对每一个交易日的买入交易策略"""
         pass
 
