@@ -298,7 +298,7 @@ def make_kl_df(symbol, data_mode=ABuEnv.EMarketDataSplitMode.E_DATA_SPLIT_SE,
         # TODO pd.Panel过时
         return pd.Panel(panel)
 
-    elif isinstance(symbol, Symbol) or isinstance(symbol, str):
+    elif isinstance(symbol, Symbol) or isinstance(symbol, six.string_types):
         # 对单个symbol进行数据获取
         df, _ = _make_kl_df(symbol, data_mode=data_mode,
                             n_folds=n_folds, start=start, end=end, benchmark=benchmark, save=True)
