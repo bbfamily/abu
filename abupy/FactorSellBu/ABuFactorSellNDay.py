@@ -19,6 +19,7 @@ class AbuFactorSellNDay(AbuFactorSellBase):
     def _init_self(self, **kwargs):
         """kwargs中可以包含: 参数sell_n：代表买入后持有的天数，默认1天"""
         self.sell_n = kwargs.pop('sell_n', 1)
+        self.is_sell_today = kwargs.pop('is_sell_today', False)
         self.sell_type_extra = '{}:sell_n={}'.format(self.__class__.__name__, self.sell_n)
 
     def support_direction(self):
@@ -36,4 +37,4 @@ class AbuFactorSellNDay(AbuFactorSellBase):
             order.keep_days += 1
             if order.keep_days >= self.sell_n:
                 # 只要超过self.sell_n即卖出
-                self.sell_tomorrow(order)
+                self.sell_today(order) if self.is_sell_today else self.sell_tomorrow(order)

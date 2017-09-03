@@ -209,4 +209,4 @@ class AbuFactorSellXD(AbuFactorSellBase):
 
     def fit_day(self, today, orders):
         """raise NotImplementedError"""
-        raise NotImplementedError('NotImplementedError support_direction')
+        raise NotImplementedError('NotImplementedError fit_day')

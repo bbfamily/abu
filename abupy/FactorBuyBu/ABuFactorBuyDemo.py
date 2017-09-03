@@ -10,7 +10,7 @@ from __future__ import division
 import numpy as np
 import pandas as pd
 
-from .ABuFactorBuyBase import AbuFactorBuyBase, BuyCallMixin
+from .ABuFactorBuyBase import AbuFactorBuyBase, AbuFactorBuyXD, AbuFactorBuyTD, BuyCallMixin
 from .ABuFactorBuyBreak import AbuFactorBuyBreak
 from ..TLineBu.ABuTL import AbuTLine
 from ..FactorBuyBu.ABuBuyFactorWrap import AbuLeastPolyWrap
@@ -20,18 +20,15 @@ __weixin__ = 'abu_quant'
 
 
 # noinspection PyAttributeOutsideInit
-class AbuSDBreak(AbuFactorBuyBase, BuyCallMixin):
+class AbuSDBreak(AbuFactorBuyXD, BuyCallMixin):
     """示例买入因子： 在AbuFactorBuyBreak基础上进行降低交易频率，提高系统的稳定性处理"""
 
     def _init_self(self, **kwargs):
+        super(AbuSDBreak, self)._init_self(**kwargs)
         # 外部可以设置poly阀值，self.poly在fit_month中和每一个月大盘计算的poly比较，若是大盘的poly大于poly认为走势震荡
         self.poly = kwargs.pop('poly', 2)
         # 是否封锁买入策略进行择时交易
         self.lock = False
-
-        # 下面的代码和AbuFactorBuyBase的实现一摸一样
-        self.xd = kwargs['xd']
-        self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
 
     def fit_month(self, today):
         # fit_month即在回测策略中每一个月执行一次的方法
@@ -66,20 +63,13 @@ class AbuSDBreak(AbuFactorBuyBase, BuyCallMixin):
             # 如果封锁策略进行交易的情况下，策略不进行择时
             return None
 
-        # 下面的代码和AbuFactorBuyBase的实现一摸一样
-        if self.today_ind < self.xd - 1:
-            return None
         # 今天的收盘价格达到xd天内最高价格则符合买入条件
-        if today.close == self.kl_pd.close[self.today_ind - self.xd + 1:self.today_ind + 1].max():
-            # 把突破新高参数赋值skip_days，这里也可以考虑make_buy_order确定是否买单成立，但是如果停盘太长时间等也不好
-            self.skip_days = self.xd
-            # 生成买入订单, 由于使用了今天的收盘价格做为策略信号判断，所以信号发出后，只能明天买
+        if today.close == self.xd_kl.close.max():
             return self.buy_tomorrow()
-        return None
 
 
 @AbuLeastPolyWrap()
-class AbuTwoDayBuy(AbuFactorBuyBase, BuyCallMixin):
+class AbuTwoDayBuy(AbuFactorBuyTD, BuyCallMixin):
     """示例AbuLeastPolyWrap，混入BuyCallMixin，即向上突破触发买入event"""
 
     def _init_self(self, **kwargs):
@@ -92,14 +82,10 @@ class AbuTwoDayBuy(AbuFactorBuyBase, BuyCallMixin):
         :param today: 当前驱动的交易日金融时间序列数据
         :return:
         """
-        # 忽略不符合买入的天（统计周期内前第1天, 因为要用到昨天的交易数据）
-        if self.today_ind == 0:
-            return None
-
         # 今天的涨幅
         td_change = today.p_change
         # 昨天的涨幅
-        yd_change = self.kl_pd.ix[self.today_ind - 1].p_change
+        yd_change = self.yesterday.p_change
 
         if td_change > 0 and 0 < yd_change < td_change:
             # 连续涨两天, 且今天的涨幅比昨天还高 －>买入, 用到了今天的涨幅，只能明天买
@@ -172,10 +158,7 @@ class AbuFactorBuyBreakHitPredictDemo(AbuFactorBuyBreak):
             与AbuFactorBuyBreak基本相同，唯一区别是关键子参数中添加了通过AbuFactorBuyBreakUmpDemo记录训练好的决策器
             self.hit_ml = kwargs['hit_ml']
         """
-        # 突破参数 xd， 比如20，30，40天...突破, 不要使用kwargs.pop('xd', 20), 明确需要参数xq
-        self.xd = kwargs['xd']
-        # 在输出生成的orders_pd中显示的名字
-        self.factor_name = '{}:{}'.format(self.__class__.__name__, self.xd)
+        super(AbuFactorBuyBreakHitPredictDemo, self)._init_self(**kwargs)
         # 添加了通过AbuFactorBuyBreakUmpDemo记录训练好的决策器
         self.hit_ml = kwargs['hit_ml']
 
