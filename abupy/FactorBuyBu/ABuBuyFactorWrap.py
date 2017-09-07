@@ -57,7 +57,7 @@ class AbuLeastPolyWrap(object):
                 if benchmark_today.empty:
                     return 0
                 # 要拿大盘最近一个月的走势，准备切片的start，end
-                end_key = int(benchmark_today.ix[0].key)
+                end_key = int(benchmark_today.iloc[0].key)
                 start_key = end_key - 20
                 if start_key < 0:
                     return 0

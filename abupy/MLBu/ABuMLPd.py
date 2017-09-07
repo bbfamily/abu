@@ -248,7 +248,7 @@ class BtcBigWaveClf(AbuMLPd):
         """
 
         # 将所有交易日以3个为一组，切割成多个子df，即每一个子df中有3个交易日的交易数据
-        btc_siblings = [btc_raw.ix[sib_ind * 3:(sib_ind + 1) * 3, :]
+        btc_siblings = [btc_raw.iloc[sib_ind * 3:(sib_ind + 1) * 3, :]
                         for sib_ind in np.arange(0, int(btc_raw.shape[0] / 3))]
 
         btc_df = pd.DataFrame()

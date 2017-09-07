@@ -217,7 +217,7 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
                     start=None, end=None, n_folds=2, show=False):
     """
     参数传递一组symbol对，获取symbol对的金融时间序列数据，根据speed_key获取曲线序列数据，
-    分别通过calc_kl_speed计算symbol对的趋势跟随速度
+    分别通过calc_kl_speed计算symbol对的趋势跟随速度，相关性＊敏感度＝敏感度置信度
     :param symbol: eg: 'AU0'
     :param benchmark_symbol: eg: 'XAU'
     :param resample: 计算速度数值的重采样周期默认5
@@ -226,9 +226,11 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
     :param end: 获取金融时间序列的end时间
     :param n_folds: 获取金融时间序列的n_folds参数
     :param show: 是否可视化symbol对的趋势走势对比
-    :return: 参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值
+    :return: 参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值，以及相关性＊敏感度＝敏感度置信度
     """
     from ..TradeBu import AbuBenchmark
+    from ..SimilarBu import ABuCorrcoef, ECoreCorrType
+
     benchmark = AbuBenchmark(benchmark_symbol, start=start, end=end, n_folds=n_folds)
     benchmark_kl = benchmark.kl_pd
     kl = ABuSymbolPd.make_kl_df(symbol, benchmark=benchmark,
@@ -236,6 +238,8 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
     # 通过calc_kl_speed计算趋势跟随速度
     kl_speed = calc_kl_speed(kl[speed_key], resample)
     benchmark_kl_speed = calc_kl_speed(benchmark_kl[speed_key], resample)
+    # 两个走势的SPERM相关性
+    corr = ABuCorrcoef.corr_xy(kl.close, benchmark_kl.close, ECoreCorrType.E_CORE_TYPE_SPERM)
 
     if show:
         # 可视化symbol对的趋势走势对比
@@ -246,8 +250,8 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
         kl_resamp.plot(label='kl', style=['*--'])
         benchmark_kl_resamp.plot(label='benchmark', style=['^--'])
         plt.legend(loc='best')
-    # 返回参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值
-    return kl_speed, benchmark_kl_speed
+    # 返回参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值, 以及相关性＊敏感度＝敏感度置信度
+    return kl_speed, benchmark_kl_speed, corr
 
 
 def shift_distance_how(how):
