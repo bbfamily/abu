@@ -316,7 +316,7 @@ abu支持股票、期货、数字货币等多种金融投资品的行情和交�
 6. 接入外部数据源，期货数据源
 7. 接入外部数据源，比特币，莱特币数据源
 
-[详细阅读](http://www.abuquant.com/lecture/lecture_119.html)
+[详细阅读](http://www.abuquant.com/lecture/lecture_19.html)
 
 ## 联系我们
 

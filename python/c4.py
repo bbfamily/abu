@@ -22,6 +22,14 @@ abupy.env.enable_example_env_ipython()
 stock_day_change = np.load('../gen/stock_day_change.npy')
 
 
+"""
+    第四章 量化工具——pandas
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
+
 def sample_411():
     """
     4.1.1 DataFrame构建及方法

@@ -28,6 +28,14 @@ x = np.arange(0, tsla_close.shape[0])
 y = tsla_close.values
 
 
+"""
+    第六章 量化工具——数学：你一生的追求到底能带来多少幸福
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
+
 def sample_611_1(show=True):
     """
     6.1.1 线性回归

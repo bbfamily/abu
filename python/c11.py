@@ -42,6 +42,9 @@ sns.set_context(rc={'figure.figsize': (14, 7)})
 """
     第11章 量化系统-机器学习•ABU
 
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+
     * 因为需要全市场回测所以本章无法使用沙盒数据，《量化交易之路》中的原始示例使用的是美股市场，这里的示例改为使用A股市场。
     * 本节可以对照阅读abu量化文档第20-23节内容
     * 本节的基础是在abu量化文档中第20节内容完成运行后有A股训练集交易和A股测试集交易数据之后

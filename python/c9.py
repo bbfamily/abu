@@ -39,6 +39,14 @@ sell_factors = [
 ]
 
 
+"""
+    第九章 量化系统——度量与优化
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
+
 def sample_91(show=True):
     """
     9.1 度量的基本使用方法
@@ -318,7 +326,7 @@ def sample_94_1():
     # 关闭沙盒数据环境
     abupy.env.disable_example_env_ipython()
     abupy.env.g_market_source = EMarketSourceType.E_MARKET_SOURCE_tx
-    abupy.env.g_data_cache_type = EDataCacheType.E_DATA_CACHE_HDF5
+    abupy.env.g_data_cache_type = EDataCacheType.E_DATA_CACHE_CSV
     # 首选这里预下载市场中所有股票的6年数据(做5年回测，需要预先下载6年数据)
     abu.run_kl_update(start='2011-08-08', end='2017-08-08', market=EMarketTargetType.E_MARKET_TARGET_US)
 

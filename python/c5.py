@@ -21,6 +21,13 @@ abupy.env.enable_example_env_ipython()
 
 tsla_df = ABuSymbolPd.make_kl_df('usTSLA', n_folds=2)
 
+"""
+    第五章 量化工具——可视化
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
 
 # noinspection PyUnresolvedReferences
 def plot_demo(axs=None, just_series=False):

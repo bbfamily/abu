@@ -203,8 +203,17 @@ class EMarketSubType(Enum):
     US_N = 'NYSE'
     """美股纳斯达克NASDAQ"""
     US_OQ = 'NASDAQ'
+    """美股粉单市场"""
+    US_PINK = 'PINK'
+    """美股OTCMKTS"""
+    US_OTC = 'OTCMKTS'
+    """未上市"""
+    US_PREIPO = 'PREIPO'
+
+
     """港股hk"""
     HK = 'hk'
+
     """上证交易所sh"""
     SH = 'sh'
     """深圳交易所sz"""
@@ -335,8 +344,12 @@ class EDataCacheType(Enum):
     E_DATA_CACHE_MONGODB = 2
 
 
-"""默认金融时间序列数据缓存类型为HDF5，单机固态硬盘推荐HDF5，非固态硬盘使用CSV，否则量大后hdf5写入速度无法接受"""
-g_data_cache_type = EDataCacheType.E_DATA_CACHE_HDF5
+# """默认金融时间序列数据缓存类型为HDF5，单机固态硬盘推荐HDF5，非固态硬盘使用CSV，否则量大后hdf5写入速度无法接受"""
+# g_data_cache_type = EDataCacheType.E_DATA_CACHE_HDF5
+"""对外版本由于用户电脑性能，存储空间且winodws用户，python2用户多，所以更改默认存储类型为csv"""
+g_data_cache_type = EDataCacheType.E_DATA_CACHE_CSV
+
+
 """csv模式下的存储路径"""
 g_project_kl_df_data_csv = path.join(g_project_data_dir, 'csv')
 

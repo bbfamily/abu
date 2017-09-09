@@ -36,6 +36,11 @@ K_MARKET_TEST_FN_BASE = os.path.join(ABuEnv.g_project_cache_dir, 'market_test_sy
 """在market_train_test_split函数中，切割的训练集交易symbol，本地序列化存储路径的基础路径名"""
 K_MARKET_TRAIN_FN_BASE = os.path.join(ABuEnv.g_project_cache_dir, 'market_train_symbols')
 
+# TODO 从沙盒数据库里读取，否则之后有变动还需要跟着改
+K_SAND_BOX_US = ['usTSLA', 'usNOAH', 'usSFUN', 'usBIDU', 'usAAPL', 'usGOOG', 'usWUBA', 'usVIPS']
+K_SAND_BOX_CN = ['002230', '300104', '300059', '601766', '600085', '600036', '600809', '000002', '002594', '002739']
+K_SAND_BOX_HK = ['hk03333', 'hk00700', 'hk02333', 'hk01359', 'hk00656', 'hk03888', 'hk02318']
+
 
 # noinspection PyUnresolvedReferences
 class MarketMixin(object):
@@ -140,8 +145,7 @@ def _all_us_symbol(index=False):
 
     # noinspection PyProtectedMember
     if ABuEnv._g_enable_example_env_ipython:
-        # TODO 从沙盒数据库里读取，否则之后有变动还需要跟着改
-        return ['usTSLA', 'usNOAH', 'usSFUN', 'usBIDU', 'usAAPL', 'usGOOG', 'usWUBA', 'usVIPS']
+        return K_SAND_BOX_US
     return AbuSymbolUS().all_symbol(index=index)
 
 
@@ -153,8 +157,7 @@ def _all_cn_symbol(index=False):
     """
     # noinspection PyProtectedMember
     if ABuEnv._g_enable_example_env_ipython:
-        # TODO 从沙盒数据库里读取，否则之后有变动还需要跟着改
-        return ['002230', '300104', '300059', '601766', '600085', '600036', '600809', '000002', '002594', '002739']
+        return K_SAND_BOX_CN
     return AbuSymbolCN().all_symbol(index=index)
 
 
@@ -166,8 +169,7 @@ def _all_hk_symbol(index=False):
     """
     # noinspection PyProtectedMember
     if ABuEnv._g_enable_example_env_ipython:
-        # TODO 从沙盒数据库里读取，否则之后有变动还需要跟着改
-        return ['hk03333', 'hk00700', 'hk02333', 'hk01359', 'hk00656', 'hk03888', 'hk02318']
+        return K_SAND_BOX_HK
     return AbuSymbolHK().all_symbol(index=index)
 
 

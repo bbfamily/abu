@@ -20,6 +20,14 @@ abupy.env.enable_example_env_ipython()
 kl_pd = ABuSymbolPd.make_kl_df('usTSLA', n_folds=2)
 
 
+"""
+    第七章 量化系统——入门：三只小猪股票投资的故事
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
+
 def sample_711():
     """
     7.1.1 趋势跟踪和均值回复的周期重叠性

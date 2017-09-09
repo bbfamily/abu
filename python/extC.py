@@ -18,6 +18,9 @@ sns.set_context(rc={'figure.figsize': (14, 7)})
 """
     附录C-量化统计分析及指标应用
 
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+
     本节内容建议对照阅读abu量化文档：第13节 量化技术分析应用
 """
 

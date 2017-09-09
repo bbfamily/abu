@@ -6,17 +6,22 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
 
+from fnmatch import fnmatch
+
+import numpy as np
+
 from ..CoreBu.ABuEnv import EMarketTargetType, EMarketSubType
 from ..CoreBu.ABuFixes import six
 from ..UtilBu.ABuLazyUtil import LazyFunc
 
 
 # noinspection PyProtectedMember
-def code_to_symbol(code):
+def code_to_symbol(code, rs=True):
     """
     解析code成Symbol,如果code中带有市场编码直接用该市场，否则进行查询所属市场信息，
     如果最后也没有发现symbol所在的市场，会向外raise ValueError
     :param code: str对象，代码 如：300104，sz300104，usTSLA
+    :param rs: 没有匹配上是否对外抛异常，默认True
     :return: Symbol对象
     """
     from ..MarketBu.ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
@@ -64,7 +69,8 @@ def code_to_symbol(code):
             market = EMarketTargetType.E_MARKET_TARGET_HK
             sub_market = EMarketSubType.HK
             return Symbol(market, sub_market, code)
-        raise TypeError('cn symbol len = 6, hk symbol len = 5')
+        if rs:
+            raise TypeError('cn symbol len = 6, hk symbol len = 5')
     elif code.isalpha() and code in Symbol.HK_INDEX:
         # 全字母且匹配港股大盘'HSI', 'HSCEI', 'HSCCI'
         market = EMarketTargetType.E_MARKET_TARGET_HK
@@ -101,7 +107,144 @@ def code_to_symbol(code):
             market = EMarketTargetType.E_MARKET_TARGET_FUTURES_CN
             return Symbol(market, sub_market, futures_code)
 
-    raise ValueError('arg code :{} format dt support'.format(code))
+    if rs:
+        raise ValueError('arg code :{} format dt support'.format(code))
+
+
+def __search(market_df, search_match, search_code, search_result, match_key='co_name'):
+    """具体搜索执行接口"""
+
+    def __search_whole_code(_match_code):
+        _sc_df = market_df[market_df.symbol == _match_code]
+        if not _sc_df.empty:
+            search_result[_sc_df.symbol.values[0]] = _sc_df[match_key].values[0]
+            return True
+        return False
+
+    def __search_pinyin_code(_match_code):
+        from ..MarketBu.ABuDataFeed import query_symbol_from_pinyin
+        # 使用query_symbol_from_pinyin对模糊拼音进行查询
+        pinyin_symbol = query_symbol_from_pinyin(_match_code)
+        if pinyin_symbol is not None:
+            # 需要把拼音code标准化为可查询的code
+            search_symbol = code_to_symbol(pinyin_symbol, rs=False)
+            if search_symbol is not None:
+                _search_code = search_symbol.symbol_code
+                sc_df = market_df[market_df.symbol == _search_code]
+                if not sc_df.empty:
+                    search_result[sc_df.symbol.values[0]] = sc_df[match_key].values[0]
+
+    def __search_fnmatch_info(_search_match):
+        # 模糊匹配公司名称信息或者交易产品信息
+        mc_df = market_df[market_df[match_key].apply(lambda name: fnmatch(name, _search_match))]
+        if not mc_df.empty:
+            for ind in np.arange(0, len(mc_df)):
+                mcs = mc_df.iloc[ind]
+                search_result[mcs.symbol] = mcs[match_key]
+
+    # 首先全匹配search_code
+    if not __search_whole_code(search_code):
+        # 如果search_code没有能全匹配成功，使用拼音进行匹配一次
+        __search_pinyin_code(search_code)
+    # 模糊匹配公司名称或者产品等信息symbol
+    __search_fnmatch_info(search_match)
+
+
+def _us_search(search_match, search_code, search_result):
+    """美股市场symbol关键字搜索"""
+    from ..MarketBu.ABuSymbolStock import AbuSymbolUS
+    __search(AbuSymbolUS().df, search_match, search_code, search_result)
+
+
+def _cn_search(search_match, search_code, search_result):
+    """a股市场symbol关键字搜索"""
+    from ..MarketBu.ABuSymbolStock import AbuSymbolCN
+    __search(AbuSymbolCN().df, search_match, search_code, search_result)
+
+
+def _hk_search(search_match, search_code, search_result):
+    """港股市场symbol关键字搜索"""
+    from ..MarketBu.ABuSymbolStock import AbuSymbolHK
+    __search(AbuSymbolHK().df, search_match, search_code, search_result)
+
+
+def _fcn_search(search_match, search_code, search_result):
+    """国内期货symbol关键字搜索"""
+    from ..MarketBu.ABuSymbolFutures import AbuFuturesCn
+    __search(AbuFuturesCn().futures_cn_df,
+             search_match, search_code, search_result, match_key='product')
+
+
+def _fgb_search(search_match, search_code, search_result):
+    """国际期货symbol关键字搜索"""
+    from ..MarketBu.ABuSymbolFutures import AbuFuturesGB
+    __search(AbuFuturesGB().futures_gb_df,
+             search_match, search_code, search_result, match_key='product')
+
+
+# TODO 币类匹配统一标准规范
+def _tc_search(search_match, search_code, search_result):
+    if fnmatch('比特币', search_match) or 'btc' == search_code:
+        search_result['btc'] = '比特币'
+    if fnmatch('莱特币', search_match) or 'ltc' == search_code:
+        search_result['ltc'] = '莱特币'
+
+
+def search_to_symbol_dict(search):
+    """
+    symbol搜索对外接口，全匹配symbol code，拼音匹配symbol，别名匹配，模糊匹配公司名称，产品名称等信息
+    eg：
+        in：
+        search_to_symbol_dict('黄金')
+        out：
+        {'002155': '湖南黄金',
+         '600489': '中金黄金',
+         '600547': '山东黄金',
+         '600766': '园城黄金',
+         '600988': '赤峰黄金',
+         'ABX': '巴里克黄金',
+         'AU0': '黄金',
+         'DGL': '黄金基金-PowerShares',
+         'DGLD': '黄金3X做空-VelocityShares',
+         'DGP': '黄金2X做多-DB',
+         'DGZ': '黄金做空-PowerShares',
+         'DZZ': '黄金2X做空-DB',
+         'EGO': '埃尔拉多黄金公司',
+         'GC': '纽约黄金',
+         'GEUR': 'Gartman欧元黄金ETF-AdvisorShares ',
+         'GLD': '黄金ETF-SPDR',
+         'GLL': '黄金2X做空-ProShares',
+         'GYEN': 'Gartman日元黄金ETF-AdvisorShares',
+         'HMY': '哈莫尼黄金',
+         'IAU': '黄金ETF-iShares',
+         'KGC': '金罗斯黄金',
+         'LIHR': '利希尔黄金',
+         'PRME': '全球黄金地段房地产ETF-First Trust Heitman',
+         'RGLD': '皇家黄金',
+         'UGL': '黄金2x做多-ProShares',
+         'UGLD': '黄金3X做多-VelocityShares'}
+    :param search: eg：'黄金'， '58'
+    :return: symbol dict
+    """
+    search_symbol_dict = {}
+    search = search.lower()
+    while len(search_symbol_dict) == 0 and len(search) > 0:
+        # 构建模糊匹配进行匹配带通配符的字符串
+        search_match = '*{}*'.format(search)
+        # 构建精确匹配或拼音模糊匹配的symbol
+        search_symbol = code_to_symbol(search, rs=False)
+        search_code = ''
+        if search_symbol is not None:
+            search_code = search_symbol.symbol_code
+        # 对search的内容进行递减匹配
+        search = search[:-1]
+        # 依次对各个市场进行搜索匹配操作
+        _tc_search(search_match, search_code, search_symbol_dict)
+        _cn_search(search_match, search_code, search_symbol_dict)
+        _us_search(search_match, search_code, search_symbol_dict)
+        _fcn_search(search_match, search_code, search_symbol_dict)
+        _fgb_search(search_match, search_code, search_symbol_dict)
+    return search_symbol_dict
 
 
 class Symbol(object):

@@ -28,6 +28,14 @@ sns.set_context(rc={'figure.figsize': (14, 7)})
 abupy.env.enable_example_env_ipython()
 
 
+"""
+    第二章 量化语言——Python
+
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+"""
+
+
 def sample_211():
     """
     量化语言-Python

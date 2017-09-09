@@ -16,7 +16,7 @@ from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EMarketTargetType, EMarketSubType
 from ..UtilBu.ABuDTUtil import singleton
 from ..UtilBu.ABuStrUtil import digit_str
-from ..MarketBu.ABuSymbol import Symbol
+from ..MarketBu.ABuSymbol import Symbol, code_to_symbol
 from ..CrawlBu.ABuXqConsts import columns_map
 
 __author__ = '阿布'
@@ -57,7 +57,6 @@ class AbuStockBaseWrap(object):
                 local_columns_map = {columns_map[col_key]: col_key for col_key in columns_map}
                 # show_df中列名使用本地语言展示
                 warp_self.show_df = warp_self.df.rename(columns=local_columns_map, inplace=False)
-
                 # 冻结接口，只读
                 # noinspection PyProtectedMember
                 warp_self._freeze()
@@ -365,3 +364,26 @@ class AbuSymbolHK(AbuSymbolStockBase):
         :return: 返回EMarketSubType.value值，即子市场（交易所）字符串对象
         """
         return default
+
+
+def query_stock_info(symbol):
+    """
+    通过将symbol code转换为Symbol对象查询对应的市场，构造对应的市场对象，
+    仅支持股票类型symbol
+    :param symbol: eg：usTSLA
+    :return: 一行数据的pd.DataFrame对象
+    """
+    if isinstance(symbol, six.string_types):
+        symbol = code_to_symbol(symbol)
+
+    if symbol.is_a_stock():
+        sn = AbuSymbolCN()
+    elif symbol.is_hk_stock():
+        sn = AbuSymbolHK()
+    elif symbol.is_us_stock():
+        sn = AbuSymbolUS()
+    else:
+        print('query_symbol_info just suit sz, sh, us, hk!')
+        return
+    # 直接使用类的__getitem__方法
+    return sn[symbol.symbol_code]

@@ -35,6 +35,9 @@ sell_factors = [
 """
     附录A 量化环境部署
 
+    abu量化系统github地址：https://github.com/bbfamily/abu (您的star是我的动力！)
+    abu量化文档教程ipython notebook：https://github.com/bbfamily/abu/tree/master/abupy_lecture
+
     * 本节建议对照阅读abu量化文档: 第19节 数据源
 """
 

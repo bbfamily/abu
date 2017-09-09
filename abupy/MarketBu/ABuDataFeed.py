@@ -24,6 +24,7 @@ from ..MarketBu.ABuDataBase import StockBaseMarket, SupportMixin, FuturesBaseMar
 from ..MarketBu.ABuDataParser import BDParser, TXParser, NTParser, SNUSParser
 from ..MarketBu.ABuDataParser import SNFuturesParser, SNFuturesGBParser, HBTCParser
 from ..UtilBu import ABuStrUtil, ABuDateUtil, ABuMd5
+from ..UtilBu.ABuDTUtil import catch_error
 from ..CoreBu.ABuDeprecated import AbuDeprecated
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import xrange, range, filter
@@ -36,6 +37,49 @@ def random_from_list(array):
     """从参数array中随机取一个元素"""
     # 在array长度短的情况下，测试比np.random.choice效率要高
     return array[random.randrange(0, len(array))]
+
+
+@AbuDeprecated('only read old symbol db, miss update!!!')
+def query_symbol_sub_market(symbol):
+    path = TXApi.K_SYMBOLS_DB
+    conn = sqlite.connect(path)
+    cur = conn.cursor()
+    symbol = symbol.lower()
+    query = "select {} from {} where {} like \'{}.%\'".format(TXApi.K_DB_TABLE_SN, TXApi.K_DB_TABLE_NAME,
+                                                              TXApi.K_DB_TABLE_SN, symbol)
+    cur.execute(query)
+    results = cur.fetchall()
+    conn.close()
+    sub_market = ''
+    if results is not None and len(results) > 0:
+        try:
+            if results[0][0].find('.') > 0:
+                sub_market = '.' + results[0][0].split('.')[1].upper()
+        except:
+            logging.info(results)
+    return sub_market
+
+
+@catch_error(return_val=None, log=False)
+def query_symbol_from_pinyin(pinyin):
+    """通过拼音对symbol进行模糊查询"""
+    path = TXApi.K_SYMBOLS_DB
+    conn = sqlite.connect(path)
+    cur = conn.cursor()
+    pinyin = pinyin.lower()
+    query = "select stockCode from {} where pinyin=\'{}\'".format(TXApi.K_DB_TABLE_NAME, pinyin)
+    cur.execute(query)
+    results = cur.fetchall()
+    conn.close()
+    if len(results) > 0:
+        code = results[0][0]
+        # 查询到的stcok code eg：sh111111，usabcd.n
+        start = 2
+        end = len(code)
+        if '.' in code:
+            # 如果是美股要截取.
+            end = code.find('.')
+        return code[start:end]
 
 
 class BDApi(StockBaseMarket, SupportMixin):
@@ -132,26 +176,6 @@ class TXApi(StockBaseMarket, SupportMixin):
         # 设置数据源解析对象类
         self.data_parser_cls = TXParser
 
-    @AbuDeprecated('only read old symbol db, miss update!!!')
-    def query_symbol_sub_market(self, symbol):
-        path = TXApi.K_SYMBOLS_DB
-        conn = sqlite.connect(path)
-        cur = conn.cursor()
-        symbol = symbol.lower()
-        query = "select {} from {} where {} like \'{}.%\'".format(TXApi.K_DB_TABLE_SN, TXApi.K_DB_TABLE_NAME,
-                                                                  TXApi.K_DB_TABLE_SN, symbol)
-        cur.execute(query)
-        results = cur.fetchall()
-        conn.close()
-        sub_market = ''
-        if results is not None and len(results) > 0:
-            try:
-                if results[0][0].find('.') > 0:
-                    sub_market = '.' + results[0][0].split('.')[1].upper()
-            except:
-                logging.info(results)
-        return sub_market
-
     def kline(self, n_folds=2, start=None, end=None):
         """日k线接口"""
         cuid = ABuStrUtil.create_random_with_num_low(40)
@@ -175,7 +199,10 @@ class TXApi(StockBaseMarket, SupportMixin):
                 # 如果已经有.了说明是大盘，大盘不需要子市场，eg：us.IXIC
                 sub_market = ''
             else:
-                sub_market_map = {EMarketSubType.US_N.value: 'n', EMarketSubType.US_OQ.value: 'oq'}
+                # 这里tx的source不支持US_PINK, US_OTC, US_PREIPO
+                sub_market_map = {EMarketSubType.US_N.value: 'n', EMarketSubType.US_PINK.value: 'n',
+                                  EMarketSubType.US_OTC.value: 'n', EMarketSubType.US_PREIPO.value: 'n',
+                                  EMarketSubType.US_OQ.value: 'oq'}
                 sub_market = '.{}'.format(sub_market_map[self._symbol.sub_market.value])
             url = TXApi.K_NET_BASE % (
                 market, self._symbol.value + sub_market, days,

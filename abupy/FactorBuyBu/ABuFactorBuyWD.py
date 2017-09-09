@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 """
-    买入择时示例因子：黄金分割线买入择时因子
+    买入择时示例因子：日胜率均值买入择时因子
 """
 
 from __future__ import absolute_import
