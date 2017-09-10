@@ -312,7 +312,7 @@ class AbuUmpEdgeBase(AbuUmpBase):
                    [  1.445,  16.266,   4.615,  -1.115],
                    [  1.445,  16.266,   4.615,  -1.115]])
         """
-        ABuFileUtil.dump_pickle(df_x_dict, self.dump_file_fn())
+        ABuFileUtil.dump_pickle(df_x_dict, self.dump_file_fn(), how='zero')
 
     def predict(self, **kwargs):
         """

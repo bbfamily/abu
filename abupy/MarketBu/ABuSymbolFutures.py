@@ -77,6 +77,10 @@ class AbuFuturesCn(FreezeAttrMixin):
         if key in self:
             return self.futures_cn_df[key]
         # 不在的话，返回整个表格futures_cn_df
+
+        symbol_df = self.futures_cn_df[self.futures_cn_df.symbol == key]
+        if not symbol_df.empty:
+            return symbol_df
         return self.futures_cn_df
 
     def __setitem__(self, key, value):
@@ -187,6 +191,11 @@ class AbuFuturesGB(FreezeAttrMixin):
         """索引获取：套接self.futures_cn_df[key]"""
         if key in self:
             return self.futures_gb_df[key]
+
+        symbol_df = self.futures_gb_df[self.futures_gb_df.symbol == key]
+        if not symbol_df.empty:
+            return symbol_df
+
         # 不在的话，返回整个表格futures_cn_df
         return self.futures_gb_df
 

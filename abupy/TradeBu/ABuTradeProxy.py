@@ -223,14 +223,14 @@ def difference_in_2orders(orders_pd, other_orders_pd, same_rule=EOrderSameRule.O
 
 def find_unique_group_symbol(order_pd):
     """
-    按照'buy_date', 'symbol'分组后，只筛选组里的第一个same_group.ix[0]
+    按照'buy_date', 'symbol'分组后，只筛选组里的第一个same_group.iloc[0]
     :param order_pd:
     :return:
     """
 
     def _find_unique_group_symbol(same_group):
         # 只筛选组里的第一个, 即同一个交易日，对一个股票的交易只保留一个order
-        return same_group.ix[0]
+        return same_group.iloc[0]
 
     # 按照'buy_date', 'symbol'分组后apply same_handle
     order_pds = order_pd.groupby(['buy_date', 'symbol']).apply(_find_unique_group_symbol)

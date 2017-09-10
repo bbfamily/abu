@@ -973,7 +973,7 @@ class AbuUmpMainBase(AbuUmpBase):
                 }
             """
         # 通过ABuFileUtil.dump_pickle将clf_cluster_dict进行序列化
-        ABuFileUtil.dump_pickle(clf_cluster_dict, self.dump_file_fn())
+        ABuFileUtil.dump_pickle(clf_cluster_dict, self.dump_file_fn(), how='zero')
 
     def predict(self, x, need_hit_cnt=1):
         """

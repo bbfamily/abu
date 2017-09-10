@@ -119,11 +119,14 @@ def load_pickle(file_name):
     return ret
 
 
-def dump_pickle(input_obj, file_name):
+def dump_pickle(input_obj, file_name, how='normal'):
     """
     存贮python序列化的本地文件
     :param input_obj: 需要进行序列化的对象
     :param file_name: 文件名，str对象, 相对路径或者绝对路径
+    :param how: 序列化协议选择，默认normal不特殊处理，
+                zero使用python2, python3协议兼容模式，使用protocol=0，
+                high使用支持的最高协议
     """
     ensure_dir(file_name)
 
@@ -131,10 +134,10 @@ def dump_pickle(input_obj, file_name):
 
     try:
         with open(file_name, "wb") as pick_file:
-            if K_SET_PICKLE_HIGHEST_PROTOCOL:
+            if K_SET_PICKLE_HIGHEST_PROTOCOL or how == 'high':
                 """使用所支持的最高协议进行dump"""
                 pickle.dump(input_obj, pick_file, pickle.HIGHEST_PROTOCOL)
-            elif K_SET_PICKLE_ZERO_PROTOCOL:
+            elif K_SET_PICKLE_ZERO_PROTOCOL or how == 'zero':
                 """python2, python3协议兼容模式，使用protocol=0"""
                 pickle.dump(input_obj, pick_file, 0)
             else:

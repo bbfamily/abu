@@ -312,8 +312,8 @@ def _handle_market_change_df(market_change_df, cmp_cnt, benchmark_df, show_cnt, 
     :return:
     """
     # 使用[-cmp_cnt:]再次确定时间序列周期
-    benchmark_df = benchmark_df.ix[-cmp_cnt:]
-    market_change_df = market_change_df.ix[-cmp_cnt:]
+    benchmark_df = benchmark_df.iloc[-cmp_cnt:]
+    market_change_df = market_change_df.iloc[-cmp_cnt:]
 
     if corr_type == ECoreCorrType.E_CORE_TYPE_ROLLING:
         # 把参数时间加权rolling和corr_type设置进行merge

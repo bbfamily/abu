@@ -44,7 +44,7 @@ class EFitError(Enum):
 
 
 def _do_pick_time_work(capital, buy_factors, sell_factors, kl_pd, benchmark, draw=False,
-                       show_info=False):
+                       show_info=False, show_pg=False):
     """
     内部方法：包装AbuPickTimeWorker进行fit，分配错误码，通过trade_summary生成orders_pd，action_pd
     :param capital: AbuCapital实例对象
@@ -54,20 +54,24 @@ def _do_pick_time_work(capital, buy_factors, sell_factors, kl_pd, benchmark, dra
     :param benchmark: 交易基准对象，AbuBenchmark实例对象
     :param draw: 是否绘制在对应的金融时间序列上的交易行为
     :param show_info: 是否显示在整个金融时间序列上的交易结果
+    :param show_pg: 是否择时内部启动进度条，适合单进程或者每个进程里只有一个symbol进行择时
     :return:
     """
     if kl_pd is None or kl_pd.shape[0] == 0:
         return None, EFitError.NET_ERROR
 
-    abu = AbuPickTimeWorker(capital, kl_pd, benchmark, buy_factors, sell_factors)
-    abu.fit()
+    pick_timer_worker = AbuPickTimeWorker(capital, kl_pd, benchmark, buy_factors, sell_factors)
+    if show_pg:
+        pick_timer_worker.enable_task_pg()
+    pick_timer_worker.fit()
 
-    if len(abu.orders) == 0:
+    if len(pick_timer_worker.orders) == 0:
         # 择时金融时间序列拟合操作后，没有任何order生成
         return None, EFitError.NO_ORDER_GEN
 
     # 生成关键的orders_pd与action_pd
-    orders_pd, action_pd, _ = ABuTradeProxy.trade_summary(abu.orders, kl_pd, draw=draw, show_info=show_info)
+    orders_pd, action_pd, _ = ABuTradeProxy.trade_summary(pick_timer_worker.orders, kl_pd, draw=draw,
+                                                          show_info=show_info)
 
     # 最后生成list是因为tuple无法修改导致之后不能灵活处理
     return [orders_pd, action_pd], EFitError.FIT_OK
@@ -101,8 +105,11 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
         # 启动多进程进度显示AbuMulPidProgress
         with AbuMulPidProgress(len(target_symbols), 'pick times complete') as progress:
             for epoch, target_symbol in enumerate(target_symbols):
-                # 如果要绘制交易细节就不要clear了
-                progress.show(epoch + 1, clear=not show)
+
+                # 如果symbol只有一个就不show了，留给下面_do_pick_time_work中show_pg内部显示进度
+                if len(target_symbols) > 1:
+                    # 如果要绘制交易细节就不要clear了
+                    progress.show(epoch + 1, clear=not show)
 
                 if func_factors is not None and callable(func_factors):
                     # 针对do_symbols_with_diff_factors mul factors等情况嵌入可变因子
@@ -110,7 +117,7 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
                 try:
                     kl_pd = kl_pd_manager.get_pick_time_kl_pd(target_symbol)
                     ret, fit_error = _do_pick_time_work(capital, p_buy_factors, p_sell_factors, kl_pd, benchmark,
-                                                        draw=show, show_info=show)
+                                                        draw=show, show_info=show, show_pg=len(target_symbols) == 1)
                 except Exception as e:
                     logging.exception(e)
                     continue

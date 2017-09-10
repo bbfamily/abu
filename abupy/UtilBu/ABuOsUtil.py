@@ -14,16 +14,18 @@ log_func = logging.info if ABuEnv.g_is_ipython else print
 
 
 @catch_error()
-def show_msg(title, msg):
+def show_msg(title, msg, log=True):
     """
     统一平台弹窗信息提示，被catch_error装饰，即不应该被提示中断程序，
     特别长任务的情况下
     :param title: 弹窗信息标题
     :param msg: 弹窗信息内容
+    :param log: 是否通过logging.info打印信息
     :return:
     """
     # 由于catch_error忽略错误，所有主要信息还是先打印
-    log_func('title: {} msg: {}'.format(title, msg))
+    if log:
+        log_func('title: {} msg: {}'.format(title, msg))
     if ABuEnv.g_is_mac_os:
         from ..UtilBu.ABuMacUtil import show_msg as do_show_msg
     else:

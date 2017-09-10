@@ -17,6 +17,7 @@ from ..TradeBu.ABuBenchmark import AbuBenchmark
 from ..TradeBu.ABuCapital import AbuCapital
 from ..TradeBu.ABuKLManager import AbuKLManager
 from ..UtilBu import ABuDateUtil
+from ..UtilBu import ABuProgress
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -97,17 +98,22 @@ def run_loop_back(read_cash, buy_factors, sell_factors, stock_picks=None, choice
     if choice_symbols is None or len(choice_symbols) == 0:
         logging.info('pick stock result is zero!')
         return None, None
-
     # kl数据管理类初始化
     kl_pd_manager = AbuKLManager(benchmark, capital)
     # 批量获取择时kl数据
     kl_pd_manager.batch_get_pick_time_kl_pd(choice_symbols, n_process=n_process_kl)
+
+    # 在择时之前清理一下输出, 不能wait, windows上一些浏览器会卡死
+    ABuProgress.do_clear_output(wait=False)
 
     # 择时策略运行，多进程方式
     orders_pd, action_pd, all_fit_symbols_cnt = AbuPickTimeMaster.do_symbols_with_same_factors_process(
         choice_symbols, benchmark,
         buy_factors, sell_factors, capital, kl_pd_manager=kl_pd_manager, n_process_kl=n_process_kl,
         n_process_pick_time=n_process_pick)
+
+    # 都完事时检测一下还有没有ui进度条
+    ABuProgress.do_check_process_is_dead()
 
     # 返回namedtuple， ('orders_pd', 'action_pd', 'capital', 'benchmark')
     abu_result = AbuResultTuple(orders_pd, action_pd, capital, benchmark)

@@ -18,6 +18,7 @@ from ..FactorSellBu.ABuFactorSellBase import AbuFactorSellBase
 from .ABuPickBase import AbuPickTimeWorkBase
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import filter
+from ..UtilBu.ABuProgress import AbuMulPidProgress
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -60,12 +61,21 @@ class AbuPickTimeWorker(AbuPickTimeWorkBase):
         self.filter_long_task_factors()
         # 择时最终买入卖出行为列表，列表中每一个对象都为AbuOrder对象
         self.orders = list()
+        # 择时进度条，默认空, 即不打开，不显示择时进度
+        self.task_pg = None
 
     def __str__(self):
         """打印对象显示：买入因子列表＋卖出因子列表"""
         return 'buy_factors:{}\nsell_factors:{}'.format(self.buy_factors, self.sell_factors)
 
     __repr__ = __str__
+
+    def enable_task_pg(self):
+        """启动择时内部任务进度条"""
+        if self.kl_pd is not None and hasattr(self.kl_pd, 'name') and len(self.kl_pd) > 120:
+            self.task_pg = AbuMulPidProgress(len(self.kl_pd), 'pick {} times'.format(self.kl_pd.name))
+            self.task_pg.init_ui_progress()
+            self.task_pg.display_step = 42
 
     def _week_task(self, today):
         """
@@ -116,6 +126,9 @@ class AbuPickTimeWorker(AbuPickTimeWorkBase):
         :param today: 对self.kl_pd apply操作，且axis＝1结果为一天的交易数据
         :return:
         """
+        if self.task_pg is not None:
+            self.task_pg.show()
+
         day_cnt = today.key
         # 判断是否执行周任务
         exec_week = today.week_task == 1 if g_natural_long_task else day_cnt % 5 == 0
@@ -163,6 +176,9 @@ class AbuPickTimeWorker(AbuPickTimeWorkBase):
             self.kl_pd['month_task'] = np.where(self.kl_pd.shift(-1)['date'] - self.kl_pd['date'] > 60, 1, 0)
         # 通过pandas apply进行交易日递进择时
         self.kl_pd.apply(self._task_loop, axis=1)
+
+        if self.task_pg is not None:
+            self.task_pg.close_ui_progress()
 
     def init_sell_factors(self, sell_factors):
         """

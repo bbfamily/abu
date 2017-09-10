@@ -203,7 +203,6 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
         self.btc_similar_top = kwargs.pop('btc_similar_top')
         # 超过多少个相关股票今天趋势相同就买入
         self.btc_vote_val = kwargs.pop('btc_vote_val', 0.60)
-        self.pg = AbuProgress(len(self.kl_pd), 0, 'btc buy day')
 
         def _collect_kl(sim_line):
             """在初始化中将所有相关股票的对应时间的k线数据进行收集"""
@@ -222,8 +221,6 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
         :param today: 当前驱动的交易日金融时间序列数据
         :return:
         """
-        self.pg.show()
-
         # 忽略不符合买入的天（统计周期内前两天, 因为btc的机器学习特证需要三天交易数据）
         if self.today_ind < 2:
             return None

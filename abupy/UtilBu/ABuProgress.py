@@ -126,23 +126,28 @@ def ui_progress_socket_work():
 @catch_error(log=False)
 def check_process_is_dead():
     """主进程下的子线程函数：检测ui_progress_dict中的进程pid是否仍然活着，如果死了，从字典中清除，close ui"""
-    import psutil
     while True:
         # 低优先级任务，1分钟执行1次
         time.sleep(60)
-        # 获取活着的所有pid序列
-        living = psutil.pids()
-        clear_arr = list()
-        for progress_pid in ui_progress_dict:
-            # 需要临时转换一次int，living中进程序列是int
-            if int(progress_pid) not in living:
-                # 字典中记录的pid如果不在活着的序列中，清除
-                clear_arr.append(progress_pid)
-        for clear_pid in clear_arr:
-            if clear_pid in ui_progress_dict:
-                pop_progress = ui_progress_dict.pop(clear_pid, None)
-                if pop_progress is not None:
-                    pop_progress.close()
+        do_check_process_is_dead()
+
+
+def do_check_process_is_dead():
+    """执行检测ui_progress_dict中的进程pid是否仍然活着，如果死了，从字典中清除，close ui"""
+    import psutil
+    # 获取活着的所有pid序列
+    living = psutil.pids()
+    clear_arr = list()
+    for progress_pid in ui_progress_dict:
+        # 需要临时转换一次int，living中进程序列是int
+        if int(progress_pid) not in living:
+            # 字典中记录的pid如果不在活着的序列中，清除
+            clear_arr.append(progress_pid)
+    for clear_pid in clear_arr:
+        if clear_pid in ui_progress_dict:
+            pop_progress = ui_progress_dict.pop(clear_pid, None)
+            if pop_progress is not None:
+                pop_progress.close()
 
 if g_show_ui_progress and ABuEnv.g_main_pid == os.getpid() and ABuEnv.g_is_ipython:
     # 如果是主进程执行进行子线程函数ui_progress_socket_work：处理子进程传递的进度条处理信息：创建，进度更新，销毁
@@ -167,7 +172,7 @@ class AbuMulPidProgress(object):
         self._total = total
         self._label = label
         self.epoch = 0
-
+        self.display_step = 1
         self.progress_widget = None
         self.text_widget = None
         self.progress_box = None
@@ -262,12 +267,13 @@ class AbuMulPidProgress(object):
         """
         self.epoch = epoch if epoch is not None else self.epoch + 1
         if self.epoch % self.display_step == 0:
-            if clear:
-                do_clear_output()
-
             ps = round(self.epoch / self._total * 100, 2)
+            ps = 100 if ps > 100 else ps
             ps_text = "pid:{} {}:{}%".format(os.getpid(), self._label, ps)
-            print(ps_text)
+            if not ABuEnv.g_is_ipython or self._total < 2:
+                if clear:
+                    do_clear_output()
+                print(ps_text)
             self.update_ui_progress(ps, ps_text)
 
     def __exit__(self, exc_type, exc_val, exc_tb):

@@ -18,7 +18,12 @@ from ..CoreBu import ABuEnv
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
 
-if ABuEnv.g_is_mac_os:
+# if ABuEnv.g_is_mac_os:
+if False:
+    """
+        对外版本不再使用joblib避免python2，python3，mac, windows等joblib最后的pop一直出不来的bug，
+        有能力可自行打开，在mac下python3环境且cpu足够快建议打开
+    """
     # MAC 直接import Parallel, delayed
     # noinspection PyUnresolvedReferences
     from ..ExtBu.joblib import Parallel, delayed

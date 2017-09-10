@@ -42,6 +42,7 @@ except NameError:
 try:
     # noinspection PyUnresolvedReferences
     import psutil
+
     """有psutil，使用psutil.cpu_count计算cpu个数"""
     g_cpu_cnt = psutil.cpu_count(logical=True) * 1
 except ImportError:
@@ -50,6 +51,7 @@ except ImportError:
         g_cpu_cnt = os.cpu_count()
     else:
         import multiprocessing as mp
+
         g_cpu_cnt = mp.cpu_count()
 except:
     """cpu个数"""
@@ -78,9 +80,11 @@ if g_ignore_lib_warnings:
     # noinspection PyBroadException
     try:
         import matplotlib
+
         matplotlib.warnings.filterwarnings('ignore')
         matplotlib.warnings.simplefilter('ignore')
         import sklearn
+
         sklearn.warnings.filterwarnings('ignore')
         sklearn.warnings.simplefilter('ignore')
     except:
@@ -101,7 +105,6 @@ if g_ignore_all_warnings:
 """
 root_drive = path.expanduser('~')
 
-
 """abu数据缓存主目录文件夹"""
 g_project_root = path.join(root_drive, 'abu')
 """abu数据文件夹 ~/abu/data"""
@@ -114,7 +117,6 @@ g_project_db_dir = path.join(g_project_root, 'db')
 g_project_cache_dir = path.join(g_project_data_dir, 'cache')
 """abu项目数据主文件目录，即项目中的RomDataBu位置"""
 g_project_rom_data_dir = path.join(path.dirname(path.abspath(path.realpath(__file__))), '../RomDataBu')
-
 
 """abu日志文件 ~/abu/log/info.log"""
 g_project_log_info = path.join(g_project_log_dir, 'info.log')
@@ -136,6 +138,7 @@ g_project_kl_df_data_example = os.path.join(_p_dir, 'RomDataBu/df_kl.h5')
 chrome 驱动
 """
 g_crawl_chrome_driver = None
+
 
 # ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ CrawlBu start ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 
@@ -161,6 +164,7 @@ class EMarketSourceType(Enum):
 
     """火币 比特币，莱特币"""
     E_MARKET_SOURCE_hb_tc = 200
+
 
 """默认设置数据源使用E_MARKET_SOURCE_bd"""
 g_market_source = EMarketSourceType.E_MARKET_SOURCE_bd
@@ -209,7 +213,6 @@ class EMarketSubType(Enum):
     US_OTC = 'OTCMKTS'
     """未上市"""
     US_PREIPO = 'PREIPO'
-
 
     """港股hk"""
     HK = 'hk'
@@ -348,7 +351,6 @@ class EDataCacheType(Enum):
 # g_data_cache_type = EDataCacheType.E_DATA_CACHE_HDF5
 """对外版本由于用户电脑性能，存储空间且winodws用户，python2用户多，所以更改默认存储类型为csv"""
 g_data_cache_type = EDataCacheType.E_DATA_CACHE_CSV
-
 
 """csv模式下的存储路径"""
 g_project_kl_df_data_csv = path.join(g_project_data_dir, 'csv')
