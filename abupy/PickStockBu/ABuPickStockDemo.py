@@ -10,6 +10,7 @@ import numpy as np
 
 from .ABuPickStockBase import AbuPickStockBase, reversed_result
 from ..TLineBu.ABuTL import AbuTLine
+from ..MarketBu import ABuSymbolPd
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -43,3 +44,56 @@ class AbuPickStockShiftDistance(AbuPickStockBase):
 
     def fit_first_choice(self, pick_worker, choice_symbols, *args, **kwargs):
         raise NotImplementedError('AbuPickStockShiftDistance fit_first_choice unsupported now!')
+
+
+class AbuPickStockNTop(AbuPickStockBase):
+    """根据一段时间内的涨幅选取top N个"""
+
+    def _init_self(self, **kwargs):
+        """通过kwargs设置选股条件，配置因子参数"""
+        # 选股参数symbol_pool：进行涨幅比较的top n个symbol
+        self.symbol_pool = kwargs.pop('symbol_pool', [])
+        # 选股参数n_top：选取前n_top个symbol
+        self.n_top = kwargs.pop('n_top', [])
+        # 选股参数direction_top：选取前n_top个的方向，即选择涨的多的，还是选择跌的多的
+        self.direction_top = kwargs.pop('direction_top', 1)
+
+    @reversed_result
+    def fit_pick(self, kl_pd, target_symbol):
+        """开始根据参数进行选股"""
+
+        if len(self.symbol_pool) == 0:
+            # 如果没有传递任何参照序列symbol，择默认为选中
+            return True
+        start = kl_pd.iloc[0].date
+        end = kl_pd.iloc[-1].date
+        # 定义lambda函数计算周期内change
+        kl_change = lambda p_kl: \
+            p_kl.iloc[-1].close / p_kl.iloc[0].close if p_kl.iloc[0].close != 0 else 0
+        cmp_top_array = []
+        for symbol in self.symbol_pool:
+            if symbol != target_symbol:
+                # 不使用benchmark模式进行获取，因为只需要进行涨跌幅度的统计
+                kl = ABuSymbolPd.make_kl_df(symbol, start=start, end=end)
+                if kl is not None and kl.shape[0] > kl_pd.shape[0] * 0.75:
+                    # 需要获取实际交易日数量，避免停盘等错误信号
+                    cmp_top_array.append(kl_change(kl))
+
+        if self.n_top > len(cmp_top_array):
+            # 如果结果序列不足n_top个，直接认为选中
+            return True
+        # 与选股方向相乘，即结果只去top
+        cmp_top_array = np.array(cmp_top_array) * self.direction_top
+        # 计算本源的周期内涨跌幅度
+        target_change = kl_change(kl_pd) * self.direction_top
+        # sort排序小－》大, 非inplace
+        cmp_top_array.sort()
+        # [::-1]大－》小
+        # noinspection PyTypeChecker
+        if target_change > cmp_top_array[::-1][self.n_top - 1]:
+            # 如果比排序后的第self.n_top位置上的大就认为选中
+            return True
+        return False
+
+    def fit_first_choice(self, pick_worker, choice_symbols, *args, **kwargs):
+        raise NotImplementedError('AbuPickStockNTop fit_first_choice unsupported now!')

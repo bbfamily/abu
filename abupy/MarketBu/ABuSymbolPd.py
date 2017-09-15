@@ -241,6 +241,7 @@ def kl_df_dict_parallel(symbols, data_mode=ABuEnv.EMarketDataSplitMode.E_DATA_SP
     return df_dicts
 
 
+# noinspection PyDeprecation
 def make_kl_df(symbol, data_mode=ABuEnv.EMarketDataSplitMode.E_DATA_SPLIT_SE,
                n_folds=2, start=None, end=None, benchmark=None, show_progress=True, parallel=False, parallel_save=True):
     """

@@ -6,6 +6,8 @@ from .ABuFactorAtrNStop import AbuFactorAtrNStop
 from .ABuFactorCloseAtrNStop import AbuFactorCloseAtrNStop
 from .ABuFactorSellBreak import AbuFactorSellBreak
 from .ABuFactorSellNDay import AbuFactorSellNDay
+from .ABuFactorSellDM import AbuDoubleMaSell
+
 # noinspection all
 from . import ABuFS as fs
 
@@ -18,6 +20,6 @@ __all__ = [
     'AbuFactorCloseAtrNStop',
     'AbuFactorSellBreak',
     'AbuFactorSellNDay',
-
+    'AbuDoubleMaSell',
     'fs'
 ]

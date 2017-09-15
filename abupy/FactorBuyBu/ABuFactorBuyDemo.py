@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 """
-    买入择时示例因子：突破买入择时因子
+    示例买入择时因子
 """
 
 from __future__ import absolute_import
@@ -24,8 +24,12 @@ class AbuSDBreak(AbuFactorBuyXD, BuyCallMixin):
     """示例买入因子： 在AbuFactorBuyBreak基础上进行降低交易频率，提高系统的稳定性处理"""
 
     def _init_self(self, **kwargs):
+        """
+        :param kwargs: kwargs可选参数poly值，poly在fit_month中和每一个月大盘计算的poly比较，
+        若是大盘的poly大于poly认为走势震荡，poly默认为2
+        """
         super(AbuSDBreak, self)._init_self(**kwargs)
-        # 外部可以设置poly阀值，self.poly在fit_month中和每一个月大盘计算的poly比较，若是大盘的poly大于poly认为走势震荡
+        # poly阀值，self.poly在fit_month中和每一个月大盘计算的poly比较，若是大盘的poly大于poly认为走势震荡
         self.poly = kwargs.pop('poly', 2)
         # 是否封锁买入策略进行择时交易
         self.lock = False
@@ -91,6 +95,22 @@ class AbuTwoDayBuy(AbuFactorBuyTD, BuyCallMixin):
             # 连续涨两天, 且今天的涨幅比昨天还高 －>买入, 用到了今天的涨幅，只能明天买
             return self.buy_tomorrow()
         return None
+
+
+class AbuWeekMonthBuy(AbuFactorBuyBase, BuyCallMixin):
+    """策略示例每周买入一次或者每一个月买入一次"""
+
+    def _init_self(self, **kwargs):
+        """kwargs可选参数：is_buy_month，bool默认True一个月买入一次, False一周买入一次"""
+        self.is_buy_month = kwargs.pop('is_buy_month', True)
+
+    def fit_day(self, today):
+        """
+        :param today: 当前驱动的交易日金融时间序列数据
+        """
+        if self.is_buy_month and today.exec_month or not self.is_buy_month and today.exec_week:
+            # 没有用到今天的任何数据，直接今天买入
+            return self.buy_today()
 
 
 class AbuFactorBuyBreakUmpDemo(AbuFactorBuyBreak):
@@ -196,7 +216,6 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
     """
 
     def _init_self(self, **kwargs):
-        from ..UtilBu.ABuProgress import AbuProgress
         from ..MarketBu import ABuSymbolPd
 
         # 市场中与btc最相关的top个股票
@@ -219,7 +238,6 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
     def fit_day(self, today):
         """
         :param today: 当前驱动的交易日金融时间序列数据
-        :return:
         """
         # 忽略不符合买入的天（统计周期内前两天, 因为btc的机器学习特证需要三天交易数据）
         if self.today_ind < 2:
@@ -293,6 +311,7 @@ class AbuBTCDayBuy(AbuFactorBuyBase, BuyCallMixin):
 
     def similar_predict(self, today_date):
         """与比特币在市场中最相关的top100个股票已各自今天的涨跌结果进行投票"""
+
         def _predict_vote(sim_line, _today_date):
             kl = self.kl_dict[sim_line.symbol]
             if kl is None:

@@ -32,7 +32,7 @@ class AbuFactorBuyWD(AbuFactorBuyTD, BuyCallMixin):
         self.buy_dwm = kwargs.pop('buy_dwm', 0.618)
         self.dw_period = kwargs.pop('dw_period', 40)
 
-        # combine_kl_pd中包含择时金融时间数据与择时之前一年的金融时间数据, 先取出择时开始之前的周期数据
+        # combine_kl_pd中包含择时金融时间数据与择时之前周期的金融时间数据, 先取出择时开始之前的周期数据
         last_kl = self.combine_kl_pd.loc[:self.kl_pd.index[0]]
         if last_kl.shape[0] > self.dw_period:
             last_kl = last_kl[-self.dw_period:]
@@ -40,7 +40,7 @@ class AbuFactorBuyWD(AbuFactorBuyTD, BuyCallMixin):
         self._make_buy_date(last_kl)
 
     def fit_month(self, today):
-        """月任务，每一个重新取之前一年的金融时间序列数据，重新计算一遍'周几买'"""
+        """月任务，每一个重新取之前周期内的金融时间序列数据，重新计算一遍'周几买'"""
         end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
         start_ind = end_ind - self.dw_period if end_ind - self.dw_period > 0 else 0
         # 根据当前的交易日，切片过去的一年金融时间序列

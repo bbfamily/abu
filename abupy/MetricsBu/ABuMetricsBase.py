@@ -186,6 +186,12 @@ class AbuMetricsBase(object):
         # 为plot_sell_factors函数生成卖出生效因子分布
         self.dumm_sell_t_sum = dumm_sell_t.sum(axis=1)
 
+        # 买入因子唯一名称get_dummies进行离散化
+        dumm_buy = pd.get_dummies(deal_pd.buy_factor)
+        dumm_buy = dumm_buy.T
+        # 为plot_buy_factors函数生成卖出生效因子分布
+        self.dumm_buy_t_sum = dumm_buy.sum(axis=1)
+
         self.orders_pd['buy_date'] = self.orders_pd['buy_date'].astype(int)
         self.orders_pd[self.orders_pd['result'] != 0]['sell_date'].astype(int, copy=False)
         # 因子的单子的持股时间长度计算
@@ -403,12 +409,23 @@ class AbuMetricsBase(object):
     @valid_check
     def plot_sell_factors(self):
         """可视化卖出生效因子分布"""
-
-        self.log_func('卖出生效因子分布：')
+        self.log_func('卖出择时生效因子分布：')
         self.log_func(self.dumm_sell_t_sum)
-        self.dumm_sell_t_sum.plot(kind='barh')
-        plt.title('sell factors barh')
-        plt.show()
+        if self.dumm_sell_t_sum.shape[0] > 1:
+            self.dumm_sell_t_sum.plot(kind='barh')
+            plt.title('sell factors barh')
+            plt.show()
+
+    @valid_check
+    def plot_buy_factors(self):
+        """可视化买入生效因子分布"""
+        self.log_func('买入择时生效因子分布：')
+        self.log_func(self.dumm_buy_t_sum)
+
+        if self.dumm_buy_t_sum.shape[0] > 1:
+            self.dumm_buy_t_sum.plot(kind='barh')
+            plt.title('buy factors barh')
+            plt.show()
 
     @valid_check
     def plot_keep_days(self):

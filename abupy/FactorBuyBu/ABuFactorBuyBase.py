@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
+import copy
 from abc import ABCMeta, abstractmethod
 
 from ..CoreBu.ABuFixes import six
@@ -61,7 +62,10 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
     """
         买入择时策略因子基类：每一个继承AbuFactorBuyBase的子类必须混入一个方向类，
         且只能混入一个方向类，即具体买入因子必须明确买入方向，且只能有一个买入方向，
-        一个因子不能同上又看涨又看跌，详情查阅ABuFactorBuyBreak因子示例
+        一个因子不能同上又看涨又看跌，
+
+        买入因子内部可容纳专属卖出因子和选股因子，即值针对本源生效的卖出因子和选股策略，
+        且选股因子动态在择时周期内每月或者每周根据策略重新进行选股。
     """
 
     def __init__(self, capital, kl_pd, combine_kl_pd, benchmark, **kwargs):
@@ -84,6 +88,32 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         self.slippage_class = kwargs.pop('slippage', AbuSlippageBuyMean)
         # 仓位管理，默认AbuAtrPosition
         self.position_class = kwargs.pop('position', AbuAtrPosition)
+        # 构造ump对外的接口对象UmpManager
+        self.ump_manger = AbuUmpManager(self)
+
+        # 默认的factor_name，子类通过_init_self可覆盖更具体的名字
+        self.factor_name = '{}'.format(self.__class__.__name__)
+
+        # 忽略的交易日数量
+        self.skip_days = 0
+        # 是否封锁本源择时买入因子的执行，此值只通过本源择时买入因子附属的选股因子进行改变
+        self.lock_factor = False
+        # kwargs参数中其它设置赋予买入因子的参数
+        self._other_kwargs_init(**kwargs)
+
+        # 子类继续完成自有的构造
+        self._init_self(**kwargs)
+
+    def _other_kwargs_init(self, **kwargs):
+        """
+            kwargs参数中其它设置赋予买入因子的参数：
+            可选参数win_rate：策略因子期望胜率（可根据历史回测结果计算得出）
+            可选参数gains_mean：策略因子期望收益（可根据历史回测结果计算得出）
+            可选参数gains_mean：策略因子期望亏损（可根据历史回测结果计算得出）
+
+            可选参数stock_pickers：专属买入择时策略因子的选股因子序列，序列中对象为选股因子
+            可选参数sell_factors： 专属买入择时策略因子的择时卖出因子序列，序列中对象为卖出因子
+        """
 
         """
             因子可选择根据策略的历史回测设置胜率，期望收益，期望亏损，
@@ -101,17 +131,48 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
             # 策略因子历史期望亏损
             self.losses_mean = kwargs['losses_mean']
 
-        # 构造ump对外的接口对象UmpManager
-        self.ump_manger = AbuUmpManager(self)
+        # 专属买入策略因子的选股周生效因子
+        self.ps_week = []
+        # 专属买入策略因子的选股月生效因子
+        self.ps_month = []
+        # 专属买入策略因子的选股因子
+        stock_pickers = kwargs.pop('stock_pickers', [])
+        for picker_class in stock_pickers:
+            if picker_class is None:
+                continue
+            if 'class' not in picker_class:
+                # 必须要有需要实例化的类信息
+                raise ValueError('picker_class class key must name class !!!')
+            picker_class_cp = copy.deepcopy(picker_class)
+            # pop出类信息后剩下的都为类需要的参数
+            class_fac = picker_class_cp.pop('class')
+            # 专属买入策略因子独有可设置选股因子生效周期，默认一个月重新进行一次选股，设置week为一周
+            pick_period = picker_class_cp.pop('pick_period', 'month')
+            # 整合capital，benchmark等实例化因子对象
+            picker = class_fac(self.capital, self.benchmark, **picker_class_cp)
+            if pick_period == 'month':
+                self.ps_month.append(picker)
+            elif pick_period == 'week':
+                self.ps_week.append(picker)
+            else:
+                raise ValueError('pick_period just support month|week!')
 
-        # 默认的factor_name，子类通过_init_self可覆盖更具体的名字
-        self.factor_name = '{}'.format(self.__class__.__name__)
-
-        # 忽略的交易日数量
-        self.skip_days = 0
-
-        # 子类继续完成自有的构造
-        self._init_self(**kwargs)
+        # 专属买入策略因子的卖出因子策略，只针对本源择时买入因子生效
+        self.sell_factors = []
+        sell_factors = kwargs.pop('sell_factors', [])
+        for factor_class in sell_factors:
+            if factor_class is None:
+                continue
+            if 'class' not in factor_class:
+                # 必须要有需要实例化的类信息
+                raise ValueError('factor class key must name class !!!')
+            factor_class_cp = copy.deepcopy(factor_class)
+            # pop出类信息后剩下的都为类需要的参数
+            class_fac = factor_class_cp.pop('class')
+            # 整合capital，kl_pd等实例化因子对象
+            factor = class_fac(self.capital, self.kl_pd, self.combine_kl_pd, self.benchmark, **factor_class_cp)
+            # 添加到本源卖出因子序列
+            self.sell_factors.append(factor)
 
     def __str__(self):
         """打印对象显示：class name, slippage, position, kl_pd.info"""
@@ -208,6 +269,29 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         :return 生成的交易订单AbuOrder对象
         """
         return self.make_buy_order(self.today_ind - 1)
+
+    def _fit_pick_stock(self, today, pick_array):
+        """买入因子专属选股因子执行，只要一个选股因子发出没有选中的信号，就封锁本源择时因子"""
+
+        for picker in pick_array:
+            end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
+            start_ind = end_ind - picker.xd if end_ind - picker.xd > 0 else 0
+            # 根据当前的交易日，选股周期xd切片金融时间序列
+            pick_kl = self.combine_kl_pd.iloc[start_ind:end_ind]
+            if pick_kl.empty or not picker.fit_pick(pick_kl, self.kl_pd.name):
+                # 只要一个选股因子发出没有选中的信号，就封锁本源选股因子
+                self.lock_factor = True
+                return
+            # 遍历所有专属选股因子后，都没有发出封锁因子信号，就打开因子
+            self.lock_factor = False
+
+    def fit_ps_week(self, today):
+        """买入因子专属'周'选股因子执行，只要一个选股因子发出没有选中的信号，就封锁本源择时因子"""
+        self._fit_pick_stock(today, self.ps_week)
+
+    def fit_ps_month(self, today):
+        """买入因子专属'月'选股因子执行，只要一个选股因子发出没有选中的信号，就封锁本源择时因子"""
+        self._fit_pick_stock(today, self.ps_month)
 
     @abstractmethod
     def fit_day(self, today):

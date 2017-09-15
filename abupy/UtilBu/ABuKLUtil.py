@@ -305,7 +305,7 @@ def wave_change_rate(df):
         out:
         日振幅涨跌幅比：1.794156
 
-    :param df: bupy中格式化好的kl，或者字典，或者可迭代序列
+    :param df: abupy中格式化好的kl，或者字典，或者可迭代序列
     """
 
     def _wave_change_rate(p_df, df_name=''):

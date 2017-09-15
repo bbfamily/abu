@@ -19,6 +19,7 @@ from enum import Enum
 from .ABuNDBase import plot_from_order, g_calc_type, ECalcType
 from ..CoreBu.ABuPdHelper import pd_rolling_mean, pd_ewm_mean
 from ..CoreBu.ABuFixes import six
+from ..UtilBu.ABuDTUtil import catch_error
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -150,12 +151,29 @@ def plot_ma(prices, kl_index, time_period, from_calc=EMACalcType.E_MA_MA,
     if with_price:
         plt.plot(kl_index, prices, label='prices')
 
+    @catch_error(return_val=None, log=False)
+    def plot_with_point(points, co, cc):
+        """
+        点位使用圆点＋竖线进行标注
+        :param points: 点位坐标序列
+        :param co: 点颜色 eg. 'go' 'ro'
+        :param cc: markeredgecolor和竖线axvline颜色 eg. 'green' 'red'
+        """
+        v_index_num = kl_index.tolist().index(points)
+        # 如果有ma线，y点做目标画在第一根ma线上否则画在价格上面
+        y_array = ma_array[0] if len(ma_array) > 0 else prices
+        plt.plot(points, y_array[v_index_num], co, markersize=12, markeredgewidth=3.0,
+                 markerfacecolor='None', markeredgecolor=cc)
+        plt.axvline(points, color=cc)
+
     # with_points和with_points_ext的点位使用竖线标注
     if with_points is not None:
-        plt.axvline(with_points, color='green', linestyle='--')
+        # plt.axvline(with_points, color='green', linestyle='--')
+        plot_with_point(with_points, 'go', 'green')
 
     if with_points_ext is not None:
-        plt.axvline(with_points_ext, color='red')
+        # plt.axvline(with_points_ext, color='red')
+        plot_with_point(with_points_ext, 'ro', 'red')
 
     plt.grid(True)
     plt.legend(loc='best')

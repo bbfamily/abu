@@ -42,7 +42,8 @@ class AbuOrder(object):
     """交易订单类"""
 
     # 多个因子买入条件可能生成几百万个order对象使用__slots__降低内存消耗
-    __slots__ = ('order_deal', 'buy_symbol', 'buy_date', 'buy_factor', 'buy_price', 'buy_cnt', 'buy_pos', 'sell_date',
+    __slots__ = ('order_deal', 'buy_symbol', 'buy_date', 'buy_factor', 'buy_factor_class',
+                 'buy_price', 'buy_cnt', 'buy_pos', 'sell_date',
                  'buy_type_str', 'expect_direction',
                  'sell_type', 'keep_days', 'sell_price', 'sell_type_extra', 'ml_features')
 
@@ -146,6 +147,8 @@ class AbuOrder(object):
             self.buy_date = int(kl_pd_buy.date)
             # 订单写入买入因子名字
             self.buy_factor = factor_name
+            # 订单对象中添加买入因子类名，和buy_factor不同没有具体参数等唯一key
+            self.buy_factor_class = factor_object.__class__.__name__
             # 订单写入买入价格
             self.buy_price = bp
             # 订单写入买入数量
