@@ -200,9 +200,9 @@ class AbuDoubleMaBuy(AbuFactorBuyXD, BuyCallMixin):
     def fit_day(self, today):
         """双均线买入择时因子，信号快线上穿慢行形成金叉做为买入信号"""
         # 计算快线
-        fast_line = calc_ma_from_prices(self.xd_kl.close, self.ma_fast, min_periods=1)
+        fast_line = calc_ma_from_prices(self.xd_kl.close, int(self.ma_fast), min_periods=1)
         # 计算慢线
-        slow_line = calc_ma_from_prices(self.xd_kl.close, self.ma_slow, min_periods=1)
+        slow_line = calc_ma_from_prices(self.xd_kl.close, int(self.ma_slow), min_periods=1)
 
         if len(fast_line) >= 2 and len(slow_line) >= 2:
             # 今天的快线值
