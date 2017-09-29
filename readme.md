@@ -14,8 +14,9 @@ abu能够帮助用户自动完善策略，主动分析策略产生的交易行�
 
 | 内容 | 位置 | 
 | ------| ------ | 
-| 阿布量化交易系统 | abupy目录 |
-| 阿布量化交易教程 | abupy_lecture目录 |
+| 阿布量化系统源代码 | abupy目录 |
+| 阿布量化使用教程 | abupy_lecture目录 |
+| 阿布量化非编程界面操作 | abupy_ui目录 |
 | 《量化交易之路》示例代码 | ipython／python目录| 
 | 《机器学习之路》示例代码 | https://github.com/maxmon/abu_ml | 
 
@@ -46,10 +47,17 @@ abu能够帮助用户自动完善策略，主动分析策略产生的交易行�
 ```python
 import abupy
 ```
+## 界面操作（非编程）
+
+![](./abupy_ui/gif/loop_back.gif)
+
+[更多界面操作示例](./abupy_ui/readme.md)
 
 ## 使用文档
 
 ### 1：择时策略的开发
+
+[第一节界面操作教程视频播放地址](https://v.qq.com/x/page/g0555b9k6ge.html)
 
 择时策略决定什么时候买入投资品，回测告诉我们这种策略在历史数据中的模拟收益如何。
 

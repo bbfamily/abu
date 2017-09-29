@@ -23,6 +23,7 @@ from ..TradeBu.ABuKLManager import AbuKLManager
 from ..TradeBu.ABuCapital import AbuCapital
 from ..TradeBu import ABuTradeExecute
 
+
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
 
@@ -95,9 +96,15 @@ class AbuMetricsBase(object):
     @valid_check
     def fit_metrics(self):
         """执行所有度量函数"""
+        # TODO 根据ORDER数量大于一定阀值启动进度条
+        # with AbuProgress(100, 0, label='metrics progress...') as pg:
+        # pg.show(5)
         self._metrics_base_stats()
+        # pg.show(50)
         self._metrics_sell_stats()
+        # pg.show(80)
         self._metrics_action_stats()
+        # pg.show(95)
         self._metrics_extend_stats()
 
     def fit_metrics_order(self):
@@ -503,7 +510,8 @@ class AbuMetricsBase(object):
 
             target_symbols = list(set(self.orders_pd.symbol))
             # 重新以很大的资金初始化AbuCapital
-            capital = AbuCapital(read_cash, self.benchmark, user_commission_dict=self.capital.commission.commission_dict)
+            capital = AbuCapital(read_cash, self.benchmark,
+                                 user_commission_dict=self.capital.commission.commission_dict)
             if kl_pd_manager is None:
                 kl_pd_manager = AbuKLManager(self.benchmark, capital)
                 # 一次性在主进程中执行多进程获取k线数据，全部放入kl_pd_manager中，内部启动n_process_kl个进程执行

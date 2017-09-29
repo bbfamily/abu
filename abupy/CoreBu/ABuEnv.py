@@ -54,8 +54,8 @@ except ImportError:
 
         g_cpu_cnt = mp.cpu_count()
 except:
-    """cpu个数"""
-    g_cpu_cnt = 8
+    # 获取cpu个数失败，默认4个
+    g_cpu_cnt = 4
 
 """pandas忽略赋值警告"""
 pd.options.mode.chained_assignment = None
@@ -211,6 +211,8 @@ class EMarketSubType(Enum):
     US_PINK = 'PINK'
     """美股OTCMKTS"""
     US_OTC = 'OTCMKTS'
+    """美国证券交易所"""
+    US_AMEX = 'AMEX'
     """未上市"""
     US_PREIPO = 'PREIPO'
 
@@ -292,13 +294,15 @@ g_data_fetch_mode = EMarketDataFetchMode.E_DATA_FETCH_NORMAL
 _g_enable_example_env_ipython = False
 
 
-def enable_example_env_ipython():
+def enable_example_env_ipython(show_log=True, check_cn=True):
     """
     只为在ipython example 环境中运行与书中一样的数据，即读取RomDataBu/df_kl.h5下的数据
 
     初始内置在RomDataBu/df_kl.h5.zip下的数据只有zip压缩包，因为git上面的文件最好不要超过50m，
     内置测试数据，包括美股，a股，期货，比特币，港股数据初始化在df_kl_ext.h5.zip中，通过解压zip
     之后将测试数据为df_kl.h5
+    show_log: 是否显示enable example env will only read RomDataBu/df_kl.h5
+    check_cn: 是否检测运行环境有中文路径
     :return:
     """
 
@@ -320,18 +324,31 @@ def enable_example_env_ipython():
     global _g_enable_example_env_ipython, g_data_fetch_mode
     _g_enable_example_env_ipython = True
     g_data_fetch_mode = EMarketDataFetchMode.E_DATA_FETCH_FORCE_LOCAL
-    logging.info('enable example env will only read RomDataBu/df_kl.h5')
+    if check_cn:
+        try:
+            from ..UtilBu.ABuStrUtil import str_is_cn, to_unicode
+            if str_is_cn(str(__file__)):
+                # 检测到运行环境路径中含有中文，严重错误，将出错，使用中文警告
+                msg = u'严重错误！当前运行环境下有中文路径，abu将无法正常运行！请不要使用中文路径名称, 当前环境为{}'.format(
+                    to_unicode(str(__file__)))
+                logging.info(msg)
+                return
+        except Exception as e:
+            logging.exception(e)
+    if show_log:
+        logging.info('enable example env will only read RomDataBu/df_kl.h5')
 
 
-def disable_example_env_ipython():
+def disable_example_env_ipython(show_log=True):
     """
     只为在ipython example 环境中运行与书中一样的数据。，即读取RomDataBu/df_kl.h5下的数据
-    :return:
+    show_log: 是否显示disable example env
     """
     global _g_enable_example_env_ipython, g_data_fetch_mode
     _g_enable_example_env_ipython = False
     g_data_fetch_mode = EMarketDataFetchMode.E_DATA_FETCH_NORMAL
-    logging.info('disable example env')
+    if show_log:
+        logging.info('disable example env')
 
 
 class EDataCacheType(Enum):

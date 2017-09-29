@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 """
-    相关系数上次技术线应用模块
+    相关系数上层技术线应用模块
 """
 
 from __future__ import division
@@ -18,6 +18,7 @@ from statsmodels.tsa.stattools import coint
 from ..CoreBu.ABuEnv import EMarketDataSplitMode
 from ..CoreBu import ABuEnv
 from ..MarketBu import ABuSymbolPd
+from ..MarketBu.ABuSymbol import code_to_symbol
 from ..SimilarBu import ABuSimilar
 from ..SimilarBu import ECoreCorrType
 from ..TradeBu.ABuBenchmark import AbuBenchmark
@@ -80,6 +81,8 @@ def rank_corr_sum(corr_df_dict, symbol):
 
         if symbol not in corr_df:
             # TODO 在这里处理有点晚
+            # print(corr_df.columns)
+            # print(code_to_symbol(symbol).symbol_code)
             return None
 
         corr_rank = corr_df[symbol].rank(ascending=False, method='first')
@@ -158,8 +161,24 @@ def calc_similar(symbol, cmp_symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_C
     :param show: 是否进行可视化
     :return: rank_score (float: 0至1), sum_rank
     """
+
+    cs_symbol = code_to_symbol(symbol)
+    cs_cmp_symbol = code_to_symbol(cmp_symbol)
+
+    if cs_symbol.market != cs_cmp_symbol.market:
+        # 必须在同一个市场
+        logging.info('{} and {} in different market!!!'.format(symbol, cmp_symbol))
+        return
+
+    symbol = cs_symbol.value
+    cmp_symbol = cs_cmp_symbol.value
     if sum_rank is None:
+        tmp_market = ABuEnv.g_market_target
+        # 强制把市场设置为一样的
+        ABuEnv.g_market_target = cs_symbol.market
         corr_df_dict = ABuSimilar.multi_corr_df(corr_jobs)
+        # 恢复之前的市场
+        ABuEnv.g_market_target = tmp_market
         """
             eg： corr_df_dict
             {'pears':
@@ -198,11 +217,11 @@ def calc_similar(symbol, cmp_symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_C
         """
         if sum_rank is None:
             logging.info('{} not in corr df!!!'.format(symbol))
-            return
+            return None, None
 
     if cmp_symbol not in sum_rank.index:
         logging.info('{} not in sum_rank.index'.format(cmp_symbol))
-        return 0
+        return None, None
 
     # sum_rank.sort_values(ascending=True)之后的结果index即是对比的排序结果值cmp_rank
     cmp_rank = sum_rank.sort_values(ascending=True).index.tolist().index(cmp_symbol)
@@ -291,8 +310,16 @@ def calc_similar_top(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE
                     usVIPS           16.0
                     usNOAH           18.0
     """
+    cs = code_to_symbol(symbol)
+    symbol = cs.value
     if sum_rank is None:
+        # TODO 重复代码太多，提前头装饰器
+        tmp_market = ABuEnv.g_market_target
+        # 强制把市场设置为一样的
+        ABuEnv.g_market_target = cs.market
         corr_df_dict = ABuSimilar.multi_corr_df(corr_jobs)
+        # 恢复之前的市场
+        ABuEnv.g_market_target = tmp_market
         """
             eg： corr_df_dict
             {'pears':
@@ -371,7 +398,7 @@ def calc_similar_top(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE
 def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PEARS,
                                                     ECoreCorrType.E_CORE_TYPE_SPERM), show=True):
     """
-    首先找到的是最相关的top个，从top n个最相关的再找协整，只虑pvalue，因为已经是从top n个最相关的再找协整
+    首先找到的是最相关的top个，从top n个最相关的再找协整，只考虑pvalue，因为已经是从top n个最相关的再找协整
     可视化整个过程
 
     :param symbol: eg: 'usTSLA'
@@ -393,8 +420,15 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
                       注意每添加一种相关计算方法，耗时都会增加
     :param show: 是否进行可视化
     """
+    cs = code_to_symbol(symbol)
+    symbol = cs.value
     if sum_rank is None:
+        tmp_market = ABuEnv.g_market_target
+        # 强制把市场设置为一样的
+        ABuEnv.g_market_target = cs.market
         corr_df_dict = ABuSimilar.multi_corr_df(corr_jobs)
+        # 恢复之前的市场
+        ABuEnv.g_market_target = tmp_market
         """
             eg： corr_df_dict
             {'pears':
@@ -433,7 +467,7 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
         """
         if sum_rank is None:
             logging.info('{} not in corr df!!!'.format(symbol))
-            return
+            return None, None
 
     top_cnt = sum_rank.shape[0] if g_top_corr_cnt > sum_rank.shape[0] else g_top_corr_cnt
     # 首先找到的是最相关的top个
@@ -478,7 +512,7 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
     if len(p_value_sorted) == 0:
         logging.info(
             'len(p_value_sorted) == 0 please try change tl.similar.g_top_corr_cnt|tl.similar.g_coint_threshold!')
-        return
+        return None, None
 
     if show:
         cmp_cnt = np.minimum(len(p_value_sorted), g_coint_show_max)
@@ -610,4 +644,4 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
         plt.legend(['close regular', 'distance votes', 'votes mean', 'dvotes above', 'dvotes below'],
                    bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
         plt.show()
-    return p_value_sorted
+    return p_value_sorted, sum_rank

@@ -25,7 +25,7 @@ def show_msg(title, msg, log=True):
     """
     # 由于catch_error忽略错误，所有主要信息还是先打印
     if log:
-        log_func('title: {} msg: {}'.format(title, msg))
+        log_func('{}\n{}'.format(title, msg))
     if ABuEnv.g_is_mac_os:
         from ..UtilBu.ABuMacUtil import show_msg as do_show_msg
     else:

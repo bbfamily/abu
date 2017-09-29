@@ -169,7 +169,7 @@ def rolling_corr(df, ss=None, window=g_rolling_corr_window):
         for (s, e) in rolling_window:
             # eg. rolling_window第一个即为np.corrcoef(df.iloc[0:60].T)
             window_corr = np.corrcoef(df.iloc[s:e].T)
-            window_corr[(window_corr == np.inf) | (window_corr == np.nan)] = 0
+            window_corr[np.isinf(window_corr) | np.isnan(window_corr)] = 0
             # 当前窗口下的相关系数乘以权重, window_corr * weights[s]为df.shape[1]大小的相关系数二维方阵
             corr += window_corr * weights[s]
     else:

@@ -124,23 +124,33 @@ class AbuKLManager(object):
         :return: 选股时段金融时间序列
         """
 
-        # 从选股周期天数转换为n_folds（年数），eg：(252 -1) / 252  + 1 = 1
-        n_folds = int((xd - 1) / ABuEnv.g_market_trade_year) + 1
-        # 根据选股n_folds，拼接选股类变量key，eg：pre_benchmark_1
-        pre_bc_key = 'pre_benchmark_{}'.format(n_folds)
         # 从设置的择时benchmark中取第一个日期即为选股时段最后一个日期
         end = ABuDateUtil.timestamp_to_str(self.benchmark.kl_pd.index[0])
+
+        if xd == ABuEnv.g_market_trade_year:
+            # 一般都是默认的1年，不需要使用begin_date提高效率
+            n_folds = 1
+            pre_bc_key = 'pre_benchmark_{}'.format(n_folds)
+            start = None
+        else:
+            # 1年除1年交易日数量，浮点数n_folds eg: 0.88
+            n_folds = float(xd / ABuEnv.g_market_trade_year)
+            # 为了计算start，xd的单位是交易日，换算为自然日
+            delay_day = 365 * n_folds
+            start = ABuDateUtil.begin_date(delay_day, date_str=end, fix=False)
+            # 根据选股start，end拼接选股类变量key，eg：pre_benchmark_2011-09-09_2016-07-26
+            pre_bc_key = 'pre_benchmark_{}-{}'.format(start, end)
         if hasattr(self, pre_bc_key):
-            # 从类变量中直接获取选股benchmark，eg: self.pre_benchmark_1
+            # 从类变量中直接获取选股benchmark，eg: self.pre_benchmark_2011-09-09_2016-07-26
             pre_benchmark = getattr(self, pre_bc_key)
         else:
             # 类变量中没有，实例一个AbuBenchmark，根据n_folds和end获取benchmark选股时段
-            pre_benchmark = AbuBenchmark(n_folds=n_folds, end=end)
+            pre_benchmark = AbuBenchmark(n_folds=n_folds, start=start, end=end)
             # 类变量设置选股时段benchmark
             setattr(self, pre_bc_key, pre_benchmark)
         # 以选股时段benchmark做为参数，获取选股时段对应symbol的金融时间序列
         return ABuSymbolPd.make_kl_df(target_symbol, data_mode=EMarketDataSplitMode.E_DATA_SPLIT_UNDO,
-                                      benchmark=pre_benchmark, n_folds=pre_benchmark.n_folds, end=end)
+                                      benchmark=pre_benchmark, n_folds=pre_benchmark.n_folds, start=start, end=end)
 
     def _fetch_pick_time_kl_pd(self, target_symbol):
         """获取择时时段金融时间序列"""
@@ -235,12 +245,12 @@ class AbuKLManager(object):
 
         # 字典中每找到，进行fetch
         kl_pd = self._fetch_pick_stock_kl_pd(xd, target_symbol)
-
         """选股字典是三层字典结构，比择时字典多一层，因为有选股周期做为第三层字典的key"""
         if kl_pd is None or kl_pd.shape[0] == 0:
             self.pick_kl_pd_dict['pick_stock'][target_symbol] = {xd: None}
             return None
 
+        """由于_fetch_pick_stock_kl_pd中获取kl_pd使用了标尺模式，所以这里的min_xd要设置大于标尺才有实际意义"""
         if kl_pd.shape[0] < min_xd:
             # 如果时间序列有数据但是 < min_xd, 抛弃数据直接{xd: None}
             self.pick_kl_pd_dict['pick_stock'][target_symbol] = {xd: None}

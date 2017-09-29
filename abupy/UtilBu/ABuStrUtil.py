@@ -8,10 +8,14 @@ from __future__ import absolute_import
 from __future__ import division
 
 import random
+import re
+
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import xrange
 from ..CoreBu.ABuFixes import six
 from ..CoreBu import ABuEnv
+
+K_CN_RE = re.compile(u'[\u4e00-\u9fa5]+')
 
 
 def _create_random_tmp(salt_count, seed):
@@ -62,7 +66,7 @@ def create_random_with_num_low(salt_count):
 
 def to_unicode(text, encoding=None, errors='strict'):
     """
-    在中to_native_str对py3生效，对six.text_type直接返回，其它的encode，默认utf-8
+    to_native_str对py2生效，对six.text_type直接返回，其它的encode，默认utf-8
     """
     if isinstance(text, six.text_type):
         return text
@@ -76,7 +80,7 @@ def to_unicode(text, encoding=None, errors='strict'):
 
 def to_bytes(text, encoding=None, errors='strict'):
     """
-    在中to_native_str对py2生效，对bytes直接返回，其它的encode，默认utf-8
+    to_native_str对py3生效，对bytes直接返回，其它的encode，默认utf-8
     """
     if isinstance(text, bytes):
         return text
@@ -91,8 +95,12 @@ def to_bytes(text, encoding=None, errors='strict'):
 def to_native_str(text, encoding=None, errors='strict'):
     """
     套接to_unicode和to_bytes针对python版本不同处理
+
+    颠倒转换本来的str类型：
+        python2 to_unicode
+        python3 to_bytes
     """
-    if not ABuEnv.g_is_py3:
+    if ABuEnv.g_is_py3:
         return to_bytes(text, encoding, errors)
     else:
         return to_unicode(text, encoding, errors)
@@ -116,6 +124,21 @@ def str_is_num16(a_str):
         return True
     except:
         return False
+
+
+def str_is_cn(a_str):
+    """
+        通过正则表达式判断字符串中是否含有中文
+        返回结果只判断是否search结果为None, 不返回具体匹配结果
+        eg:
+            K_CN_RE.search(a_str)('abc') is None
+            return False
+            K_CN_RE.search(a_str)('abc哈哈') -> <_sre.SRE_Match object; span=(3, 5), match='哈哈'>
+            return True
+    """
+    # a_str = to_unicode(a_str)
+    # return any(u'\u4e00' <= c <= u'\u9fa5' for c in a_str)
+    return K_CN_RE.search(to_unicode(a_str)) is not None
 
 
 def digit_str(item):

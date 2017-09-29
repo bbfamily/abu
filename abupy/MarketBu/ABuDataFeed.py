@@ -200,8 +200,13 @@ class TXApi(StockBaseMarket, SupportMixin):
                 sub_market = ''
             else:
                 # 这里tx的source不支持US_PINK, US_OTC, US_PREIPO
-                sub_market_map = {EMarketSubType.US_N.value: 'n', EMarketSubType.US_PINK.value: 'n',
-                                  EMarketSubType.US_OTC.value: 'n', EMarketSubType.US_PREIPO.value: 'n',
+                sub_market_map = {EMarketSubType.US_N.value: 'n',
+
+                                  EMarketSubType.US_PINK.value: 'n',
+                                  EMarketSubType.US_OTC.value: 'n',
+                                  EMarketSubType.US_PREIPO.value: 'n',
+                                  EMarketSubType.US_AMEX.value: 'n',
+
                                   EMarketSubType.US_OQ.value: 'oq'}
                 sub_market = '.{}'.format(sub_market_map[self._symbol.sub_market.value])
             url = TXApi.K_NET_BASE % (

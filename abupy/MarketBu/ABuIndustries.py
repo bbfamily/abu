@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 
 from ..MarketBu import ABuSymbolPd
+from ..UtilBu.ABuStrUtil import to_unicode
 from ..UtilBu import ABuScalerUtil
 from ..MarketBu.ABuSymbolStock import AbuSymbolUS, AbuSymbolCN, AbuSymbolHK
 from ..CoreBu.ABuEnv import EMarketDataSplitMode, EMarketTargetType
@@ -179,18 +180,18 @@ def match_industries_factorize(match, market=None):
     :param market: 需要查询的市场，eg：EMarketTargetType.E_MARKET_TARGET_US
     :return: 匹配的list序列对象，序列中每一个元素为(factorize, 本地描述)，eg：(33, '中国互联网软件服务')
     """
+    match = to_unicode(match)
     _industries_factorize = industries_factorize(market=market)
-    if '*' not in match:
+    if u'*' not in match:
         # 如果不带＊那就前后加＊进行match
-        match = '*{}*'.format(match)
-
+        match = u'*{}*'.format(match)
     match_list = list()
     for factorize, industries in enumerate(_industries_factorize):
-        if fnmatch(industries, match):
+        if fnmatch(to_unicode(industries), match):
             # 使用fnmatch进行匹配
             match_list.append((factorize, industries))
 
-    match = match.replace('*', '')
+    match = match.replace(u'*', u'')
     if len(match_list) == 0 and len(match) > 1:
         # 如果第一次模糊查询没有查到，开始一个字一个字的进行模糊查询，eg：*教育*－>*教*－>*育*
         for match_pos in np.arange(0, len(match)):
@@ -211,7 +212,6 @@ def query_match_industries_df(match, market=None):
     :param market: 需要查询的市场，eg：EMarketTargetType.E_MARKET_TARGET_US
     :return: 返回行业组合pd.DataFrame对象
     """
-
     # 获取模糊查询factorize序列
     match_list = match_industries_factorize(match, market=market)
     # 通过industries_market获取对应市场操作句柄industries_market_op

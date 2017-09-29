@@ -97,6 +97,7 @@ def resample_close_mean(df, bins=None):
     :param bins: 默认eg:  ['5D', '10D', '21D', '42D', '60D', '90D', '120D']
     :return: pd.DataFrame
     """
+
     def _resample_close_mean(p_df, df_name=''):
         resample_dict = {}
         for _bin in bins:
@@ -311,8 +312,10 @@ def wave_change_rate(df):
     def _wave_change_rate(p_df, df_name=''):
         wave = ((p_df.high - p_df.low) / p_df.pre_close) * 100
         # noinspection PyUnresolvedReferences
-        print('{}日振幅涨跌幅比：{:2f}'.format(df_name, wave.mean() / np.abs(p_df['p_change']).mean()))
+        wave_rate = wave.mean() / np.abs(p_df['p_change']).mean()
 
+        print('{}日振幅涨跌幅比：{:2f}, {}日统计套利条件'.format(
+            df_name, wave_rate, '具备' if wave_rate > 1.80 else '不具备'))
     _df_dispatch(df, _wave_change_rate)
 
 

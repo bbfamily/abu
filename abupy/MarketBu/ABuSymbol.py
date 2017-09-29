@@ -12,6 +12,7 @@ import numpy as np
 
 from ..CoreBu.ABuEnv import EMarketTargetType, EMarketSubType
 from ..CoreBu.ABuFixes import six
+from ..UtilBu.ABuStrUtil import to_unicode
 from ..UtilBu.ABuLazyUtil import LazyFunc
 
 
@@ -136,7 +137,9 @@ def __search(market_df, search_match, search_code, search_result, match_key='co_
 
     def __search_fnmatch_info(_search_match):
         # 模糊匹配公司名称信息或者交易产品信息
-        mc_df = market_df[market_df[match_key].apply(lambda name: fnmatch(name, _search_match))]
+        mc_df = market_df[market_df[match_key].apply(lambda name:
+                                                     fnmatch(to_unicode(name),
+                                                             _search_match))]
         if not mc_df.empty:
             for ind in np.arange(0, len(mc_df)):
                 mcs = mc_df.iloc[ind]
@@ -184,13 +187,13 @@ def _fgb_search(search_match, search_code, search_result):
 
 # TODO 币类匹配统一标准规范
 def _tc_search(search_match, search_code, search_result):
-    if fnmatch('比特币', search_match) or 'btc' == search_code:
-        search_result['btc'] = '比特币'
-    if fnmatch('莱特币', search_match) or 'ltc' == search_code:
-        search_result['ltc'] = '莱特币'
+    if fnmatch(u'比特币', search_match) or 'btc' == search_code:
+        search_result['btc'] = u'比特币'
+    if fnmatch(u'莱特币', search_match) or 'ltc' == search_code:
+        search_result['ltc'] = u'莱特币'
 
 
-def search_to_symbol_dict(search):
+def search_to_symbol_dict(search, fast_mode=False):
     """
     symbol搜索对外接口，全匹配symbol code，拼音匹配symbol，别名匹配，模糊匹配公司名称，产品名称等信息
     eg：
@@ -224,13 +227,14 @@ def search_to_symbol_dict(search):
          'UGL': '黄金2x做多-ProShares',
          'UGLD': '黄金3X做多-VelocityShares'}
     :param search: eg：'黄金'， '58'
+    :param fast_mode: 是否尽快匹配，速度优先模式
     :return: symbol dict
     """
     search_symbol_dict = {}
     search = search.lower()
     while len(search_symbol_dict) == 0 and len(search) > 0:
         # 构建模糊匹配进行匹配带通配符的字符串
-        search_match = '*{}*'.format(search)
+        search_match = u'*{}*'.format(search)
         # 构建精确匹配或拼音模糊匹配的symbol
         search_symbol = code_to_symbol(search, rs=False)
         search_code = ''
@@ -242,8 +246,11 @@ def search_to_symbol_dict(search):
         _tc_search(search_match, search_code, search_symbol_dict)
         _cn_search(search_match, search_code, search_symbol_dict)
         _us_search(search_match, search_code, search_symbol_dict)
+        _hk_search(search_match, search_code, search_symbol_dict)
         _fcn_search(search_match, search_code, search_symbol_dict)
         _fgb_search(search_match, search_code, search_symbol_dict)
+        if fast_mode:
+            break
     return search_symbol_dict
 
 
@@ -350,6 +357,15 @@ class Symbol(object):
     def is_index(self):
         """判定是否大盘"""
         return self.is_us_index() or self.is_hk_index() or self.is_a_index()
+
+    def is_futures(self):
+        """判定是否期货symbol"""
+        return self.market == EMarketTargetType.E_MARKET_TARGET_FUTURES_CN \
+            or self.market == EMarketTargetType.E_MARKET_TARGET_FUTURES_GLOBAL
+
+    def is_tc(self):
+        """判定是否电子货币symbol"""
+        return self.market == EMarketTargetType.E_MARKET_TARGET_TC
 
 
 class IndexSymbol(object):

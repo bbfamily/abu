@@ -83,12 +83,24 @@ def run_loop_back(read_cash, buy_factors, sell_factors, stock_picks=None, choice
     # 资金类初始化
     capital = AbuCapital(read_cash, benchmark, user_commission_dict=commission_dict)
 
+    """
+         win_to_one:
+         1. 如果symbol数量少于20
+         2. 并且操作系统是windows，因为windows进程开辟销毁开销都非常大，
+         3. 判断cpu不是很快，只能通过cpu数量做判断，4核认为速度一般
+         这种情况下不再启动多个进程，只使用一个进程运行所有择时选股操作
+
+         TODO：不能只以symbol数量进行判断，结合策略买入卖出策略数进行综合判断
+    """
+    win_to_one = choice_symbols is not None and len(
+        choice_symbols) < 20 and not ABuEnv.g_is_mac_os and ABuEnv.g_cpu_cnt <= 4
+
     if n_process_pick is None:
-        # 择时，选股并行操作的进程等于cpu数量
-        n_process_pick = ABuEnv.g_cpu_cnt
+        # 择时，选股并行操作的进程等于cpu数量, win_to_one满足情况下1个
+        n_process_pick = 1 if win_to_one else ABuEnv.g_cpu_cnt
     if n_process_kl is None:
-        # mac系统下金融时间序列数据收集启动两倍进程数, windows只是进程数量
-        n_process_kl = ABuEnv.g_cpu_cnt * 2 if ABuEnv.g_is_mac_os else ABuEnv.g_cpu_cnt
+        # mac系统下金融时间序列数据收集启动两倍进程数, windows只是进程数量，win_to_one满足情况下1个
+        n_process_kl = 1 if win_to_one else ABuEnv.g_cpu_cnt * 2 if ABuEnv.g_is_mac_os else ABuEnv.g_cpu_cnt
 
     # 选股策略执行，多进程方式
     choice_symbols = AbuPickStockMaster.do_pick_stock_with_process(capital, benchmark,

@@ -16,6 +16,7 @@ import seaborn as sns
 
 from ..CoreBu import ABuEnv
 from ..UtilBu import ABuDateUtil
+from ..UtilBu.ABuProgress import AbuProgress
 
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import range
@@ -52,84 +53,86 @@ def plot_his_trade(orders, kl_pd):
     plt.figure(figsize=(14, 8 * ax_cnt))
     fig_dims = (ax_cnt, 1)
 
-    for index, order in enumerate(orders):
-        # 迭代所有orders，对每一个AbuOrder对象绘制交易细节
-        mask_date = all_pd['date'] == order.buy_date
-        st_key = all_pd[mask_date]['key']
+    with AbuProgress(len(orders), 0) as pg:
+        for index, order in enumerate(orders):
+            pg.show(index + 1)
+            # 迭代所有orders，对每一个AbuOrder对象绘制交易细节
+            mask_date = all_pd['date'] == order.buy_date
+            st_key = all_pd[mask_date]['key']
 
-        if order.sell_type == 'keep':
-            rv_pd = all_pd.iloc[st_key.values[0]:, :]
-        else:
-            mask_sell_date = all_pd['date'] == order.sell_date
-            st_sell_key = all_pd[mask_sell_date]['key']
-            rv_pd = all_pd.iloc[st_key.values[0]:st_sell_key.values[0], :]
+            if order.sell_type == 'keep':
+                rv_pd = all_pd.iloc[st_key.values[0]:, :]
+            else:
+                mask_sell_date = all_pd['date'] == order.sell_date
+                st_sell_key = all_pd[mask_sell_date]['key']
+                rv_pd = all_pd.iloc[st_key.values[0]:st_sell_key.values[0], :]
 
-        if draw_multi_ax:
-            # ipython环境绘制在多个子画布上
-            plt.subplot2grid(fig_dims, (index, 0))
-        # 绘制价格曲线
-        plt.plot(all_pd.index, all_pd['close'], label='close')
-        # 填充透明blue
-        plt.fill_between(all_pd.index, 0, all_pd['close'], color='blue', alpha=.18)
+            if draw_multi_ax:
+                # ipython环境绘制在多个子画布上
+                plt.subplot2grid(fig_dims, (index, 0))
+            # 绘制价格曲线
+            plt.plot(all_pd.index, all_pd['close'], label='close')
+            # 填充透明blue
+            plt.fill_between(all_pd.index, 0, all_pd['close'], color='blue', alpha=.18)
 
-        if order.sell_type == 'keep':
-            # 如果单子还没卖出，是否win使用now_price代替sell_price，需＊单子期望的盈利方向
-            order_win = (now_price - order.buy_price) * order.expect_direction > 0
-        elif order.sell_type == 'win':
-            order_win = True
-        else:
-            order_win = False
+            if order.sell_type == 'keep':
+                # 如果单子还没卖出，是否win使用now_price代替sell_price，需＊单子期望的盈利方向
+                order_win = (now_price - order.buy_price) * order.expect_direction > 0
+            elif order.sell_type == 'win':
+                order_win = True
+            else:
+                order_win = False
 
-        if order_win:
-            # 盈利的使用红色
-            plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='red', alpha=.38)
-        else:
-            # 亏损的使用绿色
-            plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='green', alpha=.38)
+            if order_win:
+                # 盈利的使用红色
+                plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='red', alpha=.38)
+            else:
+                # 亏损的使用绿色
+                plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='green', alpha=.38)
 
-        # 格式化买入信息标签
-        buy_date_fmt = ABuDateUtil.str_to_datetime(str(order.buy_date), '%Y%m%d')
-        buy_tip = 'buy_price:{:.2f}'.format(order.buy_price)
+            # 格式化买入信息标签
+            buy_date_fmt = ABuDateUtil.str_to_datetime(str(order.buy_date), '%Y%m%d')
+            buy_tip = 'buy_price:{:.2f}'.format(order.buy_price)
 
-        # 写买入tip信息
-        plt.annotate(buy_tip, xy=(buy_date_fmt, all_pd['close'].asof(buy_date_fmt) * 2 / 5),
-                     xytext=(buy_date_fmt, all_pd['close'].asof(buy_date_fmt)),
-                     arrowprops=dict(facecolor='red'),
-                     horizontalalignment='left', verticalalignment='top')
+            # 写买入tip信息
+            plt.annotate(buy_tip, xy=(buy_date_fmt, all_pd['close'].asof(buy_date_fmt) * 2 / 5),
+                         xytext=(buy_date_fmt, all_pd['close'].asof(buy_date_fmt)),
+                         arrowprops=dict(facecolor='red'),
+                         horizontalalignment='left', verticalalignment='top')
 
-        if order.sell_price is not None:
-            # 如果单子卖出，卖出入信息标签使用，收益使用sell_price计算，需＊单子期望的盈利方向
-            sell_date_fmt = ABuDateUtil.str_to_datetime(str(order.sell_date), '%Y%m%d')
-            pft = (order.sell_price - order.buy_price) * order.buy_cnt * order.expect_direction
-            sell_tip = 'sell price:{:.2f}, profit:{:.2f}'.format(order.sell_price, pft)
-        else:
-            # 如果单子未卖出，卖出入信息标签使用，收益使用now_price计算，需＊单子期望的盈利方向
-            sell_date_fmt = ABuDateUtil.str_to_datetime(str(all_pd[-1:]['date'][0]), '%Y%m%d')
-            pft = (now_price - order.buy_price) * order.buy_cnt * order.expect_direction
-            sell_tip = 'now price:{:.2f}, profit:{:.2f}'.format(now_price, pft)
+            if order.sell_price is not None:
+                # 如果单子卖出，卖出入信息标签使用，收益使用sell_price计算，需＊单子期望的盈利方向
+                sell_date_fmt = ABuDateUtil.str_to_datetime(str(order.sell_date), '%Y%m%d')
+                pft = (order.sell_price - order.buy_price) * order.buy_cnt * order.expect_direction
+                sell_tip = 'sell price:{:.2f}, profit:{:.2f}'.format(order.sell_price, pft)
+            else:
+                # 如果单子未卖出，卖出入信息标签使用，收益使用now_price计算，需＊单子期望的盈利方向
+                sell_date_fmt = ABuDateUtil.str_to_datetime(str(all_pd[-1:]['date'][0]), '%Y%m%d')
+                pft = (now_price - order.buy_price) * order.buy_cnt * order.expect_direction
+                sell_tip = 'now price:{:.2f}, profit:{:.2f}'.format(now_price, pft)
 
-        # 写卖出tip信息
-        plt.annotate(sell_tip, xy=(sell_date_fmt, all_pd['close'].asof(sell_date_fmt) * 2 / 5),
-                     xytext=(sell_date_fmt, all_pd['close'].asof(sell_date_fmt)),
-                     arrowprops=dict(facecolor='green'),
-                     horizontalalignment='left', verticalalignment='top')
-        # 写卖出因子信息
-        plt.annotate(order.sell_type_extra, xy=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 4),
-                     xytext=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 4),
-                     arrowprops=dict(facecolor='yellow'),
-                     horizontalalignment='left', verticalalignment='top')
-
-        # 写买入因子信息
-        if order.buy_factor is not None:
-            plt.annotate(order.buy_factor, xy=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 3),
-                         xytext=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 3),
+            # 写卖出tip信息
+            plt.annotate(sell_tip, xy=(sell_date_fmt, all_pd['close'].asof(sell_date_fmt) * 2 / 5),
+                         xytext=(sell_date_fmt, all_pd['close'].asof(sell_date_fmt)),
+                         arrowprops=dict(facecolor='green'),
+                         horizontalalignment='left', verticalalignment='top')
+            # 写卖出因子信息
+            plt.annotate(order.sell_type_extra, xy=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 4),
+                         xytext=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 4),
                          arrowprops=dict(facecolor='yellow'),
                          horizontalalignment='left', verticalalignment='top')
-        # title使用时间序列symbol
-        plt.title(order.buy_symbol)
-        if not draw_multi_ax:
-            # ipython环境绘制在多个子画布上，普通python环境绘制一个show一个
-            plt.show()
+
+            # 写买入因子信息
+            if order.buy_factor is not None:
+                plt.annotate(order.buy_factor, xy=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 3),
+                             xytext=(buy_date_fmt, all_pd['close'].asof(sell_date_fmt) / 3),
+                             arrowprops=dict(facecolor='yellow'),
+                             horizontalalignment='left', verticalalignment='top')
+            # title使用时间序列symbol
+            plt.title(order.buy_symbol)
+            if not draw_multi_ax:
+                # ipython环境绘制在多个子画布上，普通python环境绘制一个show一个
+                plt.show()
 
     plt.show()
 

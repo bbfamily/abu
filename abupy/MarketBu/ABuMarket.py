@@ -38,7 +38,8 @@ K_MARKET_TRAIN_FN_BASE = os.path.join(ABuEnv.g_project_cache_dir, 'market_train_
 
 # TODO 从沙盒数据库里读取，否则之后有变动还需要跟着改
 K_SAND_BOX_US = ['usTSLA', 'usNOAH', 'usSFUN', 'usBIDU', 'usAAPL', 'usGOOG', 'usWUBA', 'usVIPS']
-K_SAND_BOX_CN = ['002230', '300104', '300059', '601766', '600085', '600036', '600809', '000002', '002594', '002739']
+K_SAND_BOX_CN = ['sz002230', 'sz300104', 'sz300059', 'sh601766', 'sh600085', 'sh600036',
+                 'sh600809', 'sz000002', 'sz002594', 'sz002739']
 K_SAND_BOX_HK = ['hk03333', 'hk00700', 'hk02333', 'hk01359', 'hk00656', 'hk03888', 'hk02318']
 
 
@@ -370,6 +371,23 @@ def _do_market_train_test_split(n_folds=10, market_symbols=None, shuffle=True, m
         # noinspection PyUnresolvedReferences
         return train.tolist(), test.tolist()
     return list(), list()
+
+
+def is_in_sand_box(symbol):
+    """判定symbol是否在沙盒数据支持里面"""
+    cs = code_to_symbol(symbol, rs=False)
+    if cs is None:
+        return False
+    if cs.is_futures() or cs.is_tc():
+        # 沙盒数据支持完整期货和电子货币市场
+        return True
+    if symbol in K_SAND_BOX_CN \
+            or symbol in K_SAND_BOX_US \
+            or symbol in K_SAND_BOX_HK:
+        # A股，美股，港股沙盒数据需要在沙盒数据序列中
+        return True
+    return False
+
 
 """＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊Deprecated 旧数据格式文件＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊"""
 _rom_dir = ABuEnv.g_project_rom_data_dir

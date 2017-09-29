@@ -208,7 +208,12 @@ def _load_csv_key(symbol_key):
     if file_exist(ABuEnv.g_project_kl_df_data_csv):
         for name in os.listdir(ABuEnv.g_project_kl_df_data_csv):
             # 从csv缓存文件夹下进行模糊查询通过fnmatch匹配具体csv文件路径，eg. usTSLA->usTSLA_2014-7-26_2016_7_26
-            if fnmatch(name, '{}*'.format(symbol_key)):
+            # if fnmatch(name, '{}*'.format(symbol_key)):
+            """
+                这里不能模糊匹配，否则会因为TSL匹配上TSLA导致删除原有的symbol
+                而且必须要加'_'做为symbol结束匹配标记
+            """
+            if name.startswith(symbol_key + '_'):
                 # []只是为了配合外面针对不同store统一使用key[0]
                 return [name]
     return None
@@ -322,7 +327,6 @@ def _dump_kline_csv(symbol_key, date_key, dump_df, delete_key=None):
     :param delete_key: 是否有需要删除的csv文件
     :return:
     """
-
     # 先删后后写入
     if delete_key is not None:
         delete_key = delete_key[0]

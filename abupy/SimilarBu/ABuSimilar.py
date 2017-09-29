@@ -104,6 +104,9 @@ def _find_similar(symbol, cmp_cnt=None, n_folds=None, start=None, end=None, show
     """
     # 获取全市场symbol涨跌幅度pd.DataFrame对象
     market_change_df = _all_market_cg(symbol, cmp_cnt=cmp_cnt, n_folds=n_folds, start=start, end=end)
+    if market_change_df is None:
+        logging.info('{} data is miss, please update data first!'.format(symbol))
+        return
     # 重新赋予标尺实际的交易日数量
     cmp_cnt = market_change_df[symbol].shape[0]
     # symbol涨跌幅度df数据
@@ -242,12 +245,14 @@ def _net_cg_df_create(symbol, benchmark):
         n_jobs=n_process_pick_stock, verbose=0, pre_dispatch='2*n_jobs')
 
     # 暂时关闭多进程进度条，太多, 注意这种全局设置一定要在AbuEnvProcess初始化之前完成
-    ABuProgress.g_show_ui_progress = False
+    # ABuProgress.g_show_ui_progress = False
     # _make_symbols_cg_df被装饰器add_process_env_sig装饰，需要进程间内存拷贝对象AbuEnvProcess, 详AbuEnvProcess
     p_nev = AbuEnvProcess()
     change_df_array = parallel(
         delayed(_make_symbols_cg_df)(choice_symbols, benchmark, env=p_nev) for choice_symbols in process_symbols)
-    ABuProgress.g_show_ui_progress = True
+    # ABuProgress.g_show_ui_progress = True
+    # 还是显示进度条，但是完事时检测一下还有没有ui进度条
+    ABuProgress.do_check_process_is_dead()
     """
         如果标尺的涨跌幅已经在choice_symbols中就不单独获取组装了，没有的情况是如：
         eg. env中指定市场参数港股，即g_market_target = EMarketTargetType.E_MARKET_TARGET_HK，但是

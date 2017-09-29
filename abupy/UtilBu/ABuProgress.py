@@ -384,8 +384,10 @@ class AbuProgress(object):
         self.progress = a_progress if a_progress is not None else self.progress + 1
         ps = round(self._progress / self._total * 100, 2)
 
-        self.f.write('\r')
-        self.f.write(p_format.format(self._label, ext, ps))
+        if self._label is not None:
+            # 如果初始化label没有就只显示ui进度
+            self.f.write('\r')
+            self.f.write(p_format.format(self._label, ext, ps))
 
         if ABuEnv.g_is_ipython:
             if self.progress_widget is None:

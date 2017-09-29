@@ -231,10 +231,14 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
     from ..TradeBu import AbuBenchmark
     from ..SimilarBu import ABuCorrcoef, ECoreCorrType
 
-    benchmark = AbuBenchmark(benchmark_symbol, start=start, end=end, n_folds=n_folds)
+    benchmark = AbuBenchmark(benchmark_symbol, start=start, end=end, n_folds=n_folds, rs=False)
+    if benchmark.kl_pd is None:
+        return None, None, None
     benchmark_kl = benchmark.kl_pd
     kl = ABuSymbolPd.make_kl_df(symbol, benchmark=benchmark,
                                 data_mode=EMarketDataSplitMode.E_DATA_SPLIT_UNDO)
+    if kl is None:
+        return None, None, None
     # 通过calc_kl_speed计算趋势跟随速度
     kl_speed = calc_kl_speed(kl[speed_key], resample)
     benchmark_kl_speed = calc_kl_speed(benchmark_kl[speed_key], resample)
