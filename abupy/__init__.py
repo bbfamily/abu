@@ -25,6 +25,6 @@ __all__ = ['AlphaBu', 'BetaBu', 'CheckBu', 'UmpBu', 'FactorSellBu', 'FactorSell'
            'SimilarBu', 'MetricsBu', 'SlippageBu', 'PickStockBu', 'CoreBu', 'TLineBu',
            'MLBu', 'DLBu', 'TradeBu', 'WidgetBu']
 
-__version__ = '0.1.2'
+__version__ = '0.2.0'
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
