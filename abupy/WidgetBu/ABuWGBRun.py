@@ -8,6 +8,8 @@ from __future__ import division
 import os
 import logging
 
+import pandas as pd
+from IPython.display import display
 import ipywidgets as widgets
 
 from ..UtilBu import ABuProgress, ABuFileUtil
@@ -19,6 +21,7 @@ from ..WidgetBu.ABuWGSFBase import SellFactorWGManager
 from ..WidgetBu.ABuWGPSBase import PickStockWGManager
 
 from ..CoreBu.ABu import run_loop_back
+from ..CoreBu.ABuStore import store_abu_result_out_put
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EDataCacheType, EMarketDataFetchMode, EMarketTargetType
 # noinspection PyUnresolvedReferences
@@ -29,6 +32,7 @@ from ..AlphaBu import ABuPickTimeExecute
 from ..TradeBu.ABuBenchmark import AbuBenchmark
 from ..TradeBu.ABuCapital import AbuCapital
 from ..MetricsBu.ABuMetricsBase import AbuMetricsBase
+from ..CoreBu.ABuStore import AbuResultTuple
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -125,6 +129,41 @@ class WidgetRunLoopBack(WidgetBase):
                     return False
         return True
 
+    def _metrics_out_put(self, metrics, abu_result_tuple):
+        """针对输出结果和界面中的设置进行输出操作"""
+        if metrics is None:
+            return
+
+        if self.tt.metrics_mode.value == 0:
+            metrics.plot_returns_cmp(only_show_returns=True)
+        else:
+            metrics.plot_order_returns_cmp(only_info=True)
+
+        pd.options.display.max_rows = self.tt.out_put_display_max_rows.value
+        pd.options.display.max_columns = self.tt.out_put_display_max_columns.value
+
+        """
+            options={u'只输出交易单：orders_pd': 0,
+                     u'只输出行为单：action_pd': 1,
+                     u'只输出资金单：capital_pd': 2,
+                     u'同时输出交易单，行为单，资金单':3
+        """
+        if self.tt.metrics_out_put.value == 0 or self.tt.metrics_out_put.value == 3:
+            show_msg_func(u'交易买卖详情单：')
+            display(abu_result_tuple.orders_pd)
+        if self.tt.metrics_out_put.value == 1 or self.tt.metrics_out_put.value == 3:
+            show_msg_func(u'交易行为详情单：')
+            display(abu_result_tuple.action_pd)
+        if self.tt.metrics_out_put.value == 2 or self.tt.metrics_out_put.value == 3:
+            show_msg_func(u'交易资金详细单：')
+            display(abu_result_tuple.capital.capital_pd)
+            show_msg_func(u'交易手续费详单：')
+            display(abu_result_tuple.capital.commission.commission_df)
+
+        if self.tt.save_out_put.value is True:
+            # 本地保存各个交易单到文件
+            store_abu_result_out_put(abu_result_tuple)
+
     # noinspection PyUnusedLocal
     def run_loop_back(self, bt):
         """运行回测所对应的button按钮"""
@@ -177,6 +216,7 @@ class WidgetRunLoopBack(WidgetBase):
                                                                                       buy_factors,
                                                                                       sell_factors,
                                                                                       capital, show=True)
+            abu_result_tuple = AbuResultTuple(orders_pd, action_pd, capital, benchmark)
             metrics = AbuMetricsBase(orders_pd, action_pd, capital, benchmark)
         else:
             # 针对选股策略中需要choice_symbols的情况进行选股策略choice_symbols更新
@@ -200,4 +240,4 @@ class WidgetRunLoopBack(WidgetBase):
             ABuProgress.clear_output()
             metrics = AbuMetricsBase(*abu_result_tuple)
         metrics.fit_metrics()
-        metrics.plot_returns_cmp(only_show_returns=True)
+        self._metrics_out_put(metrics, abu_result_tuple)

@@ -40,9 +40,7 @@ class WidgetEnvSetMixin(object):
         )
         self.date_mode.observe(self.on_data_mode_change, names='value')
 
-        set_mode_label_tip1 = widgets.Label(u'下面的设置|缓存模式|联网模式|数据源：',
-                                            layout=widgets.Layout(width='300px', align_items='stretch'))
-        set_mode_label_tip2 = widgets.Label(u'只在开放数据模式下生效',
+        set_mode_label_tip = widgets.Label(u'缓存模式|联网模式|数据源只在开放数据模式下生效：',
                                             layout=widgets.Layout(width='300px', align_items='stretch'))
 
         """csv模式与hdf5模式模式切换"""
@@ -100,7 +98,7 @@ class WidgetEnvSetMixin(object):
         self.data_source_accordion.set_title(0, u'缓存模式|联网模式|数据源')
         self.data_source_accordion.selected_index = -1
 
-        mdm_box = widgets.VBox([self.date_mode, set_mode_label_tip1, set_mode_label_tip2, self.data_source_accordion])
+        mdm_box = widgets.VBox([self.date_mode, set_mode_label_tip, self.data_source_accordion])
 
         if ABuEnv._g_enable_example_env_ipython:
             # 非沙盒数据下数据存贮以及数据获取模式切换才生效
@@ -216,7 +214,101 @@ class WidgetTimeModeMixin(object):
         raise NotImplementedError('NotImplementedError time_mode_str!')
 
 
-class WidgetRunTT(WidgetBase, WidgetEnvSetMixin, WidgetTimeModeMixin):
+class WidgetMetricsSet(object):
+    """
+        使用混入而不要做为上层widget拥有的模式，可为多个上层使用
+        便于上层widgte使用self去获取设置，统一上层使用
+        混入类：回测输出设置：
+        1. 输出模式：
+            1. order_cmp + only_show_returns
+            2. returns_cmp + only_info
+        2. 输出度量对象：
+            1. 只输出交易单：orders_pd
+            2. 只输出行为单：action_pd
+            3. 只输出资金单：capital_pd
+            4. 同时输出交易单，行为单，资金单(orders_pd, action_pd, capital_pd)
+        3. 输出交易单最大行列显示设置：
+            1. 默认最大行显示50
+            2. 默认最大列显示50
+        4. 是否将交易单，行为单，资金单保存在本地output文件中
+    """
+
+    # noinspection PyProtectedMember
+    def init_metrics_ui(self):
+        """构建基础env widget ui return widgets.VBox"""
+        # 回测时间模式
+        self.metrics_mode = widgets.RadioButtons(
+            options={u'考虑初始资金规模＋标尺大盘对比': 0,
+                     u'不考虑初始资金＋不对比标尺收益': 1},
+            value=0,
+            description=u'度量模式:',
+            disabled=False
+        )
+
+        self.metrics_out_put = widgets.RadioButtons(
+            options={u'只输出交易单：orders_pd': 0,
+                     u'只输出行为单：action_pd': 1,
+                     u'只输出资金单：capital_pd': 2,
+                     u'同时输出交易单，行为单，资金单': 3},
+            value=0,
+            description=u'输出对象:',
+            disabled=False
+        )
+
+        out_put_display_max_label1 = widgets.Label(u'输出显示最大行列数，最大100行，100列',
+                                                   layout=widgets.Layout(width='300px', align_items='stretch'))
+        out_put_display_max_label2 = widgets.Label(u'如需查看更多输出表单，请选择保存输出至文件',
+                                                   layout=widgets.Layout(width='300px', align_items='stretch'))
+        self.out_put_display_max_rows = widgets.IntSlider(
+            value=50,
+            min=1,
+            max=100,
+            step=1,
+            description=u'行数',
+            disabled=True,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+
+        self.out_put_display_max_columns = widgets.IntSlider(
+            value=50,
+            min=1,
+            max=100,
+            step=1,
+            description=u'列数',
+            disabled=True,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+        out_put_display = widgets.VBox([out_put_display_max_label1,
+                                        out_put_display_max_label2,
+                                        self.out_put_display_max_rows,
+                                        self.out_put_display_max_columns])
+
+        save_out_put_lable = widgets.Label(u'是否保存交易单，行为单，资金单到文件',
+                                           layout=widgets.Layout(width='300px', align_items='stretch'))
+        save_out_put_lable2 = widgets.Label(u'路径:{}'.format(os.path.join(ABuEnv.g_project_data_dir, 'out_put')),
+                                            layout=widgets.Layout(width='300px', align_items='stretch'))
+        self.save_out_put = widgets.Checkbox(
+            value=False,
+            description=u'保存输出',
+            disabled=False,
+        )
+        save_out_put = widgets.VBox([save_out_put_lable,
+                                     save_out_put_lable2,
+                                     self.save_out_put])
+
+        accordion = widgets.Accordion()
+        accordion.children = [widgets.VBox([self.metrics_mode, self.metrics_out_put, out_put_display, save_out_put])]
+        accordion.set_title(0, u'回测度量结果设置')
+        accordion.selected_index = -1
+
+        return accordion
+
+
+class WidgetRunTT(WidgetBase, WidgetEnvSetMixin, WidgetTimeModeMixin, WidgetMetricsSet):
     """基础设置界面：初始资金，回测开始，结束周期，参考大盘等"""
 
     def __init__(self):
@@ -232,7 +324,9 @@ class WidgetRunTT(WidgetBase, WidgetEnvSetMixin, WidgetTimeModeMixin):
         )
         tm_box = self.init_time_mode_ui()
         mdm_box = self.init_env_set_ui()
-        self.widget = widgets.VBox([self.cash, tm_box, mdm_box])
+        metrics_box = self.init_metrics_ui()
+
+        self.widget = widgets.VBox([self.cash, tm_box, mdm_box, metrics_box])
 
     def time_mode_str(self):
         """实现混入WidgetTimeModeMixin，声明时间模块代表回测"""

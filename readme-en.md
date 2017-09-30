@@ -50,9 +50,17 @@ Recommended to use Anaconda to deploy the Python environment, see [here](http://
 import abupy
 ```
 
+## UI operation（Non programming）
+
+![](./abupy_ui/gif/loop_back.gif)
+
+[More examples of UI operations](./abupy_ui/readme.md)
+
 ## Document
 
 ### 1: Develop Trading Strategy
+
+[Section 1 UI operation tutorial](https://v.qq.com/x/page/g0555b9k6ge.html)
 
 Trading strategy decide when to invest, backtesting tell us the simulation of profit about this strategy in the historical data.
 

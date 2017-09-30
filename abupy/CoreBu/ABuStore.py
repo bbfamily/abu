@@ -4,6 +4,8 @@
 import os
 from collections import namedtuple
 from enum import Enum
+import datetime
+
 
 from ..CoreBu import ABuEnv
 from ..UtilBu import ABuFileUtil
@@ -100,6 +102,36 @@ def store_abu_result_tuple(abu_result_tuple, n_folds, store_type=None, custom_na
     fn = os.path.join(fn_root, fn_head + '_benchmark')
     # abu_result_tuple.benchmark使用dump_pickle存储AbuBenchmark对象
     ABuFileUtil.dump_pickle(abu_result_tuple.benchmark, fn)
+
+
+def store_abu_result_out_put(abu_result_tuple, show_log=True):
+    """
+    保存abu.run_loop_back的回测结果AbuResultTuple对象，根据当前时间戳保存来定义存储的文件夹名称
+    1. 交易单: orders.csv
+    2. 行动单: actions.csv
+    3. 资金单: capital.csv
+    4. 手续费: commission.csv
+    """
+    base_dir = 'out_put'
+    # 时间字符串
+    date_dir = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S_%f")
+    fn = os.path.join(ABuEnv.g_project_data_dir, base_dir, date_dir, 'orders.csv')
+    ABuFileUtil.ensure_dir(fn)
+
+    fn = os.path.join(ABuEnv.g_project_data_dir, base_dir, date_dir, 'actions.csv')
+    ABuFileUtil.dump_df_csv(fn, abu_result_tuple.action_pd)
+    if show_log:
+        print('save {} suc!'.format(fn))
+
+    fn = os.path.join(ABuEnv.g_project_data_dir, base_dir, date_dir, 'capital.csv')
+    ABuFileUtil.dump_df_csv(fn, abu_result_tuple.capital.capital_pd)
+    if show_log:
+        print('save {} suc!'.format(fn))
+
+    fn = os.path.join(ABuEnv.g_project_data_dir, base_dir, date_dir, 'commission.csv')
+    ABuFileUtil.dump_df_csv(fn, abu_result_tuple.capital.commission.commission_df)
+    if show_log:
+        print('save {} suc!'.format(fn))
 
 
 def load_abu_result_tuple(n_folds, store_type, custom_name=None):
