@@ -9,6 +9,7 @@ from __future__ import print_function
 
 import logging
 import os
+import re
 import platform
 import sys
 import warnings
@@ -103,7 +104,50 @@ if g_ignore_all_warnings:
     root_drive = 'e://'
     root_drive = 'f://'
 """
+
+
+def str_is_cn(a_str):
+    """
+        str_is_cn原始位置: UtilBu.ABuStrUtil
+        为保持env为最初初始化不引入其它模块，这里临时拷贝使用
+        通过正则表达式判断字符串中是否含有中文
+        返回结果只判断是否search结果为None, 不返回具体匹配结果
+        eg:
+            K_CN_RE.search(a_str)('abc') is None
+            return False
+            K_CN_RE.search(a_str)('abc哈哈') -> <_sre.SRE_Match object; span=(3, 5), match='哈哈'>
+            return True
+    """
+    def to_unicode(text, encoding=None, errors='strict'):
+        """
+        to_unicode原始位置: UtilBu.ABuStrUtil，为保持env为最初初始化不引入其它模块，这里临时拷贝使用
+        """
+        if isinstance(text, six.text_type):
+            return text
+        if not isinstance(text, (bytes, six.text_type)):
+            raise TypeError('to_unicode must receive a bytes, str or unicode '
+                            'object, got %s' % type(text).__name__)
+        if encoding is None:
+            encoding = 'utf-8'
+        return text.decode(encoding, errors)
+
+    cn_re = re.compile(u'[\u4e00-\u9fa5]+')
+    return cn_re.search(to_unicode(a_str)) is not None
+
 root_drive = path.expanduser('~')
+# root_drive = os.path.join(root_drive, u'测试')
+# noinspection PyTypeChecker
+if str_is_cn(root_drive):
+    """
+        如果用户根目录使用了中文名称，择放弃使用公共缓存文件夹,
+        windows下可以使用中文用户名，这样会导致pandas读取，写入
+        csv，hdf5出现问题，所以一旦发现用户路径为中文路径，改变
+        缓存路径为abupy根代码路径
+    """
+    abupy_source_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(str(__file__))), os.path.pardir))
+    # 改变缓存路径为abupy根代码路径
+    root_drive = abupy_source_dir
+    print('root_drive is change to {}'.format(root_drive))
 
 """abu数据缓存主目录文件夹"""
 g_project_root = path.join(root_drive, 'abu')
