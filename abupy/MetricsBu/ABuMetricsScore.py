@@ -30,11 +30,11 @@ class AbuScoreTuple(namedtuple('AbuScoreTuple',
     __slots__ = ()
 
     def __repr__(self):
-        return "orders_pd:{}\naction_pd:{}\ncapital:{}\nbenchmark:{}" \
-               "\nbuy_factors:{}\nsell_factors:{}\nstock_picks:{}".format(self.orders_pd.info(), self.action_pd.info(),
-                                                                          self.capital, self.benchmark,
-                                                                          self.buy_factors, self.sell_factors,
-                                                                          self.stock_picks)
+        return "orders_pd:{}\naction_pd:{}\ncapital:{}\nbenchmark:{}\n" \
+               "buy_factors:{}\nsell_factors:{}\nstock_picks:{}".format(
+                self.orders_pd.info() if self.orders_pd is not None else 'zero order',
+                self.action_pd.info() if self.action_pd is not None else 'zero action', self.capital, self.benchmark,
+                self.buy_factors, self.sell_factors, self.stock_picks)
 
 
 class AbuBaseScorer(six.with_metaclass(ABCMeta, object)):
@@ -71,13 +71,18 @@ class AbuBaseScorer(six.with_metaclass(ABCMeta, object)):
         else:
             self.metrics_class = AbuMetricsBase
 
+        valid_score_tuple_array = []
         for ind, score_tuple in enumerate(self.score_tuple_array):
             # 一个一个的进行度量
             metrics = self.metrics_class(score_tuple.orders_pd, score_tuple.action_pd, score_tuple.capital,
                                          score_tuple.benchmark)
-            metrics.fit_metrics()
-            # 使用子类_init_self_begin中设置的select_score_func方法选取
-            self.score_dict[ind] = self.select_score_func(metrics)
+            if metrics.valid:
+                metrics.fit_metrics()
+                # 使用子类_init_self_begin中设置的select_score_func方法选取
+                self.score_dict[ind] = self.select_score_func(metrics)
+                valid_score_tuple_array.append(score_tuple)
+        # 把筛选出来有交易结果的重新放到score_tuple_array中
+        self.score_tuple_array = valid_score_tuple_array
 
         # 将score_dict转换DataFrame并且转制
         self.score_pd = pd.DataFrame(self.score_dict).T
@@ -112,7 +117,8 @@ class AbuBaseScorer(six.with_metaclass(ABCMeta, object)):
 
     def fit_score(self):
         """对度量结果按照score排序，返回排序后的score列"""
-        return self.score_pd.sort_values(by='score')['score']
+        self.score_pd.sort_values(by='score', inplace=True)
+        return self.score_pd['score']
 
     def __call__(self):
         """call self.fit_score"""

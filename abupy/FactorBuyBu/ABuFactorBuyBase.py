@@ -11,7 +11,9 @@ import copy
 from abc import ABCMeta, abstractmethod
 
 from ..CoreBu.ABuFixes import six
+from ..CoreBu.ABuDeprecated import AbuDeprecated
 from ..BetaBu.ABuAtrPosition import AbuAtrPosition
+from ..BetaBu import ABuPositionBase
 from ..TradeBu.ABuOrder import AbuOrder
 from ..TradeBu.ABuMLFeature import AbuMlFeature
 from ..CoreBu.ABuBase import AbuParamBase
@@ -85,12 +87,12 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         self.benchmark = benchmark
 
         # 滑点类，默认AbuSlippageBuyMean
-        self.slippage_class = kwargs.pop('slippage', AbuSlippageBuyMean)
+        self._slippage_class_init(**kwargs)
         # 仓位管理，默认AbuAtrPosition
-        self.position_class = kwargs.pop('position', AbuAtrPosition)
+        self._position_class_init(**kwargs)
+
         # 构造ump对外的接口对象UmpManager
         self.ump_manger = AbuUmpManager(self)
-
         # 默认的factor_name，子类通过_init_self可覆盖更具体的名字
         self.factor_name = '{}'.format(self.__class__.__name__)
 
@@ -104,6 +106,45 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         # 子类继续完成自有的构造
         self._init_self(**kwargs)
 
+    def _position_class_init(self, **kwargs):
+        """仓位管理类构建"""
+
+        # 仓位管理，默认AbuAtrPosition
+        if ABuPositionBase.g_default_pos_class is None:
+            self.position_class = AbuAtrPosition
+            # 仓位管理类构建关键字参数默认空字典
+            self.position_kwargs = dict()
+        else:
+            # 否则设置了全局仓位管理字典对象，弹出class
+            default_pos_class = copy.deepcopy(ABuPositionBase.g_default_pos_class)
+            self.position_class = default_pos_class.pop('class')
+            # 弹出class后剩下的就为其它关键字参数
+            self.position_kwargs = default_pos_class
+
+        if 'position' in kwargs:
+            position = kwargs.pop('position', AbuAtrPosition)
+            if isinstance(position, six.class_types):
+                # 如果position里面直接设置的是一个class，直接弹出
+                self.position_class = position
+            elif isinstance(position, dict):
+                # 支持赋予字典结构 eg: {'class': AbuAtrPosition, 'atr_base_price': 20, 'atr_pos_base': 0.5}
+                if 'class' not in position:
+                    # 必须要有需要实例化的类信息
+                    raise ValueError('position class key must name class !!!')
+                position_cp = copy.deepcopy(position)
+                # pop出类信息后剩下的都为类需要的参数
+                self.position_class = position_cp.pop('class')
+                # pop出class之后剩下的就class的构造关键字参数
+                self.position_kwargs = position_cp
+            else:
+                raise TypeError('_position_class_init position type is {}'.format(type(position)))
+
+    def _slippage_class_init(self, **kwargs):
+        """滑点类构建"""
+        # 滑点类，默认AbuSlippageBuyMean
+        self.slippage_class = kwargs.pop('slippage', AbuSlippageBuyMean)
+        # TODO 滑点类完善参数构建等需求
+
     def _other_kwargs_init(self, **kwargs):
         """
             kwargs参数中其它设置赋予买入因子的参数：
@@ -115,21 +156,8 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
             可选参数sell_factors： 专属买入择时策略因子的择时卖出因子序列，序列中对象为卖出因子
         """
 
-        """
-            因子可选择根据策略的历史回测设置胜率，期望收益，期望亏损，
-            比如使用AbuKellyPosition，必须需要因子的胜率，期望收益，
-            期望亏损参数，不要使用kwargs.pop('a', None)设置，因为
-            暂时使用hasattr判断是否有设置属性
-        """
-        if 'win_rate' in kwargs:
-            # 策略因子历史胜率
-            self.win_rate = kwargs['win_rate']
-        if 'gains_mean' in kwargs:
-            # 策略因子历史期望收益
-            self.gains_mean = kwargs['gains_mean']
-        if 'losses_mean' in kwargs:
-            # 策略因子历史期望亏损
-            self.losses_mean = kwargs['losses_mean']
+        # 先处理过时的方法
+        self._deprecated_kwargs_init(**kwargs)
 
         # 专属买入策略因子的选股周生效因子
         self.ps_week = []
@@ -195,6 +223,7 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         order = AbuOrder()
         # AbuOrde对象根据交易发生的时间索引生成交易订单
         order.fit_buy_order(day_ind, self)
+
         if order.order_deal:
             # 交易时间序列特征生成
             ml_feature_dict = self.make_buy_order_ml_feature(day_ind)
@@ -274,10 +303,8 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
         """买入因子专属选股因子执行，只要一个选股因子发出没有选中的信号，就封锁本源择时因子"""
 
         for picker in pick_array:
-            end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
-            start_ind = end_ind - picker.xd if end_ind - picker.xd > 0 else 0
-            # 根据当前的交易日，选股周期xd切片金融时间序列
-            pick_kl = self.combine_kl_pd.iloc[start_ind:end_ind]
+            pick_kl = self.past_today_kl(today, picker.xd)
+
             if pick_kl.empty or not picker.fit_pick(pick_kl, self.kl_pd.name):
                 # 只要一个选股因子发出没有选中的信号，就封锁本源选股因子
                 self.lock_factor = True
@@ -297,6 +324,52 @@ class AbuFactorBuyBase(six.with_metaclass(ABCMeta, AbuParamBase)):
     def fit_day(self, today):
         """子类主要需要实现的函数，完成策略因子针对每一个交易日的买入交易策略"""
         pass
+
+    def past_today_kl(self, today, past_day_cnt):
+        """
+            在fit_day, fit_month, fit_week等时间驱动经过的函数中通过传递今天的数据
+            获取过去past_day_cnt天的交易日数据，返回为pd.DataFram数据
+            :param today: 当前驱动的交易日金融时间序列数据
+            :param past_day_cnt: int，获取今天之前过去past_day_cnt天的金融时间序列数据
+        """
+        end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
+        start_ind = end_ind - past_day_cnt if end_ind - past_day_cnt > 0 else 0
+        # 根据当前的交易日，切片过去一段时间金融时间序列
+        return self.combine_kl_pd.iloc[start_ind:end_ind]
+
+    def past_today_one_month(self, today):
+        """套接past_today_kl，获取今天之前1个月交易日的金融时间序列数据"""
+        # TODO 这里固定了值，最好使用env中的时间，如币类市场等特殊情况
+        return self.past_today_kl(today, 20)
+
+    def past_today_one_week(self, today):
+        """套接past_today_kl，获取今天之前1周交易日的金融时间序列数据"""
+        # TODO 这里固定了值，最好使用env中的时间，如币类市场等特殊情况
+        return self.past_today_kl(today, 5)
+
+    def past_today_one_year(self, today):
+        """套接past_today_kl，获取今天之前1年交易日的金融时间序列数据"""
+        # TODO 这里固定了值，最好使用env中的时间，如币类市场等特殊情况
+        return self.past_today_kl(today, 250)
+
+    def _deprecated_kwargs_init(self, **kwargs):
+        """处理过时的初始化"""
+        if 'win_rate' in kwargs and 'gains_mean' in kwargs and 'losses_mean' in kwargs:
+            self._do_kelly_deprecated(**kwargs)
+
+    @AbuDeprecated('kelly object now use dict to build, it will be remove next version!')
+    def _do_kelly_deprecated(self, **kwargs):
+        """针对kelly仓位管理过时方法的处理"""
+
+        """
+            因子可选择根据策略的历史回测设置胜率，期望收益，期望亏损，
+            比如使用AbuKellyPosition，必须需要因子的胜率，期望收益，
+            期望亏损参数，不要使用kwargs.pop('a', None)设置，因为
+            暂时使用hasattr判断是否有设置属性
+        """
+        # 策略因子历史胜率win_rate, 策略因子历史期望收益gains_mean, 策略因子历史期望亏损losses_mean
+        self.position_kwargs = {'win_rate': kwargs['win_rate'], 'gains_mean': kwargs['gains_mean'],
+                                'losses_mean': kwargs['losses_mean']}
 
     """TODO: 使用check support方式查询是否支持fit_week，fit_month，上层不再使用hasattr去判断"""
     # def fit_week(self, *args, **kwargs):

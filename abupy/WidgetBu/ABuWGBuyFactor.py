@@ -42,7 +42,7 @@ class BuyDMWidget(WidgetFactorBuyBase):
             max=120,
             step=1,
             description=u'手动',
-            disabled=True,
+            disabled=False,
             orientation='horizontal',
             readout=True,
             readout_format='d'
@@ -67,7 +67,7 @@ class BuyDMWidget(WidgetFactorBuyBase):
             max=90,
             step=1,
             description=u'手动',
-            disabled=True,
+            disabled=False,
             orientation='horizontal',
             readout=True,
             readout_format='d'

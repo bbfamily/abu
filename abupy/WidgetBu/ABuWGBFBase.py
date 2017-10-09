@@ -47,7 +47,7 @@ class BFSubscriberMixin(object):
         """已添加的买入策略框接收买入tab已添加的买入策略信息改变ui同步"""
         self.buy_factors.options = self.wg_manager.buy_factor_manger.selected_factors.options
 
-    def add_to_buy_factor(self, select, factor_unique_callable, factor_key):
+    def add_to_buy_factor(self, select, factor_unique_callable, factor_key, only_one=False):
         """对应按钮添加策略到指定买入策略中的基础方法，具体策略中外层需要再套一层"""
         if not callable(factor_unique_callable):
             raise TypeError('factor_unique_callable must callable!')
@@ -66,11 +66,22 @@ class BFSubscriberMixin(object):
 
             # 从买入manager字典中出栈点击的这个描述买入字典对象
             buy_factor_dict = self.wg_manager.buy_factor_manger.factor_dict.pop(buy_factor_desc_key)
-            # 买入字典对象中如果有独立因子策略序列，弹出
-            factors = buy_factor_dict.pop(factor_key, [])
 
-            # 买入独有因子序列中加入factor_dict
-            factors.append(factor_dict)
+            if only_one:
+                """
+                    非重复容器类型策略，如一个买入策略只能对应一个仓位管理策略
+                """
+                factors = factor_dict
+            else:
+                """
+                    可复容器类型策略，如可以有多个买入因子，多个卖出，
+                    多个选股因子, 使用list作为二级容器
+                """
+                # 买入字典对象中如果有独立因子策略序列，弹出
+                factors = buy_factor_dict.pop(factor_key, [])
+                # 买入独有因子序列中加入factor_dict
+                factors.append(factor_dict)
+
             # 将因子序列放回到买入字典对象中
             buy_factor_dict[factor_key] = factors
             # 买入策略因子描述＋独有因子描述＝唯一策略描述
@@ -102,8 +113,8 @@ class BuyFactorWGManager(WidgetFactorManagerBase):
             self.factor_box = widgets.Box(children=children,
                                           layout=self.factor_layout)
         else:
-            # 一行显示两个，2个为一组，组装sub_children_group序列,
-            sub_children_group = self._sub_children(children, len(children) / 2)
+            # 一行显示两个，n个为一组，组装sub_children_group序列,
+            sub_children_group = self._sub_children(children, len(children) / self._sub_children_group_cnt)
             sub_children_box = [widgets.HBox(sub_children) for sub_children in sub_children_group]
             self.factor_box = widgets.VBox(sub_children_box)
 
@@ -113,9 +124,20 @@ class WidgetFactorBuyBase(WidgetFactorBase):
 
     def __init__(self, wg_manager):
         super(WidgetFactorBuyBase, self).__init__(wg_manager)
-        self.add = widgets.Button(description=u'添加为全局买入策略', layout=widgets.Layout(width='98%'),
-                                  button_style='info')
-        self.add.on_click(self.add_buy_factor)
+        if wg_manager.add_button_style == 'grid':
+            add_cb = widgets.Button(description=u'添加为寻找买入策略最优参数组合', layout=widgets.Layout(width='98%'),
+                                    button_style='info')
+            add_cb.on_click(self.add_buy_factor)
+
+            add_dp = widgets.Button(description=u'添加为寻找独立买入策略最佳组合', layout=widgets.Layout(width='98%'),
+                                    button_style='warning')
+            add_dp.on_click(self.add_buy_factor_grid)
+
+            self.add = widgets.VBox([add_cb, add_dp])
+        else:
+            self.add = widgets.Button(description=u'添加为全局买入策略', layout=widgets.Layout(width='98%'),
+                                      button_style='info')
+            self.add.on_click(self.add_buy_factor)
         self._init_widget()
 
     @abstractmethod
@@ -138,3 +160,12 @@ class WidgetFactorBuyBase(WidgetFactorBase):
         """对应按钮添加策略，构建策略字典对象factor_dict以及唯一策略描述字符串factor_desc_key"""
         factor_dict, factor_desc_key = self.make_buy_factor_unique()
         self.wg_manager.add_factor(factor_dict, factor_desc_key)
+
+    # noinspection PyUnusedLocal
+    def add_buy_factor_grid(self, bt):
+        """grid search，构建策略字典对象factor_dict以及唯一策略描述字符串factor_desc_key"""
+        factor_dict, factor_desc_key = self.make_buy_factor_unique()
+        # 因子序列value都套上list
+        factors_grid = {bf_key: [factor_dict[bf_key]]
+                        for bf_key in factor_dict.keys()}
+        self.wg_manager.add_factor(factors_grid, factor_desc_key)

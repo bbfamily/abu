@@ -10,7 +10,7 @@ import ipywidgets as widgets
 
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EDataCacheType, EMarketDataFetchMode, EMarketSourceType
-from ..WidgetBu.ABuWGBase import WidgetBase
+from ..WidgetBu.ABuWGBase import WidgetBase, accordion_shut
 from ..UtilBu import ABuFileUtil
 
 __author__ = '阿布'
@@ -41,7 +41,7 @@ class WidgetEnvSetMixin(object):
         self.date_mode.observe(self.on_data_mode_change, names='value')
 
         set_mode_label_tip = widgets.Label(u'缓存模式|联网模式|数据源只在开放数据模式下生效：',
-                                            layout=widgets.Layout(width='300px', align_items='stretch'))
+                                           layout=widgets.Layout(width='300px', align_items='stretch'))
 
         """csv模式与hdf5模式模式切换"""
         self.store_mode_dict = {EDataCacheType.E_DATA_CACHE_CSV.value: u'csv模式(推荐)',
@@ -96,7 +96,7 @@ class WidgetEnvSetMixin(object):
 
         self.data_source_accordion.children = [other_data_set_box]
         self.data_source_accordion.set_title(0, u'缓存模式|联网模式|数据源')
-        self.data_source_accordion.selected_index = -1
+        accordion_shut(self.data_source_accordion)
 
         mdm_box = widgets.VBox([self.date_mode, set_mode_label_tip, self.data_source_accordion])
 
@@ -113,7 +113,7 @@ class WidgetEnvSetMixin(object):
             ABuEnv.enable_example_env_ipython(show_log=False)
             self.store_mode.disabled = True
             self.fetch_mode.disabled = True
-            self.data_source_accordion.selected_index = -1
+            accordion_shut(self.data_source_accordion)
         else:
             if ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data_csv) and \
                             len(os.listdir(ABuEnv.g_project_kl_df_data_csv)) > 5000:
@@ -238,8 +238,8 @@ class WidgetMetricsSet(object):
         """构建基础env widget ui return widgets.VBox"""
         # 回测时间模式
         self.metrics_mode = widgets.RadioButtons(
-            options={u'考虑初始资金规模＋标尺大盘对比': 0,
-                     u'不考虑初始资金＋不对比标尺收益': 1},
+            options={u'考虑初始资金＋标尺大盘对比': 0,
+                     u'不考虑初始资金＋不对比标尺': 1},
             value=0,
             description=u'度量模式:',
             disabled=False
@@ -249,7 +249,7 @@ class WidgetMetricsSet(object):
             options={u'只输出交易单：orders_pd': 0,
                      u'只输出行为单：action_pd': 1,
                      u'只输出资金单：capital_pd': 2,
-                     u'同时输出交易单，行为单，资金单': 3},
+                     u'输出交易单，行为单，资金单': 3},
             value=0,
             description=u'输出对象:',
             disabled=False
@@ -265,7 +265,7 @@ class WidgetMetricsSet(object):
             max=100,
             step=1,
             description=u'行数',
-            disabled=True,
+            disabled=False,
             orientation='horizontal',
             readout=True,
             readout_format='d'
@@ -277,7 +277,7 @@ class WidgetMetricsSet(object):
             max=100,
             step=1,
             description=u'列数',
-            disabled=True,
+            disabled=False,
             orientation='horizontal',
             readout=True,
             readout_format='d'
@@ -303,7 +303,7 @@ class WidgetMetricsSet(object):
         accordion = widgets.Accordion()
         accordion.children = [widgets.VBox([self.metrics_mode, self.metrics_out_put, out_put_display, save_out_put])]
         accordion.set_title(0, u'回测度量结果设置')
-        accordion.selected_index = -1
+        accordion_shut(accordion)
 
         return accordion
 

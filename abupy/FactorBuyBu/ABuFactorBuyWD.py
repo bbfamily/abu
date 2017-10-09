@@ -41,10 +41,7 @@ class AbuFactorBuyWD(AbuFactorBuyTD, BuyCallMixin):
 
     def fit_month(self, today):
         """月任务，每一个重新取之前周期内的金融时间序列数据，重新计算一遍'周几买'"""
-        end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
-        start_ind = end_ind - self.dw_period if end_ind - self.dw_period > 0 else 0
-        # 根据当前的交易日，切片过去的一年金融时间序列
-        last_kl = self.combine_kl_pd.iloc[start_ind:end_ind]
+        last_kl = self.past_today_kl(today, self.dw_period)
         # 重新计算一遍'周几买'
         self._make_buy_date(last_kl)
 

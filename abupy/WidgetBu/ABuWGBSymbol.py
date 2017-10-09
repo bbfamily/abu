@@ -100,7 +100,7 @@ class WidgetSymbolChoice(WidgetBase):
         st_symbol = [symbol.split(':')[1] if symbol.find(':') > 0
                      else symbol for symbol in list(select['new'])]
         # 更新股票池中原有的symbol序列
-        self.choice_symbols.options = list(set(st_symbol + self.choice_symbols.options))
+        self.choice_symbols.options = list(set(st_symbol + list(self.choice_symbols.options)))
 
     def choice_symbols_select(self, select):
         """股票池中点击删除股票池中对应的symbol"""

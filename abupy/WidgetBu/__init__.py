@@ -6,6 +6,7 @@ from .ABuWGBSymbol import WidgetSymbolChoice
 from .ABuWGBRun import WidgetRunLoopBack
 from .ABuWGQuantTool import WidgetQuantTool
 from .ABuWGUpdate import WidgetUpdate
+from .ABuWGGridSearch import WidgetGridSearch
 
 __all__ = [
     'WidgetRunLoopBack',
@@ -16,5 +17,7 @@ __all__ = [
 
     'WidgetRunTT',
     'WidgetSymbolChoice',
-    'WidgetUpdate'
+    'WidgetUpdate',
+
+    'WidgetGridSearch'
 ]

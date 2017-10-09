@@ -80,7 +80,7 @@ def _do_pick_time_work(capital, buy_factors, sell_factors, kl_pd, benchmark, dra
 @add_process_env_sig
 def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_factors, capital,
                                  apply_capital=True, kl_pd_manager=None,
-                                 show=False, back_target_symbols=None, func_factors=None):
+                                 show=False, back_target_symbols=None, func_factors=None, show_progress=True):
     """
     输入为多个择时交易对象，以及相同的择时买入，卖出因子序列，对多个交易对象上实施相同的因子
     :param target_symbols: 多个择时交易对象序列
@@ -93,7 +93,7 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
     :param show: 是否显示每个交易对象的交易细节
     :param back_target_symbols:  补位targetSymbols为了忽略网络问题及数据不足导致的问题
     :param func_factors: funcFactors在内层解开factors dicts为了do_symbols_with_diff_factors
-    :return:
+    :param show_progress: 进度条显示，默认True
     """
     if kl_pd_manager is None:
         kl_pd_manager = AbuKLManager(benchmark, capital)
@@ -103,9 +103,8 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
         r_action_pd = None
         r_all_fit_symbols_cnt = 0
         # 启动多进程进度显示AbuMulPidProgress
-        with AbuMulPidProgress(len(target_symbols), 'pick times complete') as progress:
+        with AbuMulPidProgress(len(target_symbols), 'pick times complete', show_progress=show_progress) as progress:
             for epoch, target_symbol in enumerate(target_symbols):
-
                 # 如果symbol只有一个就不show了，留给下面_do_pick_time_work中show_pg内部显示进度
                 if len(target_symbols) > 1:
                     # 如果要绘制交易细节就不要clear了
@@ -117,7 +116,8 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
                 try:
                     kl_pd = kl_pd_manager.get_pick_time_kl_pd(target_symbol)
                     ret, fit_error = _do_pick_time_work(capital, p_buy_factors, p_sell_factors, kl_pd, benchmark,
-                                                        draw=show, show_info=show, show_pg=len(target_symbols) == 1)
+                                                        draw=show, show_info=show,
+                                                        show_pg=(len(target_symbols) == 1 and show_progress))
                 except Exception as e:
                     logging.exception(e)
                     continue
@@ -158,7 +158,7 @@ def do_symbols_with_same_factors(target_symbols, benchmark, buy_factors, sell_fa
         orders_pd = orders_pd.sort_values(['buy_date'])
         if apply_capital:
             # 如果非多进程环境下开始融合资金对象
-            ABuTradeExecute.apply_action_to_capital(capital, action_pd, kl_pd_manager)
+            ABuTradeExecute.apply_action_to_capital(capital, action_pd, kl_pd_manager, show_progress=show_progress)
 
     return orders_pd, action_pd, all_fit_symbols_cnt
 

@@ -8,6 +8,8 @@ from __future__ import division
 import os
 import socket
 
+from ..UtilBu.ABuStrUtil import to_native_str
+
 
 def socket_bind_recv(socket_fn, cmd_handler):
     """
@@ -47,7 +49,8 @@ def show_msg(title, msg):
     :param title: 弹窗标题
     :param msg: 弹窗信息
     """
-    msg_cmd = 'osascript -e \'display notification "%s" with title "%s"\'' % (msg, title)
+    # 注意这里要把msg统一转换回bytes
+    msg_cmd = 'osascript -e \'display notification "%s" with title "%s"\'' % (to_native_str(msg), to_native_str(title))
     os.system(msg_cmd)
 
 

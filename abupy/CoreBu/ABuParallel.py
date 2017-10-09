@@ -86,7 +86,7 @@ else:
                 self.n_jobs = ABuEnv.g_cpu_cnt
 
             if self.n_jobs == 1:
-                # 如果只开一个进程，那么只在主进程里运行，方便pdb debug且与joblib运行方式保持一致
+                # 如果只开一个进程，那么只在主进程(或当前运行的子进程)里运行，方便pdb debug且与joblib运行方式保持一致
                 for jb in iterable:
                     result.append(jb[0](*jb[1], **jb[2]))
             else:

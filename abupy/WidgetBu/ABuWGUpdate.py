@@ -107,8 +107,7 @@ class WidgetUpdate(WidgetBase, WidgetTimeModeMixin):
     # noinspection PyUnusedLocal
     def run_yun_down(self, bt):
         """打开浏览器csv zip地址准备开始下载"""
-        # 清理之前的输出结果
-        ABuProgress.clear_output()
+        ABuProgress.clear_std_output()
         browser_down_csv_zip(open_browser=True)
 
     # noinspection PyUnusedLocal

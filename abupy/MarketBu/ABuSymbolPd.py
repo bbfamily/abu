@@ -13,7 +13,8 @@ from collections import Iterable
 import pandas as pd
 
 from .ABuDataSource import kline_pd
-from ..MarketBu.ABuDataCache import save_kline_df
+from ..MarketBu.ABuDataCache import save_kline_df, check_csv_local
+from ..MarketBu.ABuSymbol import code_to_symbol
 from .ABuSymbol import Symbol
 from .ABuMarket import split_k_market
 from ..CoreBu import ABuEnv
@@ -321,6 +322,27 @@ def get_price(symbol, start_date=None, end_date=None):
         df = df.filter(['close'])
         # 为了配合主流回测平台适配
         return df.rename(columns={'close': 'price'})
+
+
+def check_symbol_in_local_csv(symbol):
+    """
+    通过传递symbol监测symbol对象是否存在csv缓存，不监测时间范围，只监测是否存在缓存
+    :param symbol: str对象 or Symbol对象, 内部统一使用code_to_symbol变成Symbol对象
+                   e.g : 'usTSLA' or Symbol(MType.US,'TSLA')
+    :return: bool, symbol是否存在csv缓存
+    """
+
+    if isinstance(symbol, six.string_types):
+        # 如果是str对象，通过code_to_symbol转化为Symbol对象
+        symbol = code_to_symbol(symbol, rs=False)
+    if symbol is None:
+        # 主要针对code_to_symbol无规则进行转换的情况下只返回不存在缓存
+        return False
+
+    if not isinstance(symbol, Symbol):
+        raise TypeError('symbol must like as "usTSLA" or "TSLA" or Symbol(MType.US, "TSLA")')
+
+    return check_csv_local(symbol.value)
 
 
 def combine_pre_kl_pd(kl_pd, n_folds=1):

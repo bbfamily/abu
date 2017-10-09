@@ -96,11 +96,10 @@ def to_native_str(text, encoding=None, errors='strict'):
     """
     套接to_unicode和to_bytes针对python版本不同处理
 
-    颠倒转换本来的str类型：
-        python2 to_unicode
-        python3 to_bytes
+        python2 to_bytes
+        python3 to_unicode
     """
-    if ABuEnv.g_is_py3:
+    if not ABuEnv.g_is_py3:
         return to_bytes(text, encoding, errors)
     else:
         return to_unicode(text, encoding, errors)

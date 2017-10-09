@@ -9,7 +9,7 @@ from abc import abstractmethod
 
 import ipywidgets as widgets
 
-from ..WidgetBu.ABuWGBase import WidgetFactorBase, WidgetFactorManagerBase
+from ..WidgetBu.ABuWGBase import WidgetFactorBase, WidgetFactorManagerBase, accordion_shut
 from ..WidgetBu.ABuWGBFBase import BFSubscriberMixin
 
 __author__ = '阿布'
@@ -36,8 +36,8 @@ class PickStockWGManager(WidgetFactorManagerBase):
             self.factor_box = widgets.Box(children=children,
                                           layout=self.factor_layout)
         else:
-            # 一行显示两个，2个为一组，组装sub_children_group序列,
-            sub_children_group = self._sub_children(children, len(children) / 2)
+            # 一行显示两个，3个为一组，组装sub_children_group序列,
+            sub_children_group = self._sub_children(children, len(children) / self._sub_children_group_cnt)
             sub_children_box = [widgets.HBox(sub_children) for sub_children in sub_children_group]
             self.factor_box = widgets.VBox(sub_children_box)
         # 买入因子是特殊的存在，都需要买入因子的全局数据
@@ -115,7 +115,7 @@ class WidgetPickStockBase(WidgetFactorBase, BFSubscriberMixin):
         # 买入策略框点击行为：将本卖出策略加到对应的买入策略做为附属
         self.buy_factors.observe(self.add_pick_stock_to_buy_factor, names='value')
         self.accordion.set_title(0, u'添加为指定买入因子的选股策略')
-        self.accordion.selected_index = -1
+        accordion_shut(self.accordion)
         self.add_box = widgets.VBox([self.add, self.accordion])
         # 构建选股策略独有基础通用ui
         self._pick_stock_base_ui()

@@ -217,6 +217,41 @@ class AbuTLine(FreezeAttrMixin):
         plt.title(self.line_name)
         plt.show()
 
+    def is_up_trend(self, up_deg_threshold=5, show=True):
+        """
+        判断走势是否符合上升走势：
+        1. 判断走势是否可以使用一次拟合进行描述
+        2. 如果可以使用1次拟合进行描述，计算一次拟合趋势角度
+        3. 如果1次拟合趋势角度 >= up_deg_threshold判定上升
+        :param up_deg_threshold: 判定一次拟合趋势角度为上升趋势的阀值角度，默认5
+        :param show: 是否显示判定过程视图
+        :return: 是否上升趋势
+        """
+        valid = ABuRegUtil.valid_poly(self.tl, poly=1, show=show)
+        if valid:
+            deg = ABuRegUtil.calc_regress_deg(self.tl, show=show)
+            if deg >= up_deg_threshold:
+                return True
+        return False
+
+    def is_down_trend(self, down_deg_threshold=-5, show=True):
+        """
+        判断走势是否符合下降走势：
+        1. 判断走势是否可以使用一次拟合进行描述
+        2. 如果可以使用1次拟合进行描述，计算一次拟合趋势角度
+        3. 如果1次拟合趋势角度 <= down_deg_threshold判定下降
+        :param down_deg_threshold: 判定一次拟合趋势角度为下降趋势的阀值角度，默认－5
+        :param show: 是否显示判定过程视图
+        :return: 是否下降趋势
+        """
+        valid = ABuRegUtil.valid_poly(self.tl, poly=1, show=show)
+        # logging.debug('is_down_trend valid:{}'.format(valid))
+        if valid:
+            deg = ABuRegUtil.calc_regress_deg(self.tl, show=show)
+            if deg <= down_deg_threshold:
+                return True
+        return False
+
     def show_best_poly(self, zoom=False, show=show):
         """
         可视化技术线最优拟合次数，寻找poly（1－100）次多项式拟合回归的趋势曲线可以比较完美的代表原始曲线y的走势，
@@ -572,12 +607,16 @@ class AbuTLine(FreezeAttrMixin):
             即返回的是一个比例地带，绘制地带的上下边界
         """
         for pt, color in zip(pts_dict, itertools.cycle(K_PLT_MAP_STYLE)):
-            below, above = below_above_gen(*pts_dict[pt])
-            plt.axhline(below, c=color)
-            plt.axhline(above, c=color)
+            stats_key = 'stats:{}'.format(pt)
+            sight_key = 'sight:{}'.format(pt)
+            p_dict = {stats_key: pts_dict[pt][0], sight_key: pts_dict[pt][1]}
+            plt.axhline(p_dict[stats_key], c=color, label=stats_key)
+            plt.axhline(p_dict[sight_key], c='y', label=sight_key)
 
+            below, above = below_above_gen(*pts_dict[pt])
             plt.fill_between(self.x, below, above,
                              alpha=0.5, color=color)
+            plt.legend(loc='best')
         plt.show()
 
     def show_golden(self, both_golden=True):

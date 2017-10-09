@@ -88,7 +88,7 @@ class AbuMetricsBase(object):
         self.enable_stocks_full_rate_factor = enable_stocks_full_rate_factor
         # 验证输入的回测数据是否可度量，便于valid_check装饰器工作
         self.valid = False
-        if self.capital is not None and 'capital_blance' in self.capital.capital_pd:
+        if self.orders_pd is not None and self.capital is not None and 'capital_blance' in self.capital.capital_pd:
             self.valid = True
         # ipython notebook下使用logging.info
         self.log_func = logging.info if ABuEnv.g_is_ipython else print
@@ -289,14 +289,19 @@ class AbuMetricsBase(object):
         # 计算平均生效间隔时间
         self.effect_mean_day = self.diff_dt.mean()
 
-        self.act_buy['cost'] = self.act_buy.apply(lambda order: order.Price * order.Cnt, axis=1)
-        # 计算cost各种统计度量值
-        self.cost_stats = ABuStatsUtil.stats_namedtuple(self.act_buy['cost'])
+        if self.act_buy.empty:
+            self.act_buy['cost'] = 0
+            self.cost_stats = 0
+            self.buy_deal_rate = 0
+        else:
+            self.act_buy['cost'] = self.act_buy.apply(lambda order: order.Price * order.Cnt, axis=1)
+            # 计算cost各种统计度量值
+            self.cost_stats = ABuStatsUtil.stats_namedtuple(self.act_buy['cost'])
 
-        buy_action_pd = action_pd[action_pd['action'] == 'buy']
-        buy_action_pd_deal = buy_action_pd['deal']
-        # 计算资金对应的成交比例
-        self.buy_deal_rate = buy_action_pd_deal.sum() / buy_action_pd_deal.count()
+            buy_action_pd = action_pd[action_pd['action'] == 'buy']
+            buy_action_pd_deal = buy_action_pd['deal']
+            # 计算资金对应的成交比例
+            self.buy_deal_rate = buy_action_pd_deal.sum() / buy_action_pd_deal.count()
 
     def _metrics_extend_stats(self):
         """子类可扩展的metrics方法，子类在此方法中可定义自己需要度量的值"""

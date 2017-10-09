@@ -49,7 +49,7 @@ class WidgetSMTool(WidgetToolBase):
             self.widget = widgets.VBox([sm_box])
         else:
             # 一行显示两个，2个为一组，组装sub_children_group序列,
-            sub_children_group = self._sub_children(children, len(children) / 2)
+            sub_children_group = self._sub_children(children, len(children) / self._sub_children_group_cnt)
             sub_children_box = [widgets.HBox(sub_children) for sub_children in sub_children_group]
             self.widget = widgets.VBox(sub_children_box)
 

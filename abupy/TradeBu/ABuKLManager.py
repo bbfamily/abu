@@ -46,8 +46,7 @@ def gen_dict_pick_time_kl_pd(target_symbols, capital, benchmark):
             EMarketDataFetchMode.E_DATA_FETCH_FORCE_LOCAL:
         # 存储使用hdf5且使用本地数据模式才赋予h5s_fn路径
         # noinspection PyProtectedMember
-        h5s_fn = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
-            else ABuEnv.g_project_kl_df_data
+        h5s_fn = ABuEnv.g_project_kl_df_data
 
     @batch_h5s(h5s_fn)
     def _batch_gen_dict_pick_time_kl_pd():

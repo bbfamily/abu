@@ -1,14 +1,11 @@
 # -*- encoding:utf-8 -*-
-"""
-    示例仓位管理：kelly仓位管理模块
-"""
+"""示例仓位管理：kelly仓位管理模块"""
 
 from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
 from .ABuPositionBase import AbuPositionBase
-from . import ABuPositionBase
 
 
 class AbuKellyPosition(AbuPositionBase):
@@ -22,26 +19,23 @@ class AbuKellyPosition(AbuPositionBase):
         :param factor_object: ABuFactorBuyBases子类实例对象
         :return:买入多少个单位（股，手，顿，合约）
         """
-
-        # 检测择时策略因子对象有没有设置设置胜率，期望收益，期望亏损，详情查阅ABuFactorBuyBase
-        if not hasattr(factor_object, 'win_rate'):
-            raise RuntimeError('AbuKellyPosition need factor_object has  win_rate')
-        if not hasattr(factor_object, 'gains_mean'):
-            raise RuntimeError('AbuKellyPosition need factor_object has  gains_mean')
-        if not hasattr(factor_object, 'losses_mean'):
-            raise RuntimeError('AbuKellyPosition need factor_object has  losses_mean')
-
-        # 胜率
-        win_rate = factor_object.win_rate
         # 败率
-        loss_rate = 1 - win_rate
-        # 平均获利期望
-        gains_mean = factor_object.gains_mean
-        # 平均亏损期望
-        losses_mean = factor_object.losses_mean
+        loss_rate = 1 - self.win_rate
         # kelly计算出仓位比例
-        kelly_pos = win_rate - loss_rate / (gains_mean / losses_mean)
-        # 最大仓位限制
-        kelly_pos = ABuPositionBase.g_pos_max if kelly_pos > ABuPositionBase.g_pos_max else kelly_pos
+        kelly_pos = self.win_rate - loss_rate / (self.gains_mean / self.losses_mean)
+        # 最大仓位限制，依然受上层最大仓位控制限制，eg：如果kelly计算出全仓，依然会减少到75%，如修改需要修改最大仓位值
+        kelly_pos = self.pos_max if kelly_pos > self.pos_max else kelly_pos
         # 结果是买入多少个单位（股，手，顿，合约）
         return self.read_cash * kelly_pos / self.bp * self.deposit_rate
+
+    def _init_self(self, **kwargs):
+        """kelly仓位控制管理类初始化设置"""
+
+        # 默认kelly仓位胜率0.50
+        self.win_rate = kwargs.pop('win_rate', 0.50)
+        # 默认平均获利期望0.10
+        self.gains_mean = kwargs.pop('gains_mean', 0.10)
+        # 默认平均亏损期望0.05
+        self.losses_mean = kwargs.pop('losses_mean', 0.05)
+
+        """以默认的设置kelly根据计算0.5 - 0.5 / (0.10 / 0.05) 仓位将是0.25即25%"""

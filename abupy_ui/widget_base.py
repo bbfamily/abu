@@ -15,8 +15,6 @@ warnings.simplefilter('ignore')
 @contextmanager
 def show_ui_ct():
     print('正在初始化界面元素，请稍后...')
-    import seaborn as sns
-    sns.set_context(rc={'figure.figsize': (14, 7)})
     from abupy import ABuStrUtil
     go_on = True
 

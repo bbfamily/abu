@@ -118,10 +118,7 @@ class AbuDoubleMaBuy(AbuFactorBuyXD, BuyCallMixin):
             上述的变换周期由10， 15，20，30....进行迭代, 直到计算出第一个重新
             采样的周期内的平均变化幅度 > 0.12的周期做为slow的取值
         """
-        end_ind = self.combine_kl_pd[self.combine_kl_pd.date == today.date].key.values[0]
-        start_ind = end_ind - self.resample_max if end_ind - self.resample_max > 0 else 0
-        # 根据当前的交易日，切片过去的半年金融时间序列
-        last_kl = self.combine_kl_pd.iloc[start_ind:end_ind]
+        last_kl = self.past_today_kl(today, self.resample_max)
         if last_kl.empty:
             # 返回慢线默认值60
             return 60

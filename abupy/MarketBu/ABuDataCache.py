@@ -8,7 +8,6 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-from fnmatch import fnmatch
 
 import pandas as pd
 
@@ -74,9 +73,7 @@ def load_all_kline(want_df=True, market=None, all_market=False):
         raise RuntimeError('only support hdf5 cache mode!')
 
     # noinspection PyProtectedMember
-    target_hdf5 = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
-        else ABuEnv.g_project_kl_df_data
-
+    target_hdf5 = ABuEnv.g_project_kl_df_data
     # 如果是实体pd.DataFrame数据的key，key的长度最少要两个日期 8 ＊ 2 ＋ 市场前缀 ＋ 2  ＋ 最小symbol长 ＋ 2
     k_min_index_key_len = 20  # 8 * 2 + 2 + 2
     with pd.HDFStore(target_hdf5) as h5s:
@@ -140,16 +137,17 @@ def load_kline_df(symbol_key):
     :return: (金融时间序列pd.DataFrame对象，索引date_key中start请求日期int，索引date_key中end请求日期int)
     """
 
-    # 初始化默认读取日k数据使用_load_kline_hdf5方法
-    load_kline_func = _load_kline_hdf5
-    # 初始化默认读取日k数据key使用_load_hdf5_key方法
-    load_kline_key = _load_hdf5_key
+    """老版本默认的为hdf5，windows用户有hdf5环境问题，改为首先csv"""
+    # 初始化默认读取日k数据使用_load_kline_csv方法
+    load_kline_func = _load_kline_csv
+    # 初始化默认读取日k数据key使用_load_csv_key方法
+    load_kline_key = _load_csv_key
     # noinspection PyProtectedMember
-    if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_CSV and \
+    if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_HDF5 and \
             not ABuEnv._g_enable_example_env_ipython:
-        # 读取方式是csv，并且不是沙盒数据模式，切换load_kline_func，load_kline_key为csv读取函数
-        load_kline_func = _load_kline_csv
-        load_kline_key = _load_csv_key
+        # 读取方式是HDF5，并且不是沙盒数据模式，切换load_kline_func，load_kline_key为HDF5读取函数
+        load_kline_func = _load_kline_hdf5
+        load_kline_key = _load_hdf5_key
 
     # noinspection PyUnusedLocal
     date_key = None
@@ -179,9 +177,12 @@ def _load_kline_csv(date_key):
     针对csv存储模式，读取本地cache金融时间序列
     :param date_key: 金融时间序列索引key，针对对csv存储模式为目标csv的具体文件名
     """
+    # noinspection PyProtectedMember
+    csv_dir = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
+        else ABuEnv.g_project_kl_df_data_csv
 
     # 通过连接date_key和csv存储根目录，得到目标csv文件路径
-    csv_fn = os.path.join(ABuEnv.g_project_kl_df_data_csv, date_key)
+    csv_fn = os.path.join(csv_dir, date_key)
     df = load_df_csv(csv_fn)
     # 这里要把类型转换为time
     df.index = pd.to_datetime(df.index)
@@ -193,10 +194,18 @@ def _load_kline_hdf5(date_key):
     针对hdf5存储模式，读取本地cache金融时间序列
     :param date_key: 金融时间序列索引key，针对对hdf5存储模式为目标金融时间序列查询key
     """
-    # noinspection PyProtectedMember
-    target_hdf5 = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
-        else ABuEnv.g_project_kl_df_data
+    target_hdf5 = ABuEnv.g_project_kl_df_data
     return load_hdf5(target_hdf5, date_key)
+
+
+def check_csv_local(symbol_key):
+    """
+    套结_load_csv_key，但不返回key具体值，只返回对应的symbol是否
+    存在csv缓存
+    :param symbol_key: str对象，eg. usTSLA
+    :return: bool, symbol是否存在csv缓存
+    """
+    return _load_csv_key(symbol_key) is not None
 
 
 def _load_csv_key(symbol_key):
@@ -205,8 +214,12 @@ def _load_csv_key(symbol_key):
     如从usTSLA->找到usTSLA_2014-7-26_2016_7_26这个具体csv文件路径
     :param symbol_key: str对象，eg. usTSLA
     """
-    if file_exist(ABuEnv.g_project_kl_df_data_csv):
-        for name in os.listdir(ABuEnv.g_project_kl_df_data_csv):
+    # noinspection PyProtectedMember
+    csv_dir = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
+        else ABuEnv.g_project_kl_df_data_csv
+
+    if file_exist(csv_dir):
+        for name in os.listdir(csv_dir):
             # 从csv缓存文件夹下进行模糊查询通过fnmatch匹配具体csv文件路径，eg. usTSLA->usTSLA_2014-7-26_2016_7_26
             # if fnmatch(name, '{}*'.format(symbol_key)):
             """
@@ -226,8 +239,7 @@ def _load_hdf5_key(symbol_key):
     :param symbol_key: 金融时间序列索引key，针对对hdf5存储模式为目标金融时间序列查询key
     """
     # noinspection PyProtectedMember
-    target_hdf5 = ABuEnv.g_project_kl_df_data_example if ABuEnv._g_enable_example_env_ipython \
-        else ABuEnv.g_project_kl_df_data
+    target_hdf5 = ABuEnv.g_project_kl_df_data
     return load_hdf5(target_hdf5, symbol_key)
 
 
@@ -243,15 +255,15 @@ def dump_kline_df(dump_df, symbol_key, date_key):
     :param date_key: str对象，eg. usTSLA_20100214_20170214 包含了df的时间开始时间与结束时间，便于计算需要的数据段是否在此之间
 
     """
-    # 默认hdf5模式分配工作函数
-    load_kline_key = _load_hdf5_key
-    dump_kline_func = _dump_kline_hdf5
-    load_kline_func = _load_kline_hdf5
-    # csv模式分配工作函数
-    if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_CSV:
-        dump_kline_func = _dump_kline_csv
-        load_kline_key = _load_csv_key
-        load_kline_func = _load_kline_csv
+    # 默认csv模式分配工作函数
+    dump_kline_func = _dump_kline_csv
+    load_kline_key = _load_csv_key
+    load_kline_func = _load_kline_csv
+    # hdf5模式分配工作函数
+    if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_HDF5:
+        load_kline_key = _load_hdf5_key
+        dump_kline_func = _dump_kline_hdf5
+        load_kline_func = _load_kline_hdf5
 
     _start = int(date_key[-17: -9])
     _end = int(date_key[-8:])

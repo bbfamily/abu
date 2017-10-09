@@ -118,6 +118,7 @@ def str_is_cn(a_str):
             K_CN_RE.search(a_str)('abc哈哈') -> <_sre.SRE_Match object; span=(3, 5), match='哈哈'>
             return True
     """
+
     def to_unicode(text, encoding=None, errors='strict'):
         """
         to_unicode原始位置: UtilBu.ABuStrUtil，为保持env为最初初始化不引入其它模块，这里临时拷贝使用
@@ -133,6 +134,7 @@ def str_is_cn(a_str):
 
     cn_re = re.compile(u'[\u4e00-\u9fa5]+')
     return cn_re.search(to_unicode(a_str)) is not None
+
 
 root_drive = path.expanduser('~')
 # root_drive = os.path.join(root_drive, u'测试')
@@ -169,9 +171,11 @@ g_project_log_info = path.join(g_project_log_dir, 'info.log')
 g_project_kl_df_data = path.join(g_project_data_dir, 'df_kl.h5')
 
 _p_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.path.pardir))
-"""使用书中相同的沙盒数据环境，RomDataBu/df_kl.h5中内置的金融时间序列文件"""
-g_project_kl_df_data_example = os.path.join(_p_dir, 'RomDataBu/df_kl.h5')
 
+# 不再使用hdf5做为默认，有windows用户的hdf5环境有问题
+"""使用书中相同的沙盒数据环境，RomDataBu/csv内置的金融时间序列文件"""
+# g_project_kl_df_data_example = os.path.join(_p_dir, 'RomDataBu/df_kl.h5')
+g_project_kl_df_data_example = os.path.join(_p_dir, 'RomDataBu/csv')
 # ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ 数据目录 end ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 
 
@@ -340,26 +344,25 @@ _g_enable_example_env_ipython = False
 
 def enable_example_env_ipython(show_log=True, check_cn=True):
     """
-    只为在ipython example 环境中运行与书中一样的数据，即读取RomDataBu/df_kl.h5下的数据
+    只为在ipython example 环境中运行与书中一样的数据，即读取RomDataBu/csv下的数据
 
-    初始内置在RomDataBu/df_kl.h5.zip下的数据只有zip压缩包，因为git上面的文件最好不要超过50m，
-    内置测试数据，包括美股，a股，期货，比特币，港股数据初始化在df_kl_ext.h5.zip中，通过解压zip
-    之后将测试数据为df_kl.h5
+    初始内置在RomDataBu/csv.zip下的数据只有zip压缩包，因为git上面的文件最好不要超过50m，
+    内置测试数据，包括美股，a股，期货，比特币，港股数据初始化在csv.zip中，通过解压zip
+    之后将测试数据为csv(老版本都是使用hdf5，但windows用户有些hdf5环境有问题)
     show_log: 是否显示enable example env will only read RomDataBu/df_kl.h5
     check_cn: 是否检测运行环境有中文路径
-    :return:
     """
 
     if not os.path.exists(g_project_kl_df_data_example):
-        # 如果还没有进行解压，开始解压df_kl.h5.zip
-        data_example_zip = os.path.join(_p_dir, 'RomDataBu/df_kl.h5.zip')
+        # 如果还没有进行解压，开始解压csv.zip
+        data_example_zip = os.path.join(_p_dir, 'RomDataBu/csv.zip')
         try:
             from zipfile import ZipFile
-            zip_h5 = ZipFile(data_example_zip, 'r')
+            zip_csv = ZipFile(data_example_zip, 'r')
             unzip_dir = os.path.join(_p_dir, 'RomDataBu/')
-            for h5 in zip_h5.namelist():
-                zip_h5.extract(h5, unzip_dir)
-            zip_h5.close()
+            for csv in zip_csv.namelist():
+                zip_csv.extract(csv, unzip_dir)
+            zip_csv.close()
         except Exception as e:
             # 解压测试数据zip失败，就不开启测试数据模式了
             print('example env failed! e={}'.format(e))
@@ -380,7 +383,7 @@ def enable_example_env_ipython(show_log=True, check_cn=True):
         except Exception as e:
             logging.exception(e)
     if show_log:
-        logging.info('enable example env will only read RomDataBu/df_kl.h5')
+        logging.info('enable example env will only read RomDataBu/csv')
 
 
 def disable_example_env_ipython(show_log=True):
@@ -504,4 +507,19 @@ def init_logging():
 
 
 init_logging()
+
+
 #  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ 日志 end ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+
+def init_plot_set():
+    """全局plot设置"""
+    import seaborn as sns
+    sns.set_context('notebook', rc={'figure.figsize': (14, 7)})
+    sns.set_style("darkgrid")
+
+    import matplotlib
+    # conda 5.0后需要添加单独matplotlib的figure设置否则pandas的plot size不生效
+    matplotlib.rcParams['figure.figsize'] = (14, 7)
+
+init_plot_set()

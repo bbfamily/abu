@@ -138,13 +138,14 @@ def transform_action(orders_pd):
     return action_pd
 
 
-def apply_action_to_capital(capital, action_pd, kl_pd_manager):
+def apply_action_to_capital(capital, action_pd, kl_pd_manager, show_progress=True):
     """
     多个金融时间序列对应的多个交易行为action_pd，在考虑资金类AbuCapital对象的情况下，对AbuCapital对象进行
     资金时间序列更新，以及判定在有限资金的情况下，交易行为是否可以执行
     :param capital: 资金类AbuCapital实例化对象
     :param action_pd: 交易行为构成的pd.DataFrame对象
     :param kl_pd_manager: 金融时间序列管理对象，AbuKLManager实例
+    :param show_progress: 是否显示进度条，默认True
     :return:
     """
     if action_pd.empty:
@@ -152,12 +153,12 @@ def apply_action_to_capital(capital, action_pd, kl_pd_manager):
         return
 
     # 如果交易symbol数量 > 10000个显示初始化进度条
-    init_show_progress = len(set(action_pd.symbol)) > 10000
+    init_show_progress = (show_progress and len(set(action_pd.symbol)) > 10000)
     # 资金时间序列初始化各个symbol对应的持仓列，持仓价值列
     capital.apply_init_kl(action_pd, show_progress=init_show_progress)
 
     # 如果交易symbol数量 > 1个显示apply进度条
-    show_apply_act_progress = len(set(action_pd.symbol)) > 1
+    show_apply_act_progress = (show_progress and len(set(action_pd.symbol)) > 1)
     # 外部new一个进度条，为使用apply的操作使用
     with AbuProgress(len(action_pd), 0, label='capital.apply_action') as progress:
         # 针对每一笔交易进行buy，sell细节处理，涉及有限资金是否成交判定
@@ -165,7 +166,7 @@ def apply_action_to_capital(capital, action_pd, kl_pd_manager):
                                             args=(progress if show_apply_act_progress else None,))
 
     # 如果交易symbol数量 > 1000个显示apply进度条
-    show_apply_kl = len(set(action_pd.symbol)) > 1000
+    show_apply_kl = (show_progress and len(set(action_pd.symbol)) > 1000)
     # 根据交易行为产生的持仓列，持仓价值列更新资金时间序列
     capital.apply_kl(action_pd, kl_pd_manager, show_progress=show_apply_kl)
 

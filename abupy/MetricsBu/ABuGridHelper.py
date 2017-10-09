@@ -27,11 +27,12 @@ K_GEN_FACTOR_PARAMS_BUY = 0
 K_GEN_FACTOR_PARAMS_SELL = 1
 
 
-def gen_factor_grid(type_param, factors):
+def gen_factor_grid(type_param, factors, need_empty_sell=False):
     """
     :param type_param: grid目标，为K_GEN_FACTOR_PARAMS_BUY或K_GEN_FACTOR_PARAMS_SELL需要重构
     :param factors: 可迭代序列，元素为因子dict 如：
                     {'class': [AbuFactorBuyBreak], 'xd': [42]}, {'class': [AbuFactorBuyBreak],'xd': [60]}
+    :param need_empty_sell: 只针对卖出因子组合添加一个完全不使用任何卖出因子的组合
     :return: 返回因子dict的组合参数序列
     """
     
@@ -46,7 +47,7 @@ def gen_factor_grid(type_param, factors):
         for grid_single in grid_params:
             for single in grid_single:
                 factor_params.append([single])
-    if type_param == K_GEN_FACTOR_PARAMS_SELL:
+    if need_empty_sell and type_param == K_GEN_FACTOR_PARAMS_SELL:
         # 只有sell的factor要加个空的，买的因子要是全空就没办法玩了
         factor_params.append([])  # 最后加一个完全不使用因子的
 

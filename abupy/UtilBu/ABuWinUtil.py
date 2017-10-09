@@ -27,6 +27,8 @@ import mmapfile as mmf
 # noinspection PyUnresolvedReferences
 import win32api as win_api
 
+from ..UtilBu.ABuStrUtil import to_native_str
+
 
 def show_msg(title, msg):
     """
@@ -34,7 +36,7 @@ def show_msg(title, msg):
     :param title: 弹窗标题
     :param msg: 弹窗信息
     """
-    MainWindow(title, msg)
+    MainWindow(to_native_str(title), to_native_str(msg))
 
 
 def socket_bind_recv(socket_fn, cmd_handler):

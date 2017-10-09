@@ -126,7 +126,7 @@ class AbuPickTimeWorker(AbuPickTimeWorkBase):
         # 优先执行买入择时因子专属卖出择时因子，不受买入因子是否被锁的影响
         self._task_attached_sell(today, how='day')
 
-        # 注意回测模式下始终非高频，非当日买菜，不区分美股，A股市场，卖出因子要先于买入因子的执行
+        # 注意回测模式下始终非高频，非当日买卖，不区分美股，A股市场，卖出因子要先于买入因子的执行
         for sell_factor in self.sell_factors:
             # 迭代卖出因子，每个卖出因子针对今日交易数据，已经所以交易单进行择时
             sell_factor.read_fit_day(today, self.orders)

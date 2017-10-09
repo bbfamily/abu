@@ -13,7 +13,6 @@ import numpy as np
 
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EMarketTargetType
-from ..BetaBu import ABuPositionBase
 from ..MarketBu.ABuSymbolFutures import AbuFuturesCn, AbuFuturesGB
 from ..MarketBu.ABuHkUnit import AbuHkUnit
 from ..MarketBu import ABuMarket
@@ -74,14 +73,16 @@ class AbuOrder(object):
         bp = fact.fit()
         # 如果滑点类中决定不买入，撤单子，bp就返回正无穷
         if bp < np.inf:
-            # 默认保证金比例是1，即没有杠杆，修改ABuPositionBase.g_deposit_rate可提高融资能力，
-            # 如果margin＝2－>ABuPositionBase.g_deposit_rate = 0.5, 即只需要一半的保证金
-            deposit_rate = ABuPositionBase.g_deposit_rate
-            # 实例化仓位管理类
-            position = position_class(kl_pd_buy, factor_name, factor_object.kl_pd.name, bp, read_cash, deposit_rate)
+            """
+                实例化仓位管理类
+                仓位管理默认保证金比例是1，即没有杠杆，修改ABuPositionBase.g_deposit_rate可提高融资能力，
+                如果margin＝2－>ABuPositionBase.g_deposit_rate = 0.5, 即只需要一半的保证金，也可同过构建
+                时使用关键字参数完成保证金比例传递
+            """
+            position = position_class(kl_pd_buy, factor_name, factor_object.kl_pd.name, bp, read_cash,
+                                      **factor_object.position_kwargs)
 
             market = ABuEnv.g_market_target if ABuMarket.g_use_env_market_set else position.symbol_market
-
             """
                 由于模块牵扯复杂，暂时不迁移保证金融资相关模块，期货不使用杠杆，即回测不牵扯资金总量的评估
                 if market == EMarketTargetType.E_MARKET_TARGET_FUTURES_CN:

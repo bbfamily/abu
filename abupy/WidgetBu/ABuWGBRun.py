@@ -13,12 +13,13 @@ from IPython.display import display
 import ipywidgets as widgets
 
 from ..UtilBu import ABuProgress, ABuFileUtil
-from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func, browser_down_csv_zip
+from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func, show_msg_toast_func, browser_down_csv_zip
 from ..WidgetBu.ABuWGBRunBase import WidgetRunTT
 from ..WidgetBu.ABuWGBSymbol import WidgetSymbolChoice
 from ..WidgetBu.ABuWGBFBase import BuyFactorWGManager
 from ..WidgetBu.ABuWGSFBase import SellFactorWGManager
 from ..WidgetBu.ABuWGPSBase import PickStockWGManager
+from ..WidgetBu.ABuWGPosBase import PosWGManager
 
 from ..CoreBu.ABu import run_loop_back
 from ..CoreBu.ABuStore import store_abu_result_out_put
@@ -27,7 +28,7 @@ from ..CoreBu.ABuEnv import EDataCacheType, EMarketDataFetchMode, EMarketTargetT
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import filter
 from ..MarketBu.ABuMarket import is_in_sand_box
-from ..BetaBu import ABuAtrPosition
+from ..BetaBu import ABuAtrPosition, ABuPositionBase
 from ..AlphaBu import ABuPickTimeExecute
 from ..TradeBu.ABuBenchmark import AbuBenchmark
 from ..TradeBu.ABuCapital import AbuCapital
@@ -48,16 +49,23 @@ class WidgetRunLoopBack(WidgetBase):
         self.tt = WidgetRunTT()
         self.sc = WidgetSymbolChoice()
         self.bf = BuyFactorWGManager()
+
         self.sf = SellFactorWGManager()
         # 卖出策略管理注册买入策略接收改变
         self.sf.register(self.bf)
+
         self.ps = PickStockWGManager()
         # 选股策略管理注册买入策略接收改变
         self.ps.register(self.bf)
 
+        self.pos = PosWGManager()
+        # 资金管理注册买入策略接收改变
+        self.pos.register(self.bf)
+
         sub_widget_tab = widgets.Tab()
-        sub_widget_tab.children = [self.tt.widget, self.sc.widget, self.bf.widget, self.sf.widget, self.ps.widget]
-        for ind, name in enumerate([u'基本', u'股池', u'买策', u'卖策', u'选股']):
+        sub_widget_tab.children = [self.tt.widget, self.sc.widget, self.bf.widget, self.sf.widget, self.ps.widget,
+                                   self.pos.widget]
+        for ind, name in enumerate([u'基本', u'股池', u'买策', u'卖策', u'选股', u'资管']):
             sub_widget_tab.set_title(ind, name)
 
         self.run_loop_bt = widgets.Button(description=u'开始回测', layout=widgets.Layout(width='98%'),
@@ -168,7 +176,7 @@ class WidgetRunLoopBack(WidgetBase):
     def run_loop_back(self, bt):
         """运行回测所对应的button按钮"""
         # 清理之前的输出结果
-        ABuProgress.clear_output()
+        # ABuProgress.clear_output()
 
         base_run = self.tt
         # 初始资金
@@ -198,18 +206,24 @@ class WidgetRunLoopBack(WidgetBase):
         buy_factors = list(self.bf.factor_dict.values())
         if len(buy_factors) == 0:
             msg = u'没有添加任何一个买入策略！'
-            show_msg_func(msg)
+            show_msg_toast_func(msg)
             return
 
         # 卖出策略可以一个也没有
         sell_factors = list(self.sf.factor_dict.values())
 
+        pos_class_list = list(self.pos.factor_dict.values())
+        if len(pos_class_list) == 1:
+            # 资金仓位管理全局策略设置, [0]全局仓位管理策略只能是一个且是唯一
+            ABuPositionBase.g_default_pos_class = pos_class_list[0]
+
         if choice_symbols is not None and len(choice_symbols) == 1:
             # 如果只有1支股票回测，直接使用这个股票做为做为对比基准
             benchmark = AbuBenchmark(choice_symbols[0])
             capital = AbuCapital(cash, benchmark)
-            # 如果只有1支股票回测，持仓比例调高
-            ABuAtrPosition.g_atr_pos_base = 0.5
+            if len(pos_class_list) == 0:
+                # 如果只有1支股票回测，且没有修改过资金管理设置，持仓比例调高
+                ABuAtrPosition.g_atr_pos_base = 0.5
             # 就一只股票的情况下也不运行选股策略
             orders_pd, action_pd, _ = ABuPickTimeExecute.do_symbols_with_same_factors(choice_symbols,
                                                                                       benchmark,

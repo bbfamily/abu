@@ -9,7 +9,7 @@ from abc import abstractmethod
 
 import ipywidgets as widgets
 
-from ..WidgetBu.ABuWGBase import WidgetFactorBase, WidgetFactorManagerBase
+from ..WidgetBu.ABuWGBase import WidgetFactorBase, WidgetFactorManagerBase, accordion_shut
 from ..WidgetBu.ABuWGBFBase import BFSubscriberMixin
 
 __author__ = '阿布'
@@ -39,8 +39,8 @@ class SellFactorWGManager(WidgetFactorManagerBase):
             self.factor_box = widgets.Box(children=children,
                                           layout=self.factor_layout)
         else:
-            # 一行显示两个，2个为一组，组装sub_children_group序列,
-            sub_children_group = self._sub_children(children, len(children) / 2)
+            # 一行显示两个，3个为一组，组装sub_children_group序列,
+            sub_children_group = self._sub_children(children, len(children) / self._sub_children_group_cnt)
             sub_children_box = [widgets.HBox(sub_children) for sub_children in sub_children_group]
             self.factor_box = widgets.VBox(sub_children_box)
 
@@ -59,17 +59,33 @@ class WidgetFactorSellBase(WidgetFactorBase, BFSubscriberMixin):
 
     def __init__(self, wg_manager):
         super(WidgetFactorSellBase, self).__init__(wg_manager)
-        self.add = widgets.Button(description=u'添加为全局卖出策略', layout=widgets.Layout(width='98%'),
-                                  button_style='info')
-        # 添加全局卖出策略指令按钮
-        self.add.on_click(self.add_sell_factor)
-        # 运行混入的BFSubscriberMixin中ui初始化
-        self.subscriber_ui([u'点击\'已添加的买入策略\'框中的买入策略', u'将卖出策略做为买入策略的附属卖出策略'])
-        # 买入策略框点击行为：将本卖出策略加到对应的买入策略做为附属
-        self.buy_factors.observe(self.add_sell_factor_to_buy_factor, names='value')
-        self.accordion.set_title(0, u'添加为指定买入因子的卖出策略')
-        self.accordion.selected_index = -1
-        self.add_box = widgets.VBox([self.add, self.accordion])
+
+        if wg_manager.add_button_style == 'grid':
+            add_cb = widgets.Button(description=u'添加为寻找卖出策略最优参数组合', layout=widgets.Layout(width='98%'),
+                                    button_style='info')
+            add_cb.on_click(self.add_sell_factor)
+
+            add_dp = widgets.Button(description=u'添加为寻找独立卖出策略最佳组合', layout=widgets.Layout(width='98%'),
+                                    button_style='warning')
+            add_dp.on_click(self.add_sell_factor_grid)
+
+            self.add = widgets.VBox([add_cb, add_dp])
+        else:
+            self.add = widgets.Button(description=u'添加为全局卖出策略', layout=widgets.Layout(width='98%'),
+                                      button_style='info')
+            # 添加全局卖出策略指令按钮
+            self.add.on_click(self.add_sell_factor)
+
+        if self.wg_manager.show_add_buy:
+            # 运行混入的BFSubscriberMixin中ui初始化
+            self.subscriber_ui([u'点击\'已添加的买入策略\'框中的买入策略', u'将卖出策略做为买入策略的附属卖出策略'])
+            # 买入策略框点击行为：将本卖出策略加到对应的买入策略做为附属
+            self.buy_factors.observe(self.add_sell_factor_to_buy_factor, names='value')
+            self.accordion.set_title(0, u'添加为指定买入因子的卖出策略')
+            accordion_shut(self.accordion)
+            self.add_box = widgets.VBox([self.add, self.accordion])
+        else:
+            self.add_box = self.add
 
         self._init_widget()
 
@@ -95,7 +111,15 @@ class WidgetFactorSellBase(WidgetFactorBase, BFSubscriberMixin):
         factor_dict, factor_desc_key = self.make_sell_factor_unique()
         self.wg_manager.add_factor(factor_dict, factor_desc_key)
 
+    # noinspection PyUnusedLocal
+    def add_sell_factor_grid(self, bt):
+        """grid search，构建策略字典对象factor_dict以及唯一策略描述字符串factor_desc_key"""
+        factor_dict, factor_desc_key = self.make_sell_factor_unique()
+        # 因子序列value都套上list
+        factors_grid = {bf_key: [factor_dict[bf_key]]
+                        for bf_key in factor_dict.keys()}
+        self.wg_manager.add_factor(factor_dict, factor_desc_key)
+
     def add_sell_factor_to_buy_factor(self, select):
         """对应按钮添加策略到指定买入策略中"""
         self.add_to_buy_factor(select, self.make_sell_factor_unique, 'sell_factors')
-
