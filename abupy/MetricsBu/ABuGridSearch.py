@@ -169,9 +169,6 @@ def grid_mul_func(read_cash, benchmark, factors, choice_symbols, kl_pd_manager=N
                                          stock_pickers)
             result_tuple_array.append(result_tuple)
 
-            # 清理一下输出, 不能wait, windows上一些浏览器会卡死
-            ABuProgress.do_clear_output(wait=False)
-
     return result_tuple_array
 
 

@@ -26,6 +26,7 @@ from ..UtilBu import ABuScalerUtil
 from ..UtilBu.ABuProgress import do_clear_output
 from ..SimilarBu.ABuSimilar import from_local
 from ..TLineBu.ABuTLine import AbuTLine
+from ..UtilBu.ABuDTUtil import plt_show
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -253,12 +254,13 @@ def calc_similar(symbol, cmp_symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_C
         kl_pd, kl_pd_cmp = ABuScalerUtil.scaler_xy(kl_pd.close,
                                                    kl_pd_cmp.close,
                                                    type_look='look_max')
-        # 首先可视化已经缩放到一个级别的两个金融序列
-        kl_pd.plot()
-        kl_pd_cmp.plot()
-        plt.legend([symbol, cmp_symbol])
-        plt.title('similar draw')
-        plt.show()
+
+        with plt_show():
+            # 首先可视化已经缩放到一个级别的两个金融序列
+            kl_pd.plot()
+            kl_pd_cmp.plot()
+            plt.legend([symbol, cmp_symbol])
+            plt.title('similar draw')
 
         distance = (kl_pd - kl_pd_cmp)
         # 通过distance构造技术线对象AbuTLine，可视化几个技术线
@@ -373,12 +375,13 @@ def calc_similar_top(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE
             kl_pd_close, kl_pd_cmp_close = ABuScalerUtil.scaler_xy(kl_pd.close,
                                                                    mul_pd[cmp_symbol].close,
                                                                    type_look='look_max')
-            # 缩放后的数据进行可视化对比
-            kl_pd_close.plot()
-            kl_pd_cmp_close.plot()
-            plt.legend([symbol, cmp_symbol])
-            plt.title('similar draw')
-            plt.show()
+
+            with plt_show():
+                # 缩放后的数据进行可视化对比
+                kl_pd_close.plot()
+                kl_pd_cmp_close.plot()
+                plt.legend([symbol, cmp_symbol])
+                plt.title('similar draw')
 
     """
         eg：rank_head
@@ -554,7 +557,7 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
             2016-07-26  5585.4872  5122.5141  4735.6581  4451.3468  4615.6963
         """
         # 可视化scaler_matrix操作后的close
-        close_panel_pd.plot()
+        close_panel_pd.plot(figsize=ABuEnv.g_plt_figsize)
         plt.title('close panel pd scaler_matrix')
         plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
         plt.show()
@@ -600,11 +603,10 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
             2016-07-26 -1.6473 -0.8509  0.2018  0.3922  0.4085        -1.2702
         """
         regular_diff = ABuScalerUtil.scaler_std(close_panel_pd_cp - close_panel_pd)
-        regular_diff.plot()
+        regular_diff.plot(figsize=ABuEnv.g_plt_figsize)
         plt.title('regular diff')
         plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
         plt.show()
-
         """
             distance_votes = regular_diff.sum(axis=1):
 
@@ -632,16 +634,17 @@ def coint_similar(symbol, sum_rank=None, corr_jobs=(ECoreCorrType.E_CORE_TYPE_PE
         below = votes_mean - votes_std
         close_regular = ABuScalerUtil.scaler_std(benchmark.kl_pd.close)
         close_regular = (close_regular * distance_votes.max() / 2)
-        # noinspection PyUnresolvedReferences
-        close_regular.plot()
-        distance_votes.plot()
 
-        plt.axhline(votes_mean, color='r')
-        plt.axhline(above, color='c')
-        plt.axhline(below, color='g')
+        with plt_show():
+            # noinspection PyUnresolvedReferences
+            close_regular.plot()
+            distance_votes.plot()
 
-        plt.title('coint distance votes')
-        plt.legend(['close regular', 'distance votes', 'votes mean', 'dvotes above', 'dvotes below'],
-                   bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-        plt.show()
+            plt.axhline(votes_mean, color='r')
+            plt.axhline(above, color='c')
+            plt.axhline(below, color='g')
+
+            plt.title('coint distance votes')
+            plt.legend(['close regular', 'distance votes', 'votes mean', 'dvotes above', 'dvotes below'],
+                       bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     return p_value_sorted, sum_rank

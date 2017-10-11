@@ -82,6 +82,13 @@ def _distance_xy(distance_func, x, y):
     :param y: 可迭代序列
     :return: float数值
     """
+    if hasattr(x, 'shape') and len(x.shape) == 1:
+        # 有shape 但是eg: (10,)纠正为(1, 10)
+        x = x.reshape(1, -1)
+    if hasattr(y, 'shape') and len(y.shape) == 1:
+        # 有shape 但是eg: (10,)纠正为(1, 10)
+        y = y.reshape(1, -1)
+
     distance = distance_func(x, y)
     if isinstance(distance, float):
         return distance

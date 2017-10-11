@@ -14,6 +14,7 @@ import pandas as pd
 from ..TLineBu.ABuTLine import AbuTLine
 from ..CoreBu.ABuPdHelper import pd_rolling_std, pd_ewm_mean, pd_ewm_std, pd_resample
 from ..UtilBu import ABuStatsUtil
+from ..UtilBu.ABuDTUtil import plt_show
 
 
 def show_wave_return(kl_pd):
@@ -156,24 +157,23 @@ def _show_wave(wave, above, wave_mean, below, xd_mean_close):
     不使用AbuTLine.show，因为需要绘制另一个对比line，价格均线xd_mean_close，
     使用双坐标轴的方式进行可视化
     """
-    fig, ax1 = plt.subplots()
-    plt.plot(wave)
-    plt.axhline(above, color='c')
-    plt.axhline(wave_mean, color='r')
-    plt.axhline(below, color='g')
-    _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
-    plt.legend(['wave', 'above', 'wave_mean', 'below'],
-               bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    with plt_show():
+        fig, ax1 = plt.subplots()
+        plt.plot(wave)
+        plt.axhline(above, color='c')
+        plt.axhline(wave_mean, color='r')
+        plt.axhline(below, color='g')
+        _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
+        plt.legend(['wave', 'above', 'wave_mean', 'below'],
+                   bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
-    # 采用左右两个y轴坐标显示
-    # noinspection PyUnusedLocal
-    ax2 = ax1.twinx()
-    plt.plot(xd_mean_close, c='y')
-    plt.plot(xd_mean_close, 'ro')
-    plt.legend(['mean close'],
-               bbox_to_anchor=(1.05, 1), loc=3, borderaxespad=0.)
-    # 当时间序列太长时使用将时间显示倾斜30度角
-    _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
-
-    plt.title('wave line')
-    plt.show()
+        # 采用左右两个y轴坐标显示
+        # noinspection PyUnusedLocal
+        ax2 = ax1.twinx()
+        plt.plot(xd_mean_close, c='y')
+        plt.plot(xd_mean_close, 'ro')
+        plt.legend(['mean close'],
+                   bbox_to_anchor=(1.05, 1), loc=3, borderaxespad=0.)
+        # 当时间序列太长时使用将时间显示倾斜30度角
+        _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
+        plt.title('wave line')

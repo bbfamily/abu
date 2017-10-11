@@ -17,6 +17,7 @@ import pandas as pd
 from ..MarketBu import ABuMarketDrawing
 from ..CoreBu.ABuPdHelper import pd_resample
 from ..UtilBu.ABuDateUtil import fmt_date
+from ..UtilBu.ABuDTUtil import plt_show
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -239,20 +240,20 @@ def _show_jump_line(kl_pd, jump_lines):
     :param kl_pd: 金融时间序列，pd.DataFrame对象
     :param jump_lines: AbuJumpTuple对象序列
     """
-    plt.plot(kl_pd.close)
-    # 迭代跳空点，通过itertools.cycle(K_PLT_MAP_STYLE)形成不同的颜色
-    for jump_tuple, cs_color in zip(jump_lines, itertools.cycle(K_PLT_MAP_STYLE)):
-        # 跳空点位对应的价格上面绘制横线，label标注跳空能量
-        plt.axhline(jump_tuple.price, color=cs_color, label='power:' + str(jump_tuple.power))
-        # 跳空描述：日期：up／down， 根据jump_tuple.direction跳空方向
-        jump_desc = '{} : {}'.format(jump_tuple.date, ' up ' if jump_tuple.direction > 0 else ' down ')
-        # 再把这个跳空时间点上画一个圆圈进行标示
-        plt.plot(jump_tuple.date, jump_tuple.price, 'ro', markersize=12, markeredgewidth=(1.0 * jump_tuple.power),
-                 markerfacecolor='None', markeredgecolor=cs_color, label=jump_desc)
+    with plt_show():
+        plt.plot(kl_pd.close)
+        # 迭代跳空点，通过itertools.cycle(K_PLT_MAP_STYLE)形成不同的颜色
+        for jump_tuple, cs_color in zip(jump_lines, itertools.cycle(K_PLT_MAP_STYLE)):
+            # 跳空点位对应的价格上面绘制横线，label标注跳空能量
+            plt.axhline(jump_tuple.price, color=cs_color, label='power:' + str(jump_tuple.power))
+            # 跳空描述：日期：up／down， 根据jump_tuple.direction跳空方向
+            jump_desc = '{} : {}'.format(jump_tuple.date, ' up ' if jump_tuple.direction > 0 else ' down ')
+            # 再把这个跳空时间点上画一个圆圈进行标示
+            plt.plot(jump_tuple.date, jump_tuple.price, 'ro', markersize=12, markeredgewidth=(1.0 * jump_tuple.power),
+                     markerfacecolor='None', markeredgecolor=cs_color, label=jump_desc)
 
-    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-    plt.title('jump lines')
-    plt.show()
+        plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+        plt.title('jump lines')
 
 
 def calc_jump_line_weight(kl_pd, sw=(0.5, 0.5), power_threshold=2.0, jump_diff_factor=1, show=True):

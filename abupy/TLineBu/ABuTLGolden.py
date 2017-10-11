@@ -12,6 +12,7 @@ from collections import namedtuple
 import matplotlib.pyplot as plt
 
 from ..TLineBu import ABuTLExecute
+from ..UtilBu.ABuDTUtil import plt_show
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -56,38 +57,38 @@ def calc_golden(kl_pd, show=True):
     _, above950 = ABuTLExecute.below_above_gen(*pts_dict[0.95])
 
     if show:
-        # 开始可视化黄金分割及比例分割结果
-        plt.axes([0.025, 0.025, 0.95, 0.95])
-        plt.plot(kl_close)
+        with plt_show():
+            # 开始可视化黄金分割及比例分割结果
+            plt.axes([0.025, 0.025, 0.95, 0.95])
+            plt.plot(kl_close)
 
-        # 0.70, 0.80, 0.90, 0.95，lw线条粗度递减
-        plt.axhline(above950, lw=3.5, color='c')
-        plt.axhline(above900, lw=3.0, color='y')
-        plt.axhline(above800, lw=2.5, color='k')
-        plt.axhline(above700, lw=2.5, color='m')
+            # 0.70, 0.80, 0.90, 0.95，lw线条粗度递减
+            plt.axhline(above950, lw=3.5, color='c')
+            plt.axhline(above900, lw=3.0, color='y')
+            plt.axhline(above800, lw=2.5, color='k')
+            plt.axhline(above700, lw=2.5, color='m')
 
-        # 中间层的618是带，有上下底
-        plt.axhline(above618, lw=2, color='r')
-        plt.axhline(below618, lw=1.5, color='r')
-        plt.fill_between(kl_pd.index, above618, below618,
-                         alpha=0.1, color="r")
-        # 中间层的382是带，有上下底
-        plt.axhline(above382, lw=1.5, color='g')
-        plt.axhline(below382, lw=2, color='g')
-        plt.fill_between(kl_pd.index, above382, below382,
-                         alpha=0.1, color="g")
+            # 中间层的618是带，有上下底
+            plt.axhline(above618, lw=2, color='r')
+            plt.axhline(below618, lw=1.5, color='r')
+            plt.fill_between(kl_pd.index, above618, below618,
+                             alpha=0.1, color="r")
+            # 中间层的382是带，有上下底
+            plt.axhline(above382, lw=1.5, color='g')
+            plt.axhline(below382, lw=2, color='g')
+            plt.fill_between(kl_pd.index, above382, below382,
+                             alpha=0.1, color="g")
 
-        # 0.20, 0.25, 0.30 lw线条粗度递曾
-        plt.axhline(below300, lw=2.5, color='k')
-        plt.axhline(below250, lw=3.0, color='y')
-        plt.axhline(below200, lw=3.5, color='c')
+            # 0.20, 0.25, 0.30 lw线条粗度递曾
+            plt.axhline(below300, lw=2.5, color='k')
+            plt.axhline(below250, lw=3.0, color='y')
+            plt.axhline(below200, lw=3.5, color='c')
 
-        _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
-        plt.legend([kl_pd.name, 'above950', 'above900', 'above800', 'above700', 'above618', 'below618',
-                    'above382', 'below382', 'below300', 'below250', 'below200'], bbox_to_anchor=(1.05, 1), loc=2,
-                   borderaxespad=0.)
-        plt.title('between golden')
-        plt.show()
+            _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
+            plt.legend([kl_pd.name, 'above950', 'above900', 'above800', 'above700', 'above618', 'below618',
+                        'above382', 'below382', 'below300', 'below250', 'below200'], bbox_to_anchor=(1.05, 1), loc=2,
+                       borderaxespad=0.)
+            plt.title('between golden')
 
     return namedtuple('golden', ['g382', 'gex382', 'g500', 'gex500', 'g618',
                                  'gex618', 'above618', 'below618', 'above382', 'below382',

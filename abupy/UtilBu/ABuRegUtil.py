@@ -18,6 +18,7 @@ from sklearn import metrics
 
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuPdHelper import pd_rolling_mean
+from ..UtilBu.ABuDTUtil import plt_show
 from ..UtilBu.ABuStatsUtil import euclidean_distance_xy, manhattan_distances_xy, cosine_distances_xy
 
 
@@ -56,17 +57,17 @@ def regress_xy(x, y, mode=True, zoom=False, show=False):
         y_fit = np.polynomial.Chebyshev.fit(x, y, 1)(x)
         model = None
     if show:
-        # 取-1因为有OLS add_constant和Chebyshev没有add_constant的两种情况
-        x_plot = x[:, -1]
-        # 绘制x， y
-        plt.plot(x_plot, y)
-        # 绘制x， 拟合的y
-        plt.plot(x_plot, y_fit)
-        plt.show()
+        with plt_show():
+            # 取-1因为有OLS add_constant和Chebyshev没有add_constant的两种情况
+            x_plot = x[:, -1]
+            # 绘制x， y
+            plt.plot(x_plot, y)
+            # 绘制x， 拟合的y
+            plt.plot(x_plot, y_fit)
 
-        # 再使用sns绘制，对比拟合结果
-        sns.regplot(x=x_plot, y=y)
-        plt.show()
+        with plt_show():
+            # 再使用sns绘制，对比拟合结果
+            sns.regplot(x=x_plot, y=y)
     return model, y_fit
 
 
@@ -123,11 +124,11 @@ def regress_xy_polynomial(x, y, poly=1, zoom=False, show=False):
     y_fit = polynomial(x)
 
     if show:
-        # 可视化显示拟合结果
-        plt.plot(x, y)
-        plt.plot(x, y_fit)
-        plt.title('{} poly zoom ={}'.format(poly, zoom))
-        plt.show()
+        with plt_show():
+            # 可视化显示拟合结果
+            plt.plot(x, y)
+            plt.plot(x, y_fit)
+            plt.title('{} poly zoom ={}'.format(poly, zoom))
 
     return y_fit
 
@@ -273,13 +274,13 @@ def valid_poly(y, poly=1, zoom=False, show=True, metrics_func=metrics_rmse):
     if distance_fit <= distance_mean:
         valid = True
     if show:
-        # 原始曲线y，均线，以及拟合曲线可视化
-        plt.plot(x, y)
-        plt.plot(x, y_roll_mean)
-        plt.plot(x, y_fit)
-        plt.legend(['close', 'rolling window={}'.format(rolling_window), 'y_fit poly={}'.format(poly)])
-        plt.show()
-        log_func('metrics_func rolling_mean={}, metrics_func y_fit={}'.format(distance_mean, distance_fit))
+        with plt_show():
+            # 原始曲线y，均线，以及拟合曲线可视化
+            plt.plot(x, y)
+            plt.plot(x, y_roll_mean)
+            plt.plot(x, y_fit)
+            plt.legend(['close', 'rolling window={}'.format(rolling_window), 'y_fit poly={}'.format(poly)])
+            log_func('metrics_func rolling_mean={}, metrics_func y_fit={}'.format(distance_mean, distance_fit))
     return valid
 
 
@@ -347,13 +348,13 @@ def search_best_poly(y, poly_min=1, poly_max=100, zoom=False, show=True, metrics
         if distance_fit <= distance_mean * 0.6:
             # 如果distance_fit <= distance_mean* 0.6即代表拟合曲线可以比较完美的代表原始曲线y的走势，停止迭代
             if show:
-                # 原始曲线y，均线，以及拟合曲线可视化
-                plt.plot(x, y)
-                plt.plot(x, y_roll_mean)
-                plt.plot(x, y_fit)
-                plt.legend(['close', 'rolling window={}'.format(rolling_window), 'y_fit poly={}'.format(poly)])
-                log_func('metrics_func rolling_mean={}, metrics_func y_fit={}'.format(distance_mean, distance_fit))
-                plt.show()
+                with plt_show():
+                    # 原始曲线y，均线，以及拟合曲线可视化
+                    plt.plot(x, y)
+                    plt.plot(x, y_roll_mean)
+                    plt.plot(x, y_fit)
+                    plt.legend(['close', 'rolling window={}'.format(rolling_window), 'y_fit poly={}'.format(poly)])
+                    log_func('metrics_func rolling_mean={}, metrics_func y_fit={}'.format(distance_mean, distance_fit))
             break
         poly += 1
     return poly

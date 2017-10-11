@@ -24,6 +24,7 @@ from ..CoreBu.ABuEnv import EMarketDataSplitMode
 from ..UtilBu.ABuProgress import AbuProgress
 from ..UtilBu import ABuRegUtil, ABuScalerUtil
 from ..MarketBu import ABuSymbolPd
+from ..UtilBu.ABuDTUtil import plt_show
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -126,9 +127,9 @@ def shift_distance(arr, how, slice_start=0, slice_end=-1, color='r', show=True, 
                  [end_pos[1], shift_pos[1]], c=color, label=legend)
         plt.legend(loc=2)
         if ps:
-            # 是否立即show
-            plt.plot(slice_arr)
-            plt.show()
+            with plt_show():
+                # 是否立即show
+                plt.plot(slice_arr)
         if show_log:
             log_func(legend)
 
@@ -246,14 +247,15 @@ def calc_pair_speed(symbol, benchmark_symbol, resample=5, speed_key='close',
     corr = ABuCorrcoef.corr_xy(kl.close, benchmark_kl.close, ECoreCorrType.E_CORE_TYPE_SPERM)
 
     if show:
-        # 可视化symbol对的趋势走势对比
-        kl_sl = ABuScalerUtil.scaler_one(kl[speed_key])
-        benchmark_kl_sl = ABuScalerUtil.scaler_one(benchmark_kl[speed_key])
-        kl_resamp = pd_resample(kl_sl, '{}D'.format(resample), how='mean')
-        benchmark_kl_resamp = pd_resample(benchmark_kl_sl, '{}D'.format(resample), how='mean')
-        kl_resamp.plot(label='kl', style=['*--'])
-        benchmark_kl_resamp.plot(label='benchmark', style=['^--'])
-        plt.legend(loc='best')
+        with plt_show():
+            # 可视化symbol对的趋势走势对比
+            kl_sl = ABuScalerUtil.scaler_one(kl[speed_key])
+            benchmark_kl_sl = ABuScalerUtil.scaler_one(benchmark_kl[speed_key])
+            kl_resamp = pd_resample(kl_sl, '{}D'.format(resample), how='mean')
+            benchmark_kl_resamp = pd_resample(benchmark_kl_sl, '{}D'.format(resample), how='mean')
+            kl_resamp.plot(label='kl', style=['*--'])
+            benchmark_kl_resamp.plot(label='benchmark', style=['^--'])
+            plt.legend(loc='best')
     # 返回参数symbol, benchmark_symbol所对应的趋势变化敏感速度数值, 以及相关性＊敏感度＝敏感度置信度
     return kl_speed, benchmark_kl_speed, corr
 
@@ -433,7 +435,7 @@ def select_k_support_resistance(support_resistance, thresh=0.06, label='', show=
     est = est_arr[select_k - 1]
 
     if show:
-        plt.subplot(211)
+        plt.subplot(211, figsize=ABuEnv.g_plt_figsize)
         plt.title('{}: elbow method to inform k choice'.format(label))
         # 手肘法可视化最佳聚类个数值，通过silhouette_score
         silhouette_score = [metrics.silhouette_score(support_resistance, e.labels_, metric='euclidean')
@@ -443,7 +445,7 @@ def select_k_support_resistance(support_resistance, thresh=0.06, label='', show=
         plt.ylabel('{}: Silhouette Coefficient'.format(label))
 
         # 可视化方差最佳聚类
-        plt.subplot(212)
+        plt.subplot(212, figsize=ABuEnv.g_plt_figsize)
         plt.plot(k_rng, sum_squares, 'b*-')
         plt.grid(True)
         plt.xlabel('{}: k'.format(label))
@@ -475,19 +477,19 @@ def support_resistance_predict(x, y, est, support_resistance, is_support, show=T
         array([0, 0, 1, 1, 0, 1, 1, 0, 0, 2, 1, 0, 0, 2, 0, 0, 0], dtype=int32)
     """
     if show:
-        # FIXME 这里没有对超出颜色的范围进行处理，如果聚类个数超过颜色，会出错
-        colors = np.array(['#FF0054', '#FBD039', '#23C2BC',
-                           '#CC99CC', '#CC3399', '#33FF99', '#00CCFF', '#66FF66', '#339999',
-                           '#6666CC', '#666666', '#663333', '#660033', '#FF0054', '#FBD039', '#23C2BC',
-                           '#CC99CC', '#CC3399', '#33FF99', '#00CCFF', '#66FF66', '#339999',
-                           '#6666CC', '#666666', '#663333', '#660033', '#6666CC', '#666666', '#663333',
-                           '#660033', '#FF0054', '#FBD039', '#23C2BC', '#CC99CC', '#CC3399', '#33FF99',
-                           '#00CCFF', '#66FF66', '#339999'])
-        plt.plot(x, y, '-')
-        # c=colors[support_resistance_k]即对不同的聚类采用不同的颜色进行标示
-        plt.scatter(support_resistance[:, 0], support_resistance[:, 1], c=colors[support_resistance_k], s=60)
-        plt.title('{}: k choice'.format('support' if is_support else 'resistance'))
-        plt.show()
+        with plt_show():
+            # FIXME 这里没有对超出颜色的范围进行处理，如果聚类个数超过颜色，会出错
+            colors = np.array(['#FF0054', '#FBD039', '#23C2BC',
+                               '#CC99CC', '#CC3399', '#33FF99', '#00CCFF', '#66FF66', '#339999',
+                               '#6666CC', '#666666', '#663333', '#660033', '#FF0054', '#FBD039', '#23C2BC',
+                               '#CC99CC', '#CC3399', '#33FF99', '#00CCFF', '#66FF66', '#339999',
+                               '#6666CC', '#666666', '#663333', '#660033', '#6666CC', '#666666', '#663333',
+                               '#660033', '#FF0054', '#FBD039', '#23C2BC', '#CC99CC', '#CC3399', '#33FF99',
+                               '#00CCFF', '#66FF66', '#339999'])
+            plt.plot(x, y, '-')
+            # c=colors[support_resistance_k]即对不同的聚类采用不同的颜色进行标示
+            plt.scatter(support_resistance[:, 0], support_resistance[:, 1], c=colors[support_resistance_k], s=60)
+            plt.title('{}: k choice'.format('support' if is_support else 'resistance'))
     d_pd = pd.DataFrame(support_resistance, columns=['x', 'y'])
     d_pd['cluster'] = support_resistance_k
     """
@@ -653,15 +655,15 @@ def find_golden_point_ex(x, y, show=False):
     sp50 = stats.scoreatpercentile(y, 50.0)
 
     if show:
-        # 可视化操作
-        plt.plot(x, y)
-        plt.axhline(sp50, color='c')
-        plt.axhline(sp618, color='r')
-        plt.axhline(sp382, color='g')
-        _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
-        plt.legend(['TLine', 'sp50', 'sp618', 'sp382'],
-                   bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-        plt.show()
+        with plt_show():
+            # 可视化操作
+            plt.plot(x, y)
+            plt.axhline(sp50, color='c')
+            plt.axhline(sp618, color='r')
+            plt.axhline(sp382, color='g')
+            _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
+            plt.legend(['TLine', 'sp50', 'sp618', 'sp382'],
+                       bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
     return sp382, sp50, sp618
 
@@ -676,14 +678,14 @@ def find_golden_point(x, y, show=False):
     sp618 = (cs_max - cs_min) * 0.618 + cs_min
     sp50 = (cs_max - cs_min) * 0.5 + cs_min
     if show:
-        # 可视化操作
-        plt.plot(x, y)
-        plt.axhline(sp50, color='c')
-        plt.axhline(sp618, color='r')
-        plt.axhline(sp382, color='g')
-        _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
-        plt.legend(['TLine', 'sp50', 'sp618', 'sp382'],
-                   bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-        plt.show()
+        with plt_show():
+            # 可视化操作
+            plt.plot(x, y)
+            plt.axhline(sp50, color='c')
+            plt.axhline(sp618, color='r')
+            plt.axhline(sp382, color='g')
+            _ = plt.setp(plt.gca().get_xticklabels(), rotation=30)
+            plt.legend(['TLine', 'sp50', 'sp618', 'sp382'],
+                       bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
     return sp382, sp50, sp618

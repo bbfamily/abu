@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 """
-    通用装饰器工具模块
+    通用装饰器, 上下文管理器工具模块
 """
 
 from __future__ import absolute_import
@@ -13,9 +13,11 @@ import pdb
 import time
 import warnings
 from collections import Iterable
+from contextlib import contextmanager
 
 import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
 
 from ..CoreBu import ABuEnv
 from ..CoreBu.ABuFixes import six
@@ -154,6 +156,7 @@ def catch_error(return_val=None, log=True):
                     out: 100
     :param log: 是否打印错误日志
     """
+
     def decorate(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
@@ -173,6 +176,7 @@ def consume_time(func):
     作用范围：函数装饰器 (模块函数或者类函数)
     功能：简单统计被装饰函数运行时间
     """
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.time()
@@ -231,3 +235,17 @@ def except_debug(func):
             return func(*args, **kwargs)
 
     return wrapper
+
+
+@contextmanager
+def plt_show():
+    """
+        在conda5.00封装的matplotlib中全局rc的figsize在使用notebook并且开启直接show的模式下
+        代码中显示使用plt.show会将rc中的figsize重置，所以需要显示使用plt.show的地方，通过plt_show
+        上下文管理器进行规范控制：
+        1. 上文figsize设置ABuEnv中的全局g_plt_figsize
+        2. 下文显示调用plt.show()
+    """
+    plt.figure(figsize=ABuEnv.g_plt_figsize)
+    yield
+    plt.show()

@@ -308,9 +308,9 @@ class AbuMulPidProgress(object):
         if clear:
             # clear在mac上应该打开, 由于windows某些版本浏览器wait=True会有阻塞情况，如果wait＝False, 有clear之后的风险，
             do_clear_output(wait=True)  # wait 需要同步否则会延迟clear
-            # clear_std_output()
         else:
-            print("pid:{} done!".format(os.getpid()))
+            # print("pid:{} done!".format(os.getpid()))
+            pass
 
         self.close_ui_progress()
 

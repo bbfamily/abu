@@ -508,18 +508,20 @@ def init_logging():
 
 init_logging()
 
-
 #  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ 日志 end ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+g_plt_figsize = (14, 7)
 
 
 def init_plot_set():
     """全局plot设置"""
     import seaborn as sns
-    sns.set_context('notebook', rc={'figure.figsize': (14, 7)})
+    sns.set_context('notebook', rc={'figure.figsize': g_plt_figsize})
     sns.set_style("darkgrid")
 
     import matplotlib
     # conda 5.0后需要添加单独matplotlib的figure设置否则pandas的plot size不生效
-    matplotlib.rcParams['figure.figsize'] = (14, 7)
+    matplotlib.rcParams['figure.figsize'] = g_plt_figsize
+
 
 init_plot_set()

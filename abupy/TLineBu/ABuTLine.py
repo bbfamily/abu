@@ -27,6 +27,7 @@ from ..UtilBu import ABuRegUtil
 from ..UtilBu import ABuStatsUtil
 from ..UtilBu.ABuDTUtil import arr_to_numpy
 from ..UtilBu.ABuLazyUtil import LazyFunc
+from ..UtilBu.ABuDTUtil import plt_show
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -205,7 +206,7 @@ class AbuTLine(FreezeAttrMixin):
 
     def show(self):
         """可视化技术线最基本的信息，high，mean，low"""
-        plt.subplots()
+        plt.subplots(figsize=ABuEnv.g_plt_figsize)
         # tl装载技术线本体
         plt.plot(self.tl)
         plt.axhline(self.high, color='c')
@@ -295,6 +296,7 @@ class AbuTLine(FreezeAttrMixin):
         step = self.step_x_to_step(step_x)
 
         if show:
+            plt.figure(figsize=ABuEnv.g_plt_figsize)
             plt.plot(y)
         shift_distance_list = []
         for slice_end, color in zip(np.arange(step, len(y), step), itertools.cycle(K_PLT_MAP_STYLE)):
@@ -314,17 +316,17 @@ class AbuTLine(FreezeAttrMixin):
         y = self.tl
         step = self.step_x_to_step(step_x)
 
-        plt.plot(y)
-        for slice_end, color in zip(np.arange(step, len(y), step), itertools.cycle(K_PLT_MAP_STYLE)):
-            slice_start = slice_end - step
-            slice_arr = y[slice_start:slice_end]
-            # 通过regress_trend_channel获取切片段的上中下三段拟合曲线值
-            y_below, y_fit, y_above = regress_trend_channel(slice_arr)
-            x = self.x[slice_start:slice_end]
-            plt.plot(x, y_below, 'g')
-            plt.plot(x, y_fit, 'y')
-            plt.plot(x, y_above, 'r')
-        plt.show()
+        with plt_show():
+            plt.plot(y)
+            for slice_end, color in zip(np.arange(step, len(y), step), itertools.cycle(K_PLT_MAP_STYLE)):
+                slice_start = slice_end - step
+                slice_arr = y[slice_start:slice_end]
+                # 通过regress_trend_channel获取切片段的上中下三段拟合曲线值
+                y_below, y_fit, y_above = regress_trend_channel(slice_arr)
+                x = self.x[slice_start:slice_end]
+                plt.plot(x, y_below, 'g')
+                plt.plot(x, y_fit, 'y')
+                plt.plot(x, y_above, 'r')
 
     def show_skeleton_channel(self, with_mean=True, step_x=1.0):
         """
@@ -336,13 +338,13 @@ class AbuTLine(FreezeAttrMixin):
         :param with_mean: 是否绘制ESkeletonHow.skeleton_mean 中轨通道，默认True
         :param step_x: 时间步长控制参数，默认1.0，float
         """
+        plt.figure(figsize=ABuEnv.g_plt_figsize)
         self.show_skeleton(how=ESkeletonHow.skeleton_min, step_x=step_x, ps=False)
         self.show_skeleton(how=ESkeletonHow.skeleton_max, step_x=step_x, ps=False)
         if with_mean:
             self.show_skeleton(how=ESkeletonHow.skeleton_mean, step_x=step_x, ps=False)
-        plt.plot(self.tl)
         # 前面的绘制ps都是False, 这里统一show
-        plt.show()
+        plt.plot(self.tl)
 
     def show_skeleton(self, how=ESkeletonHow.skeleton_min, step_x=1.0, ps=True):
         """
@@ -358,6 +360,8 @@ class AbuTLine(FreezeAttrMixin):
         last_pos = None
         # 根据how映射计算数据序列骨架点位的方法
         how_func = skeleton_how(how)
+        if ps:
+            plt.figure(figsize=ABuEnv.g_plt_figsize)
         for slice_end, color in zip(np.arange(step, len(self.tl), step), itertools.cycle(K_PLT_MAP_STYLE)):
             slice_start = slice_end - step
             slice_arr = self.tl[slice_start:slice_end]
@@ -389,7 +393,6 @@ class AbuTLine(FreezeAttrMixin):
                 last_pos = draw_pos
         if ps:
             plt.plot(self.tl)
-            plt.show()
 
     def show_skeleton_bfgs(self, step_x=1.0):
         """
@@ -403,24 +406,24 @@ class AbuTLine(FreezeAttrMixin):
         # 每个单位都先画一个点，由两个点连成一条直线形成股价骨架图
         last_pos = None
 
-        # 每步长step单位求一次局部最小
-        for find_min_pos in np.arange(step, len(self.tl), step):
-            # sco.fmin_bfgs计算骨架点位值
-            local_min_pos = int(bfgs_min_pos(find_min_pos, linear_interp, len(self.tl)))
-            if local_min_pos == -1:
-                # 其实主要就是利用这里找不到的情况进行过滤
-                continue
+        with plt_show():
+            # 每步长step单位求一次局部最小
+            for find_min_pos in np.arange(step, len(self.tl), step):
+                # sco.fmin_bfgs计算骨架点位值
+                local_min_pos = int(bfgs_min_pos(find_min_pos, linear_interp, len(self.tl)))
+                if local_min_pos == -1:
+                    # 其实主要就是利用这里找不到的情况进行过滤
+                    continue
 
-            # 形成最小点位置信息(x, y)
-            draw_pos = (local_min_pos, self.tl[local_min_pos])
-            # 第一个step单位last_pos＝none, 之后都有值
-            if last_pos is not None:
-                # 将两两临近局部最小值相连，两个点连成一条直线
-                plt.plot([last_pos[0], draw_pos[0]],
-                         [last_pos[1], draw_pos[1]], 'o-')
-            # 将这个步长单位内的最小值点赋予last_pos
-            last_pos = draw_pos
-        plt.show()
+                # 形成最小点位置信息(x, y)
+                draw_pos = (local_min_pos, self.tl[local_min_pos])
+                # 第一个step单位last_pos＝none, 之后都有值
+                if last_pos is not None:
+                    # 将两两临近局部最小值相连，两个点连成一条直线
+                    plt.plot([last_pos[0], draw_pos[0]],
+                             [last_pos[1], draw_pos[1]], 'o-')
+                # 将这个步长单位内的最小值点赋予last_pos
+                last_pos = draw_pos
 
     def show_support_resistance_pos(self, best_poly=0, show=True):
         """
@@ -498,6 +501,8 @@ class AbuTLine(FreezeAttrMixin):
         """
         support_est, resistance_est, support_pos, resistance_pos = self.show_support_resistance_select_k(best_poly,
                                                                                                          show=show_step)
+        if show:
+            plt.figure(figsize=ABuEnv.g_plt_figsize)
 
         y_trend_dict = {}
         if support_est is not None:
@@ -542,6 +547,9 @@ class AbuTLine(FreezeAttrMixin):
         :param show: show: show参数控制的是最终阻力位或者支撑的可视化
         """
 
+        if show:
+            plt.figure(figsize=ABuEnv.g_plt_figsize)
+
         support_est, _, support_pos, _ = self.show_support_resistance_select_k(best_poly,
                                                                                show=show_step)
         y_trend_dict = {}
@@ -574,6 +582,8 @@ class AbuTLine(FreezeAttrMixin):
         _, resistance_est, _, resistance_pos = self.show_support_resistance_select_k(best_poly,
                                                                                      show=show_step)
 
+        if show:
+            plt.figure(figsize=ABuEnv.g_plt_figsize)
         y_trend_dict = {}
         if resistance_est is not None:
             resistance_trend = support_resistance_predict(self.x, self.tl, resistance_est,
@@ -599,25 +609,26 @@ class AbuTLine(FreezeAttrMixin):
             percents = [percents]
 
         pts_dict = find_percent_point(percents, self.tl)
-        plt.plot(self.tl)
 
-        """
-            eg: pts_dict 形如：
-            {0.1: (15.732749999999999, 15.5075), 0.9: (31.995000000000005, 34.387500000000003)}
-            即返回的是一个比例地带，绘制地带的上下边界
-        """
-        for pt, color in zip(pts_dict, itertools.cycle(K_PLT_MAP_STYLE)):
-            stats_key = 'stats:{}'.format(pt)
-            sight_key = 'sight:{}'.format(pt)
-            p_dict = {stats_key: pts_dict[pt][0], sight_key: pts_dict[pt][1]}
-            plt.axhline(p_dict[stats_key], c=color, label=stats_key)
-            plt.axhline(p_dict[sight_key], c='y', label=sight_key)
+        with plt_show():
+            plt.plot(self.tl)
 
-            below, above = below_above_gen(*pts_dict[pt])
-            plt.fill_between(self.x, below, above,
-                             alpha=0.5, color=color)
-            plt.legend(loc='best')
-        plt.show()
+            """
+                eg: pts_dict 形如：
+                {0.1: (15.732749999999999, 15.5075), 0.9: (31.995000000000005, 34.387500000000003)}
+                即返回的是一个比例地带，绘制地带的上下边界
+            """
+            for pt, color in zip(pts_dict, itertools.cycle(K_PLT_MAP_STYLE)):
+                stats_key = 'stats:{}'.format(pt)
+                sight_key = 'sight:{}'.format(pt)
+                p_dict = {stats_key: pts_dict[pt][0], sight_key: pts_dict[pt][1]}
+                plt.axhline(p_dict[stats_key], c=color, label=stats_key)
+                plt.axhline(p_dict[sight_key], c='y', label=sight_key)
+
+                below, above = below_above_gen(*pts_dict[pt])
+                plt.fill_between(self.x, below, above,
+                                 alpha=0.5, color=color)
+                plt.legend(loc='best')
 
     def show_golden(self, both_golden=True):
         """

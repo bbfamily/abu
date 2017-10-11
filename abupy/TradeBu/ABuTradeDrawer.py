@@ -149,6 +149,7 @@ def plot_capital_info(capital_pd, init_cash=-1):
         init_cash = capital_pd.read_cash
         capital_pd = capital_pd.capital_pd
 
+    plt.figure(figsize=(14, 8))
     if init_cash != -1:
         cb_earn = capital_pd['capital_blance'] - init_cash
         try:
