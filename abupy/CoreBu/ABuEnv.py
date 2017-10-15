@@ -130,15 +130,26 @@ def str_is_cn(a_str):
                             'object, got %s' % type(text).__name__)
         if encoding is None:
             encoding = 'utf-8'
-        return text.decode(encoding, errors)
+        try:
+            decode_text = text.decode(encoding, errors)
+        except:
+            # 切换试一下，不行就需要上层处理
+            decode_text = text.decode('gbk' if encoding == 'utf-8' else 'utf-8', errors)
+        return decode_text
 
     cn_re = re.compile(u'[\u4e00-\u9fa5]+')
-    return cn_re.search(to_unicode(a_str)) is not None
+    try:
+        is_cn_path = cn_re.search(to_unicode(a_str)) is not None
+    except:
+        # 非gbk，utf8的其它编码会进入这里，统一进行处理
+        is_cn_path = True
+    return is_cn_path
 
 
 root_drive = path.expanduser('~')
 # root_drive = os.path.join(root_drive, u'测试')
 # noinspection PyTypeChecker
+
 if str_is_cn(root_drive):
     """
         如果用户根目录使用了中文名称，择放弃使用公共缓存文件夹,
@@ -380,8 +391,11 @@ def enable_example_env_ipython(show_log=True, check_cn=True):
                     to_unicode(str(__file__)))
                 logging.info(msg)
                 return
-        except Exception as e:
-            logging.exception(e)
+        except:
+            # 没有必要显示log给用户，如果是其它编码的字符路径会进到这里
+            # logging.exception(e)
+            msg = 'error！non English characters in the current running environment,abu will not work properly!'
+            logging.info(msg)
     if show_log:
         logging.info('enable example env will only read RomDataBu/csv')
 

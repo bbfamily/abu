@@ -27,8 +27,11 @@ def show_ui_ct():
             logging.info(msg)
             go_on = False
     except:
-        # TODO
-        pass
+        # 如果是其它编码的字符路径会进到这里
+        import logging
+        msg = 'error！non English characters in the current running environment,abu will not work properly!'
+        logging.info(msg)
+        go_on = False
     yield go_on
 
     if go_on:
