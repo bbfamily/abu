@@ -5,23 +5,16 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
 
-import os
-import logging
-import math
-
 import ipywidgets as widgets
 
-from ..UtilBu import ABuFileUtil
-from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_toast_func, browser_down_csv_zip
+from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_toast_func
 from ..WidgetBu.ABuWGBSymbol import WidgetSymbolChoice
 from ..WidgetBu.ABuWGBFBase import BuyFactorWGManager
 from ..WidgetBu.ABuWGSFBase import SellFactorWGManager
 from ..CoreBu import ABuEnv
-from ..CoreBu.ABuEnv import EDataCacheType
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import filter
-from ..MarketBu.ABuMarket import is_in_sand_box
-from ..MarketBu.ABuSymbolPd import check_symbol_in_local_csv
+from ..MarketBu.ABuDataCheck import check_symbol_data
 from ..MetricsBu.ABuGridSearch import GridSearch
 
 __author__ = '阿布'
@@ -83,7 +76,7 @@ class WidgetGridSearch(WidgetBase):
             show_msg_toast_func(u'请最少在\'股池\'中选择一个symbol！')
             return
 
-        if not self.check_symbol_data(choice_symbols):
+        if not check_symbol_data(choice_symbols):
             # 监测是否本地缓存数据存在或者沙盒数据不匹配
             return
 
@@ -101,53 +94,4 @@ class WidgetGridSearch(WidgetBase):
         # 合并卖出因子不同的class factor到符合grid search格式的因子参数组合
         sell_factors = GridSearch.combine_same_factor_class(sell_factors)
 
-        cash = 10000000
-        scores, score_tuple_array = GridSearch.grid_search(cash, choice_symbols, buy_factors, sell_factors)
-
-    def check_symbol_data(self, choice_symbols):
-        """检测是否需要提示下载csv数据或者使用数据下载界面进行操作"""
-
-        if ABuEnv._g_enable_example_env_ipython and choice_symbols is not None:
-            # 沙盒模式下 and choice_symbols不是none
-            not_in_sb_list = list(filter(lambda symbol: not is_in_sand_box(symbol), choice_symbols))
-            if len(not_in_sb_list) > 0:
-                logging.info(
-                    u'当前数据模式为\'沙盒模式\'无{}数据，'
-                    u'请在\'设置\'中切换数据模式并确认数据在本地存在！'
-                    u'最优参数grid search暂不支持实时网络数据模式！'
-                    u'所以非沙盒模式需要先用\'数据下载界面操作\'进行数据下载'.format(not_in_sb_list))
-                browser_down_csv_zip()
-                return False
-        else:
-            # 非沙盒数据模式下
-            if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_CSV:
-                # csv模式下，一个csv数据都没有
-                if not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data_csv):
-                    # 股票类型全市场回测，但没有数据
-                    logging.info(
-                        u'未发现本地缓存数据，最优参数grid search暂不支持实时网络数据模式！'
-                        u'所以非沙盒模式需要先用\'数据下载界面操作\'进行数据下载')
-                    browser_down_csv_zip()
-                    return False
-                elif len(os.listdir(ABuEnv.g_project_kl_df_data_csv)) < 100:
-                    # 未下载云盘上的csv为前提条件
-                    not_in_local_csv = list(filter(lambda symbol:
-                                                   not check_symbol_in_local_csv(symbol), choice_symbols))
-                    # 需要grid search的symbol中有30%以上不在本地缓存中提示下载数据
-                    if not_in_local_csv > math.ceil(len(choice_symbols) * 0.3):
-                        logging.info(
-                            u'{}未发现本地缓存数据，最优参数grid search暂不支持实时网络数据模式！'
-                            u'需要先用\'数据下载界面操作\'进行数据下载'.format(not_in_local_csv))
-                        browser_down_csv_zip()
-                        return False
-
-            elif ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_HDF5 \
-                    and not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data):
-                # hdf5模式下文件不存在
-                logging.info(
-                    u'未发现本地缓存数据，最优参数grid search暂不支持实时网络数据模式！'
-                    u'所以非沙盒模式需要先用\'数据下载界面操作\'进行数据下载')
-                browser_down_csv_zip()
-                return False
-
-        return True
+        scores, score_tuple_array = GridSearch.grid_search(choice_symbols, buy_factors, sell_factors)

@@ -39,14 +39,6 @@ def do_clear_output(wait=False):
         # pass
 
 
-def clear_std_output():
-    """只删除std out的输出"""
-    print('\033[2K\r', end='')
-    sys.stdout.flush()
-    print('\033[2K\r', end='')
-    sys.stderr.flush()
-
-
 class UIProgress(object):
     """多进程socket通信下的进度显示类"""
 

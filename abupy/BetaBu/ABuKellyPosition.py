@@ -13,9 +13,7 @@ class AbuKellyPosition(AbuPositionBase):
 
     def fit_position(self, factor_object):
         """
-        fit_position计算的结果是买入多少个单位（股，手，顿，合约）
-        需要factor_object策略因子对象通过历史回测统计胜率，期望收益，期望亏损，
-        并设置构造当前factor_object对象，通过kelly公司计算仓位
+        通过kelly公司计算仓位, fit_position计算的结果是买入多少个单位（股，手，顿，合约）
         :param factor_object: ABuFactorBuyBases子类实例对象
         :return:买入多少个单位（股，手，顿，合约）
         """

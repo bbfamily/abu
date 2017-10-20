@@ -49,7 +49,7 @@ class AbuPickTimeMaster(object):
         if kl_pd_manager is None:
             kl_pd_manager = AbuKLManager(benchmark, capital)
             # 一次性在主进程中执行多进程获取k线数据，全部放入kl_pd_manager中，内部启动n_process_kl个进程执行
-            kl_pd_manager.batch_get_pick_time_kl_pd(target_symbols, n_process=n_process_kl)
+            kl_pd_manager.batch_get_pick_time_kl_pd(target_symbols, n_process=n_process_kl, show_progress=show_progress)
 
         if n_process_pick_time <= 0:
             # 因为下面要根据n_process_pick_time来split_k_market

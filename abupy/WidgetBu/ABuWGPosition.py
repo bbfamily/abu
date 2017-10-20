@@ -9,6 +9,7 @@ import ipywidgets as widgets
 
 from ..BetaBu.ABuAtrPosition import AbuAtrPosition
 from ..BetaBu.ABuKellyPosition import AbuKellyPosition
+from ..BetaBu.ABuPtPosition import AbuPtPosition
 from ..WidgetBu.ABuWGPosBase import WidgetPositionBase
 
 __author__ = '阿布'
@@ -161,3 +162,68 @@ class KellyPosWidget(WidgetPositionBase):
     def delegate_class(self):
         """子类因子所委托的具体因子类AbuKellyPosition"""
         return AbuKellyPosition
+
+
+class PtPosition(WidgetPositionBase):
+    """对应AbuPtPosition策略widget"""
+
+    def _init_widget(self):
+        """构建AbuPtPosition策略参数界面"""
+
+        description = widgets.Textarea(
+            value=u'价格位置仓位管理策略：\n'
+                  u'针对均值回复类型策略的仓位管理策略\n'
+                  u'根据买入价格在之前一段时间的价格位置来决策仓位大小\n'
+                  u'假设过去一段时间的价格为[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n'
+                  u'如果当前买入价格为2元：则买入仓位配比很高(认为均值回复有很大向上空间)\n'
+                  u'如果当前买入价格为9元：则买入仓位配比很低(认为均值回复向上空间比较小)',
+            description=u'价格位置',
+            disabled=False,
+            layout=self.description_layout
+        )
+
+        pos_base_label = widgets.Label(u'仓位基础配比：默认0.1即资金10%为仓位基数',
+                                       layout=self.label_layout)
+        # 需要精确到小数点后5位
+        self.pos_base = widgets.FloatSlider(
+            value=0.10,
+            min=0.00001,
+            max=1.0,
+            step=0.00001,
+            description=u'基配',
+            disabled=False,
+            orientation='horizontal',
+            readout=True,
+            readout_format='.5f'
+        )
+        pos_base_box = widgets.VBox([pos_base_label, self.pos_base])
+        past_day_cnt_label = widgets.Label(u'根据过去多长一段时间的价格趋势做为参考，默认20',
+                                           layout=self.label_layout)
+        self.past_day_cnt = widgets.IntSlider(
+            value=20,
+            min=5,
+            max=250,
+            step=1,
+            description=u'参考天数',
+            disabled=False,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+        past_day_cnt_box = widgets.VBox([past_day_cnt_label, self.past_day_cnt])
+
+        self.widget = widgets.VBox([description, pos_base_box,
+                                    past_day_cnt_box, self.add_box], layout=self.widget_layout)
+
+    def make_position_unique(self):
+        """对应按钮添加AbuPtPosition策略，构建策略字典对象factor_dict以及唯一策略描述字符串factor_desc_key"""
+        factor_dict = {'class': AbuPtPosition,
+                       'pos_base': self.pos_base.value,
+                       'past_day_cnt': self.past_day_cnt.value}
+        factor_desc_key = u'价格位置基仓比例:{} 参考天数:{}'.format(
+            self.pos_base.value, self.past_day_cnt.value)
+        return factor_dict, factor_desc_key
+
+    def delegate_class(self):
+        """子类因子所委托的具体因子类AbuPtPosition"""
+        return AbuPtPosition

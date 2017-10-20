@@ -5,15 +5,13 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
 
-import os
-import logging
 
 import pandas as pd
 from IPython.display import display
 import ipywidgets as widgets
 
-from ..UtilBu import ABuProgress, ABuFileUtil
-from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func, show_msg_toast_func, browser_down_csv_zip
+from ..UtilBu import ABuProgress
+from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func, show_msg_toast_func
 from ..WidgetBu.ABuWGBRunBase import WidgetRunTT
 from ..WidgetBu.ABuWGBSymbol import WidgetSymbolChoice
 from ..WidgetBu.ABuWGBFBase import BuyFactorWGManager
@@ -23,11 +21,9 @@ from ..WidgetBu.ABuWGPosBase import PosWGManager
 
 from ..CoreBu.ABu import run_loop_back
 from ..CoreBu.ABuStore import store_abu_result_out_put
-from ..CoreBu import ABuEnv
-from ..CoreBu.ABuEnv import EDataCacheType, EMarketDataFetchMode, EMarketTargetType
 # noinspection PyUnresolvedReferences
 from ..CoreBu.ABuFixes import filter
-from ..MarketBu.ABuMarket import is_in_sand_box
+from ..MarketBu.ABuDataCheck import check_symbol_data_mode
 from ..BetaBu import ABuAtrPosition, ABuPositionBase
 from ..AlphaBu import ABuPickTimeExecute
 from ..TradeBu.ABuBenchmark import AbuBenchmark
@@ -72,70 +68,6 @@ class WidgetRunLoopBack(WidgetBase):
                                           button_style='danger')
         self.run_loop_bt.on_click(self.run_loop_back)
         self.widget = widgets.VBox([sub_widget_tab, self.run_loop_bt])
-
-    def check_symbol_data_mode(self, choice_symbols):
-        """检测是否需要提示下载csv数据或者使用数据下载界面进行操作"""
-        if ABuEnv._g_enable_example_env_ipython and choice_symbols is not None:
-            # 沙盒模式下 and choice_symbols不是none
-            not_in_sb_list = list(filter(lambda symbol: not is_in_sand_box(symbol), choice_symbols))
-            if len(not_in_sb_list) > 0:
-                logging.info(
-                    u'当前数据模式为\'沙盒模式\'无{}数据，'
-                    u'请在\'分析设置\'中切换数据模式并确认数据可获取！'
-                    u'非沙盒模式建议先用\'数据下载界面操作\'进行数据下载'
-                    u'之后设置数据模式为\'开放数据模式\'，联网模式使用\'本地数据模式\''.format(not_in_sb_list))
-                browser_down_csv_zip()
-                return False
-
-        is_stock_market = \
-            ABuEnv.g_market_target == EMarketTargetType.E_MARKET_TARGET_FUTURES_CN or \
-            ABuEnv.g_market_target == EMarketTargetType.E_MARKET_TARGET_US or \
-            ABuEnv.g_market_target == EMarketTargetType.E_MARKET_TARGET_HK
-
-        if is_stock_market and not ABuEnv._g_enable_example_env_ipython and choice_symbols is None:
-            # 非沙盒模式下要做全股票市场全市场回测
-            if ABuEnv.g_data_fetch_mode != EMarketDataFetchMode.E_DATA_FETCH_FORCE_LOCAL:
-                logging.info(
-                    u'未选择任何回测目标且在非沙盒数据模式下，判定为进行全市场回测'
-                    u'为了提高运行效率，请将联网模式修改为\'本地数据模式\'，如需要进行数据更新，'
-                    u'请先使用\'数据下载界面操作\'进行数据更新！')
-                browser_down_csv_zip()
-                return False
-            else:
-                if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_CSV:
-                    # csv模式下
-                    if not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data_csv):
-                        # 股票类型全市场回测，但没有数据
-                        logging.info(
-                            u'未选择任何回测目标且在非沙盒数据模式下，判定为进行全市场回测'
-                            u'为了提高运行效率, 只使用\'本地数据模式\'进行回测，但未发现本地缓存数据，'
-                            u'如需要进行数据更新'
-                            u'请先使用\'数据下载界面操作\'进行数据更新！')
-                        browser_down_csv_zip()
-                        return False
-                    elif len(os.listdir(ABuEnv.g_project_kl_df_data_csv)) < 100:
-                        # 股票类型全市场回测，但数据不足
-                        logging.info(
-                            u'未选择任何回测目标且在非沙盒数据模式下，判定为进行全市场回测'
-                            u'为了提高运行效率, 只使用\'本地数据模式\'进行回测，发现本地缓存数据不足，'
-                            u'只有{}支股票历史数据信息'
-                            u'如需要进行数据更新'
-                            u'请先使用\'数据下载界面操作\'进行数据更新！'.format(
-                                len(os.listdir(ABuEnv.g_project_kl_df_data_csv))))
-                        browser_down_csv_zip()
-                        return False
-                elif ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_HDF5 \
-                        and not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data):
-                    # hdf5模式下文件不存在
-                    logging.info(
-                        u'未选择任何回测目标且在非沙盒数据模式下，判定为进行全市场回测'
-                        u'为了提高运行效率, 只使用\'本地数据模式\'进行回测'
-                        u'hdf5模式下未发现hdf5本地缓存数据，'
-                        u'如需要进行数据更新'
-                        u'请先使用\'数据下载界面操作\'进行数据更新！')
-                    browser_down_csv_zip()
-                    return False
-        return True
 
     def _metrics_out_put(self, metrics, abu_result_tuple):
         """针对输出结果和界面中的设置进行输出操作"""
@@ -199,7 +131,7 @@ class WidgetRunLoopBack(WidgetBase):
             # 如果一个symbol都没有设置None， 将使用选择的市场进行全市场回测
             choice_symbols = None
 
-        if not self.check_symbol_data_mode(choice_symbols):
+        if not check_symbol_data_mode(choice_symbols):
             return
 
         # 买入策略构成序列

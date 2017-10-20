@@ -12,6 +12,7 @@ from ..FactorBuyBu.ABuFactorBuyBreak import AbuFactorBuyBreak
 from ..FactorBuyBu.ABuFactorBuyDM import AbuDoubleMaBuy
 from ..FactorBuyBu.ABuFactorBuyWD import AbuFactorBuyWD
 from ..FactorBuyBu.ABuFactorBuyDemo import AbuSDBreak, AbuWeekMonthBuy
+from ..FactorBuyBu.ABuFactorBuyTrend import AbuDownUpTrend
 
 __author__ = '阿布'
 __weixin__ = 'abu_quant'
@@ -313,3 +314,80 @@ class BuyWMWidget(WidgetFactorBuyBase):
     def delegate_class(self):
         """子类因子所委托的具体因子类AbuWeekMonthBuy"""
         return AbuWeekMonthBuy
+
+
+class BuyDUWidget(WidgetFactorBuyBase):
+    """对应AbuDownUpTrend策略widget"""
+
+    def _init_widget(self):
+        """构建AbuDownUpTrend策略参数界面"""
+
+        self.description = widgets.Textarea(
+            value=u'整个择时周期分成两部分，长的为长线择时，短的为短线择时：\n'
+                  u'1. 寻找长线下跌的股票，比如一个季度(4个月)整体趋势为下跌趋势\n'
+                  u'2. 短线走势上涨的股票，比如一个月整体趋势为上涨趋势\n，'
+                  u'3. 最后使用海龟突破的N日突破策略作为策略最终买入信号',
+            description=u'长跌短涨',
+            disabled=False,
+            layout=self.description_layout
+        )
+
+        xd_label = widgets.Label(u'短线周期：比如20，30，40天,短线以及突破参数',
+                                 layout=self.label_layout)
+        self.xd = widgets.IntSlider(
+            value=20,
+            min=5,
+            max=120,
+            step=5,
+            description=u'xd',
+            disabled=False,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+        xd_box = widgets.VBox([xd_label, self.xd])
+
+        past_factor_label = widgets.Label(u'长线乘数：短线基础 x 长线乘数 = 长线周期',
+                                          layout=self.label_layout)
+        self.past_factor = widgets.IntSlider(
+            value=4,
+            min=1,
+            max=10,
+            step=1,
+            description=u'长线乘数',
+            disabled=False,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+        past_factor_box = widgets.VBox([past_factor_label, self.past_factor])
+
+        down_deg_threshold_label = widgets.Label(u'拟合趋势角度阀值：如-2,-3,-4',
+                                                 layout=self.label_layout)
+        self.down_deg_threshold = widgets.IntSlider(
+            value=-3,
+            min=-10,
+            max=0,
+            step=1,
+            description=u'角度阀值',
+            disabled=False,
+            orientation='horizontal',
+            readout=True,
+            readout_format='d'
+        )
+        down_deg_threshold_box = widgets.VBox([down_deg_threshold_label, self.down_deg_threshold])
+
+        self.widget = widgets.VBox([self.description, xd_box, past_factor_box, down_deg_threshold_box, self.add],
+                                   layout=self.widget_layout)
+
+    def make_buy_factor_unique(self):
+        """对应按钮添加AbuDownUpTrend策略，构建策略字典对象factor_dict以及唯一策略描述字符串factor_desc_key"""
+        factor_dict = {'class': AbuDownUpTrend, 'xd': self.xd.value,
+                       'past_factor': self.past_factor.value, 'down_deg_threshold': self.down_deg_threshold.value}
+        factor_desc_key = u'长线{}下跌短线{}上涨角度{}'.format(
+            self.xd.value * self.past_factor.value, self.xd.value, self.down_deg_threshold.value)
+        return factor_dict, factor_desc_key
+
+    def delegate_class(self):
+        """子类因子所委托的具体因子类AbuDownUpTrend"""
+        return AbuDownUpTrend

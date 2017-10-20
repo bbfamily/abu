@@ -12,7 +12,6 @@ import ipywidgets as widgets
 from abc import ABCMeta, abstractmethod
 from IPython.display import display
 
-from ..CoreBu import ABuEnv
 from ..CoreBu.ABuFixes import six, partial
 from ..UtilBu.ABuStrUtil import to_unicode
 from ..UtilBu.ABuOsUtil import show_msg
@@ -24,22 +23,6 @@ __weixin__ = 'abu_quant'
 show_msg_func = logging.info
 """基于不同系统的提示框使用partial包装title以及显示log"""
 show_msg_toast_func = partial(show_msg, u'提示', log=True)
-
-
-def browser_down_csv_zip(open_browser=False):
-    """浏览器打开教程使用的csv数据百度云地址"""
-    try:
-        if open_browser:
-            import webbrowser
-            webbrowser.open('https://pan.baidu.com/s/1geNZgqf', new=0, autoraise=True)
-            show_msg_toast_func(u'提取密码: gvtr')
-    except:
-        pass
-    finally:
-        logging.info(u'建议直接从百度云下载教程中使用的csv格式美股，A股，港股，币类，期货6年日k数据: ')
-        logging.info(u'下载地址: https://pan.baidu.com/s/1geNZgqf')
-        logging.info(u'提取密码: gvtr')
-        logging.info(u'下载完成后解压zip得到\'csv\'文件夹到\'{}\'目录下'.format(ABuEnv.g_project_data_dir))
 
 
 def accordion_shut(accordion):
@@ -94,7 +77,7 @@ class WidgetFactorManagerBase(six.with_metaclass(ABCMeta, WidgetBase)):
         self.factor_wg_array = []
         # 策略候选池可x轴左右滚动
         self.factor_layout = widgets.Layout(overflow_x='scroll',
-                                            flex_direction='row',
+                                            # flex_direction='row',
                                             display='flex')
         self.selected_factors = widgets.SelectMultiple(
             options=[],

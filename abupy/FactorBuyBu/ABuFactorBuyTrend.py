@@ -90,7 +90,7 @@ class AbuDownUpTrend(AbuFactorBuyXD, BuyCallMixin):
             kwargs中可以包含down_deg_threshold: 代表判断下跌趋势拟合角度阀值，即长线拟合角度值多少决策为下跌，默认-3
         """
         if 'xd' not in kwargs:
-            # 如果外部没有设置xd值，默认给一个30
+            # 如果外部没有设置xd值，默认给一个20
             kwargs['xd'] = 20
 
         super(AbuDownUpTrend, self)._init_self(**kwargs)

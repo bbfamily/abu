@@ -25,6 +25,7 @@ from ..CoreBu import ABuEnv
 from ..CoreBu.ABuEnv import EMarketDataFetchMode
 from ..UtilBu.ABuProgress import AbuMulPidProgress
 from ..MarketBu.ABuMarket import split_k_market
+from ..MarketBu.ABuDataCheck import check_symbol_data
 from ..UtilBu import ABuProgress
 
 __author__ = '阿布'
@@ -103,7 +104,7 @@ def _check_param_grid(param_grid):
 
 
 @add_process_env_sig
-def grid_mul_func(read_cash, benchmark, factors, choice_symbols, kl_pd_manager=None):
+def grid_search_mul_process(read_cash, benchmark, factors, choice_symbols, kl_pd_manager=None):
     """
     针对输入的买入因子，卖出因子，选股因子及其它参数，进行两年历史交易回测，返回结果包装AbuScoreTuple对象
     :param read_cash: 初始化资金数(int)
@@ -124,11 +125,11 @@ def grid_mul_func(read_cash, benchmark, factors, choice_symbols, kl_pd_manager=N
     :param kl_pd_manager: 金融时间序列管理对象，AbuKLManager实例
     :return: AbuScoreTuple对象
     """
-    # 由于grid_mul_func以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程选股
+    # 由于grid_search_mul_process以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程选股
     n_process_pick_stock = 1
-    # 由于grid_mul_func以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程择时
+    # 由于grid_search_mul_process以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程择时
     n_process_pick_time = 1
-    # 由于grid_mul_func以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程数据收集
+    # 由于grid_search_mul_process以处于多任务运行环境，所以不内部不再启动多任务，使用1个进程数据收集
     n_process_kl = 1
     # 每一个任务子进程中返回的由AbuScoreTuple组成的独立结果对象，进程承接层使用chain.from_iterable摊开展平
     result_tuple_array = []
@@ -243,68 +244,121 @@ class GridSearch(object):
         return combine_factor_list
 
     @classmethod
-    def grid_search(cls, read_cash, choice_symbols, buy_factors, sell_factors,
+    def show_top_constraints_metrics(cls, constraints, scores, score_tuple_array, top_cnt=10):
+        direction = int(top_cnt / abs(top_cnt))
+        # 需要使用-direction因为分数是从小－>大排序的
+        scores = scores[::-direction]
+        result_top = constraints(scores, score_tuple_array, top_cnt)
+
+        from ..MetricsBu.ABuMetricsBase import AbuMetricsBase
+        for top_tuple in result_top:
+            logging.info(u'买入策略:{}'.format(top_tuple.buy_factors))
+            logging.info(u'卖出策略:{}'.format(top_tuple.sell_factors))
+            AbuMetricsBase.show_general(top_tuple.orders_pd, top_tuple.action_pd, top_tuple.capital,
+                                        top_tuple.benchmark,
+                                        returns_cmp=True, only_info=True)
+            logging.info('\n')
+
+    @classmethod
+    def show_top_score_metrics(cls, scores, score_tuple_array, top_cnt=10):
+        """
+        类方法，根据grid_search寻找最优参数的grid结果返回的scores序列与AbuScoreTuple对象序列
+        显示top n个度量结果
+        :param scores: grid_search结果返回的scores序列
+        :param score_tuple_array: grid_search结果返回的AbuScoreTuple对象序列
+        :param top_cnt: 显示的top度量结果个数，默认10个， 如果传递的top_cnt为负数，eg：-10 则取出最不好的10个结
+        """
+        # 如果传递的top_cnt为负数，eg：-10 则取出最不好的10个结果
+        direction = int(top_cnt / abs(top_cnt))
+        # 需要使用-direction因为分数是从小－>大排序的
+        top_n = scores[::-direction][:abs(top_cnt)]
+        from ..MetricsBu.ABuMetricsBase import AbuMetricsBase
+        for top in top_n.index:
+            top_tuple = score_tuple_array[top]
+            logging.info(u'买入策略:{}'.format(top_tuple.buy_factors))
+            logging.info(u'卖出策略:{}'.format(top_tuple.sell_factors))
+            AbuMetricsBase.show_general(top_tuple.orders_pd, top_tuple.action_pd, top_tuple.capital,
+                                        top_tuple.benchmark,
+                                        returns_cmp=True, only_info=True)
+            logging.info('\n')
+
+    @classmethod
+    def grid_search(cls, choice_symbols, buy_factors, sell_factors, read_cash=10000000,
                     score_weights=None, metrics_class=None):
         """
         类方法: 不gird选股因子，只使用买入因子和卖出因子序列的gird product行为
-        :param read_cash: 初始化资金数(int)
         :param choice_symbols: 初始备选交易对象序列
         :param buy_factors: 买入因子grid序列或者直接为独立买入因子grid
         :param sell_factors: 卖出因子grid序列或者直接为独立卖出因子grid
+        :param read_cash: 初始化资金数(int), 默认10000000
         :param score_weights: make_scorer中设置的评分权重
         :param metrics_class: make_scorer中设置的度量类
         """
 
-        def factor_grid(factors):
-            if isinstance(factors, dict):
-                # 独立因子grid, 确保参数为序列，且形成独立grid list
-                factors_grid = [{bf_key: factors[bf_key] if isinstance(factors[bf_key],
-                                                                       list) else [factors[bf_key]]
-                                 for bf_key in factors.keys()}]
-            elif isinstance(factors, list):
-                # 如果传递进来的本身就是序列，需要对序列内容做参数监测，
-                factors_grid = []
-                for factor in factors:
-                    factor_dict = {bf_key: factor[bf_key] if isinstance(factor[bf_key],
-                                                                        list) else [factor[bf_key]]
-                                   for bf_key in factor.keys()}
-                    factors_grid.append(factor_dict)
-            else:
-                raise TypeError('factors must be dict or list not {}'.format(type(factors)))
-            return factors_grid
+        scores = None
+        score_tuple_array = None
+        restore_data_fetch = None
 
-        # print('buy_factors', buy_factors)
-        buy_factors_grid = factor_grid(buy_factors)
-        # print('buy_factors_grid', buy_factors_grid)
+        if ABuEnv.g_data_fetch_mode != EMarketDataFetchMode.E_DATA_FETCH_FORCE_LOCAL:
+            restore_data_fetch = ABuEnv.g_data_fetch_mode
+            ABuEnv.g_data_fetch_mode = EMarketDataFetchMode.E_DATA_FETCH_FORCE_LOCAL
 
-        sell_factors_grid = factor_grid(sell_factors)
+        if check_symbol_data(choice_symbols):
+            def factor_grid(factors):
+                if isinstance(factors, dict):
+                    # 独立因子grid, 确保参数为序列，且形成独立grid list
+                    factors_grid = [{bf_key: factors[bf_key] if isinstance(factors[bf_key],
+                                                                           list) else [factors[bf_key]]
+                                     for bf_key in factors.keys()}]
+                elif isinstance(factors, list):
+                    # 如果传递进来的本身就是序列，需要对序列内容做参数监测，
+                    factors_grid = []
+                    for factor in factors:
+                        factor_dict = {bf_key: factor[bf_key] if isinstance(factor[bf_key],
+                                                                            list) else [factor[bf_key]]
+                                       for bf_key in factor.keys()}
+                        factors_grid.append(factor_dict)
+                else:
+                    raise TypeError('factors must be dict or list not {}'.format(type(factors)))
+                return factors_grid
 
-        from ..MetricsBu.ABuGridHelper import gen_factor_grid, K_GEN_FACTOR_PARAMS_BUY, K_GEN_FACTOR_PARAMS_SELL
+            # print('buy_factors', buy_factors)
+            buy_factors_grid = factor_grid(buy_factors)
+            # print('buy_factors_grid', buy_factors_grid)
+            sell_factors_grid = factor_grid(sell_factors)
 
-        buy_factors_product = gen_factor_grid(K_GEN_FACTOR_PARAMS_BUY, buy_factors_grid)
-        # print('buy_factors_product', buy_factors_product)
+            from ..MetricsBu.ABuGridHelper import gen_factor_grid, K_GEN_FACTOR_PARAMS_BUY, K_GEN_FACTOR_PARAMS_SELL
 
-        sell_factors_product = gen_factor_grid(K_GEN_FACTOR_PARAMS_SELL, sell_factors_grid)
+            buy_factors_product = gen_factor_grid(K_GEN_FACTOR_PARAMS_BUY, buy_factors_grid)
+            # print('buy_factors_product', buy_factors_product)
 
-        logging.info('卖出因子参数共有{}种组合方式'.format(len(sell_factors_product)))
-        logging.info('卖出因子组合0: 形式为{}'.format(sell_factors_product[0]))
+            sell_factors_product = gen_factor_grid(K_GEN_FACTOR_PARAMS_SELL, sell_factors_grid)
 
-        logging.info('买入因子参数共有{}种组合方式'.format(len(buy_factors_product)))
-        logging.info('买入因子组合0: 形式为{}'.format(buy_factors_product[0]))
+            logging.info(u'卖出因子参数共有{}种组合方式'.format(len(sell_factors_product)))
+            logging.info(u'卖出因子组合0: 形式为{}'.format(sell_factors_product[0]))
 
-        # return buy_factors_product, sell_factors_product
+            logging.info(u'买入因子参数共有{}种组合方式'.format(len(buy_factors_product)))
+            logging.info(u'买入因子组合0: 形式为{}'.format(buy_factors_product[0]))
 
-        gs = cls(read_cash, choice_symbols, buy_factors_product=buy_factors_product,
-                 sell_factors_product=sell_factors_product, score_weights=score_weights, metrics_class=metrics_class)
-        scores, score_tuple_array = gs.fit(n_jobs=-1)
-        best_score_tuple_grid = gs.best_score_tuple_grid
-        from ..MetricsBu.ABuMetricsBase import AbuMetricsBase
-        logging.info(u'最佳买入因子参数组合：{}'.format(best_score_tuple_grid.buy_factors))
-        logging.info(u'最佳卖出因子参数组合：{}'.format(best_score_tuple_grid.sell_factors))
-        logging.info('*' * 100)
-        AbuMetricsBase.show_general(best_score_tuple_grid.orders_pd, best_score_tuple_grid.action_pd,
-                                    best_score_tuple_grid.capital, best_score_tuple_grid.benchmark,
-                                    returns_cmp=True, only_info=True)
+            logging.info(u'买入卖出组合形式共: {} X {} = {}种'.format(
+                len(buy_factors_product[0]), len(sell_factors_product[0]),
+                len(buy_factors_product[0]) * len(sell_factors_product[0])))
+            # return buy_factors_product, sell_factors_product
+            gs = cls(read_cash, choice_symbols, buy_factors_product=buy_factors_product,
+                     sell_factors_product=sell_factors_product, score_weights=score_weights,
+                     metrics_class=metrics_class)
+            scores, score_tuple_array = gs.fit(n_jobs=-1)
+            best_score_tuple_grid = gs.best_score_tuple_grid
+            from ..MetricsBu.ABuMetricsBase import AbuMetricsBase
+            logging.info(u'最佳买入因子参数组合：{}'.format(best_score_tuple_grid.buy_factors))
+            logging.info(u'最佳卖出因子参数组合：{}'.format(best_score_tuple_grid.sell_factors))
+            logging.info('*' * 100)
+            AbuMetricsBase.show_general(best_score_tuple_grid.orders_pd, best_score_tuple_grid.action_pd,
+                                        best_score_tuple_grid.capital, best_score_tuple_grid.benchmark,
+                                        returns_cmp=True, only_info=True)
+        if restore_data_fetch is not None:
+            ABuEnv.g_data_fetch_mode = restore_data_fetch
+
         return scores, score_tuple_array
 
     def __init__(self, read_cash, choice_symbols, stock_pickers_product=None,
@@ -367,15 +421,14 @@ class GridSearch(object):
             n_jobs=n_jobs, verbose=0, pre_dispatch='2*n_jobs')
         # 多任务环境下的内存环境拷贝对象AbuEnvProcess
         p_nev = AbuEnvProcess()
-        # 多层迭代各种类型因子，没一种因子组合作为参数启动一个新进程，运行grid_mul_func
+        # 多层迭代各种类型因子，没一种因子组合作为参数启动一个新进程，运行grid_search_mul_process
         out_abu_score_tuple = parallel(
-            delayed(grid_mul_func)(self.read_cash, self.benchmark, factors,
-                                   self.choice_symbols, pass_kl_pd_manager, env=p_nev)
+            delayed(grid_search_mul_process)(self.read_cash, self.benchmark, factors,
+                                             self.choice_symbols, pass_kl_pd_manager, env=p_nev)
             for factors in process_factors)
 
         # 都完事时检测一下还有没有ui进度条
         ABuProgress.do_check_process_is_dead()
-
         # 返回的AbuScoreTuple序列转换score_tuple_array, 即摊开多个子结果序列eg: ([], [], [], [])->[]
         score_tuple_array = list(chain.from_iterable(out_abu_score_tuple))
         # 使用ABuMetricsScore中make_scorer对多个参数组合的交易结果进行评分，详情阅读ABuMetricsScore模块

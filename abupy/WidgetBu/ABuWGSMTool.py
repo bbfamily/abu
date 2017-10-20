@@ -5,21 +5,19 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import logging
-import os
 from contextlib import contextmanager
 
 import ipywidgets as widgets
 from IPython.display import display
 
 from ..WidgetBu.ABuWGToolBase import WidgetToolBase, multi_fetch_symbol_df_analyse
-from ..WidgetBu.ABuWGBase import browser_down_csv_zip
-from ..UtilBu import ABuProgress, ABuFileUtil
+from ..UtilBu import ABuProgress
 from ..MarketBu.ABuSymbol import code_to_symbol
 from ..SimilarBu.ABuCorrcoef import ECoreCorrType, corr_matrix
 from ..SimilarBu.ABuSimilar import find_similar_with_se, find_similar_with_folds
 from ..TLineBu.ABuTLSimilar import calc_similar, coint_similar
-from ..CoreBu.ABuEnv import EMarketTargetType, EDataCacheType
+from ..MarketBu.ABuDataCheck import all_market_env_check
+from ..CoreBu.ABuEnv import EMarketTargetType
 from ..CoreBu import ABuEnv
 from ..UtilBu.ABuStatsUtil import cosine_distance_matrix, manhattan_distance_matrix, euclidean_distance_matrix
 
@@ -241,7 +239,7 @@ class WidgetSMTool(WidgetToolBase):
         """全市场协整相关分析"""
         with self.data_mode_recover(self.coint_corr_data_mode.value):
             ABuProgress.clear_output()
-            if not self.all_market_env_check():
+            if not all_market_env_check():
                 return
 
             symbol = self._choice_symbol_single(default='usAAPL')
@@ -256,7 +254,7 @@ class WidgetSMTool(WidgetToolBase):
         """全市场相对相关分析action"""
         with self.data_mode_recover(self.relative_corr_data_mode.value):
             ABuProgress.clear_output()
-            if not self.all_market_env_check():
+            if not all_market_env_check():
                 return
 
             symbol1, symbol2 = self._choice_symbol_pair(default=['sh600036', 'sh601766'])
@@ -271,7 +269,7 @@ class WidgetSMTool(WidgetToolBase):
         with self.data_mode_recover(self.corr_market_data_mode.value):
             ABuProgress.clear_output()
 
-            if not self.all_market_env_check():
+            if not all_market_env_check():
                 return
 
             # 不做全局设置，做为后还需要恢复
@@ -287,41 +285,3 @@ class WidgetSMTool(WidgetToolBase):
                 find_similar_with_folds(symbol, n_folds=n_folds, corr_type=corr_type)
 
             ABuEnv.g_market_target = tmp_market
-
-    def all_market_env_check(self):
-        """如果要做全市场相关类型的操作，检测本地数据文件"""
-        if ABuEnv._g_enable_example_env_ipython:
-            # 沙盒环境下不需要检测
-            return True
-
-        if ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_CSV:
-            # csv模式下
-            if not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data_csv):
-                # 全市场回测，但没有数据
-                logging.info(
-                    u'全市场相关操作为了提高运行效率, 只使用\'本地数据模式\'进行回测，但未发现本地缓存数据，'
-                    u'如需要进行数据更新'
-                    u'请先使用\'数据下载界面操作\'进行数据更新！')
-                browser_down_csv_zip()
-                return False
-            elif len(os.listdir(ABuEnv.g_project_kl_df_data_csv)) < 30:
-                # 全市场回测，但数据不足, 这里取30
-                logging.info(
-                    u'全市场相关操作为了提高运行效率, 只使用\'本地数据模式\'进行回测，发现本地缓存数据不足，'
-                    u'只有{}支股票历史数据信息'
-                    u'如需要进行数据更新'
-                    u'请先使用\'数据下载界面操作\'进行数据更新！'.format(
-                        len(os.listdir(ABuEnv.g_project_kl_df_data_csv))))
-                browser_down_csv_zip()
-                return False
-        elif ABuEnv.g_data_cache_type == EDataCacheType.E_DATA_CACHE_HDF5 \
-                and not ABuFileUtil.file_exist(ABuEnv.g_project_kl_df_data):
-            # hdf5模式下文件不存在
-            logging.info(
-                u'全市场相关为了提高运行效率, 只使用\'本地数据模式\'进行回测'
-                u'hdf5模式下未发现hdf5本地缓存数据，'
-                u'如需要进行数据更新'
-                u'请先使用\'数据下载界面操作\'进行数据更新！')
-            browser_down_csv_zip()
-            return False
-        return True

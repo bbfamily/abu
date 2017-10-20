@@ -29,12 +29,13 @@ __weixin__ = 'abu_quant'
 
 # noinspection PyUnusedLocal
 @add_process_env_sig
-def gen_dict_pick_time_kl_pd(target_symbols, capital, benchmark):
+def gen_dict_pick_time_kl_pd(target_symbols, capital, benchmark, show_progress=True):
     """
     在AbuKLManager中batch_get_pick_time_kl_pd批量获取择时时间序列中使用做为并行多进程委托方法
     :param target_symbols: 请求的symbol
     :param capital: 资金类AbuCapital实例化对象 （实现中暂时不使用其中信息）
     :param benchmark: 交易基准对象，AbuBenchmark实例对象
+    :param show_progress: 是否显示ui进度条
     """
 
     # 构建的返回时间序列交易数据组成的字典
@@ -51,7 +52,7 @@ def gen_dict_pick_time_kl_pd(target_symbols, capital, benchmark):
     @batch_h5s(h5s_fn)
     def _batch_gen_dict_pick_time_kl_pd():
         # 启动多进程进度条
-        with AbuMulPidProgress(len(target_symbols), 'gen kl_pd complete') as progress:
+        with AbuMulPidProgress(len(target_symbols), 'gen kl_pd complete', show_progress=show_progress) as progress:
             for epoch, target_symbol in enumerate(target_symbols):
                 progress.show(epoch + 1)
                 # 迭代target_symbols，获取对应时间交易序列
@@ -178,12 +179,12 @@ class AbuKLManager(object):
         return list(filter(lambda target_symbol: target_symbol not in self.pick_kl_pd_dict['pick_time'],
                            choice_symbols))
 
-    def batch_get_pick_time_kl_pd(self, choice_symbols, n_process=ABuEnv.g_cpu_cnt):
+    def batch_get_pick_time_kl_pd(self, choice_symbols, n_process=ABuEnv.g_cpu_cnt, show_progress=True):
         """
         统一批量获取择时金融时间序列获保存在内部的择时字典中，以多进程并行方式运行
         :param choice_symbols: 支持迭代的symbol序列
         :param n_process: 择时金融时间序列获取并行启动的进程数，默认16个，属于io操作多，所以没有考虑cpu数量
-        :return:
+        :param show_progress: 是否显示ui进度条
         """
         if len(choice_symbols) == 0:
             return
@@ -214,6 +215,7 @@ class AbuKLManager(object):
         p_nev = AbuEnvProcess()
         # 开始并行任务执行
         out_pick_kl_pd_dict = parallel(delayed(gen_dict_pick_time_kl_pd)(target_symbols, self.capital, self.benchmark,
+                                                                         show_progress=show_progress,
                                                                          env=p_nev)
                                        for target_symbols in process_symbols)
 

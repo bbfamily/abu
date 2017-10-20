@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from .ABuGridSearch import ParameterGrid, GridSearch
+from .ABuCrossVal import AbuCrossVal
 from .ABuMetricsBase import AbuMetricsBase, MetricsDemo
 from .ABuMetricsFutures import AbuMetricsFutures
 from .ABuMetricsTC import AbuMetricsTC
@@ -12,6 +13,7 @@ from . import ABuMetrics as metrics
 __all__ = [
     'ParameterGrid',
     'GridSearch',
+    'AbuCrossVal',
     'AbuMetricsBase',
     'AbuMetricsFutures',
     'AbuMetricsTC',

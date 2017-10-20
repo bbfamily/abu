@@ -30,10 +30,11 @@ class PosWGManager(WidgetFactorManagerBase):
     def _init_widget(self):
         """构建内置的仓位资金管理可视化组件，构造出self.factor_box"""
 
-        from ..WidgetBu.ABuWGPosition import AtrPosWidget, KellyPosWidget
+        from ..WidgetBu.ABuWGPosition import AtrPosWidget, KellyPosWidget, PtPosition
         self.pos_array = []
         self.pos_array.append(AtrPosWidget(self))
         self.pos_array.append(KellyPosWidget(self))
+        self.pos_array.append(PtPosition(self))
 
         #  ps() call用widget组list
         children = [pos() for pos in self.pos_array]

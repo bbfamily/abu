@@ -98,13 +98,16 @@ class BuyFactorWGManager(WidgetFactorManagerBase):
     def _init_widget(self):
         """构建内置的买入策略可视化组件，构造出self.factor_box"""
 
-        from ..WidgetBu.ABuWGBuyFactor import BuyDMWidget, BuyXDWidget, BuyWDWidget, BuySDWidget, BuyWMWidget
+        from ..WidgetBu.ABuWGBuyFactor import BuyDMWidget, BuyXDWidget, BuyWDWidget
+        from ..WidgetBu.ABuWGBuyFactor import BuySDWidget, BuyWMWidget, BuyDUWidget
+
         self.bf_array = []
         self.bf_array.append(BuyDMWidget(self))
         self.bf_array.append(BuyXDWidget(self))
         self.bf_array.append(BuyWDWidget(self))
         self.bf_array.append(BuySDWidget(self))
         self.bf_array.append(BuyWMWidget(self))
+        self.bf_array.append(BuyDUWidget(self))
 
         # bf() call用widget组list
         children = [bf() for bf in self.bf_array]

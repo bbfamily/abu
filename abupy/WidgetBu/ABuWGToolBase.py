@@ -13,10 +13,11 @@ import ipywidgets as widgets
 import pandas as pd
 
 from ..CoreBu import ABuEnv
-from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func, browser_down_csv_zip
+from ..WidgetBu.ABuWGBase import WidgetBase, show_msg_func
 from ..WidgetBu.ABuWGBSymbol import WidgetSymbolChoice
 from ..WidgetBu.ABuWGBRunBase import WidgetEnvSetMixin, WidgetTimeModeMixin
 from ..MarketBu import ABuSymbolPd
+from ..MarketBu.ABuDataCheck import browser_down_csv_zip
 from ..UtilBu import ABuProgress
 from ..TLineBu.ABuTL import AbuTLine
 
@@ -121,7 +122,7 @@ class WidgetToolBase(WidgetBase):
         self.label_layout = widgets.Layout(width='300px', align_items='stretch')
         self.tool_layout = widgets.Layout(align_items='stretch', justify_content='space-between')
         self.scroll_widget_layout = widgets.Layout(overflow_x='scroll',
-                                                   flex_direction='row',
+                                                   # flex_direction='row',
                                                    display='flex')
         self.description_layout = widgets.Layout(height='150px')
         # 默认不启动可滚动因子界面，因为对外的widget版本以及os操作系统不统一

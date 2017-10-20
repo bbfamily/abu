@@ -87,7 +87,7 @@ def from_net(func):
 
 
 @from_local
-def _find_similar(symbol, cmp_cnt=None, n_folds=None, start=None, end=None, show_cnt=None, rolling=False,
+def _find_similar(symbol, cmp_cnt=None, n_folds=2, start=None, end=None, show_cnt=None, rolling=False,
                   show=True, corr_type=ECoreCorrType.E_CORE_TYPE_PEARS):
     """
     被from_local装饰器装饰 即强制走本地数据，获取全市场symbol涨跌幅度pd.DataFrame对象，
@@ -136,7 +136,7 @@ def find_similar_with_se(symbol, start, end, show_cnt=10, rolling=False, show=Tr
                          corr_type=corr_type)
 
 
-def find_similar_with_folds(symbol, n_folds=None, show_cnt=10, rolling=False, show=True,
+def find_similar_with_folds(symbol, n_folds=2, show_cnt=10, rolling=False, show=True,
                             corr_type=ECoreCorrType.E_CORE_TYPE_PEARS):
     """
     固定参数使用n_folds参数提供时间范围规则，套接_find_similar，为_find_similar提供时间范围规则
@@ -269,7 +269,7 @@ def _net_cg_df_create(symbol, benchmark):
 
 
 @consume_time
-def _all_market_cg(symbol, cmp_cnt=None, n_folds=None, start=None, end=None):
+def _all_market_cg(symbol, cmp_cnt=None, n_folds=2, start=None, end=None):
     """
     获取全市场symbol涨跌幅度pd.DataFrame对象
     :param symbol: 外部指定目标symbol，str对象
