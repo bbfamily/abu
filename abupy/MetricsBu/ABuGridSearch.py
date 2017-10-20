@@ -341,8 +341,8 @@ class GridSearch(object):
             logging.info(u'买入因子组合0: 形式为{}'.format(buy_factors_product[0]))
 
             logging.info(u'买入卖出组合形式共: {} X {} = {}种'.format(
-                len(buy_factors_product[0]), len(sell_factors_product[0]),
-                len(buy_factors_product[0]) * len(sell_factors_product[0])))
+                len(buy_factors_product), len(sell_factors_product),
+                len(buy_factors_product) * len(sell_factors_product)))
             # return buy_factors_product, sell_factors_product
             gs = cls(read_cash, choice_symbols, buy_factors_product=buy_factors_product,
                      sell_factors_product=sell_factors_product, score_weights=score_weights,
