@@ -24,7 +24,7 @@ from ..CoreBu.ABuParallel import delayed, Parallel
 from ..CoreBu.ABuEnv import EMarketDataSplitMode, EMarketTargetType
 from ..MarketBu import ABuSymbolPd
 from ..MarketBu.ABuMarket import split_k_market, all_symbol
-from ..MarketBu.ABuSymbol import IndexSymbol
+from ..MarketBu.ABuSymbol import IndexSymbol, Symbol
 from ..UtilBu.ABuDTUtil import consume_time
 from ..UtilBu.ABuProgress import do_clear_output
 from ..CoreBu.ABuEnvProcess import add_process_env_sig, AbuEnvProcess
@@ -102,6 +102,9 @@ def _find_similar(symbol, cmp_cnt=None, n_folds=2, start=None, end=None, show_cn
     :param show: 是否可视化最终top最相关的股票
     :param corr_type: ECoreCorrType对象，暂时支持皮尔逊，斯皮尔曼，＋－符号相关系数，移动时间加权相关系数
     """
+    if isinstance(symbol, Symbol):
+        # 如果传递的时Symbol对象，取value
+        symbol = symbol.value
     # 获取全市场symbol涨跌幅度pd.DataFrame对象
     market_change_df = _all_market_cg(symbol, cmp_cnt=cmp_cnt, n_folds=n_folds, start=start, end=end)
     if market_change_df is None:
