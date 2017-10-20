@@ -29,6 +29,9 @@ def code_to_symbol(code, rs=True):
     from ..MarketBu.ABuSymbolStock import AbuSymbolCN, AbuSymbolUS
     from ..MarketBu.ABuMarket import all_symbol
 
+    if isinstance(code, Symbol):
+        # code本身时symbol对象直接返回
+        return code
     if not isinstance(code, six.string_types):
         # code必须是string_types
         raise TypeError('code must be string_types!!!，{} : type is {}'.format(code, type(code)))
