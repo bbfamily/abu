@@ -16,6 +16,8 @@ from IPython.display import display
 from ipywidgets import FloatProgress, Text, Box
 
 from ..CoreBu import ABuEnv
+# noinspection PyUnresolvedReferences
+from ..CoreBu.ABuFixes import filter
 from ..UtilBu.ABuDTUtil import warnings_filter, catch_error
 from ..UtilBu import ABuFileUtil, ABuOsUtil
 from ..CoreBu.ABuParallel import run_in_subprocess, run_in_thread
@@ -150,7 +152,21 @@ def do_check_process_is_dead():
                 pop_progress.close()
 
 
+# 不管ui进度条有什么问题，也不能影响任务主进程主任务工作的进度执行
+@catch_error(log=False)
+def cache_socket_ready():
+    """通信临时文件准备工作"""
+    ABuFileUtil.ensure_dir(K_SOCKET_FN_BASE)
+    cache_list = os.listdir(ABuEnv.g_project_cache_dir)
+    socket_cache_list = list(filter(lambda cache: cache.startswith('abu_socket_progress'), cache_list))
+    if len(socket_cache_list) > 300:
+        # 如果有超过300个进度socket缓存，进行清理
+        for sk_name in socket_cache_list:
+            ABuFileUtil.del_file(os.path.join(ABuEnv.g_project_cache_dir, sk_name))
+
 if g_show_ui_progress and ABuEnv.g_main_pid == os.getpid() and ABuEnv.g_is_ipython:
+    # 通信临时文件准备工作
+    cache_socket_ready()
     # 如果是主进程执行进行子线程函数ui_progress_socket_work：处理子进程传递的进度条处理信息：创建，进度更新，销毁
     run_in_thread(ui_progress_socket_work)
     # 如果是主进程执行进行子线程函数check_process_is_dead：检测ui_progress_dict中的进程是否仍然活着，从字典中清除，close ui
