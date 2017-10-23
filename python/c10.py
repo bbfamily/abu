@@ -911,8 +911,8 @@ def sample_1052():
     # 需要在有缓存的情况下运行
     abu_result_tuple, _ = sample_1051_1(from_cache=True, show=False)
 
-    from abupy import AbuUmpMainMul
-    mul = AbuUmpMainMul.UmpMulFiter(orders_pd=abu_result_tuple.orders_pd, scaler=False)
+    from abupy.UmpBu.ABuUmpMainMul import UmpMulFiter
+    mul = UmpMulFiter(orders_pd=abu_result_tuple.orders_pd, scaler=False)
     print('mul.df.head():\n', mul.df.head())
 
     # 默认使用svm作为分类器
@@ -926,8 +926,8 @@ def sample_1052():
     mul.estimator.knn_classifier()
     mul.cross_val_accuracy_score()
 
-    from abupy import AbuUmpMainDeg
-    deg = AbuUmpMainDeg.UmpDegFiter(orders_pd=abu_result_tuple.orders_pd)
+    from abupy.UmpBu.ABuUmpMainBase import UmpDegFiter
+    deg = UmpDegFiter(orders_pd=abu_result_tuple.orders_pd)
     print('deg.df.head():\n', deg.df.head())
 
     print('xgb_classifier cv please wait...')

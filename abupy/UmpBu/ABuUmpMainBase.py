@@ -933,6 +933,9 @@ class AbuUmpMainBase(AbuUmpBase):
                     ................................
         """
         if llps is None:
+            if not hasattr(self, 'llps'):
+                # fit中订单不足量等终止情况
+                return
             llps = self.llps
 
         clf_cluster_dict = {}
