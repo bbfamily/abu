@@ -355,7 +355,7 @@ def dump_df_csv(file_name, df):
     if df is not None:
         # TODO 为效率，不应该在函数内部ensure_dir，确保使用dump_df_csv需要在外部ensure_dir
         ensure_dir(file_name)
-        df.to_csv(file_name, columns=df.columns, index=True)
+        df.to_csv(file_name, columns=df.columns, index=True, encoding='utf-8')
 
 
 def load_df_csv(file_name):

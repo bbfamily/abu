@@ -9,6 +9,7 @@ from ..AlphaBu.ABuPickStockMaster import AbuPickStockMaster
 from ..AlphaBu.ABuPickTimeMaster import AbuPickTimeMaster
 from ..CoreBu import ABuEnv
 from ..CoreBu import ABuStore
+from ..CoreBu.ABuStore import EStoreAbu
 from ..CoreBu.ABuEnv import EMarketDataFetchMode
 from ..CoreBu.ABuStore import AbuResultTuple
 from ..MarketBu.ABuMarket import all_symbol
@@ -181,7 +182,8 @@ def run_kl_update(n_folds=2, start=None, end=None, market=None, n_jobs=16, how='
         ABuEnv.g_market_target = pre_market
 
 
-def store_abu_result_tuple(abu_result_tuple, n_folds, store_type=None, custom_name=None):
+def store_abu_result_tuple(abu_result_tuple, n_folds=None, store_type=EStoreAbu.E_STORE_NORMAL,
+                           custom_name=None):
     """
     保存abu.run_loop_back的回测结果AbuResultTuple对象，根据n_folds，store_type参数
     来定义存储的文件名称，透传参数使用ABuStore.store_abu_result_tuple执行操作
@@ -194,7 +196,7 @@ def store_abu_result_tuple(abu_result_tuple, n_folds, store_type=None, custom_na
     ABuStore.store_abu_result_tuple(abu_result_tuple, n_folds, store_type=store_type, custom_name=custom_name)
 
 
-def load_abu_result_tuple(n_folds, store_type, custom_name=None):
+def load_abu_result_tuple(n_folds=None, store_type=EStoreAbu.E_STORE_NORMAL, custom_name=None):
     """
     读取使用store_abu_result_tuple保存的回测结果，根据n_folds，store_type参数
     来定义读取的文件名称，依次读取orders_pd，action_pd，capital，benchmark后构造

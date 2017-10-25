@@ -217,3 +217,9 @@ class WidgetSearchBox(WidgetBase):
             result_options = [u'{}:{}'.format(to_unicode(result_dict[symbol]), to_unicode(symbol))
                               for symbol in result_dict]
             self.search_result.options = result_options
+
+
+# noinspection PyUnusedLocal
+def permission_denied(*arg, **kwargs):
+    """执行权限不足的用户提示"""
+    show_msg_toast_func(u'所执行的操作权限不足！')

@@ -5,7 +5,6 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
 
-
 import pandas as pd
 from IPython.display import display
 import ipywidgets as widgets
@@ -18,6 +17,7 @@ from ..WidgetBu.ABuWGBFBase import BuyFactorWGManager
 from ..WidgetBu.ABuWGSFBase import SellFactorWGManager
 from ..WidgetBu.ABuWGPSBase import PickStockWGManager
 from ..WidgetBu.ABuWGPosBase import PosWGManager
+from ..WidgetBu.ABuWGUmp import WidgetUmp
 
 from ..CoreBu.ABu import run_loop_back
 from ..CoreBu.ABuStore import store_abu_result_out_put
@@ -58,10 +58,13 @@ class WidgetRunLoopBack(WidgetBase):
         # 资金管理注册买入策略接收改变
         self.pos.register(self.bf)
 
+        # 构造裁判界面
+        self.ump = WidgetUmp()
+
         sub_widget_tab = widgets.Tab()
         sub_widget_tab.children = [self.tt.widget, self.sc.widget, self.bf.widget, self.sf.widget, self.ps.widget,
-                                   self.pos.widget]
-        for ind, name in enumerate([u'基本', u'股池', u'买策', u'卖策', u'选股', u'资管']):
+                                   self.pos.widget, self.ump.widget]
+        for ind, name in enumerate([u'基本', u'股池', u'买策', u'卖策', u'选股', u'资管', u'裁判']):
             sub_widget_tab.set_title(ind, name)
 
         self.run_loop_bt = widgets.Button(description=u'开始回测', layout=widgets.Layout(width='98%'),
@@ -148,7 +151,8 @@ class WidgetRunLoopBack(WidgetBase):
         if len(pos_class_list) == 1:
             # 资金仓位管理全局策略设置, [0]全局仓位管理策略只能是一个且是唯一
             ABuPositionBase.g_default_pos_class = pos_class_list[0]
-
+        # 裁判根据工作模式进行回测前设置
+        self.ump.run_before()
         if choice_symbols is not None and len(choice_symbols) == 1:
             # 如果只有1支股票回测，直接使用这个股票做为做为对比基准
             benchmark = AbuBenchmark(choice_symbols[0])
@@ -187,3 +191,7 @@ class WidgetRunLoopBack(WidgetBase):
             metrics = AbuMetricsBase(*abu_result_tuple)
         metrics.fit_metrics()
         self._metrics_out_put(metrics, abu_result_tuple)
+
+        # ump收尾工作
+        self.ump.run_end(abu_result_tuple, choice_symbols, list(self.bf.factor_dict.keys()),
+                         list(self.sf.factor_dict.keys()), list(self.ps.factor_dict.keys()))
