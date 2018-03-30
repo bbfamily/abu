@@ -74,7 +74,7 @@ def plot_his_trade(orders, kl_pd):
             plt.plot(all_pd.index, all_pd['close'], label='close')
 
             try:
-                # 填充透明blue
+                # 填充透明blue, 针对用户一些版本兼容问题进行处理
                 plt.fill_between(all_pd.index, 0, all_pd['close'], color='blue', alpha=.18)
                 if order.sell_type == 'keep':
                     # 如果单子还没卖出，是否win使用now_price代替sell_price，需＊单子期望的盈利方向
@@ -91,7 +91,6 @@ def plot_his_trade(orders, kl_pd):
                     plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='green', alpha=.38)
             except:
                 logging.debug('fill_between numpy type not safe!')
-
             # 格式化买入信息标签
             buy_date_fmt = ABuDateUtil.str_to_datetime(str(order.buy_date), '%Y%m%d')
             buy_tip = 'buy_price:{:.2f}'.format(order.buy_price)
