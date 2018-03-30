@@ -53,6 +53,9 @@ class AbuMLPd(six.with_metaclass(ABCMeta, object)):
             return getattr(self.fiter, item)
         即AbuMLPd中可以使用ABuML类对象中任何方法
         """
+        if item.startswith('__'):
+            # noinspection PyUnresolvedReferences
+            return super().__getattr__(item)
         return getattr(self.fiter, item)
 
     def __call__(self):

@@ -72,23 +72,25 @@ def plot_his_trade(orders, kl_pd):
                 plt.subplot2grid(fig_dims, (index, 0))
             # 绘制价格曲线
             plt.plot(all_pd.index, all_pd['close'], label='close')
-            # 填充透明blue
-            plt.fill_between(all_pd.index, 0, all_pd['close'], color='blue', alpha=.18)
 
-            if order.sell_type == 'keep':
-                # 如果单子还没卖出，是否win使用now_price代替sell_price，需＊单子期望的盈利方向
-                order_win = (now_price - order.buy_price) * order.expect_direction > 0
-            elif order.sell_type == 'win':
-                order_win = True
-            else:
-                order_win = False
-
-            if order_win:
-                # 盈利的使用红色
-                plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='red', alpha=.38)
-            else:
-                # 亏损的使用绿色
-                plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='green', alpha=.38)
+            try:
+                # 填充透明blue
+                plt.fill_between(all_pd.index, 0, all_pd['close'], color='blue', alpha=.18)
+                if order.sell_type == 'keep':
+                    # 如果单子还没卖出，是否win使用now_price代替sell_price，需＊单子期望的盈利方向
+                    order_win = (now_price - order.buy_price) * order.expect_direction > 0
+                elif order.sell_type == 'win':
+                    order_win = True
+                else:
+                    order_win = False
+                if order_win:
+                    # 盈利的使用红色
+                    plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='red', alpha=.38)
+                else:
+                    # 亏损的使用绿色
+                    plt.fill_between(rv_pd.index, 0, rv_pd['close'], color='green', alpha=.38)
+            except:
+                logging.debug('fill_between numpy type not safe!')
 
             # 格式化买入信息标签
             buy_date_fmt = ABuDateUtil.str_to_datetime(str(order.buy_date), '%Y%m%d')

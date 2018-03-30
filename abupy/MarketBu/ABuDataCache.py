@@ -322,8 +322,18 @@ def dump_kline_df(dump_df, symbol_key, date_key):
             # 最终保存的为new_df
             dump_kline_func(symbol_key, date_key, new_df, delete_key=df_date_key)
         else:
-            # 完全一样，是不是应该直接保存了呢，类似更新操作，暂时什么也不做
-            pass
+            # 完全包裹数据，但是更新最新下载下来的数据替换之前的本地数据，类似更新操作
+            # 首先读取原来的金融时间序列
+            # date_key 取和之前一摸一样的
+
+            date_key = '{}_{}_{}'.format(symbol_key, df_start, df_end)
+            local_df = load_kline_func(df_date_key[0])
+            local_df_st = local_df[local_df.date < _start]
+            local_df_ed = local_df[local_df.date > _end]
+            # concat连起来三个部分
+            new_df = pd.concat([local_df_st, dump_df, local_df_ed])
+            # 最终保存的为new_df
+            dump_kline_func(symbol_key, date_key, new_df, delete_key=df_date_key)
     else:
         # 即之前不存在本地缓存，直接存储在本地即可
         dump_kline_func(symbol_key, date_key, dump_df)

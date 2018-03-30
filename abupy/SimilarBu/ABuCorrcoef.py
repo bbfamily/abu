@@ -51,17 +51,24 @@ def corr_xy(x, y, similar_type=ECoreCorrType.E_CORE_TYPE_PEARS, **kwargs):
     :param similar_type: ECoreCorrType, 默认值ECoreCorrType.E_CORE_TYPE_PEARS
     :return: x与y的相关系数返回值
     """
+    if similar_type == ECoreCorrType.E_CORE_TYPE_SIGN:
+        # 序列＋－符号相关系数, 使用np.sign取符号后，再np.corrcoef计算
+        x = np.sign(x)
+        y = np.sign(y)
+        similar_type = ECoreCorrType.E_CORE_TYPE_PEARS
+
+    # noinspection PyTypeChecker
+    if np.all(x == x[0]) or np.all(y == y[0]):
+        # 如果全序列唯一不能使用相关计算，使用相同的数和与总数的比例
+        # noinspection PyUnresolvedReferences
+        return (x == y).sum() / x.count()
+
     if similar_type == ECoreCorrType.E_CORE_TYPE_PEARS:
         # 皮尔逊相关系数计算
         return np.corrcoef(x, y)[0][1]
     elif similar_type == ECoreCorrType.E_CORE_TYPE_SPERM:
         # 斯皮尔曼相关系数计算, 使用自定义spearmanr，不计算p_value
         return spearmanr(x, y)[0][1]
-    elif similar_type == ECoreCorrType.E_CORE_TYPE_SIGN:
-        # 序列＋－符号相关系数, 使用np.sign取符号后，再np.corrcoef计算
-        sign_x = np.sign(x)
-        sign_y = np.sign(y)
-        return np.corrcoef(sign_x, sign_y)[0][1]
     elif similar_type == ECoreCorrType.E_CORE_TYPE_ROLLING:
         # pop参数window，默认使用g_rolling_corr_window
         window = kwargs.pop('window', g_rolling_corr_window)

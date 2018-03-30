@@ -35,6 +35,7 @@ def _parse_version(version_string):
             version.append(x)
     return tuple(version)
 
+
 """numpy 版本号tuple"""
 np_version = _parse_version(np.__version__)
 """sklearn 版本号tuple"""
@@ -45,7 +46,6 @@ pd_version = _parse_version(pd.__version__)
 sp_version = _parse_version(scipy.__version__)
 """matplotlib 版本号tuple"""
 mpl_version = _parse_version(matplotlib.__version__)
-
 
 try:
     from inspect import signature, Parameter
@@ -114,7 +114,9 @@ except ImportError:
             @functools.wraps(func)
             def wrapper(*args, **kwargs):
                 return func(*args, **kwargs)
+
             return wrapper
+
         return decorate
 
 try:
@@ -182,7 +184,6 @@ else:
     # noinspection PyUnresolvedReferences
     from urllib import urlencode
 
-
 """
     sklearn fixes
 """
@@ -200,7 +201,12 @@ def check_random_state(seed):
                      ' instance' % seed)
 
 
-if skl_version >= (0, 18, 0):
+try:
+    skl_ver_big = skl_version >= (0, 18, 0)
+except:
+    skl_ver_big = True
+
+if skl_ver_big:
     mean_squared_error_scorer = 'neg_mean_squared_error'
     mean_absolute_error_scorer = 'neg_mean_absolute_error'
     median_absolute_error_scorer = 'neg_median_absolute_error'
@@ -220,6 +226,7 @@ if skl_version >= (0, 18, 0):
                 sklearn将KFold移动到了model_selection，而且改变了用法，暂时不需要
                 这么复杂的功能，将sklearn中关键代码简单实现，不from sklearn.model_selection import KFold
             """
+
             def __init__(self, n, n_folds=3, shuffle=False, random_state=None):
                 if abs(n - int(n)) >= np.finfo('f').eps:
                     raise ValueError("n must be an integer")
@@ -320,53 +327,60 @@ else:
     # noinspection PyUnresolvedReferences, PyDeprecation
     from sklearn.mixture import GMM
 
-if np_version < (1, 8, 1):
-    def array_equal(a1, a2):
-        # copy-paste from numpy 1.8.1
-        try:
-            a1, a2 = np.asarray(a1), np.asarray(a2)
-        except:
-            return False
-        if a1.shape != a2.shape:
-            return False
-        return bool(np.asarray(a1 == a2).all())
-else:
+try:
+    if np_version < (1, 8, 1):
+        def array_equal(a1, a2):
+            # copy-paste from numpy 1.8.1
+            try:
+                a1, a2 = np.asarray(a1), np.asarray(a2)
+            except:
+                return False
+            if a1.shape != a2.shape:
+                return False
+            return bool(np.asarray(a1 == a2).all())
+    else:
+        from numpy import array_equal
+except:
     from numpy import array_equal
 
-if sp_version < (0, 13, 0):
-    def rankdata(a, method='average'):
-        if method not in ('average', 'min', 'max', 'dense', 'ordinal'):
-            raise ValueError('unknown method "{0}"'.format(method))
+try:
+    if sp_version < (0, 13, 0):
+        def rankdata(a, method='average'):
+            if method not in ('average', 'min', 'max', 'dense', 'ordinal'):
+                raise ValueError('unknown method "{0}"'.format(method))
 
-        arr = np.ravel(np.asarray(a))
-        algo = 'mergesort' if method == 'ordinal' else 'quicksort'
-        sorter = np.argsort(arr, kind=algo)
+            arr = np.ravel(np.asarray(a))
+            algo = 'mergesort' if method == 'ordinal' else 'quicksort'
+            sorter = np.argsort(arr, kind=algo)
 
-        inv = np.empty(sorter.size, dtype=np.intp)
-        inv[sorter] = np.arange(sorter.size, dtype=np.intp)
+            inv = np.empty(sorter.size, dtype=np.intp)
+            inv[sorter] = np.arange(sorter.size, dtype=np.intp)
 
-        if method == 'ordinal':
-            return inv + 1
+            if method == 'ordinal':
+                return inv + 1
 
-        arr = arr[sorter]
-        obs = np.r_[True, arr[1:] != arr[:-1]]
-        dense = obs.cumsum()[inv]
+            arr = arr[sorter]
+            obs = np.r_[True, arr[1:] != arr[:-1]]
+            dense = obs.cumsum()[inv]
 
-        if method == 'dense':
-            return dense
+            if method == 'dense':
+                return dense
 
-        # cumulative counts of each unique value
+            # cumulative counts of each unique value
+            # noinspection PyUnresolvedReferences
+            count = np.r_[np.nonzero(obs)[0], len(obs)]
+
+            if method == 'max':
+                return count[dense]
+
+            if method == 'min':
+                return count[dense - 1] + 1
+
+            # average method
+            return .5 * (count[dense] + count[dense - 1] + 1)
+    else:
         # noinspection PyUnresolvedReferences
-        count = np.r_[np.nonzero(obs)[0], len(obs)]
-
-        if method == 'max':
-            return count[dense]
-
-        if method == 'min':
-            return count[dense - 1] + 1
-
-        # average method
-        return .5 * (count[dense] + count[dense - 1] + 1)
-else:
+        from scipy.stats import rankdata
+except:
     # noinspection PyUnresolvedReferences
     from scipy.stats import rankdata
