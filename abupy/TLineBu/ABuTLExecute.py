@@ -340,13 +340,12 @@ def bfgs_min_pos(find_min_pos, y_len, linear_interp):
 
 def support_resistance_pos(x, support_resistance_y, best_poly=0, label=None):
     """
-    分析获取序列阻力位或者支撑位，通过sco.fmin_bfgs寻找阻力位支撑位，阻力位点也是通过sco.fmin_bfgs寻找，
+    分析获取序列阻力位或者支撑位，通过对导函数和二阶导函数求根寻找阻力位支撑位，阻力位点也是用同方法寻找，
     但是要求传递进来的序列已经是标准化后取反的序列
     eg：
         demean_y = ABuStatsUtil.demean(self.tl)： 首先通过demean将序列去均值
         resistance_y = demean_y * -1 ：阻力位序列要取反
         support_y = demean_y ：支持位序列不需要取反
-    sco.fmin_bfgs使用的模型函数为polynomial.Chebyshev多项拟合函数，poly的次数确定
     由ABuRegUtil.search_best_poly得到，即best_poly次多项式拟合回归的趋势曲线可以比较完美的代表原始曲线y的走势，
     为了得到更多的阻力支持位种子点位值，使用：
         np.polynomial.Chebyshev.fit(x, support_resistance_y, best_poly * g_upport_resistance_unit)
@@ -370,20 +369,14 @@ def support_resistance_pos(x, support_resistance_y, best_poly=0, label=None):
     # 为了得到更多的阻力支持位种子点位值->best_poly * 3，即将poly次数又扩大了3倍
     p = np.polynomial.Chebyshev.fit(x, support_resistance_y, best_poly)
 
-    # 需要使用set，因为需要过滤重复的
-    support_resistance = set()
-    # 属于耗时操作，构建进度条显示
-    with AbuProgress(len(support_resistance_y), 0, label) as progess:
-        for index in xrange(0, len(support_resistance_y), 1):
-            progess.show(index + 1)
-            local_min_pos = int(bfgs_min_pos(index, len(support_resistance_y), p))
-            if local_min_pos == -1:
-                # 其实主要就是利用这里找不到的情况进行过滤
-                continue
-            # 将local_min_pos加到集合中
-            support_resistance.add(local_min_pos)
-    # 为了方便后续api将set转换list
-    support_resistance = list(support_resistance)
+    # 求导函数的根
+    support_resistance = [int(round(_.real)) for _ in p.deriv().roots()]
+    support_resistance = [_ for _ in support_resistance if _ > 0 and _ < len(support_resistance_y)]
+
+    # 通过二阶导数分拣极大值和极小值
+    second_deriv = p.deriv(2)
+    support_resistance = [_ for _ in support_resistance if second_deriv(_) > 0]
+
     return support_resistance
 
 
