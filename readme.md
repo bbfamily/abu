@@ -35,7 +35,9 @@
 * [电脑浏览器访问网址: https://www.abuquant.com](https://www.abuquant.com)
 * [iOS苹果手机AppStore下载链接](https://itunes.apple.com/cn/app/id1447039705?mt=8)
 * [android手机下载链接页面](https://www.abuquant.com/download)
-
+* [量化技术博客地址](https://blog.abuquant.com/)
+* [K线课堂地址](https://blog.abuquant.com/category/kl_classical)
+* [量化课堂地址](https://blog.abuquant.com/category/lecture/)
 
 ### APP简介
 
