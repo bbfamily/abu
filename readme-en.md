@@ -136,7 +136,7 @@ A good trading strategy needs a good stock.
 
 Good metric give you right direction. 
 
-1. basic useage about metric
+1. basic usage about metric
 2. visualization on metrics
 3. expand self-custom metric
 
