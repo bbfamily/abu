@@ -1,6 +1,5 @@
 ![](./img/head.png)
 
-![](./img/d2.png)
 
 #### Abu seeks the intelligent-strategy which be able to explained by of a word.
 
@@ -35,13 +34,25 @@ Our expectations : abu users only need to provide some seed strategy, on the bas
 * Separate basic strategy and strategy optimization module
 * Improve flexibility and adaptability
 
-### APP & WEB
+### WEB
 
 * [web site: https://www.abuquant.com](https://www.abuquant.com)
-* [iOS AppStore](https://itunes.apple.com/cn/app/id1447039705?mt=8)
-* [android download](https://www.abuquant.com/download)
+* [https://www.abuquant.com/abu_context/output_cn_week_2022-10-10/report/sh000001/index.html](https://www.abuquant.com/abu_context/output_cn_week_2022-10-10/report/sh000001/index.html)
+* [https://www.abuquant.com/abu_context/output_cn_day_2022-10-11-00-25-15/report/sh000001/index.html](https://www.abuquant.com/abu_context/output_cn_day_2022-10-11-00-25-15/report/sh000001/index.html)
 
-![](./img/d3.png)
+* [https://www.abuquant.com/abu_context/output_cn_week_2022-10-16/report/sz399001/index.html](https://www.abuquant.com/abu_context/output_cn_week_2022-10-16/report/sz399001/index.html)
+* [https://www.abuquant.com/abu_context/output_cn_day_2022-10-12-13-40-48/report/sz399001/index.html](https://www.abuquant.com/abu_context/output_cn_day_2022-10-12-13-40-48/report/sz399001/index.html)
+
+* [https://www.abuquant.com/abu_context/output_us_week_2022-10-11/report/us.DJI/index.html](https://www.abuquant.com/abu_context/output_us_week_2022-10-11/report/us.DJI/index.html)
+* [https://www.abuquant.com/abu_context/output_us_day_2022-10-11-01-26-56/report/us.DJI/index.html](https://www.abuquant.com/abu_context/output_us_day_2022-10-11-01-26-56/report/us.DJI/index.html)
+
+* [https://www.abuquant.com/abu_context/output_hk_week_2022-10-10/report/hkHSI/index.html](https://www.abuquant.com/abu_context/output_hk_week_2022-10-10/report/hkHSI/index.html)
+* [https://www.abuquant.com/abu_context/output_hk_day_2022-10-10-23-27-08/report/hkHSI/index.html](https://www.abuquant.com/abu_context/output_hk_day_2022-10-10-23-27-08/report/hkHSI/index.html)
+
+* [https://www.abuquant.com/cn_symbol_list.html](https://www.abuquant.com/cn_symbol_list.html)
+* [https://www.abuquant.com/us_symbol_list.html](https://www.abuquant.com/us_symbol_list.html)
+* [https://www.abuquant.com/hk_symbol_list.html](https://www.abuquant.com/hk_symbol_list.html)
+
 
 ## Install
 
