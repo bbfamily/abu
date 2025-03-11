@@ -9,6 +9,87 @@ Right now, we still writting code by hand, abu is designed to be running complet
 
 Our expectations : abu users only need to provide some seed strategy, on the basis of these seeds, computer continue to self-learning, self-growth, to build a new strategy which can adjust its parameters  with the time series data.
 
+
+###  🏆 [WEB: https://www.abuquant.com](https://www.abuquant.com)
+
+1. 🇨🇳 [CN symbol list:](https://www.abuquant.com/cn1/cn_symbol_list.html)
+
+	* 🇨🇳 [sh000001 week report:](https://www.abuquant.com/abu_context/output_cn_week1/report/sh000001/index.html)
+	* 🇨🇳 [sh000001 day report:](https://www.abuquant.com/abu_context/output_cn_day1/report/sh000001/index.html)
+
+
+2. 🇺🇸 [US symbol list:](https://www.abuquant.com/us1/us_symbol_list.html)
+
+	* 🇺🇸 [usBABA week report:](https://www.abuquant.com/abu_context/output_us_week1/report/usBABA/index.html)
+
+3. 🚩 [HK symbol list:](https://www.abuquant.com/hk1/hk_symbol_list.html)
+	* 🚩 [hk01810 week report:](https://www.abuquant.com/abu_context/output_hk_week1/report/hk01810/index.html)
+
+4. 📡 [https://www.abuquant.com/find_itl.html](https://www.abuquant.com/find_itl.html)
+
+	* 📐 [Upward triangle consolidation and upward breakthrough:](https://www.abuquant.com/itl_feature1/pattern_90triangle_up_up_break_symbol_list.html)
+	* 🌊 [Wave theory retraces wave c point:](https://www.abuquant.com/itl_feature1/dn_5wr_c_revert_symbol_list.html)
+
+	* ✂️ [Risk of upward trend and downward breakthrough:](https://www.abuquant.com/itl_feature1/trend_breakthrough_risk_symbol_list.html)
+
+	* 🐶 [Point C will rise to point D to complete the downgrade of Saifu:](https://www.abuquant.com/itl_feature1/dn_cypher_xabc_predict_symbol_list.html)
+	* ☯ [Entangled discussion relay ❸ Buy up:](https://www.abuquant.com/itl_feature1/dn_right_tangle_three_symbol_list.html)
+
+
+	* 🚩[Wedge shaped sorting and upward breakthrough:](https://www.abuquant.com/itl_feature1/pattern_wedge_dn_break_symbol_list.html)
+	* 🦇[Bats have reached the point of ascending bats:](https://www.abuquant.com/itl_feature1/up_bat_abcd_regular_symbol_list.html)
+
+	* ☯️[Entangled discussion relay ❷ Buy up:](https://www.abuquant.com/itl_feature1/dn_right_tangle_two_symbol_list.html)
+
+	* 🌊[Wave Theory: Reversal of Waves:](https://www.abuquant.com/itl_feature1/up_5wr_c_revert_symbol_list.html)
+	
+	* ⚔️[Trend line breakthrough opportunity:](https://www.abuquant.com/itl_feature1/trend_breakthrough_chance_symbol_list.html)
+
+
+
+	* ☯️[Entangled discussion relay ❸ Selling downwards:](https://www.abuquant.com/itl_feature1/up_right_tangle_three_symbol_list.html)
+
+	* 🐶[The completion of the D-point of the descending Saifu:](https://www.abuquant.com/itl_feature1/dn_cypher_xabc_predict_symbol_list.html)
+
+	* ▴▲▴[Head, shoulders, top down breakthrough:](https://www.abuquant.com/itl_feature1/trend_support_encounter_dn_symbol_list.html)
+	* ✂️[Strong upward trend, strong support, and possible breakout:](https://www.abuquant.com/itl_feature1/pattern_head_top_break_symbol_list.html)
+
+	* 🌊[Upward pullback wave relay b:](https://www.abuquant.com/itl_feature1/dn_5wr_b_pos_symbol_list.html)
+
+	* 🦊[Complete the reduction of Gali d point:](https://www.abuquant.com/itl_feature1/dn_gartley_abcd_predict_symbol_list.html)
+
+	* ☯️[Entangled discussion relay ❷ Sell downwards:](https://www.abuquant.com/itl_feature1/up_right_tangle_two_symbol_list.html)
+	* ✂️[Strong upward trend, strong support, and possible breakout:](https://www.abuquant.com/itl_feature1/pattern_head_top_break_symbol_list.html)
+
+	* ❐[Falling rectangle achieves the falling target:](https://www.abuquant.com/itl_feature1/pattern_rect_dn_up_target_symbol_list.html)
+
+	* 🌊[Wave theory falling relay c:](https://www.abuquant.com/itl_feature1/up_5wr_c_regular_symbol_list.html)
+
+
+	* 🦀️[The crab's D point has been completed:](https://www.abuquant.com/itl_feature1/up_crab_abcd_predict_symbol_list.html)
+	* ⚑[Flag lowering, sorting and upward breakthrough:](https://www.abuquant.com/itl_feature1/pattern_flag_dn_break_symbol_list.html)
+
+	* ☯[Entanglement reversal ❶ Buy up:](https://www.abuquant.com/itl_feature1/dn_lr_tg_one_symbol_list.html)
+
+	* 🌊[Wave theory rising relay c:](https://www.abuquant.com/itl_feature1/dn_5wr_c_regular_symbol_list.html)
+
+
+	* 🦇[Rising Bat 3rd Rebound Target:](https://www.abuquant.com/itl_feature1/up_bat_hm_t3_symbol_list.html)
+	* 🚩[Rising wedge type achieves the goal of consolidation and decline:](https://www.abuquant.com/itl_feature1/pattern_wedge_up_target_symbol_list.html)
+
+	* ☯[The entanglement center B has just been completed:](https://www.abuquant.com/itl_feature1/up_left_ds_large_tg_one_symbol_list.html)
+
+	
+5. 🅚[K-line composite signal strategy:](https://www.abuquant.com/find_kc.html)
+
+
+	* [Upward Pinbar Combination:](https://www.abuquant.com/kc_feature1/up_pinbar_symbol_list.html)
+	* [downpour:](https://www.abuquant.com/kc_feature1/dn_down_pour_symbol_list.html)
+	* [Low end Wuyang Line:](https://www.abuquant.com/kc_feature1/up_lp_5yang_symbol_list.html)
+
+	* [Rising and carrying six:](https://www.abuquant.com/kc_feature1/up_pregnant_6m_symbol_list.html)
+	* [key stand:](https://www.abuquant.com/kc_feature1/up_1needle_symbol_list.html)
+
 ### Index
 
 | Content | Path | 
@@ -33,26 +114,6 @@ Our expectations : abu users only need to provide some seed strategy, on the bas
 
 * Separate basic strategy and strategy optimization module
 * Improve flexibility and adaptability
-
-### WEB
-
-* [web site: https://www.abuquant.com](https://www.abuquant.com)
-* [https://www.abuquant.com/abu_context/output_cn_week_2022-10-10/report/sh000001/index.html](https://www.abuquant.com/abu_context/output_cn_week_2022-10-10/report/sh000001/index.html)
-* [https://www.abuquant.com/abu_context/output_cn_day_2022-10-11-00-25-15/report/sh000001/index.html](https://www.abuquant.com/abu_context/output_cn_day_2022-10-11-00-25-15/report/sh000001/index.html)
-
-* [https://www.abuquant.com/abu_context/output_cn_week_2022-10-16/report/sz399001/index.html](https://www.abuquant.com/abu_context/output_cn_week_2022-10-16/report/sz399001/index.html)
-* [https://www.abuquant.com/abu_context/output_cn_day_2022-10-12-13-40-48/report/sz399001/index.html](https://www.abuquant.com/abu_context/output_cn_day_2022-10-12-13-40-48/report/sz399001/index.html)
-
-* [https://www.abuquant.com/abu_context/output_us_week_2022-10-11/report/us.DJI/index.html](https://www.abuquant.com/abu_context/output_us_week_2022-10-11/report/us.DJI/index.html)
-* [https://www.abuquant.com/abu_context/output_us_day_2022-10-11-01-26-56/report/us.DJI/index.html](https://www.abuquant.com/abu_context/output_us_day_2022-10-11-01-26-56/report/us.DJI/index.html)
-
-* [https://www.abuquant.com/abu_context/output_hk_week_2022-10-10/report/hkHSI/index.html](https://www.abuquant.com/abu_context/output_hk_week_2022-10-10/report/hkHSI/index.html)
-* [https://www.abuquant.com/abu_context/output_hk_day_2022-10-10-23-27-08/report/hkHSI/index.html](https://www.abuquant.com/abu_context/output_hk_day_2022-10-10-23-27-08/report/hkHSI/index.html)
-
-* [https://www.abuquant.com/cn_symbol_list.html](https://www.abuquant.com/cn_symbol_list.html)
-* [https://www.abuquant.com/us_symbol_list.html](https://www.abuquant.com/us_symbol_list.html)
-* [https://www.abuquant.com/hk_symbol_list.html](https://www.abuquant.com/hk_symbol_list.html)
-
 
 ## Install
 
