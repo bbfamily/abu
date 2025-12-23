@@ -1,5 +1,3 @@
-![](./img/head.png)
-
 ### 索引
 
 | 内容 | 位置 | 
@@ -13,88 +11,99 @@
 
 ###  🏆 [览器访问网址: https://www.abuquant.com](https://www.abuquant.com)
 
-1. 🇨🇳 [沪深市场量化示例分析列表:](https://www.abuquant.com/cn1/cn_symbol_list.html)
+1. 🇨🇳 [沪深市场量化示例分析列表:](https://www.abuquant.com/cn3/cn_symbol_list.html)
 
-	* 🇨🇳 [上证指数周报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_week1/report/sh000001/index.html)
-	* 🇨🇳 [上证指数日报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_day1/report/sh000001/index.html)
-
-
-2. 🇺🇸 [美股市场量化示例分析列表:](https://www.abuquant.com/us1/us_symbol_list.html)
-
-	* 🇺🇸 [阿里巴巴-量化研究报告:](https://www.abuquant.com/abu_context/output_us_week1/report/usBABA/index.html)
-
-3. 🚩 [港股市场量化示例分析列表:](https://www.abuquant.com/hk1/hk_symbol_list.html)
-	* 🚩 [小米集团-量化研究报告:](https://www.abuquant.com/abu_context/output_hk_week1/report/hk01810/index.html)
-
-
-
-4. 📡 [特征交织信号策略:](https://www.abuquant.com/find_itl.html)
-
-
-	* 📐[上升三角整理向上突破:](https://www.abuquant.com/itl_feature1/pattern_90triangle_up_up_break_symbol_list.html)
-	* 🌊[波浪理论回调浪c点:](https://www.abuquant.com/itl_feature1/dn_5wr_c_revert_symbol_list.html)
-
-	* ✂️[升趋势向下破位风险:](https://www.abuquant.com/itl_feature1/trend_breakthrough_risk_symbol_list.html)
-
-	* 🐶[c点将上涨到d点完成降赛福:](https://www.abuquant.com/itl_feature1/dn_cypher_xabc_predict_symbol_list.html)
-	* ☯[缠论中继❸买向上:](https://www.abuquant.com/itl_feature1/dn_right_tangle_three_symbol_list.html)
-
-
-	* 🚩[降楔型整理向上突破:](https://www.abuquant.com/itl_feature1/pattern_wedge_dn_break_symbol_list.html)
-	* 🦇[蝙蝠到达升蝙蝠d点:](https://www.abuquant.com/itl_feature1/up_bat_abcd_regular_symbol_list.html)
-
-	* ☯️[缠论中继❷买向上:](https://www.abuquant.com/itl_feature1/dn_right_tangle_two_symbol_list.html)
-
-	* 🌊[波浪理论回调浪反转:](https://www.abuquant.com/itl_feature1/up_5wr_c_revert_symbol_list.html)
-	
-	* ⚔️[趋势线突破机会:](https://www.abuquant.com/itl_feature1/trend_breakthrough_chance_symbol_list.html)
-
-
-
-	* ☯️[缠论中继❸卖向下:](https://www.abuquant.com/itl_feature1/up_right_tangle_three_symbol_list.html)
-
-	* 🐶[降赛福d点完成:](https://www.abuquant.com/itl_feature1/dn_cypher_xabc_predict_symbol_list.html)
-
-	* ▴▲▴[头肩顶向下突破:](https://www.abuquant.com/itl_feature1/trend_support_encounter_dn_symbol_list.html)
-	* ✂️[升趋势强支撑破位可能:](https://www.abuquant.com/itl_feature1/pattern_head_top_break_symbol_list.html)
-
-	* 🌊[上涨回调浪中继b:](https://www.abuquant.com/itl_feature1/dn_5wr_b_pos_symbol_list.html)
-
-	* 🦊[降伽利d点完成:](https://www.abuquant.com/itl_feature1/dn_gartley_abcd_predict_symbol_list.html)
-
-	* ☯️[缠论中继❷卖向下:](https://www.abuquant.com/itl_feature1/up_right_tangle_two_symbol_list.html)
-	* ✂️[升趋势强支撑破位可能:](https://www.abuquant.com/itl_feature1/pattern_head_top_break_symbol_list.html)
-
-	* ❐[下跌矩形达成下跌目标:](https://www.abuquant.com/itl_feature1/pattern_rect_dn_up_target_symbol_list.html)
-
-	* 🌊[波浪理论下跌中继c:](https://www.abuquant.com/itl_feature1/up_5wr_c_regular_symbol_list.html)
-
-
-	* 🦀️[升螃蟹d点完成:](https://www.abuquant.com/itl_feature1/up_crab_abcd_predict_symbol_list.html)
-	* ⚑[降旗形整理向上突破:](https://www.abuquant.com/itl_feature1/pattern_flag_dn_break_symbol_list.html)
-
-	* ☯[缠论反转❶买向上:](https://www.abuquant.com/itl_feature1/dn_lr_tg_one_symbol_list.html)
-
-	* 🌊[波浪理论上涨中继c:](https://www.abuquant.com/itl_feature1/dn_5wr_c_regular_symbol_list.html)
-
-
-	* 🦇[升蝙蝠第3反弹目标:](https://www.abuquant.com/itl_feature1/up_bat_hm_t3_symbol_list.html)
-	* 🚩[升楔型达成整理下跌目标:](https://www.abuquant.com/itl_feature1/pattern_wedge_up_target_symbol_list.html)
-
-	* ☯[缠论中枢b刚完成:](https://www.abuquant.com/itl_feature1/up_left_ds_large_tg_one_symbol_list.html)
+	* 🇨🇳 [上证指数周报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_week3/report/sh000001/index.html)
+	* 🇨🇳 [上证指数日报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_day3/report/sh000001/index.html)
 
 	
-5. 🅚[K线复合信号策略:](https://www.abuquant.com/find_kc.html)
+2. 🇺🇸 [美股市场量化示例分析列表:](https://www.abuquant.com/us3/us_symbol_list.html)
+
+	* 🇺🇸 [阿里巴巴-量化研究报告:](https://www.abuquant.com/abu_context/output_us_week3/report/usBABA/index.html)
+
+3. 🚩 [港股市场量化示例分析列表:](https://www.abuquant.com/hk3/hk_symbol_list.html)
+	* 🚩 [小米集团-量化研究报告:](https://www.abuquant.com/abu_context/output_hk_week3/report/hk01810/index.html)
 
 
-	* [上涨Pinbar组合:](https://www.abuquant.com/kc_feature1/up_pinbar_symbol_list.html)
-	* [倾盆大雨:](https://www.abuquant.com/kc_feature1/dn_down_pour_symbol_list.html)
-	* [上涨Pinbar组合:](https://www.abuquant.com/kc_feature1/up_pinbar_symbol_list.html)
-	* [低档五阳线:](https://www.abuquant.com/kc_feature1/up_lp_5yang_symbol_list.html)
+4. 📡 [图形信号 交织 图形信号 策略:](https://www.abuquant.com/find_itl_v3.html)
 
-	* [上涨身怀六甲:](https://www.abuquant.com/kc_feature1/up_pregnant_6m_symbol_list.html)
-	* [定海神针:](https://www.abuquant.com/kc_feature1/up_1needle_symbol_list.html)
+	* 📐[上升三角整理向上突破＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_90triangle_up_up_break_symbol_list.html)
+	* 🌊[波浪理论回调浪c点＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_5wr_c_revert_symbol_list.html)
+	* ✂️[升趋势向下破位风险＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/trend_breakthrough_risk_symbol_list.html)
+	* 🐶[c点将上涨到d点完成降赛福＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_cypher_xabc_predict_symbol_list.html)
+	* ☯[缠论中继❸买向上＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_right_tangle_three_symbol_list.html)
+	* 🚩[降楔型整理向上突破＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_wedge_dn_break_symbol_list.html)
+	* 🦇[蝙蝠到达升蝙蝠d点＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_bat_abcd_regular_symbol_list.html)
+	* ☯️[缠论中继❷买向上＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_right_tangle_two_symbol_list.html)
+	* 🌊[波浪理论回调浪反转＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_5wr_c_revert_symbol_list.html)
+	* ⚔️[趋势线突破机会＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/trend_breakthrough_chance_symbol_list.html)
+	* ☯️[缠论中继❸卖向下＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_right_tangle_three_symbol_list.html)
+	* 🐶[降赛福d点完成＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_cypher_xabc_predict_symbol_list.html)
+	* ▴▲▴[头肩顶向下突破＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/trend_support_encounter_dn_symbol_list.html)
+	* ✂️[升趋势强支撑破位可能＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_head_top_break_symbol_list.html)
+	* 🌊[上涨回调浪中继b＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_5wr_b_pos_symbol_list.html)
+	* 🦊[降伽利d点完成＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_gartley_abcd_predict_symbol_list.html)
+	* ☯️[缠论中继❷卖向下＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_right_tangle_two_symbol_list.html)
+	* ✂️[升趋势强支撑破位可能＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_head_top_break_symbol_list.html)
+	* ❐[下跌矩形达成下跌目标＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_rect_dn_up_target_symbol_list.html)
+	* 🌊[波浪理论下跌中继c＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_5wr_c_regular_symbol_list.html)
+	* 🦀️[升螃蟹d点完成＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_crab_abcd_predict_symbol_list.html)
+	* ⚑[降旗形整理向上突破＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_flag_dn_break_symbol_list.html)
+	* ☯[缠论反转❶买向上＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_lr_tg_one_symbol_list.html)
+	* 🌊[波浪理论上涨中继c＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_5wr_c_regular_symbol_list.html)
+	* 🦇[升蝙蝠第3反弹目标＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_bat_hm_t3_symbol_list.html)
+	* 🚩[升楔型达成整理下跌目标＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_wedge_up_target_symbol_list.html)
+	* ☯[缠论中枢b刚完成＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_left_ds_large_tg_one_symbol_list.html)
 
+5. 📡 [均线信号 交织 图形信号 策略:](https://www.abuquant.com/find_ma_adv_v3.html)
+
+	* [【金蜘蛛】买入点 ✚【📐形态反转中继】:](https://www.abuquant.com/ma_adv_feature3/golden_spider_pattern_symbol_list.html)
+	* [葛兰威尔第①买入点 ✚【🌊波浪理论】:](https://www.abuquant.com/ma_adv_feature3/grenville_b1_5W_symbol_list.html)
+	* [【金银山谷】买入点 ✚【☯️缠论】:](https://www.abuquant.com/ma_adv_feature3/golden_silver_valley_Tangle_symbol_list.html)
+	* [葛兰威尔第⑥卖出点 ✚【📡谐波理论】:](https://www.abuquant.com/ma_adv_feature3/grenville_s6_HM_symbol_list.html)
+	* [【战机起航】卖出点 ✚【📈趋势线理论】:](https://www.abuquant.com/ma_adv_feature3/warplane_Trend_symbol_list.html)
+	* [葛兰威尔第③买入点 ✚【☯️缠论】:](https://www.abuquant.com/ma_adv_feature3/grenville_b3_Tangle_symbol_list.html)
+	* [【乌云密布】卖出点 ✚【🌊波浪理论】:](https://www.abuquant.com/ma_adv_feature3/cloud_dark_5W_symbol_list.html)
+	* [【旱地拔葱】买入点 ✚【📐形态反转中继】:](https://www.abuquant.com/ma_adv_feature3/dry_up_jump_pattern_symbol_list.html)
+	* [葛兰威尔第⑦卖出点 ✚【📈趋势线理论】:](https://www.abuquant.com/ma_adv_feature3/grenville_s7_Trend_symbol_list.html)
+	* [【断头铡刀】卖出点 ✚【📡谐波理论】:](https://www.abuquant.com/ma_adv_feature3/hc_chopper_HM_symbol_list.html)
+	
+
+6. 🅚[🄺线信号 交织 图形信号 策略:](https://www.abuquant.com/find_kc_v3.html)
+
+	* [多方尖兵 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_pioneer_symbol_list.html)
+	* [高开跳空缺口 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_jump_gap_symbol_list.html)
+	* [塔形底 | 圆底＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_tower_symbol_list.html)
+	* [冉冉上升|稳步上涨＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_unbroke_symbol_list.html)
+	* [降势受阻＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_db_symbol_list.html)
+	* [上涨Pinbar组合 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_pinbar_symbol_list.html)
+	* [倾盆大雨 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/dn_down_pour_symbol_list.html)
+	* [低档五阳线 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_lp_5yang_symbol_list.html)
+	* [上涨身怀六甲 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_pregnant_6m_symbol_list.html)
+	* [双针探底 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_2needle_symbol_list.html)
+
+	
+7. 📡 [均线信号 交织 🄺线信号 策略:](https://www.abuquant.com/find_kc_ma_v3.html)
+
+	* [葛兰威尔第②买入点 ✚【🀔🀋🀝 5根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_b2_5k_symbol_list.html)
+	* [【毒蜘蛛】卖出点 ✚【🀓🀊🀜 4根k线信号】】:](https://www.abuquant.com/kc_ma_feature3/ma_poison_spider_4k_symbol_list.html)
+	* [【鱼跃龙门】买入点 ✚【🀒🀉🀛 3根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_fish_gate_3k_symbol_list.html)
+	* [【死亡谷】卖出点 ✚【🀑🀈🀚 2根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_dtn_valley_2k_symbol_list.html)
+	* [【高山滑雪】买入点 ✚【🀐🀇🀙 1根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_alpine_skiing_1k_symbol_list.html)
+	* [葛兰威尔第④买入点 ✚【🀔🀋🀝 5根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_b4_5k_symbol_list.html)
+	* [【烘云托月】买入点 ✚【🀓🀊🀜 4根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_cloud_moon_4k_symbol_list.html)
+	* [【绝命跳】卖出点 ✚【🀒🀉🀛 3根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_dry_dn_jump_3k_symbol_list.html)
+	* [葛兰威尔第③买入点 ✚【🀑🀈🀚 2根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_b3_2k_symbol_list.html)
+	* [【蛟龙出海】买入点 ✚【🀐🀇🀙 1根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_dragon_sea_1k_symbol_list.html)
+
+
+8. 阿布量化架构概述
+
+	* [道生一:](https://www.abuquant.com/media/dao/dao1_blog.html)
+	* [一生二:](https://www.abuquant.com/media/dao/dao2_blog.html)
+	* [二生三:](https://www.abuquant.com/media/dao/dao3_blog.html)
+	* [三生万物:](https://www.abuquant.com/media/dao/dao4_blog.html)
+	
 ### 特点
 
 * 使用多种机器学习技术智能优化策略
@@ -110,11 +119,56 @@
 
 * 分离基础策略和策略优化监督模块
 * 提高灵活度和适配性
-
 * 量化系统
 
 阿布量化综合AI大数据系统, K线形态系统, 缠论，波浪理论，谐波理论，突破，整理形态分析（头肩形态，三头，三角，旗形，楔形，矩形），
 经典指标系统, 走势趋势分析系统, 时间序列维度系统, 统计概率系统, 传统均线系统对投资品种进行深度量化分析, 彻底跨越用户复杂的代码量化阶段, 更适合普通人群使用, 迈向量化2.0时代.
+
+* 基于道氏理论的一维特征
+
+	* 🌊 艾略特波浪理论
+	                    
+		* 驱动浪,调整浪,上升浪,下跌浪,5浪理论,循环浪,9浪结构,锯齿型调整浪,规则平台型调整浪,顺势平台型调整浪,扩散平台型调整浪,双锯齿,双平台
+
+	* 💸 缠论
+	
+		* 缠论一买 缠论二买 缠论三买 缠论一卖 缠论二卖 缠论三卖
+	* 📡 谐波理论
+	
+		* 谐波蝴蝶，谐波螃蟹，谐波蝙蝠，谐波伽利，谐波鲨鱼，谐波赛福
+
+	* 💹 形态模型
+	
+		* 旗形，楔型，三重底，三重顶，头肩底，头肩顶，对称三角形，上升三角形，下降三角形，扩散三角形，矩形，双重底，双重顶
+
+	* 🎯 趋势线阻力与支撑
+	
+		* 上升趋势向下破位风险，下降趋势向上突破机会，下降趋势临近强阻力回调，上升趋势临近强支撑反弹
+	
+	* 🎢 均线信号
+	
+		* 葛兰威尔八大买卖法则, 葛兰威尔一二三四买，葛兰威尔五六七八卖，高山滑雪，战机起航，烘云托月，乌云密布，金山谷，银山谷，蛟龙出海，断头铡刀，金蜘蛛，毒蜘蛛，旱地拔葱，绝命跳，鱼跃龙门
+
+
+	* 🅚 K线信号
+	
+		* 多方尖兵，空方尖兵，塔形底 | 圆底，塔形顶 | 圆顶，上升三部曲（升势三鸦），下降三部曲（降势三鹤），高档五阴线，低档五阳线，
+	                    冉冉上升|稳步上涨，绵绵阴跌|下跌不止，徐缓上升，徐缓下降，向下加速度线，向上加速度线，下探上涨，上探下跌，上升抵抗，下跌抵抗，
+	                    多方炮，空方炮，上涨两颗星|上涨三颗星，下跌两颗星｜下跌三颗星，跳空下跌三颗星，跳空上涨三颗星，上升覆盖线，下降覆盖线，
+	                    早晨之星（黎明之星），黄昏之星（夜星），上涨Pinbar组合，下跌Pinbar组合，降势受阻，升势受阻，降势停顿，升势停顿，两黑夹一红，
+	                    两红夹一黑，上涨镊子线（U形磁铁），下跌镊子线（n形磁铁），红三兵，三只乌鸦，三空阴线，三空阳线，双飞乌鸦(树上二鸦)，倾盆大雨，
+	                    旭日东升，淡友反攻，好友反攻，射击之星形态，墓碑十字线（墓碑线），下跌螺旋桨，上涨螺旋桨，顶部尽头线（下山虎），底部尽头线（上山虎），
+	                    双针探底，吊颈线（上吊线），乌云盖顶，曙光初现形态，上涨身怀六甲，下跌身怀六甲，上涨孕十字星，下跌孕十字星，上涨孤独十字星，
+	                    下跌孤独十字星，阴包阳形态，阳包阴形态，低位并排阳线，高位并排阳线，中流砥柱，单针探底（定海神针），锤头线（锤子线），
+	                    看跌(高位倒锤头)流星线，看涨(低位)倒锤头线，仙人指路，下降插入线（坠落线）
+
+	* 💢 跳空缺口
+	
+		* 高开跳空缺口，低开跳空缺口，普通缺口，突破缺口，中继缺口，竭尽缺口
+
+	* 🈯️ 指标信号
+	
+		* MACD，KDJ，BOLL，RSI，ATR，ADX，CCI，Williams R，指标背离信号，指标波动信号，指标通道强弱信号，指标趋势突破信号
 
 * 量化模型
 
@@ -127,13 +181,6 @@
 * 量化策略
 
 阿布量化结合了传统基于代码策的量化系统, 对未来择时信号发出时机的预判, 系统基于数百种简单种子交易策略，衍生出更多的量化交易策略新策略在这些种子基础上不断自我学习、自我成长，不断分裂，适者生存，淘汰选择机制下繁衍，目前应用的量化买入卖出信号策略共计18496种。
-
-* 量化应用
-
-阿布量化结合多种量化分析数据构建了数百种量化应用, 
-如: AI高能预警, AI高光时刻, 智能预测涨跌幅, 下跌五浪量化, 上涨五浪量化, 缠论，波浪理论，谐波理论，突破，整理形态分析（头肩形态，三头，三角，旗形，楔形，矩形），
-阻力支撑强度分析, 上升三角形突破, 下降三角形, 三重底 (头肩底), 三重顶 (头肩顶), 圆弧顶, 圆弧底, 乌云盖顶形态, 上升三部曲形态, 好友反攻形态, 单针探底形态, 射击之星形态, 多方炮形态, 上涨镊子线, 向上突破箱体, 跳空突破缺口, 黄金分割线量化, 趋势跟踪信号, 均值回复信号, 止损风险控制量化, 止盈利润保护量化, 综合指标分析等.
-
 
 ## 安装
 
@@ -324,7 +371,6 @@ import abupy
 5. 赋予宏观上合理的解释
 6. 最优分类簇筛选
 
-![](./img/img13.png)
 
 [详细阅读](https://github.com/bbfamily/abu/blob/master/abupy_lecture/15-%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%92%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E(ABU%E9%87%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3).ipynb)
 
@@ -341,10 +387,6 @@ abu支持股票、期货、数字货币等多种金融投资品的行情和交�
 7. 接入外部数据源，比特币，莱特币数据源
 
 [详细阅读](https://github.com/bbfamily/abu/blob/master/abupy_lecture/19-%E6%95%B0%E6%8D%AE%E6%BA%90(ABU%E9%87%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3).ipynb)
-
-关注阿布量化微信公众号: abu_quant
-
-![](./img/qrcode.jpg)
 
 ### License
 [GPL](./LICENSE)
