@@ -11,21 +11,34 @@
 
 ###  🏆 [览器访问网址: https://www.abuquant.com](https://www.abuquant.com)
 
-1. 🇨🇳 [沪深市场量化示例分析列表:](https://www.abuquant.com/cn3/cn_symbol_list.html)
-
-	* 🇨🇳 [上证指数周报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_week3/report/sh000001/index.html)
-	* 🇨🇳 [上证指数日报示例量化分析:](https://www.abuquant.com/abu_context/output_cn_day3/report/sh000001/index.html)
-
-	
-2. 🇺🇸 [美股市场量化示例分析列表:](https://www.abuquant.com/us3/us_symbol_list.html)
-
-	* 🇺🇸 [阿里巴巴-量化研究报告:](https://www.abuquant.com/abu_context/output_us_week3/report/usBABA/index.html)
-
-3. 🚩 [港股市场量化示例分析列表:](https://www.abuquant.com/hk3/hk_symbol_list.html)
-	* 🚩 [小米集团-量化研究报告:](https://www.abuquant.com/abu_context/output_hk_week3/report/hk01810/index.html)
-
-
-4. 📡 [图形信号 交织 图形信号 策略:](https://www.abuquant.com/find_itl_v3.html)
+1. [上证指数(000001) 实时AI研报:](https://www.abuquant.com/abu_context/output_gi_week3/report/000001/index.html)
+2. [黄金/美元(XAU) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/XAU/index.html)
+3. [纳斯达克(NDX) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/NDX/index.html)
+4. [恒生指数(HSI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/HSI/index.html)
+5. [深证成指(399001) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/399001/index.html)
+6. [美元兑离岸人民币(USDCNH) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/USDCNH/index.html)
+7. [白银ETF(SLV) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/SLV/index.html)
+8. [日経225(N225) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/N225/index.html)
+9. [标普500(SPX) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/SPX/index.html)
+10. [创业板指(399006) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/399006/index.html)
+11. [沪深300(000300) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/000300/index.html)
+12. [NYMEX原油(CL00Y) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/CL00Y/index.html)
+13. [中证500股指主连(ICM) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/ICM/index.html)
+14. [COMEX黄金(GC00Y) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/GC00Y/index.html)
+15. [美元兑日元(USDJPY) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/USDJPY/index.html)
+16. [韩国KOSPI(KOSPI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/KOSPI/index.html)
+17. [富时新加坡海峡时报(STI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/STI/index.html)
+18. [上证50(000016) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/000016/index.html)
+19. [科创50(000688) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/000688/index.html)
+20. [英国富时100(FTSE) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/FTSE/index.html)
+21. [红筹指数(HSCCI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/HSCCI/index.html)
+22. [道琼斯(DJIA) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/DJIA/index.html)
+23. [法国CAC40(FCHI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/FCHI/index.html)
+24. [德国DAX30(GDAXI) 实时AI研报](https://www.abuquant.com/abu_context/output_gi_week3/report/GDAXI/index.html)
+25. 🇨🇳 [沪深市场量化示例分析列表](https://www.abuquant.com/cn3/cn_symbol_list.html)
+26. 🇺🇸 [美股市场量化示例分析列表](https://www.abuquant.com/us3/us_symbol_list.html)
+27. 🚩 [港股市场量化示例分析列表](https://www.abuquant.com/hk3/hk_symbol_list.html)
+28. 📡 [图形信号 交织 图形信号 策略:](https://www.abuquant.com/find_itl_v3.html)
 
 	* 📐[上升三角整理向上突破＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_90triangle_up_up_break_symbol_list.html)
 	* 🌊[波浪理论回调浪c点＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/dn_5wr_c_revert_symbol_list.html)
@@ -55,7 +68,7 @@
 	* 🚩[升楔型达成整理下跌目标＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/pattern_wedge_up_target_symbol_list.html)
 	* ☯[缠论中枢b刚完成＋缠论｜谐波｜趋势线｜波浪｜形态模型:](https://www.abuquant.com/itl_feature3/up_left_ds_large_tg_one_symbol_list.html)
 
-5. 📡 [均线信号 交织 图形信号 策略:](https://www.abuquant.com/find_ma_adv_v3.html)
+29. 📡 [均线信号 交织 图形信号 策略:](https://www.abuquant.com/find_ma_adv_v3.html)
 
 	* [【金蜘蛛】买入点 ✚【📐形态反转中继】:](https://www.abuquant.com/ma_adv_feature3/golden_spider_pattern_symbol_list.html)
 	* [葛兰威尔第①买入点 ✚【🌊波浪理论】:](https://www.abuquant.com/ma_adv_feature3/grenville_b1_5W_symbol_list.html)
@@ -69,7 +82,7 @@
 	* [【断头铡刀】卖出点 ✚【📡谐波理论】:](https://www.abuquant.com/ma_adv_feature3/hc_chopper_HM_symbol_list.html)
 	
 
-6. 🅚[🄺线信号 交织 图形信号 策略:](https://www.abuquant.com/find_kc_v3.html)
+30. 🅚[🄺线信号 交织 图形信号 策略:](https://www.abuquant.com/find_kc_v3.html)
 
 	* [多方尖兵 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_pioneer_symbol_list.html)
 	* [高开跳空缺口 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_jump_gap_symbol_list.html)
@@ -83,7 +96,7 @@
 	* [双针探底 ＋ 🌊波浪理论|💹形态模型|📡谐波理论|💸缠论❶❷❸|🎯趋势线阻力支撑:](https://www.abuquant.com/kc_feature3/up_2needle_symbol_list.html)
 
 	
-7. 📡 [均线信号 交织 🄺线信号 策略:](https://www.abuquant.com/find_kc_ma_v3.html)
+31. 📡 [均线信号 交织 🄺线信号 策略:](https://www.abuquant.com/find_kc_ma_v3.html)
 
 	* [葛兰威尔第②买入点 ✚【🀔🀋🀝 5根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_b2_5k_symbol_list.html)
 	* [【毒蜘蛛】卖出点 ✚【🀓🀊🀜 4根k线信号】】:](https://www.abuquant.com/kc_ma_feature3/ma_poison_spider_4k_symbol_list.html)
@@ -97,7 +110,7 @@
 	* [【蛟龙出海】买入点 ✚【🀐🀇🀙 1根k线信号】:](https://www.abuquant.com/kc_ma_feature3/ma_dragon_sea_1k_symbol_list.html)
 
 
-8. 阿布量化架构概述
+32. 阿布量化架构概述
 
 	* [道生一:](https://www.abuquant.com/media/dao/dao1_blog.html)
 	* [一生二:](https://www.abuquant.com/media/dao/dao2_blog.html)
